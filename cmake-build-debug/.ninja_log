@@ -1,0 +1,11 @@
+# ninja log v5
+0	11	1703420809658209340	CMakeFiles/Flight_Management_System.dir/States/State.cpp.o	23b6c2c1aeaf0700
+0	196	1703420809842215787	CMakeFiles/Flight_Management_System.dir/States/SubMenuState.cpp.o	644a97333a9cc780
+0	19	1703420809666209621	CMakeFiles/Flight_Management_System.dir/App.cpp.o	4c6e67b08dacff0e
+0	16	1703419626782423117	CMakeFiles/Flight_Management_System.dir/main.cpp.o	ac842f13d90bcebb
+0	195	1703420809842215787	CMakeFiles/Flight_Management_System.dir/States/MainMenuState.cpp.o	774c57fd211da710
+1	175	1703420723186988076	CMakeFiles/Flight_Management_System.dir/SubMenuState.cpp.o	17134cf980c2c8
+1	176	1703420723186988076	CMakeFiles/Flight_Management_System.dir/MainMenuState.cpp.o	6efbdd594fa88547
+0	16	1703420840935281711	build.ninja	e8b76f10c5de67da
+1	11	1703419626778423110	CMakeFiles/Flight_Management_System.dir/State.cpp.o	18b32076109a441f
+196	258	1703420809902217890	Flight_Management_System	841ba4fa38af25af
