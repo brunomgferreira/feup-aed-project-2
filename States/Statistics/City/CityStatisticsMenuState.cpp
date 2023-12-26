@@ -10,7 +10,7 @@ void CityStatisticsMenuState::display() const {
     cout << "1. Number of Airports" << endl;
     cout << "2. Number of Destinations" << endl;
     cout << "3. Number of Airlines" << endl;
-    cout << "4. Number of Flights" << endl;
+    cout << "4. Number of GetFlight" << endl;
     cout << "0. Statistics Menu" << endl;
 }
 
@@ -35,7 +35,7 @@ void CityStatisticsMenuState::handleInput(App* app) {
             cout << "Executing Option 3 - Number of Airlines" << endl;
             break;
         case '4':
-            cout << "Executing Option 4 - Number of Flights" << endl;
+            cout << "Executing Option 4 - Number of GetFlight" << endl;
             break;
         case '0':
             app->setState(new StatisticsMenuState());

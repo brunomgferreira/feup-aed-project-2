@@ -1,14 +1,16 @@
 #include <iostream>
 #include "MainMenuState.h"
 #include "States/Statistics/StatisticsMenuState.h"
-#include "BestFlightMenuState.h"
+#include "States/GetFlight/GetFlightOriginMenuState.h"
+#include "States/OtherMethods/OtherMethodsMenuState.h"
 
 MainMenuState::MainMenuState() {}
 
 void MainMenuState::display() const {
 cout << "***** Main Menu *****" << endl;
 cout << "1. Statistics" << endl;
-cout << "2. Search best flight" << endl;
+cout << "2. Get Flight" << endl;
+cout << "3. Other Methods" << endl;
 cout << "0. Exit" << endl;
 }
 
@@ -27,7 +29,10 @@ void MainMenuState::handleInput(App* app) {
             app->setState(new StatisticsMenuState());
             break;
         case '2':
-            app->setState(new BestFlightMenuState());
+            app->setState(new GetFlightOriginMenuState());
+            break;
+        case '3':
+            app->setState(new OtherMethodsMenuState());
             break;
         case '0':
             cout << "Exiting the program." << endl;
