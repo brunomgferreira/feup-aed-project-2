@@ -12,7 +12,7 @@ void OtherMethodsMenuState::display() const {
     cout << "4. Maximum trip" << endl;
     cout << "5. Top K airport with the greatest air traffic capacity" << endl;
     cout << "6. Essential airports" << endl;
-    cout << "0. Main Menu" << endl;
+    cout << "q. Main Menu" << endl;
 }
 
 void OtherMethodsMenuState::handleInput(App* app) {
@@ -20,28 +20,25 @@ void OtherMethodsMenuState::handleInput(App* app) {
     cout << "Enter your choice: ";
     cin >> choice;
 
-    if(!isdigit(choice[0])){
-        cout << "Invalid input. Please enter a valid integer choice." << endl;
-        return;
-    }
-
-    switch (choice[0]) {
-        case '1':
-            cout << "Executing Option 1. Maximum trip" << endl;
-            PressEnterToContinue();
-            break;
-        case '2':
-            cout << "Executing Option 2. Top K airport with the greatest air traffic capacity" << endl;
-            PressEnterToContinue();
-            break;
-        case '3':
-            cout << "Executing Option 3. Essential airports" << endl;
-            PressEnterToContinue();
-            break;
-        case '0':
-            app->setState(new MainMenuState());
-            break;
-        default:
-            cout << "Invalid choice. Please try again." << endl;
-    }
+    if (choice.size() == 1) {
+        switch (choice[0]) {
+            case '1':
+                cout << "Executing Option 1. Maximum trip" << endl;
+                PressEnterToContinue();
+                break;
+            case '2':
+                cout << "Executing Option 2. Top K airport with the greatest air traffic capacity" << endl;
+                PressEnterToContinue();
+                break;
+            case '3':
+                cout << "Executing Option 3. Essential airports" << endl;
+                PressEnterToContinue();
+                break;
+            case 'q':
+                app->setState(new MainMenuState());
+                break;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+        }
+    } else cout << "Invalid input. Please enter a single character." << endl;
 }

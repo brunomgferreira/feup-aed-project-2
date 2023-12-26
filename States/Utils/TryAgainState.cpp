@@ -7,8 +7,8 @@ TryAgainState::TryAgainState(State *backState, State* currentState)
 
 void TryAgainState::display() const {
     cout << "1. Try Again" << endl;
-    cout << "2. Go back" << endl;
-    cout << "0. Main Menu" << endl;
+    cout << "b. Go back" << endl;
+    cout << "q. Main Menu" << endl;
 }
 
 void TryAgainState::handleInput(App* app) {
@@ -16,22 +16,19 @@ void TryAgainState::handleInput(App* app) {
     cout << "Enter your choice: ";
     cin >> choice;
 
-    if(!isdigit(choice[0])){
-        cout << "Invalid input. Please enter a valid integer choice." << endl;
-        return;
-    }
-
-    switch (choice[0]) {
-        case '1':
-            app->setState(currentState);
-            break;
-        case '2':
-            app->setState(backState);
-            break;
-        case '0':
-            app->setState(new MainMenuState());
-            break;
-        default:
-            cout << "Invalid choice. Please try again." << endl;
-    }
+    if (choice.size() == 1) {
+        switch (choice[0]) {
+            case '1':
+                app->setState(currentState);
+                break;
+            case 'b':
+                app->setState(backState);
+                break;
+            case 'q':
+                app->setState(new MainMenuState());
+                break;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+        }
+    } else cout << "Invalid input. Please enter a single character." << endl;
 }
