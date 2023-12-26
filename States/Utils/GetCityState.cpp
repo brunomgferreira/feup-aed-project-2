@@ -2,8 +2,8 @@
 #include "GetCityState.h"
 #include "TryAgainState.h"
 
-GetCityState::GetCityState(function<void(App*, const string&)> nextStateCallback)
-    : nextStateCallback(nextStateCallback) {}
+GetCityState::GetCityState(State* backState, function<void(App*, const string&)> nextStateCallback)
+    : backState(backState), nextStateCallback(nextStateCallback) {}
 
 void GetCityState::display() const {
     cout << "Insert city name: ";
@@ -20,6 +20,6 @@ void GetCityState::handleInput(App* app) {
         nextStateCallback(app, cityName);
     } else {
         cout << "City does not exist." << endl;
-        app->setState(new TryAgainState(this));
+        app->setState(new TryAgainState(backState, this));
     }
 }

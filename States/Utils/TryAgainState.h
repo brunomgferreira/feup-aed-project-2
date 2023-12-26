@@ -2,13 +2,16 @@
 #define FLIGHT_MANAGEMENT_SYSTEM_TRYAGAINSTATE_H
 
 
+#include <functional>
 #include "States/State.h"
 
 class TryAgainState : public State {
 private:
-    State* currentState;
+private:
+    State *backState;
+    State *currentState;
 public:
-    TryAgainState(State* currentState);
+    TryAgainState(State *backState, State *currentState);
     void display() const override;
     void handleInput(App* app) override;
 };

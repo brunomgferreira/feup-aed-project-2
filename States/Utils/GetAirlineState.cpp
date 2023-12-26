@@ -2,8 +2,8 @@
 #include "GetAirlineState.h"
 #include "TryAgainState.h"
 
-GetAirlineState::GetAirlineState(function<void(App*, const string&)> nextStateCallback)
-    : nextStateCallback(nextStateCallback) {}
+GetAirlineState::GetAirlineState(State* backState, function<void(App*, const string&)> nextStateCallback)
+    : backState(backState), nextStateCallback(nextStateCallback) {}
 
 void GetAirlineState::display() const {
     cout << "Insert airline code: ";
@@ -20,6 +20,6 @@ void GetAirlineState::handleInput(App* app) {
         nextStateCallback(app, airlineCode);
     } else {
         cout << "Airline does not exist." << endl;
-        app->setState(new TryAgainState(this));
+        app->setState(new TryAgainState(backState, this));
     }
 }

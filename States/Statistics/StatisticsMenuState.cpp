@@ -38,21 +38,21 @@ void StatisticsMenuState::handleInput(App* app) {
             app->setState(new GlobalStatisticsMenuState());
             break;
         case '2':
-            app->setState(new GetCountryState([&](App* app, const string& countryName) {
+            app->setState(new GetCountryState(this, [&](App* app, const string& countryName) {
                 app->setState(new CountryStatisticsMenuState(countryName));
             }));
         case '3':
-            app->setState(new GetCityState([&](App* app, const string& cityName) {
+            app->setState(new GetCityState(this, [&](App* app, const string& cityName) {
                 app->setState(new CityStatisticsMenuState(cityName));
             }));
             break;
         case '4':
-            app->setState(new GetAirlineState([&](App* app, const string& airlineCode) {
+            app->setState(new GetAirlineState(this, [&](App* app, const string& airlineCode) {
                 app->setState(new AirlineStatisticsMenuState(airlineCode));
             }));
             break;
         case '5':
-            app->setState(new GetAirportState([&](App* app, const string& airportCode) {
+            app->setState(new GetAirportState(this, [&](App* app, const string& airportCode) {
                 app->setState(new AirportStatisticsMenuState(airportCode));
             }));
             break;

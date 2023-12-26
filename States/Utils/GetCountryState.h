@@ -7,9 +7,10 @@
 
 class GetCountryState : public State {
 private:
+    State* backState;
     function<void(App*, const string&)> nextStateCallback;
 public:
-    GetCountryState(function<void(App*, const string&)> nextStateCallback);
+    GetCountryState(State* backState, function<void(App*, const string&)> nextStateCallback);
     void display() const override;
     void handleInput(App* app) override;
 };

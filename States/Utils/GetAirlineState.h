@@ -7,9 +7,10 @@
 
 class GetAirlineState : public State {
 private:
+    State* backState;
     function<void(App*, const string&)> nextStateCallback;
 public:
-    GetAirlineState(function<void(App*, const string&)> nextStateCallback);
+    GetAirlineState(State* backState, function<void(App*, const string&)> nextStateCallback);
     void display() const override;
     void handleInput(App* app) override;
 };

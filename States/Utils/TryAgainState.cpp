@@ -2,12 +2,12 @@
 #include "TryAgainState.h"
 #include "States/MainMenuState.h"
 
-TryAgainState::TryAgainState(State* currentState) {
-    this->currentState = currentState;
-}
+TryAgainState::TryAgainState(State *backState, State* currentState)
+    : backState(backState), currentState(currentState) {}
 
 void TryAgainState::display() const {
     cout << "1. Try Again" << endl;
+    cout << "2. Go back" << endl;
     cout << "0. Main Menu" << endl;
 }
 
@@ -24,6 +24,9 @@ void TryAgainState::handleInput(App* app) {
     switch (choice[0]) {
         case '1':
             app->setState(currentState);
+            break;
+        case '2':
+            app->setState(backState);
             break;
         case '0':
             app->setState(new MainMenuState());

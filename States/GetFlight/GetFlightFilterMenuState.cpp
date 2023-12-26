@@ -44,6 +44,8 @@ void GetFlightFilterMenuState::handleInput(App* app) {
             break;
         case '5':
             cout << "Executing Option 5. No filter" << endl;
+            // Execute algorithm
+            PressEnterToContinue();
             break;
         case '0':
             app->setState(new MainMenuState());
