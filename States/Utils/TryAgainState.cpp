@@ -1,6 +1,6 @@
 #include <iostream>
 #include "TryAgainState.h"
-#include "MainMenuState.h"
+#include "States/MainMenuState.h"
 
 TryAgainState::TryAgainState(State* currentState) {
     this->currentState = currentState;

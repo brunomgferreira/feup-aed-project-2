@@ -3,10 +3,13 @@
 
 
 #include "States/State.h"
+#include <functional>
 
 class GetAirportState : public State {
+private:
+    function<void(App*, const string&)> nextStateCallback;
 public:
-    GetAirportState();
+    GetAirportState(function<void(App*, const string&)> nextStateCallback);
     void display() const override;
     void handleInput(App* app) override;
 };

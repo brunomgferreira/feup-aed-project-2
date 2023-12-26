@@ -3,10 +3,13 @@
 #include "States/MainMenuState.h"
 #include "States/Statistics/Global/GlobalStatisticsMenuState.h"
 #include "States/Statistics/Airline/AirlineStatisticsMenuState.h"
-#include "States/Statistics/Country/GetCountryState.h"
-#include "States/Statistics/City/GetCityState.h"
-#include "States/Statistics/Airport/GetAirportState.h"
-#include "States/Statistics/Airline/GetAirlineState.h"
+#include "States/Utils/GetCountryState.h"
+#include "States/Utils/GetCityState.h"
+#include "States/Utils/GetAirportState.h"
+#include "States/Utils/GetAirlineState.h"
+#include "States/Statistics/Airport/AirportStatisticsMenuState.h"
+#include "States/Statistics/Country/CountryStatisticsMenuState.h"
+#include "States/Statistics/City/CityStatisticsMenuState.h"
 
 StatisticsMenuState::StatisticsMenuState() {}
 
@@ -35,16 +38,23 @@ void StatisticsMenuState::handleInput(App* app) {
             app->setState(new GlobalStatisticsMenuState());
             break;
         case '2':
-            app->setState(new GetCountryState());
-            break;
+            app->setState(new GetCountryState([&](App* app, const string& countryName) {
+                app->setState(new CountryStatisticsMenuState(countryName));
+            }));
         case '3':
-            app->setState(new GetCityState());
+            app->setState(new GetCityState([&](App* app, const string& cityName) {
+                app->setState(new CityStatisticsMenuState(cityName));
+            }));
             break;
         case '4':
-            app->setState(new GetAirlineState());
+            app->setState(new GetAirlineState([&](App* app, const string& airlineCode) {
+                app->setState(new AirlineStatisticsMenuState(airlineCode));
+            }));
             break;
         case '5':
-            app->setState(new GetAirportState());
+            app->setState(new GetAirportState([&](App* app, const string& airportCode) {
+                app->setState(new AirportStatisticsMenuState(airportCode));
+            }));
             break;
         case '0':
             app->setState(new MainMenuState());

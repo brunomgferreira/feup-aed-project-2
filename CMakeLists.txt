@@ -24,8 +24,10 @@ add_executable(Flight_Management_System
         States/GetFlight/GetFlightDestinationMenuState.cpp
         States/GetFlight/GetFlightFilterMenuState.cpp
         States/OtherMethods/OtherMethodsMenuState.cpp
-        States/TryAgainState.cpp
-        States/Statistics/Country/GetCountryState.cpp
-        States/Statistics/City/GetCityState.cpp
-        States/Statistics/Airport/GetAirportState.cpp
-        States/Statistics/Airline/GetAirlineState.cpp)
+        States/Utils/TryAgainState.cpp
+        States/Utils/GetCountryState.cpp
+        States/Utils/GetCityState.cpp
+        States/Utils/GetAirportState.cpp
+        States/Utils/GetAirlineState.cpp
+        States/Utils/GetCoordinatesState.cpp
+        States/Utils/GetRadiusState.cpp)

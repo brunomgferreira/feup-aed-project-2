@@ -1,9 +1,9 @@
 #include <iostream>
 #include "GetAirlineState.h"
-#include "States/TryAgainState.h"
-#include "AirlineStatisticsMenuState.h"
+#include "TryAgainState.h"
 
-GetAirlineState::GetAirlineState() {}
+GetAirlineState::GetAirlineState(function<void(App*, const string&)> nextStateCallback)
+    : nextStateCallback(nextStateCallback) {}
 
 void GetAirlineState::display() const {
     cout << "Insert airline code: ";
@@ -17,7 +17,7 @@ void GetAirlineState::handleInput(App* app) {
     bool airlineExists = true;
 
     if (airlineExists) {
-        app->setState(new AirlineStatisticsMenuState(airlineCode));
+        nextStateCallback(app, airlineCode);
     } else {
         cout << "Airline does not exist." << endl;
         app->setState(new TryAgainState(this));

@@ -1,6 +1,12 @@
 #include <iostream>
 #include "GetFlightOriginMenuState.h"
 #include "States/MainMenuState.h"
+#include "States/Utils/GetAirportState.h"
+#include "GetFlightDestinationMenuState.h"
+#include "States/Utils/GetCityState.h"
+#include "States/Utils/GetCountryState.h"
+#include "States/Utils/GetCoordinatesState.h"
+#include "States/Utils/GetRadiusState.h"
 
 GetFlightOriginMenuState::GetFlightOriginMenuState() {}
 
@@ -27,23 +33,35 @@ void GetFlightOriginMenuState::handleInput(App* app) {
     switch (choice[0]) {
         case '1':
             cout << "Executing Option 1. Airport" << endl;
-            // getAirport()
+            app->setState(new GetAirportState([&](App* app, const string& airportCode) {
+                app->setState(new GetFlightDestinationMenuState());
+            }));
             break;
         case '2':
             cout << "Executing Option 2. City" << endl;
-            // getCity()
+            app->setState(new GetCityState([&](App* app, const string& cityName) {
+                app->setState(new GetFlightDestinationMenuState());
+            }));
             break;
         case '3':
             cout << "Executing Option 3. Country" << endl;
-            // getCountry();
+            app->setState(new GetCountryState([&](App* app, const string& countryName) {
+                app->setState(new GetFlightDestinationMenuState());
+            }));
             break;
         case '4':
             cout << "Executing Option 4. Coordinates" << endl;
-            // getCoordinates()
+            app->setState(new GetCoordinatesState([&](App* app, const string& coordinates) {
+                app->setState(new GetFlightDestinationMenuState());
+            }));
             break;
         case '5':
             cout << "Executing Option 5. Coordinates & Radius" << endl;
-            // getCoordinatesAndRadius()
+            app->setState(new GetCoordinatesState([&](App* app, const string& coordinates) {
+                app->setState(new GetRadiusState([&](App* app, const int radius) {
+                    app->setState(new GetFlightDestinationMenuState());
+                }));
+            }));
             break;
         case '0':
             app->setState(new MainMenuState());

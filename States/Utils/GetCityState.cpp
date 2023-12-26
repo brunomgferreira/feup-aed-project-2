@@ -1,9 +1,9 @@
 #include <iostream>
 #include "GetCityState.h"
-#include "States/TryAgainState.h"
-#include "CityStatisticsMenuState.h"
+#include "TryAgainState.h"
 
-GetCityState::GetCityState() {}
+GetCityState::GetCityState(function<void(App*, const string&)> nextStateCallback)
+    : nextStateCallback(nextStateCallback) {}
 
 void GetCityState::display() const {
     cout << "Insert city name: ";
@@ -17,7 +17,7 @@ void GetCityState::handleInput(App* app) {
     bool cityExists = false;
 
     if (cityExists) {
-        app->setState(new CityStatisticsMenuState(cityName));
+        nextStateCallback(app, cityName);
     } else {
         cout << "City does not exist." << endl;
         app->setState(new TryAgainState(this));
