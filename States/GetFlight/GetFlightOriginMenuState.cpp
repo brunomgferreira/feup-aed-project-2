@@ -27,18 +27,23 @@ void GetFlightOriginMenuState::handleInput(App* app) {
     switch (choice[0]) {
         case '1':
             cout << "Executing Option 1. Airport" << endl;
+            // getAirport()
             break;
         case '2':
             cout << "Executing Option 2. City" << endl;
+            // getCity()
             break;
         case '3':
             cout << "Executing Option 3. Country" << endl;
+            // getCountry();
             break;
         case '4':
             cout << "Executing Option 4. Coordinates" << endl;
+            // getCoordinates()
             break;
         case '5':
             cout << "Executing Option 5. Coordinates & Radius" << endl;
+            // getCoordinatesAndRadius()
             break;
         case '0':
             app->setState(new MainMenuState());

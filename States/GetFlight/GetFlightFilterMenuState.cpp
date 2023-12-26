@@ -27,15 +27,19 @@ void GetFlightsFilterMenuState::handleInput(App* app) {
     switch (choice[0]) {
         case '1':
             cout << "Executing Option 1. Only one airline" << endl;
+            // getAirline()
             break;
         case '2':
             cout << "Executing Option 2. Set of airlines" << endl;
+            // getAirlines()
             break;
         case '3':
             cout << "Executing Option 3. Set of unwanted airlines" << endl;
+            // getUnwantedAirlines()
             break;
         case '4':
             cout << "Executing Option 4. Minimize number of airlines" << endl;
+            // ?
             break;
         case '5':
             cout << "Executing Option 5. No filter" << endl;
