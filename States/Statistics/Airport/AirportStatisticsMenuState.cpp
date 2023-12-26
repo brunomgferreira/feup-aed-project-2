@@ -11,6 +11,7 @@ void AirportStatisticsMenuState::display() const {
     cout << "1. Number of Flights" << endl;
     cout << "2. Number of Airlines" << endl;
     cout << "3. Number of Destinations" << endl;
+    cout << "4. Reachable Destinations with max X stops" << endl;
     cout << "0. Statistics Menu" << endl;
 }
 
@@ -35,6 +36,10 @@ void AirportStatisticsMenuState::handleInput(App* app) {
             break;
         case '3':
             cout << "Executing Option 3 - Number of Destinations." << endl;
+            PressEnterToContinue();
+            break;
+        case '4':
+            cout << "Executing Option 4. - Reachable Destinations with max X stops" << endl;
             PressEnterToContinue();
             break;
         case '0':

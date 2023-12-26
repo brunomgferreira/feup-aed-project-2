@@ -27,22 +27,16 @@ void OtherMethodsMenuState::handleInput(App* app) {
 
     switch (choice[0]) {
         case '1':
-            cout << "Executing Option 1. Reachable airports with X max flights" << endl;
+            cout << "Executing Option 1. Maximum trip" << endl;
+            PressEnterToContinue();
             break;
         case '2':
-            cout << "Executing Option 2. Reachable cities with X max flights" << endl;
+            cout << "Executing Option 2. Top K airport with the greatest air traffic capacity" << endl;
+            PressEnterToContinue();
             break;
         case '3':
-            cout << "Executing Option 3. Reachable countries with X max flights" << endl;
-            break;
-        case '4':
-            cout << "Executing Option 4. Maximum trip" << endl;
-            break;
-        case '5':
-            cout << "Executing Option 5. Top K airport with the greatest air traffic capacity" << endl;
-            break;
-        case '6':
-            cout << "Executing Option 6. Essential airports" << endl;
+            cout << "Executing Option 3. Essential airports" << endl;
+            PressEnterToContinue();
             break;
         case '0':
             app->setState(new MainMenuState());
