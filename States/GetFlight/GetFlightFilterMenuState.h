@@ -1,14 +1,18 @@
-#ifndef FLIGHT_MANAGEMENT_SYSTEM_GETFLIGHTSFILTERMENUSTATE_H
-#define FLIGHT_MANAGEMENT_SYSTEM_GETFLIGHTSFILTERMENUSTATE_H
+#ifndef FLIGHT_MANAGEMENT_SYSTEM_GETFLIGHTFILTERMENUSTATE_H
+#define FLIGHT_MANAGEMENT_SYSTEM_GETFLIGHTFILTERMENUSTATE_H
 
 #include "States/State.h"
+#include "States/Utils/LocationInfo.h"
 
-class GetFlightsFilterMenuState : public State {
+class GetFlightFilterMenuState : public State {
+private:
+    LocationInfo *originInfo;
+    LocationInfo *destinationInfo;
 public:
-    GetFlightsFilterMenuState();
+    GetFlightFilterMenuState(LocationInfo *originInfo, LocationInfo *destinationInfo);
     void display() const override;
     void handleInput(App* app) override;
 };
 
 
-#endif //FLIGHT_MANAGEMENT_SYSTEM_GETFLIGHTSFILTERMENUSTATE_H
+#endif //FLIGHT_MANAGEMENT_SYSTEM_GETFLIGHTFILTERMENUSTATE_H

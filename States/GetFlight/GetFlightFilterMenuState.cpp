@@ -2,9 +2,10 @@
 #include "GetFlightFilterMenuState.h"
 #include "States/MainMenuState.h"
 
-GetFlightsFilterMenuState::GetFlightsFilterMenuState() {}
+GetFlightFilterMenuState::GetFlightFilterMenuState(LocationInfo *originInfo, LocationInfo *destinationInfo)
+    : originInfo(originInfo), destinationInfo(destinationInfo) {}
 
-void GetFlightsFilterMenuState::display() const {
+void GetFlightFilterMenuState::display() const {
     cout << "***** Filters *****" << endl;
     cout << "1. Only one airline" << endl;
     cout << "2. Set of airlines" << endl;
@@ -14,7 +15,7 @@ void GetFlightsFilterMenuState::display() const {
     cout << "0. Main Menu" << endl;
 }
 
-void GetFlightsFilterMenuState::handleInput(App* app) {
+void GetFlightFilterMenuState::handleInput(App* app) {
     string choice;
     cout << "Enter your choice: ";
     cin >> choice;

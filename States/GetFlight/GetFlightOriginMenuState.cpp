@@ -7,6 +7,7 @@
 #include "States/Utils/GetCountryState.h"
 #include "States/Utils/GetCoordinatesState.h"
 #include "States/Utils/GetRadiusState.h"
+#include "States/Utils/LocationInfo.h"
 
 GetFlightOriginMenuState::GetFlightOriginMenuState() {}
 
@@ -34,32 +35,39 @@ void GetFlightOriginMenuState::handleInput(App* app) {
         case '1':
             cout << "Executing Option 1. Airport" << endl;
             app->setState(new GetAirportState([&](App* app, const string& airportCode) {
-                app->setState(new GetFlightDestinationMenuState());
+                LocationInfo *originInfo = new LocationInfo(1, airportCode);
+                app->setState(new GetFlightDestinationMenuState(originInfo));
             }));
             break;
         case '2':
             cout << "Executing Option 2. City" << endl;
             app->setState(new GetCityState([&](App* app, const string& cityName) {
-                app->setState(new GetFlightDestinationMenuState());
+                LocationInfo *originInfo = new LocationInfo(2, cityName);
+                app->setState(new GetFlightDestinationMenuState(originInfo));
             }));
             break;
         case '3':
             cout << "Executing Option 3. Country" << endl;
             app->setState(new GetCountryState([&](App* app, const string& countryName) {
-                app->setState(new GetFlightDestinationMenuState());
+                LocationInfo *originInfo = new LocationInfo(3, countryName);
+                app->setState(new GetFlightDestinationMenuState(originInfo));
             }));
             break;
         case '4':
             cout << "Executing Option 4. Coordinates" << endl;
             app->setState(new GetCoordinatesState([&](App* app, const string& coordinates) {
-                app->setState(new GetFlightDestinationMenuState());
+                // TODO radius[0]->latitude, radius[1]->longitude ou algo do género
+                LocationInfo *originInfo = new LocationInfo(4, 0, 0);
+                app->setState(new GetFlightDestinationMenuState(originInfo));
             }));
             break;
         case '5':
             cout << "Executing Option 5. Coordinates & Radius" << endl;
             app->setState(new GetCoordinatesState([&](App* app, const string& coordinates) {
                 app->setState(new GetRadiusState([&](App* app, const int radius) {
-                    app->setState(new GetFlightDestinationMenuState());
+                    // TODO radius[0]->latitude, radius[1]->longitude ou algo do género
+                    LocationInfo *originInfo = new LocationInfo(5, 0, 0, radius);
+                    app->setState(new GetFlightDestinationMenuState(originInfo));
                 }));
             }));
             break;

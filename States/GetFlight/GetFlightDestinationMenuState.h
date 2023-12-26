@@ -2,10 +2,13 @@
 #define FLIGHT_MANAGEMENT_SYSTEM_GETFLIGHTDESTINATIONMENUSTATE_H
 
 #include "States/State.h"
+#include "States/Utils/LocationInfo.h"
 
 class GetFlightDestinationMenuState : public State {
+private:
+    LocationInfo *originInfo;
 public:
-    GetFlightDestinationMenuState();
+    GetFlightDestinationMenuState(LocationInfo *originInfo);
     void display() const override;
     void handleInput(App* app) override;
 };

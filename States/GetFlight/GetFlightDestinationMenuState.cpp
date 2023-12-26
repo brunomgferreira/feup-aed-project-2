@@ -1,8 +1,15 @@
 #include <iostream>
 #include "GetFlightDestinationMenuState.h"
+#include "GetFlightFilterMenuState.h"
 #include "States/MainMenuState.h"
+#include "States/Utils/GetAirportState.h"
+#include "States/Utils/GetCityState.h"
+#include "States/Utils/GetCountryState.h"
+#include "States/Utils/GetCoordinatesState.h"
+#include "States/Utils/GetRadiusState.h"
 
-GetFlightDestinationMenuState::GetFlightDestinationMenuState() {}
+GetFlightDestinationMenuState::GetFlightDestinationMenuState(LocationInfo *originInfo)
+    : originInfo(originInfo) {}
 
 void GetFlightDestinationMenuState::display() const {
     cout << "***** Type of Destination *****" << endl;
@@ -27,23 +34,42 @@ void GetFlightDestinationMenuState::handleInput(App* app) {
     switch (choice[0]) {
         case '1':
             cout << "Executing Option 1. Airport" << endl;
-            // getAirport()
+            app->setState(new GetAirportState([&](App* app, const string& airportCode) {
+                LocationInfo *destinationInfo = new LocationInfo(1, airportCode);
+                app->setState(new GetFlightFilterMenuState(originInfo, destinationInfo));
+            }));
             break;
         case '2':
             cout << "Executing Option 2. City" << endl;
-            // getCity()
+            app->setState(new GetCityState([&](App* app, const string& cityName) {
+                LocationInfo *destinationInfo = new LocationInfo(2, cityName);
+                app->setState(new GetFlightFilterMenuState(originInfo, destinationInfo));
+            }));
             break;
         case '3':
             cout << "Executing Option 3. Country" << endl;
-            // getCountry();
+            app->setState(new GetCountryState([&](App* app, const string& countryName) {
+                LocationInfo *destinationInfo = new LocationInfo(3, countryName);
+                app->setState(new GetFlightFilterMenuState(originInfo, destinationInfo));
+            }));
             break;
         case '4':
             cout << "Executing Option 4. Coordinates" << endl;
-            // getCoordinates()
+            app->setState(new GetCoordinatesState([&](App* app, const string& coordinates) {
+                // TODO radius[0]->latitude, radius[1]->longitude ou algo do género
+                LocationInfo *destinationInfo = new LocationInfo(4, 0, 0);
+                app->setState(new GetFlightFilterMenuState(originInfo, destinationInfo));
+            }));
             break;
         case '5':
             cout << "Executing Option 5. Coordinates & Radius" << endl;
-            // getCoordinatesAndRadius()
+            app->setState(new GetCoordinatesState([&](App* app, const string& coordinates) {
+                app->setState(new GetRadiusState([&](App* app, const int radius) {
+                    // TODO radius[0]->latitude, radius[1]->longitude ou algo do género
+                    LocationInfo *destinationInfo = new LocationInfo(5, 0, 0, radius);
+                    app->setState(new GetFlightFilterMenuState(originInfo, destinationInfo));
+                }));
+            }));
             break;
         case '0':
             app->setState(new MainMenuState());

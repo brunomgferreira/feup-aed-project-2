@@ -30,4 +30,6 @@ add_executable(Flight_Management_System
         States/Utils/GetAirportState.cpp
         States/Utils/GetAirlineState.cpp
         States/Utils/GetCoordinatesState.cpp
-        States/Utils/GetRadiusState.cpp)
+        States/Utils/GetRadiusState.cpp
+        States/Utils/LocationInfo.h
+        States/Utils/LocationInfo.cpp)
