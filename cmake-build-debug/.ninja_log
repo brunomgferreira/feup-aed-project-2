@@ -1,11 +1,21 @@
 # ninja log v5
-0	11	1703420809658209340	CMakeFiles/Flight_Management_System.dir/States/State.cpp.o	23b6c2c1aeaf0700
+0	12	1703584227973192346	CMakeFiles/Flight_Management_System.dir/States/State.cpp.o	23b6c2c1aeaf0700
 0	196	1703420809842215787	CMakeFiles/Flight_Management_System.dir/States/SubMenuState.cpp.o	644a97333a9cc780
-0	19	1703420809666209621	CMakeFiles/Flight_Management_System.dir/App.cpp.o	4c6e67b08dacff0e
-0	16	1703419626782423117	CMakeFiles/Flight_Management_System.dir/main.cpp.o	ac842f13d90bcebb
-0	195	1703420809842215787	CMakeFiles/Flight_Management_System.dir/States/MainMenuState.cpp.o	774c57fd211da710
+1	179	1703584228141188907	CMakeFiles/Flight_Management_System.dir/States/BestFlightMenu.cpp.o	292dd44269cf2069
+0	17	1703584227981192181	CMakeFiles/Flight_Management_System.dir/App.cpp.o	4c6e67b08dacff0e
+0	16	1703584227977192264	CMakeFiles/Flight_Management_System.dir/main.cpp.o	ac842f13d90bcebb
+1	177	1703584990515446586	CMakeFiles/Flight_Management_System.dir/States/MainMenuState.cpp.o	774c57fd211da710
 1	175	1703420723186988076	CMakeFiles/Flight_Management_System.dir/SubMenuState.cpp.o	17134cf980c2c8
 1	176	1703420723186988076	CMakeFiles/Flight_Management_System.dir/MainMenuState.cpp.o	6efbdd594fa88547
-0	16	1703420840935281711	build.ninja	e8b76f10c5de67da
+0	16	1703586059316379409	build.ninja	e8b76f10c5de67da
 1	11	1703419626778423110	CMakeFiles/Flight_Management_System.dir/State.cpp.o	18b32076109a441f
-196	258	1703420809902217890	Flight_Management_System	841ba4fa38af25af
+181	231	1703584228193187843	Flight_Management_System	b7ea838176e41f0b
+1	178	1703584990515446586	CMakeFiles/Flight_Management_System.dir/States/BestFlightMenuState.cpp.o	db194308118a3f75
+1	181	1703584228145188825	CMakeFiles/Flight_Management_System.dir/States/StatisticsMenu.cpp.o	7443957709378b53
+2	192	1703586183511569700	CMakeFiles/Flight_Management_System.dir/States/Statistics/City/CityStatisticsMenuState.cpp.o	8c14679bb50e4bca
+2	192	1703586183511569700	CMakeFiles/Flight_Management_System.dir/States/Statistics/Airport/AirportStatisticsMenuState.cpp.o	8fe87e5eb9c6bb80
+1	193	1703586183511569700	CMakeFiles/Flight_Management_System.dir/States/Statistics/StatisticsMenuState.cpp.o	ac5b5d5a7ca1ebe2
+2	195	1703586183515569539	CMakeFiles/Flight_Management_System.dir/States/Statistics/Airline/AirlineStatisticsMenuState.cpp.o	64c394946b970053
+1	197	1703586183515569539	CMakeFiles/Flight_Management_System.dir/States/Statistics/Country/CountryStatisticsMenuState.cpp.o	d980247d2fcf8aeb
+1	198	1703586183519569378	CMakeFiles/Flight_Management_System.dir/States/Statistics/Global/GlobalStatisticsMenuState.cpp.o	576f284b4c44b8f7
+198	250	1703586183567567453	Flight_Management_System	52d8f8aeff44cde0

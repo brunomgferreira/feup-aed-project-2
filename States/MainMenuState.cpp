@@ -1,13 +1,14 @@
 #include <iostream>
 #include "MainMenuState.h"
-#include "SubMenuState.h"
+#include "States/Statistics/StatisticsMenuState.h"
+#include "BestFlightMenuState.h"
 
 MainMenuState::MainMenuState() {}
 
 void MainMenuState::display() const {
 cout << "***** Main Menu *****" << endl;
-cout << "1. Sub Menu" << endl;
-cout << "2. Option 2" << endl;
+cout << "1. Statistics" << endl;
+cout << "2. Search best flight" << endl;
 cout << "0. Exit" << endl;
 }
 
@@ -23,10 +24,10 @@ void MainMenuState::handleInput(App* app) {
 
     switch (choice[0]) {
         case '1':
-            app->setState(new SubMenuState());
+            app->setState(new StatisticsMenuState());
             break;
         case '2':
-            cout << "Executing Option 2 from Main Menu." << endl;
+            app->setState(new BestFlightMenuState());
             break;
         case '0':
             cout << "Exiting the program." << endl;

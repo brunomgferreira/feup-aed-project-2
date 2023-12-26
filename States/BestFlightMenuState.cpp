@@ -1,17 +1,17 @@
 #include <iostream>
-#include "SubMenuState.h"
+#include "BestFlightMenuState.h"
 #include "MainMenuState.h"
 
-SubMenuState::SubMenuState() {}
+BestFlightMenuState::BestFlightMenuState() {}
 
-void SubMenuState::display() const {
+void BestFlightMenuState::display() const {
     cout << "***** Sub Menu *****" << endl;
     cout << "1. Option 1" << endl;
     cout << "2. Option 2" << endl;
     cout << "0. Main Menu" << endl;
 }
 
-void SubMenuState::handleInput(App* app) {
+void BestFlightMenuState::handleInput(App* app) {
     string choice;
     cout << "Enter your choice: ";
     cin >> choice;
