@@ -5,8 +5,10 @@
 #include "States/State.h"
 
 class AirlineStatisticsMenuState : public State {
+private:
+    string airlineCode;
 public:
-    AirlineStatisticsMenuState();
+    AirlineStatisticsMenuState(string airlineCode);
     void display() const override;
     void handleInput(App* app) override;
 };

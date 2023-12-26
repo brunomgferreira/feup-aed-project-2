@@ -7,6 +7,7 @@ class State {
 public:
     virtual void display() const = 0;
     virtual void handleInput(App* app) = 0;
+    void PressEnterToContinue() const;
 };
 
 

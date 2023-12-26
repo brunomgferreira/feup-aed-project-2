@@ -3,7 +3,9 @@
 #include "States/Statistics/StatisticsMenuState.h"
 
 
-CityStatisticsMenuState::CityStatisticsMenuState() {}
+CityStatisticsMenuState::CityStatisticsMenuState(string cityName) {
+    this->cityName = cityName;
+}
 
 void CityStatisticsMenuState::display() const {
     cout << "***** City Statistics *****" << endl;
@@ -27,15 +29,19 @@ void CityStatisticsMenuState::handleInput(App* app) {
     switch (choice[0]) {
         case '1':
             cout << "Executing Option 1 - Number of Airports." << endl;
+            PressEnterToContinue();
             break;
         case '2':
             cout << "Executing Option 2 - Number of Destinations." << endl;
+            PressEnterToContinue();
             break;
         case '3':
             cout << "Executing Option 3 - Number of Airlines" << endl;
+            PressEnterToContinue();
             break;
         case '4':
             cout << "Executing Option 4 - Number of GetFlight" << endl;
+            PressEnterToContinue();
             break;
         case '0':
             app->setState(new StatisticsMenuState());

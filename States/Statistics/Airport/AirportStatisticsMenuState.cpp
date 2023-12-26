@@ -2,11 +2,13 @@
 #include "AirportStatisticsMenuState.h"
 #include "States/Statistics/StatisticsMenuState.h"
 
-AirportStatisticsMenuState::AirportStatisticsMenuState() {}
+AirportStatisticsMenuState::AirportStatisticsMenuState(string airportCode) {
+    this->airportCode = airportCode;
+}
 
 void AirportStatisticsMenuState::display() const {
     cout << "***** Airport Statistics *****" << endl;
-    cout << "1. Number of GetFlight" << endl;
+    cout << "1. Number of Flights" << endl;
     cout << "2. Number of Airlines" << endl;
     cout << "3. Number of Destinations" << endl;
     cout << "0. Statistics Menu" << endl;
@@ -24,13 +26,16 @@ void AirportStatisticsMenuState::handleInput(App* app) {
 
     switch (choice[0]) {
         case '1':
-            cout << "Executing Option 1 - Number of GetFlight" << endl;
+            cout << "Executing Option 1 - Number of Flight" << endl;
+            PressEnterToContinue();
             break;
         case '2':
             cout << "Executing Option 2 - Number of Airlines" << endl;
+            PressEnterToContinue();
             break;
         case '3':
             cout << "Executing Option 3 - Number of Destinations." << endl;
+            PressEnterToContinue();
             break;
         case '0':
             app->setState(new StatisticsMenuState());

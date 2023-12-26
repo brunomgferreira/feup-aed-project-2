@@ -27,18 +27,23 @@ void GlobalStatisticsMenuState::handleInput(App* app) {
     switch (choice[0]) {
         case '1':
             cout << "Executing Option 1 - Number of Airports." << endl;
+            PressEnterToContinue();
             break;
         case '2':
             cout << "Executing Option 2 - Number of Cities." << endl;
+            PressEnterToContinue();
             break;
         case '3':
             cout << "Executing Option 3 - Number of Countries." << endl;
+            PressEnterToContinue();
             break;
         case '4':
             cout << "Executing Option 4 - Number of Airlines" << endl;
+            PressEnterToContinue();
             break;
         case '5':
             cout << "Executing Option 5 - Number of GetFlight" << endl;
+            PressEnterToContinue();
             break;
         case '0':
             app->setState(new StatisticsMenuState());

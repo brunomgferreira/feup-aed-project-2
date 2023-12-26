@@ -5,8 +5,11 @@
 #include "States/State.h"
 
 class CityStatisticsMenuState : public State {
+private:
+    string cityName;
 public:
-    CityStatisticsMenuState();
+    // TODO Passar o nome ou o objeto city ??
+    CityStatisticsMenuState(string cityName);
     void display() const override;
     void handleInput(App* app) override;
 };

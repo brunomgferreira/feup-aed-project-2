@@ -2,10 +2,11 @@
 #include "StatisticsMenuState.h"
 #include "States/MainMenuState.h"
 #include "States/Statistics/Global/GlobalStatisticsMenuState.h"
-#include "States/Statistics/Country/CountryStatisticsMenuState.h"
-#include "States/Statistics/City/CityStatisticsMenuState.h"
 #include "States/Statistics/Airline/AirlineStatisticsMenuState.h"
-#include "States/Statistics/Airport/AirportStatisticsMenuState.h"
+#include "States/Statistics/Country/GetCountryState.h"
+#include "States/Statistics/City/GetCityState.h"
+#include "States/Statistics/Airport/GetAirportState.h"
+#include "States/Statistics/Airline/GetAirlineState.h"
 
 StatisticsMenuState::StatisticsMenuState() {}
 
@@ -34,16 +35,16 @@ void StatisticsMenuState::handleInput(App* app) {
             app->setState(new GlobalStatisticsMenuState());
             break;
         case '2':
-            app->setState(new CountryStatisticsMenuState());
+            app->setState(new GetCountryState());
             break;
         case '3':
-            app->setState(new CityStatisticsMenuState());
+            app->setState(new GetCityState());
             break;
         case '4':
-            app->setState(new AirlineStatisticsMenuState());
+            app->setState(new GetAirlineState());
             break;
         case '5':
-            app->setState(new AirportStatisticsMenuState());
+            app->setState(new GetAirportState());
             break;
         case '0':
             app->setState(new MainMenuState());
