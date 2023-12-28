@@ -5,6 +5,7 @@ App* App::instance = nullptr;
 
 App::App() {
     currentState = new MainMenuState();
+    data = new Data();
 }
 
 App::~App() {

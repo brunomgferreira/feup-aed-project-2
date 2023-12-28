@@ -1,6 +1,8 @@
 #ifndef FLIGHT_MANAGEMENT_SYSTEM_APP_H
 #define FLIGHT_MANAGEMENT_SYSTEM_APP_H
 
+#include "Data.h"
+
 using namespace std;
 
 class State;
@@ -9,9 +11,9 @@ class App {
 private:
     static App* instance;
     State* currentState;
-
-public:
+    Data* data;
     App();
+public:
     ~App();
     static App* getInstance();
     State *getState();

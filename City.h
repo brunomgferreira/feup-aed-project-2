@@ -6,24 +6,22 @@ using namespace std;
 
 #include <string>
 #include <vector>
+#include <unordered_set>
 
 class City {
 private:
     string name;
-    string country;
-    vector<string> airports;
+    string countryName;
+    unordered_set<string> airports;
 public:
+    City(const string &name, const string &countryName, const string &airportCode);
     const string &getName() const;
-
     void setName(const string &name);
-
-    const string &getCountry() const;
-
-    void setCountry(const string &country);
-
-    const vector<string> &getAirports() const;
-
-    void setAirports(const vector<string> &airports);
+    const string &getCountryName() const;
+    void setCountryName(const string &countryName);
+    const unordered_set<string> &getAirports() const;
+    void addAirport(const string &airportCode);
+    void setAirports(const unordered_set<string> &airports);
 };
 
 
