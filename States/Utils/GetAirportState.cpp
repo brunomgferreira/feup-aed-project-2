@@ -14,7 +14,7 @@ void GetAirportState::handleInput(App* app) {
     std::cin.ignore();
     std::getline(std::cin, airportCode);
 
-    bool airportExists = true;
+    bool airportExists = app->getData()->airportExists(airportCode);
 
     if (airportExists) {
         nextStateCallback(app, airportCode);

@@ -28,10 +28,12 @@ void CountryStatisticsMenuState::handleInput(App* app) {
         switch (choice[0]) {
             case '1':
                 cout << "Executing Option 1 - Number of Airports." << endl;
+                app->getData()->numberOfAirportsCountry(countryName);
                 PressEnterToContinue();
                 break;
             case '2':
                 cout << "Executing Option 2 - Number of Cities." << endl;
+                app->getData()->numberOfCitiesCountry(countryName);
                 PressEnterToContinue();
                 break;
             case '3':

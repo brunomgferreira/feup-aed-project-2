@@ -14,7 +14,7 @@ void GetAirlineState::handleInput(App* app) {
     std::cin.ignore();
     std::getline(std::cin, airlineCode);
 
-    bool airlineExists = true;
+    bool airlineExists = app->getData()->airlineExists(airlineCode);
 
     if (airlineExists) {
         nextStateCallback(app, airlineCode);

@@ -14,8 +14,7 @@ void GetCountryState::handleInput(App* app) {
     std::cin.ignore();
     std::getline(std::cin, countryName);
 
-    bool countryExists = true;
-
+    bool countryExists = app->getData()->countryExists(countryName);
     if (countryExists) {
         nextStateCallback(app, countryName);
     } else {

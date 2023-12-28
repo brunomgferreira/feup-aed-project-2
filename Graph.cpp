@@ -67,7 +67,6 @@ void Edge::setAirlines(unordered_set<string> airlines) {
 }
 
 
-
 // Graph
 
 Vertex *Graph::findVertex(const string &airportCode) const {
@@ -97,4 +96,91 @@ bool Graph::addEdge(const string& originAirportCode, const string& destinationAi
     }
 
     return false;
+}
+
+const unordered_map<string, Vertex *> &Graph::getVertices() const {
+    return vertices;
+}
+
+vector<int> Graph::bfs(const string airportCode) const {
+    unordered_set<string> airports;
+    unordered_set<string> cities;
+    unordered_set<string> countries;
+
+    auto s = findVertex(airportCode);
+    if (s == nullptr)
+        return {0,0,0};
+    queue<Vertex*> q;
+    for (auto &v : vertices)
+        v.second->visited = false;
+    q.push(s);
+    s->visited = true;
+    while (!q.empty()) {
+        auto v = q.front();
+        q.pop();
+        airports.insert(v->airport->getCode()); //-1 ?
+        cities.insert(v->airport->getCity());
+        countries.insert(v->airport->getCountry());
+
+        for (auto & e : v->adj) {
+            auto w = e.second.dest;
+            if ( ! w->visited ) {
+                /** ??
+                airports.insert(v->airport->getCode()); //-1 ?
+                cities.insert(v->airport->getCity());
+                countries.insert(v->airport->getCountry());
+                **/
+                q.push(w);
+                w->visited = true;
+            }
+        }
+    }
+    return {(int)airports.size(),(int)cities.size(),(int)countries.size()};
+}
+
+vector<int> Graph::bfs(const string airportCode, int stops) const {
+    unordered_set<string> airports;
+    unordered_set<string> cities;
+    unordered_set<string> countries;
+
+    auto s = findVertex(airportCode);
+    if (s == nullptr)
+        return {0,0,0};
+    queue<Vertex*> q;
+    for (auto &v : vertices)
+        v.second->visited = false;
+    q.push(s);
+    s->visited = true;
+    while(stops>=0){
+        size_t s = q.size();
+        while(s>0) {
+            auto v = q.front();
+            q.pop();
+            airports.insert(v->airport->getCode()); //-1 ?
+            cities.insert(v->airport->getCity());
+            countries.insert(v->airport->getCountry());
+
+            for (auto &e: v->getAdj()) {
+                auto w = e.second.dest;
+                if (!w->isVisited()) {
+                    /** ???
+                    airports.insert(v->airport->getCode()); //-1 ?
+                    cities.insert(v->airport->getCity());
+                    countries.insert(v->airport->getCountry());
+                     **/
+                     q.push(w);
+                    w->setVisited(true);
+                }
+            }
+            s--;
+        }
+        stops--;
+    }
+    while(!q.empty()){
+        airports.insert(q.front()->airport->getCode()); //-1 ?
+        cities.insert(q.front()->airport->getCity());
+        countries.insert(q.front()->airport->getCountry());
+        q.pop();
+    }
+    return {(int)airports.size(),(int)cities.size(),(int)countries.size()};
 }

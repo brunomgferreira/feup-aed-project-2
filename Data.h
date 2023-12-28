@@ -26,6 +26,40 @@ public:
     void readFileAirlines();
     void readFileAirports();
     void readFileFlights();
+
+
+    //Confirm Existence
+    bool countryExists(string basicString);
+    bool cityExists(string basicString);
+    bool airlineExists(string basicString);
+    bool airportExists(string basicString);
+
+
+    //Global
+    void numberOfAirports();
+    void numberOfCities();
+    void numberOfCountries();
+    void numberOfAirlines();
+    void numberOfFlights();
+
+
+    //Country
+    void numberOfAirportsCountry(string basicString);
+    void numberOfCitiesCountry(string basicString);
+
+    //City
+    void numberOfFlightsCity(string cityName);
+    void numberOfCountriesCity(string cityName);
+
+    //Airline
+    void numberOfFlightsAirline(string airlineCode);
+
+    //Airport
+    void numberOfFlightsAirport(string basicString);
+    void numberOfAirlinesAirport(string airportCode);
+    void numberOfCountriesAirport(string airportCode);
+    void numberOfDestinationsAirport(string airportCode); //mudar bf
+    void numberOfDestinationsXStopsAirport(string airportCode, int stops); //mudar bf
 };
 
 

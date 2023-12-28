@@ -18,6 +18,7 @@ public:
     static App* getInstance();
     State *getState();
     void setState(State* state);
+    Data *getData();
     void display() const;
     void handleInput();
 };

@@ -34,3 +34,7 @@ void App::display() const {
 void App::handleInput() {
     currentState->handleInput(this);
 }
+
+Data *App::getData() {
+    return data;
+}

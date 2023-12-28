@@ -11,10 +11,15 @@ private:
     string code;
     string name;
     string city;
+    string country;
     Coordinate* coordinate;
 public:
 
-    Airport(string code, string name, string city, Coordinate* coordinate);
+    Airport(string code, string name, string city, string country, Coordinate* coordinate);
+
+    const string &getCountry() const;
+
+    void setCountry(const string &country);
 
     const string &getCode() const;
 

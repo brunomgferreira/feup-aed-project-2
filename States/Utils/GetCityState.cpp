@@ -6,7 +6,7 @@ GetCityState::GetCityState(State* backState, function<void(App*, const string&)>
     : backState(backState), nextStateCallback(nextStateCallback) {}
 
 void GetCityState::display() const {
-    cout << "Insert city name: ";
+    cout << "Insert city name(Ex.Montevideo,Uruguay): ";
 }
 
 void GetCityState::handleInput(App* app) {
@@ -14,7 +14,7 @@ void GetCityState::handleInput(App* app) {
     std::cin.ignore();
     std::getline(std::cin, cityName);
 
-    bool cityExists = false;
+    bool cityExists = app->getData()->cityExists(cityName);
 
     if (cityExists) {
         nextStateCallback(app, cityName);

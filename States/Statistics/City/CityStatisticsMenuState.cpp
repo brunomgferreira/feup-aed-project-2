@@ -14,7 +14,8 @@ void CityStatisticsMenuState::display() const {
     cout << "2. Number of Destinations" << endl;
     cout << "3. Number of Airlines" << endl;
     cout << "4. Number of Flights" << endl;
-    cout << "5. Reachable Destinations with max X stops" << endl;
+    cout << "5. Number of different countries that city flies to" << endl;
+    cout << "6. Reachable Destinations with max X stops" << endl;
     cout << "b. Statistics Menu" << endl;
     cout << "q. Main Menu" << endl;
 }
@@ -40,10 +41,16 @@ void CityStatisticsMenuState::handleInput(App* app) {
                 break;
             case '4':
                 cout << "Executing Option 4 - Number of Flights" << endl;
+                app->getData()->numberOfFlightsCity(cityName);
                 PressEnterToContinue();
                 break;
             case '5':
-                cout << "Executing Option 5. - Reachable Destinations with max X stops" << endl;
+                cout << "Executing Option 5 - Number of different countries that city flies to" << endl;
+                app->getData()->numberOfCountriesCity(cityName);
+                PressEnterToContinue();
+                break;
+            case '6':
+                cout << "Executing Option 6. - Reachable Destinations with max X stops" << endl;
                 PressEnterToContinue();
                 break;
             case 'b':

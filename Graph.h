@@ -57,9 +57,15 @@ class Graph {
 private:
     unordered_map<string, Vertex *> vertices;      // vertex set
 public:
+
+    const unordered_map<string, Vertex *> &getVertices() const;
+
     Vertex *findVertex(const string &airportCode) const;
     bool addVertex(Airport *airport);
     bool addEdge(const string& originAirportCode, const string& destinationAirportCode, const string& airlineCode);
+
+    vector<int> bfs(const string airportCode) const;
+    vector<int> bfs(const string airportCode, int stops) const;
 };
 
 #endif // FLIGHT_MANAGEMENT_SYSTEM_GRAPH_H_
