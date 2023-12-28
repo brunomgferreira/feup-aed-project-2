@@ -9,7 +9,6 @@ add_executable(Flight_Management_System
         dataset/airlines.csv
         dataset/airports.csv
         dataset/flights.csv
-        Graph.h
         main.cpp
         App.cpp
         States/State.cpp
@@ -31,4 +30,11 @@ add_executable(Flight_Management_System
         States/Utils/GetAirlineState.cpp
         States/Utils/GetCoordinatesState.cpp
         States/Utils/GetRadiusState.cpp
-        States/Utils/LocationInfo.cpp)
+        States/Utils/LocationInfo.cpp
+        Airline.cpp
+        City.cpp
+        Airport.cpp
+        Coordinate.cpp
+        Country.cpp
+        Data.cpp
+        Graph.cpp)
