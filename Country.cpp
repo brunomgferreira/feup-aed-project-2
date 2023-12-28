@@ -8,10 +8,10 @@ void Country::setName(const string &name) {
     this->name = name;
 }
 
-const unordered_set <City> &Country::getCities() const {
+const unordered_set <string> &Country::getCities() const {
     return cities;
 }
 
-void Country::setCities(const unordered_set <City> &cities) {
+void Country::setCities(const unordered_set <string> &cities) {
     this->cities = cities;
 }

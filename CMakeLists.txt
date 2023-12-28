@@ -9,7 +9,6 @@ add_executable(Flight_Management_System
         dataset/airlines.csv
         dataset/airports.csv
         dataset/flights.csv
-        Graph.h
         main.cpp
         App.cpp
         States/State.cpp

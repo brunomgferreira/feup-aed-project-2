@@ -37,6 +37,14 @@ void Vertex::setAdj(const unordered_map<string, Edge> &adj) {
     this->adj = adj;
 }
 
+void Vertex::addEdge(Vertex *dest, const string& airlineCode) {
+    auto it = adj.find(dest->airport->getCode());
+    if(it != adj.end()) it->second.airlines.insert(airlineCode);
+    else {
+        Edge newEdge(dest, {airlineCode});
+        adj.at(dest->airport->getCode()) = newEdge;
+    }
+}
 
 // Edge
 
@@ -76,14 +84,11 @@ bool Graph::addVertex(Airport *airport) {
 }
 
 bool Graph::addEdge(const string& originAirportCode, const string& destinationAirportCode, const string& airlineCode) {
-    // TODO check if edge exists if it exists add airlineCode to it. Otherwise create a new edge
-    //  or just forget about the set of airlines and do a new edge for each different airline.
     Vertex *originVertex = findVertex(originAirportCode);
     Vertex *destVertex = findVertex(destinationAirportCode);
 
     if (originVertex && destVertex) {
-        Edge newEdge(destVertex, {airlineCode});
-        // originVertex->adj.push_back(newEdge);
+        originVertex->addEdge(destVertex, airlineCode);
         return true;
     }
 

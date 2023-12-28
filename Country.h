@@ -11,15 +11,15 @@ using namespace std;
 class Country {
 private:
     string name;
-    unordered_set<City> cities;
+    unordered_set<string> cities;
 public:
     const string &getName() const;
 
     void setName(const string &name);
 
-    const unordered_set<City> &getCities() const;
+    const unordered_set<string> &getCities() const;
 
-    void setCities(const unordered_set<City> &cities);
+    void setCities(const unordered_set<string> &cities);
 };
 
 

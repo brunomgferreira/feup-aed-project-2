@@ -31,10 +31,10 @@ void Airport::setCity(const string &city) {
     Airport::city = city;
 }
 
-const Coordinate &Airport::getCoordinate() const {
-    return coordinate;
+const Coordinate *Airport::getCoordinate() const {
+    return this->coordinate;
 }
 
-void Airport::setCoordinate(const Coordinate &coordinate) {
-    Airport::coordinate = coordinate;
+void Airport::setCoordinate(Coordinate *coordinate) {
+    this->coordinate = coordinate;
 }

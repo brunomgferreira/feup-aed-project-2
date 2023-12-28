@@ -46,7 +46,7 @@ void Data::readFileAirports() {
 
             Coordinate* coordinate = new Coordinate(stod(latitude), stod(longitude ));
             Airport* airport = new Airport(code, name, city, coordinate);
-            if(g.addVertex( airport->getCode())) this->airports.insert({code,airport});
+           // if(g.addVertex( airport->getCode())) this->airports.insert({code,airport});
         }
 
     }
@@ -58,7 +58,7 @@ void Data::readFileFlights() {
         cout << "Error opening the file" << endl;
     }
     else{
-        Graph<Airport> g;
+        Graph g;
         string line;
         getline(file,line);
         while(getline(file,line)){

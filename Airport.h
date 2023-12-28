@@ -28,9 +28,9 @@ public:
 
     void setCity(const string &city);
 
-    const Coordinate &getCoordinate() const;
+    const Coordinate *getCoordinate() const;
 
-    void setCoordinate(const Coordinate &coordinate);
+    void setCoordinate(Coordinate *coordinate);
 
 };
 

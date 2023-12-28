@@ -17,6 +17,7 @@ class Graph;
 class Vertex;
 
 class Edge {
+private:
     Vertex *dest;       // destination vertex
     unordered_set<string> airlines;     // edge weight
 public:
@@ -31,12 +32,13 @@ public:
 };
 
 class Vertex {
+private:
     Airport* airport;                // contents
     unordered_map<string, Edge> adj;  // list of outgoing edges
     bool visited;          // auxiliary field
     bool processing;       // auxiliary field
 
-    void addEdge(Vertex *dest, unordered_set<string> airlines);
+    void addEdge(Vertex *dest, const string& airlineCode);
 public:
     Vertex(Airport *airport);
     Airport *getAirport() const;
@@ -52,6 +54,7 @@ public:
 
 
 class Graph {
+private:
     unordered_map<string, Vertex *> vertices;      // vertex set
 public:
     Vertex *findVertex(const string &airportCode) const;
