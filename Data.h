@@ -21,14 +21,11 @@ private:
     unordered_map<string , City* > cities;
     unordered_map<string , Country* > countries;
     Graph g;
-
 public:
+    Data();
     void readFileAirlines();
     void readFileAirports();
     void readFileFlights();
-
-
-
 };
 
 

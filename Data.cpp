@@ -1,7 +1,11 @@
 #include <algorithm>
 #include "Data.h"
 
-// TODO
+Data::Data() {
+    readFileAirlines();
+    readFileAirports();
+    readFileFlights();
+}
 
 void Data::readFileAirlines() {
     ifstream file("../dataset/airlines.csv");
