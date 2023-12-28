@@ -5,13 +5,14 @@
 
 void Data::readFileAirlines() {
     ifstream file("../dataset/airlines.csv");
-    if(!file.is_open()){
+
+    if(!file.is_open()) {
         cout << "Error opening the file" << endl;
-    }
-    else{
+    } else {
         string line;
         getline(file,line);
-        while(getline(file,line)){
+
+        while(getline(file,line)) {
             string code, name, callsign, country;
             stringstream ss(line);
             getline(ss,code,',');
@@ -19,46 +20,59 @@ void Data::readFileAirlines() {
             getline(ss,callsign,',');
             getline(ss, country,',');
 
-            Airline* airline = new Airline(code,name,callsign,country);
-            this->airlines.insert({code,airline});
+            Airline* airline = new Airline(code, name, callsign, country);
+            this->airlines.insert({code, airline});
         }
-
     }
 }
 
 void Data::readFileAirports() {
     ifstream file("../dataset/airports.csv");
-    if(!file.is_open()){
+
+    if(!file.is_open()) {
         cout << "Error opening the file" << endl;
-    }
-    else{
+    } else {
         string line;
         getline(file,line);
-        while(getline(file,line)){
-            string code, name, city, country, latitude, longitude;
+        while(getline(file,line)) {
+            string code, name, cityName, countryName, latitude, longitude;
             stringstream ss(line);
             getline(ss,code,',');
             getline(ss,name,',');
-            getline(ss,city,',');
-            getline(ss, country,',');
+            getline(ss,cityName,',');
+            getline(ss, countryName,',');
             getline(ss,latitude,',');
             getline(ss, longitude,',');
 
             Coordinate* coordinate = new Coordinate(stod(latitude), stod(longitude ));
-            Airport* airport = new Airport(code, name, city, coordinate);
-           // if(g.addVertex( airport->getCode())) this->airports.insert({code,airport});
-        }
+            Airport* airport = new Airport(code, name, cityName+","+countryName, coordinate);
 
+            if(g.addVertex(airport)) {
+
+                this->airports.insert({code,airport});
+
+                auto citiesIt = cities.find(cityName);
+                if(citiesIt == cities.end()) {
+                    City* city = new City(cityName+","+countryName, countryName, code);
+                    cities.insert({cityName+","+countryName, city});
+                } else citiesIt->second->addAirport(code);
+
+                auto countriesIt = countries.find(countryName);
+                if(countriesIt == countries.end()) {
+                    Country* country = new Country(countryName, cityName+","+countryName);
+                    countries.insert({countryName, country});
+                } else countriesIt->second->addCity(cityName+","+countryName);
+            }
+        }
     }
 }
 
 void Data::readFileFlights() {
     ifstream file("../dataset/airlines.csv");
-    if(!file.is_open()){
+
+    if(!file.is_open()) {
         cout << "Error opening the file" << endl;
-    }
-    else{
-        Graph g;
+    } else {
         string line;
         getline(file,line);
         while(getline(file,line)){
@@ -66,12 +80,9 @@ void Data::readFileFlights() {
 
             stringstream ss(line);
 
-            string source, target, flightairline;
-            ss >> source >> target >> flightairline;
-            //addEdge
-
+            string origin, destination, airlineCode;
+            ss >> origin >> destination >> airlineCode;
+            g.addEdge(origin, destination, airlineCode);
         }
-
     }
-
 }

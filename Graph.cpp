@@ -42,7 +42,7 @@ void Vertex::addEdge(Vertex *dest, const string& airlineCode) {
     if(it != adj.end()) it->second.airlines.insert(airlineCode);
     else {
         Edge newEdge(dest, {airlineCode});
-        adj.at(dest->airport->getCode()) = newEdge;
+        adj.insert({dest->airport->getCode(), newEdge});
     }
 }
 
@@ -71,13 +71,17 @@ void Edge::setAirlines(unordered_set<string> airlines) {
 // Graph
 
 Vertex *Graph::findVertex(const string &airportCode) const {
-    return this->vertices.at(airportCode);
+    auto it = this->vertices.find(airportCode);
+    if (it != this->vertices.end()) {
+        return it->second;
+    }
+    return nullptr;
 }
 
 bool Graph::addVertex(Airport *airport) {
-    if(findVertex(airport->getCode()) != nullptr) {
+    if(findVertex(airport->getCode()) == nullptr) {
         Vertex *newVertex = new Vertex(airport);
-        this->vertices.at(airport->getCode()) = newVertex;
+        this->vertices.insert({airport->getCode(), newVertex});
         return true;
     }
     return false;
