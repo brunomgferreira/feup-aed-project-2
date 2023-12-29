@@ -6,11 +6,11 @@ OtherMethodsMenuState::OtherMethodsMenuState() {}
 
 void OtherMethodsMenuState::display() const {
     cout << "***** Other Methods *****" << endl;
-    cout << "1. Reachable airports with X max flights" << endl;
-    cout << "2. Reachable cities with X max flights" << endl;
-    cout << "3. Reachable countries with X max flights" << endl;
-    cout << "4. Maximum trip" << endl;
-    cout << "5. Top K airport with the greatest air traffic capacity" << endl;
+    cout << "1. Maximum trip" << endl;
+    cout << "2. Top K airport with the greatest air traffic capacity" << endl;
+    cout << "3. Reachable cities with X max flights" << endl;
+    cout << "4. Reachable countries with X max flights" << endl;
+    cout << "5. Reachable airports with X max flights"<< endl;
     cout << "6. Essential airports" << endl;
     cout << "q. Main Menu" << endl;
 }
@@ -24,10 +24,15 @@ void OtherMethodsMenuState::handleInput(App* app) {
         switch (choice[0]) {
             case '1':
                 cout << "Executing Option 1. Maximum trip" << endl;
+                app->getData()->maximumTrip();
                 PressEnterToContinue();
                 break;
             case '2':
                 cout << "Executing Option 2. Top K airport with the greatest air traffic capacity" << endl;
+                int k;
+                cout << "K: ";
+                cin >> k;
+                app->getData()->topKAirports(k);
                 PressEnterToContinue();
                 break;
             case '3':

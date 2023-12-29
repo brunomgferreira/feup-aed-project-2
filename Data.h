@@ -60,6 +60,15 @@ public:
     void numberOfCountriesAirport(string airportCode);
     void numberOfDestinationsAirport(string airportCode); //mudar bf
     void numberOfDestinationsXStopsAirport(string airportCode, int stops); //mudar bf
+
+
+    //Othermethods
+    void maximumTrip();
+    void topKAirports(int k);
+
+
+    //Sortmethod
+    static bool sortTopAirports(const pair<string, int>& a, const pair<string, int>& b);
 };
 
 

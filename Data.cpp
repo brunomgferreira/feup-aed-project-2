@@ -257,6 +257,65 @@ void Data::numberOfDestinationsXStopsAirport(string airportCode, int stops) {
 
 }
 
+void Data::maximumTrip() {
+    vector<pair<string,string>> maxtripVec;
+    int maxtrip = 0;
+    for(auto &originAirport : g.getVertices()){
+        for(auto v : g.getVertices()){
+            v.second->setVisited(false);
+        }
+        queue<pair<Vertex*,int>> q;
+        q.push({g.findVertex(originAirport.first),0});
+        q.front().first->setVisited(true);
+        while(!q.empty()){
+            Vertex * r = q.front().first;
+            int i = q.front().second;
+            q.pop();
+            for(auto &e : r->getAdj()){
+                auto w = e.second.getDest();
+                if(!w->isVisited()){
+                    q.push({w,i+1});
+                    w->setVisited(true);
+                    if (maxtrip < i+1) maxtripVec.clear();
+                    if (maxtrip <= i+1) maxtrip = i+1, maxtripVec.push_back({originAirport.first, w->getAirport()->getCode()});
+                }
+            }
+
+        }
+    }
+    cout << "Max trip of " << maxtrip << " flights." << endl;
+    cout << "Between airports: " << endl;
+    for(auto &flight : maxtripVec){
+        cout << flight.first << " --> " << flight.second << endl;
+    }
+}
+
+
+
+void Data::topKAirports(int k) {
+    vector<pair<string,int>> flights;
+    for(auto &airportCode : g.getVertices()){
+        int flightsAiport = 0;
+        for(auto connection : airportCode.second->getAdj()){ //similar numberOfFlightsAirport()
+            flightsAiport+= connection.second.getAirlines().size();
+        }
+        flights.push_back({airportCode.first,flightsAiport});
+    }
+    std::sort(flights.begin(), flights.end(),sortTopAirports);
+    cout << "Top " << k << " airports:" << endl;
+    for(int i =0; i<k; i++){
+        cout << "Airport: "<< flights[i].first << " Flights: "<< flights[i].second << endl;
+    }
+}
+
+bool Data::sortTopAirports(const pair<string, int>& a, const pair<string, int>& b){
+    if(a.second > b.second) return true;
+    else if (a.second == b.second){
+        if(a.first < b.first) return true;
+    }
+    return false;
+}
+
 
 
 

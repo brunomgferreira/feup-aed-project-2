@@ -118,18 +118,12 @@ vector<int> Graph::bfs(const string airportCode) const {
     while (!q.empty()) {
         auto v = q.front();
         q.pop();
-        airports.insert(v->airport->getCode()); //-1 ?
-        cities.insert(v->airport->getCity());
-        countries.insert(v->airport->getCountry());
-
         for (auto & e : v->adj) {
             auto w = e.second.dest;
             if ( ! w->visited ) {
-                /** ??
-                airports.insert(v->airport->getCode()); //-1 ?
-                cities.insert(v->airport->getCity());
-                countries.insert(v->airport->getCountry());
-                **/
+                airports.insert(w->airport->getCode());
+                cities.insert(w->airport->getCity());
+                countries.insert(w->airport->getCountry());
                 q.push(w);
                 w->visited = true;
             }
@@ -156,19 +150,13 @@ vector<int> Graph::bfs(const string airportCode, int stops) const {
         while(s>0) {
             auto v = q.front();
             q.pop();
-            airports.insert(v->airport->getCode()); //-1 ?
-            cities.insert(v->airport->getCity());
-            countries.insert(v->airport->getCountry());
-
             for (auto &e: v->getAdj()) {
                 auto w = e.second.dest;
                 if (!w->isVisited()) {
-                    /** ???
-                    airports.insert(v->airport->getCode()); //-1 ?
-                    cities.insert(v->airport->getCity());
-                    countries.insert(v->airport->getCountry());
-                     **/
-                     q.push(w);
+                    airports.insert(w->airport->getCode());
+                    cities.insert(w->airport->getCity());
+                    countries.insert(w->airport->getCountry());
+                    q.push(w);
                     w->setVisited(true);
                 }
             }
@@ -176,11 +164,7 @@ vector<int> Graph::bfs(const string airportCode, int stops) const {
         }
         stops--;
     }
-    while(!q.empty()){
-        airports.insert(q.front()->airport->getCode()); //-1 ?
-        cities.insert(q.front()->airport->getCity());
-        countries.insert(q.front()->airport->getCountry());
-        q.pop();
-    }
     return {(int)airports.size(),(int)cities.size(),(int)countries.size()};
 }
+
+
