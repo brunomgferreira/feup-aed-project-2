@@ -11,12 +11,9 @@ public:
 
 public:
     double getLatitude() const;
-
-    void setLatitude(double latitude);
-
     double getLongitude() const;
 
-    void setLongitude(double longitude);
+    double distanceTo(const Coordinate& coordinate) const;
 };
 
 

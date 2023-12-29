@@ -7,14 +7,16 @@ double Coordinate::getLatitude() const {
     return latitude;
 }
 
-void Coordinate::setLatitude(double latitude) {
-    Coordinate::latitude = latitude;
-}
 
 double Coordinate::getLongitude() const {
     return longitude;
 }
 
-void Coordinate::setLongitude(double longitude) {
-    Coordinate::longitude = longitude;
+
+double Coordinate::distanceTo(const Coordinate& coordinate) const {
+
+
+
+
+
 }
