@@ -1,6 +1,10 @@
 #include <cmath>
 #include "Coordinate.h"
 
+Coordinate::Coordinate() {
+    latitude = 0;
+    longitude = 0;
+}
 Coordinate::Coordinate(double latitude, double longitude)
     : latitude(latitude), longitude(longitude) {}
 

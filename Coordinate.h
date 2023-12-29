@@ -7,6 +7,7 @@ private:
     double latitude;
     double longitude;
 public:
+    Coordinate();
     Coordinate(double latitude, double longitude);
 
 public:
