@@ -2,6 +2,7 @@
 #include "AirportStatisticsMenuState.h"
 #include "States/Statistics/StatisticsMenuState.h"
 #include "States/MainMenuState.h"
+#include "States/Utils/GetStopsState.h"
 
 AirportStatisticsMenuState::AirportStatisticsMenuState(string airportCode) {
     this->airportCode = airportCode;
@@ -47,11 +48,11 @@ void AirportStatisticsMenuState::handleInput(App* app) {
                 break;
             case '5':
                 cout << "Executing Option 5. - Reachable Destinations with max X stops" << endl;
-                int stops;
-                cout << "Number of Stops: ";
-                cin >> stops;
-                app->getData()->numberOfDestinationsXStopsAirport(airportCode,stops);
-                PressEnterToContinue();
+                app->setState(new GetStopsState(this, [&](App *app, int stops) {
+                    app->getData()->numberOfDestinationsXStopsAirport(airportCode, stops);
+                    PressEnterToContinue();
+                    app->setState(this);
+                }));
                 break;
             case 'b':
                 app->setState(new StatisticsMenuState());

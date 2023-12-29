@@ -37,4 +37,5 @@ add_executable(Flight_Management_System
         Coordinate.cpp
         Country.cpp
         Data.cpp
-        Graph.cpp)
+        Graph.cpp
+        States/Utils/GetStopsState.cpp)
