@@ -51,16 +51,16 @@ void GetFlightDestinationMenuState::handleInput(App* app) {
             case '4':
                 app->setState(new GetCoordinatesState([&](App *app, const string &coordinates) {
                     // TODO radius[0]->latitude, radius[1]->longitude ou algo do género
-                    LocationInfo *destinationInfo = new LocationInfo(4, 0, 0);
-                    app->setState(new GetFlightFilterMenuState(originInfo, destinationInfo));
+                    // LocationInfo *destinationInfo = new LocationInfo(4, 0, 0);
+                    // app->setState(new GetFlightFilterMenuState(originInfo, destinationInfo));
                 }));
                 break;
             case '5':
                 app->setState(new GetCoordinatesState([&](App *app, const string &coordinates) {
                     app->setState(new GetRadiusState([&](App *app, const int radius) {
                         // TODO radius[0]->latitude, radius[1]->longitude ou algo do género
-                        LocationInfo *destinationInfo = new LocationInfo(5, 0, 0, radius);
-                        app->setState(new GetFlightFilterMenuState(originInfo, destinationInfo));
+                       // LocationInfo *destinationInfo = new LocationInfo(5, 0, 0, radius);
+                       // app->setState(new GetFlightFilterMenuState(originInfo, destinationInfo));
                     }));
                 }));
                 break;
