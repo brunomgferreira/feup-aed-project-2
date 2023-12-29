@@ -10,6 +10,7 @@ using namespace std;
 #include "Graph.h"
 #include "City.h"
 #include "Country.h"
+#include "States/Utils/LocationInfo.h"
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -46,10 +47,12 @@ public:
     //Country
     void numberOfAirportsCountry(string basicString);
     void numberOfCitiesCountry(string basicString);
+    unordered_set<string> airportsInCountry(const string& countryName) const;
 
     //City
     void numberOfFlightsCity(string cityName);
     void numberOfCountriesCity(string cityName);
+    unordered_set<string> airportsInCity(const string& cityName) const;
 
     //Airline
     void numberOfFlightsAirline(string airlineCode);
@@ -60,6 +63,12 @@ public:
     void numberOfCountriesAirport(string airportCode);
     void numberOfDestinationsAirport(string airportCode); //mudar bf
     void numberOfDestinationsXStopsAirport(string airportCode, int stops); //mudar bf
+
+    string airportNearCoordinate(Coordinate coordinate) const;
+    unordered_set<string> airportsInLocation(Coordinate coordinate, double radius);
+
+    // Location
+    unordered_set<string> convertLocation(const LocationInfo& location);
 
 
     //Othermethods

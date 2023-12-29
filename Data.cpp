@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <limits>
 #include "Data.h"
 
 Data::Data() {
@@ -169,6 +170,16 @@ void Data::numberOfCitiesCountry(string countryname) {
 }
 
 
+unordered_set<string> Data::airportsInCountry(const string& countryName) const {
+    unordered_set<string> countryAirports;
+    const unordered_set<string> countryCities= countries.at(countryName)->getCities();
+    for (const string& city: countryCities){
+        for (const string& airport : airportsInCity(city)){
+            countryAirports.insert(airport);
+        }
+    }
+}
+
 
 //City
 
@@ -194,6 +205,10 @@ void Data::numberOfCountriesCity(string cityName) {
 }
 
 
+
+unordered_set<string> Data::airportsInCity(const string& cityName) const {
+    return cities.at(cityName)->getAirports();
+}
 
 //Airline
 
@@ -317,6 +332,54 @@ bool Data::sortTopAirports(const pair<string, int>& a, const pair<string, int>& 
 }
 
 
+// Coordinates
+string Data::airportNearCoordinate(Coordinate coordinate) const {
+    double minDistance = std::numeric_limits<double>::max();
+    string closerAirport;
+    for (const auto& airport : airports){
+        double distance = coordinate.distanceTo(*airport.second->getCoordinate());
+        if (distance < minDistance){
+            minDistance = distance;
+            closerAirport = airport.first;
+        }
+    }
+    return closerAirport;
+}
+
+unordered_set<string> Data::airportsInLocation(Coordinate coordinate, double radius) {
+    unordered_set<string> inRadiusAirports;
+    for (const auto& airport: airports){
+        double distance = coordinate.distanceTo(*airport.second->getCoordinate());
+        if (distance <= radius) inRadiusAirports.insert(airport.first);
+    }
+    return inRadiusAirports;
+}
+
+
+// Location
+unordered_set<string> Data::convertLocation(const LocationInfo &location) {
+    unordered_set<string> selectedAirports;
+    int type = location.getType();
+
+    switch (type) {
+        case 1:
+            selectedAirports.insert(location.getInfo());
+            break;
+        case 2:
+            selectedAirports= airportsInCity(location.getInfo());
+            break;
+        case 3:
+            selectedAirports= airportsInCountry(location.getInfo());
+            break;
+        case 4:
+            selectedAirports.insert(airportNearCoordinate(location.getCoordinate()));
+            break;
+        case 5:
+            selectedAirports = airportsInLocation(location.getCoordinate(), location.getRadius());
+            break;
+    }
+    return selectedAirports;
+}
 
 
 

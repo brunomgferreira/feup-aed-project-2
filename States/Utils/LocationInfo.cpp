@@ -5,29 +5,23 @@ LocationInfo::LocationInfo(int type, const std::string& info)
     : type(type), info(info) {}
 
 // Constructor for type 4 (Coordinates)
-LocationInfo::LocationInfo(int type, double latitude, double longitude)
-    : type(type), latitude(latitude), longitude(longitude) {}
+LocationInfo::LocationInfo(int type, Coordinate coordinate)
+    : type(type), coordinate(coordinate) {}
 
 // Constructor for type 5 (Coordinates & Radius)
-LocationInfo::LocationInfo(int type, double latitude, double longitude, double radius)
-    : type(type), latitude(latitude), longitude(longitude), radius(radius) {}
+LocationInfo::LocationInfo(int type, Coordinate coordinate, double radius)
+    : type(type), coordinate(coordinate), radius(radius) {}
 
-int LocationInfo::getType() {
+int LocationInfo::getType() const{
     return type;
 }
 
-string LocationInfo::getInfo() {
+string LocationInfo::getInfo() const {
     return info;
 }
 
-double LocationInfo::getLatitude() {
-    return latitude;
-}
+Coordinate LocationInfo::getCoordinate() const {return coordinate;}
 
-double LocationInfo::getLongitude() {
-    return longitude;
-}
-
-double LocationInfo::getRadius() {
+double LocationInfo::getRadius() const{
     return radius;
 }
