@@ -354,8 +354,9 @@ unordered_set<string> Data::airportsInLocation(Coordinate coordinate, double rad
     }
     return inRadiusAirports;
 }
-// Location
 
+
+// Location
 unordered_set<string> Data::convertLocation(const LocationInfo &location) {
     unordered_set<string> selectedAirports;
     int type = location.getType();
