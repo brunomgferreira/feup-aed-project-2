@@ -354,7 +354,15 @@ unordered_set<string> Data::airportsInLocation(Coordinate coordinate, double rad
     }
     return inRadiusAirports;
 }
+// Flights
 
+void Data::getFlights(const LocationInfo &originLocation, const LocationInfo &destinyLocation,
+                      const unordered_set<std::string> &airlineSet, bool unwantedAirlines) {
+    unordered_set<string> originAirlines = convertLocation(originLocation);
+    unordered_set<string> destinyAirlines = convertLocation(destinyLocation);
+    cout << "Processing flights";
+
+}
 
 // Location
 unordered_set<string> Data::convertLocation(const LocationInfo &location) {

@@ -2,6 +2,7 @@
 #include "GetFlightFilterMenuState.h"
 #include "States/MainMenuState.h"
 #include "GetFlightDestinationMenuState.h"
+#include "States/Utils/GetAirlineSetState.h"
 
 GetFlightFilterMenuState::GetFlightFilterMenuState(const LocationInfo& originInfo, const LocationInfo& destinationInfo)
     : originInfo(originInfo), destinationInfo(destinationInfo) {}
@@ -25,20 +26,31 @@ void GetFlightFilterMenuState::handleInput(App* app) {
         switch (choice[0]) {
             case '1':
                 cout << "Executing Option 2. Set of airlines" << endl;
-                // getAirlines()
+                app->setState(new GetAirlineSetState(this, [&](App *app, const unordered_set<string> &airlineSet){
+                    app->getData()->getFlights(originInfo, destinationInfo, airlineSet, false);
+                    PressEnterToContinue();
+                    app->setState(new MainMenuState());
+                }));
                 break;
             case '2':
                 cout << "Executing Option 3. Set of unwanted airlines" << endl;
-                // getUnwantedAirlines()
+                app->setState(new GetAirlineSetState(this, [&](App *app, const unordered_set<string> &airlineSet){
+                    app->getData()->getFlights(originInfo, destinationInfo, airlineSet, true);
+                    PressEnterToContinue();
+                    app->setState(new MainMenuState());
+                }));
                 break;
             case '3':
                 cout << "Executing Option 4. Minimize number of airlines" << endl;
                 // ?
                 break;
             case '4':
+            {
                 cout << "Executing Option 5. No filter" << endl;
-                // Execute algorithm
+                unordered_set<string> emptyAirlineSet;
+                app->getData()->getFlights(originInfo,destinationInfo, emptyAirlineSet, true);
                 PressEnterToContinue();
+            }
                 break;
             case 'b':
                 app->setState(new GetFlightDestinationMenuState(originInfo));
