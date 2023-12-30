@@ -2,6 +2,7 @@
 #include "AirportStatisticsMenuState.h"
 #include "States/Statistics/StatisticsMenuState.h"
 #include "States/MainMenuState.h"
+#include "States/Utils/GetStopsState.h"
 
 AirportStatisticsMenuState::AirportStatisticsMenuState(string airportCode) {
     this->airportCode = airportCode;
@@ -9,9 +10,9 @@ AirportStatisticsMenuState::AirportStatisticsMenuState(string airportCode) {
 
 void AirportStatisticsMenuState::display() const {
     cout << "***** Airport Statistics *****" << endl;
-    cout << "1. Number of Flights" << endl;
+    cout << "1. Number of different Countries that airport flies to" << endl;
     cout << "2. Number of different Airlines out of this airport" << endl;
-    cout << "3. Number of different countries that airport flies to" << endl;
+    cout << "3. Number of Flights" << endl;
     cout << "4. Number of Destinations" << endl;
     cout << "5. Reachable Destinations with max X stops" << endl;
     cout << "b. Statistics Menu" << endl;
@@ -26,8 +27,8 @@ void AirportStatisticsMenuState::handleInput(App* app) {
     if (choice.size() == 1) {
         switch (choice[0]) {
             case '1':
-                cout << "Executing Option 1 - Number of Flight" << endl;
-                app->getData()->numberOfFlightsAirport(airportCode);
+                cout << "Executing Option 1 - Number of different Countries that airport flies to" << endl;
+                app->getData()->numberOfCountriesAirport(airportCode);
                 PressEnterToContinue();
                 break;
             case '2':
@@ -36,8 +37,8 @@ void AirportStatisticsMenuState::handleInput(App* app) {
                 PressEnterToContinue();
                 break;
             case '3':
-                cout << "Executing Option 3 - Number of different countries that airport flies to" << endl;
-                app->getData()->numberOfCountriesAirport(airportCode);
+                cout << "Executing Option 3 - Number of Flights" << endl;
+                app->getData()->numberOfFlightsAirport(airportCode);
                 PressEnterToContinue();
                 break;
             case '4':
@@ -47,11 +48,11 @@ void AirportStatisticsMenuState::handleInput(App* app) {
                 break;
             case '5':
                 cout << "Executing Option 5. - Reachable Destinations with max X stops" << endl;
-                int stops;
-                cout << "Number of Stops: ";
-                cin >> stops;
-                app->getData()->numberOfDestinationsXStopsAirport(airportCode,stops);
-                PressEnterToContinue();
+                app->setState(new GetStopsState(this, [&](App *app, int stops) {
+                    app->getData()->numberOfDestinationsXStopsAirport(airportCode, stops);
+                    PressEnterToContinue();
+                    app->setState(this);
+                }));
                 break;
             case 'b':
                 app->setState(new StatisticsMenuState());

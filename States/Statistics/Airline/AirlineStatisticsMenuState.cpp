@@ -29,6 +29,7 @@ void AirlineStatisticsMenuState::handleInput(App* app) {
                 break;
             case '2':
                 cout << "Executing Option 2 - Number of Destinations." << endl;
+                app->getData()->numberOfDestinationsAirline(airlineCode);
                 PressEnterToContinue();
                 break;
             case 'b':

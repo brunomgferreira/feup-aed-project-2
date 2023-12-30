@@ -64,8 +64,9 @@ public:
     bool addVertex(Airport *airport);
     bool addEdge(const string& originAirportCode, const string& destinationAirportCode, const string& airlineCode);
 
-    vector<int> bfs(const string airportCode) const;
-    vector<int> bfs(const string airportCode, int stops) const;
+    void bfs(const string& airportCode, unordered_set<string>& destinationAirports, unordered_set<string>& destinationCities, unordered_set<string>& destinationCountries);
+
+    void bfs(const string& airportCode, int stops, unordered_set<string>& destinationAirports, unordered_set<string>& destinationCities, unordered_set<string>& destinationCountries);
 };
 
 #endif // FLIGHT_MANAGEMENT_SYSTEM_GRAPH_H_

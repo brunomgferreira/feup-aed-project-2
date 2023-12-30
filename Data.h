@@ -48,21 +48,33 @@ public:
     void numberOfAirportsCountry(string basicString);
     void numberOfCitiesCountry(string basicString);
     unordered_set<string> airportsInCountry(const string& countryName) const;
+    void numberOfAirlinesCountry(string countryName);
+    void numberOfFlightsCountry(string countryName);
+    void numberOfDestinationsCountry(string countryName);
+    void numberOfDestinationsXStopsCountry(string countryName, int stops);
+
 
     //City
-    void numberOfFlightsCity(string cityName);
+    void numberOfAirportsCity(string cityName);
     void numberOfCountriesCity(string cityName);
     unordered_set<string> airportsInCity(const string& cityName) const;
+    void numberOfAirlinesCity(string cityName);
+    void numberOfFlightsCity(string cityName);
+    void numberOfDestinationsCity(string cityName);
+    void numberOfDestinationsXStopsCity(string cityName, int stops);
+
 
     //Airline
     void numberOfFlightsAirline(string airlineCode);
+    void numberOfDestinationsAirline(string airlineCode);
+
 
     //Airport
     void numberOfFlightsAirport(string basicString);
     void numberOfAirlinesAirport(string airportCode);
     void numberOfCountriesAirport(string airportCode);
-    void numberOfDestinationsAirport(string airportCode); //mudar bf
-    void numberOfDestinationsXStopsAirport(string airportCode, int stops); //mudar bf
+    void numberOfDestinationsAirport(const string& airportCode);
+    void numberOfDestinationsXStopsAirport(const string& airportCode, int stops);
 
     string airportNearCoordinate(Coordinate coordinate) const;
     unordered_set<string> airportsInLocation(Coordinate coordinate, double radius);
