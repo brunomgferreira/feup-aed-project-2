@@ -29,6 +29,22 @@ void Vertex::setProcessing(bool p) {
     this->processing = p;
 }
 
+int Vertex::getNum() const {
+    return num;
+}
+
+void Vertex::setNum(int num) {
+    Vertex::num = num;
+}
+
+int Vertex::getLow() const {
+    return low;
+}
+
+void Vertex::setLow(int low) {
+    Vertex::low = low;
+}
+
 const unordered_map<string, Edge> &Vertex::getAdj() const {
     return this->adj;
 }
@@ -45,6 +61,7 @@ void Vertex::addEdge(Vertex *dest, const string& airlineCode) {
         adj.insert({dest->airport->getCode(), newEdge});
     }
 }
+
 
 // Edge
 
@@ -156,5 +173,39 @@ void Graph::bfs(const string& airportCode, int stops, unordered_set<string>& des
         stops--;
     }
 }
+
+bool contains(stack<string> s, const string &airportCode) {
+    while(!s.empty()){
+        if(airportCode==s.top()) return true;
+        s.pop();
+    }
+    return false;
+}
+
+void Graph::dfsart(Vertex *v, stack<string> &s, unordered_set<string> &set, int &i, string root) {
+    v->setVisited(true);
+    v->setLow(i);
+    v->setNum(i);
+    i++;
+    s.push(v->getAirport()->getCode());
+    int children = 0;
+    for(auto w : v->getAdj() ){
+        auto child = w.second.getDest();
+        if(!child->isVisited()){
+            children++;
+            dfsart(child,s,set,i, root);
+            v->setLow(min(v->getLow(),child->getLow()));
+            if(child->getLow() >= v->getNum()) set.insert(v->getAirport()->getCode());
+        }
+        else if (contains(s,child->getAirport()->getCode())){
+            v->setLow(min(v->getLow(),child->getNum()));
+        }
+    }
+    if((v->getAirport()->getCode() == root) &&(children<=1)) set.erase(v->getAirport()->getCode());
+    s.pop();
+}
+
+
+
 
 

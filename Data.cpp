@@ -455,6 +455,23 @@ void Data::topKAirports(int k) {
     }
 }
 
+void Data::essentialAirports() {
+    Graph f = g;
+    for(const auto& airportCode : g.getVertices()){
+        for(const auto& connection : g.findVertex(airportCode.first)->getAdj()){
+            f.addEdge(connection.first,airportCode.first,"");
+        }
+    }
+    unordered_set<string> res;
+    for(auto airportCode : f.getVertices()) airportCode.second->setVisited(false);
+    stack<string> s;
+    int i =1;
+    for(const auto& airportCode : f.getVertices()){
+        if(!airportCode.second->isVisited()) f.dfsart(airportCode.second, s, res, i, airportCode.first);
+    }
+    cout << "There is " << res.size() << " essential airports." << endl;
+
+}
 
 
 bool Data::sortTopAirports(const pair<string, int>& a, const pair<string, int>& b){
@@ -642,6 +659,8 @@ unordered_set<string> Data::convertLocation(const LocationInfo &location) {
     }
     return selectedAirports;
 }
+
+
 
 
 
