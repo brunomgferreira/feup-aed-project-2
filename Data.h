@@ -546,7 +546,39 @@ public:
     unordered_set<string> airportsInLocation(Coordinate coordinate, double radius);
 
     // Flights
+
+    /**
+    * @brief Finds and prints the best flight paths from specified origin to destination locations
+    * with optional airline restrictions using breadth-first search (BFS).
+    *
+    * @details This method performs BFS from each origin airport to find the best flight paths to any of the
+    * specified destination airports. It considers optional airline restrictions, and the best flights are determined
+    * based on the minimum number of stops. The flight paths are then printed on the standard output.
+    *
+    * @param originLocation The origin location information, including the city and country.
+    * @param destinyLocation The destination location information, including the city and country.
+    * @param airlineSet A set of airline codes representing optional airline restrictions.
+    * @param unwantedAirlines Flag indicating whether the specified airlines are unwanted or required.
+    *
+    * @details Time complexity: O(A + E), where A is the total number of airports in the graph,
+    * and E is the total number of edges (connections) in the graph.
+    */
     void getFlights(const LocationInfo& originLocation, const LocationInfo& destinyLocation,const unordered_set<string>& airlineSet, bool unwantedAirlines);
+
+    /**
+     * @brief Recursively processes the flight paths from origin to the specified destiny based on BFS results.
+     *
+     * @details This method recursively generates flight paths from the specified origin to the given destiny
+     * using information obtained from BFS traversal. It retrieves the list of origins for the destiny and constructs
+     * flight paths by appending the destiny to each origin's flight path.
+     *
+     * @param destiny The airport code of the destination airport.
+     * @param airportTrack A map containing information about airports and their respective BFS results.
+     *
+     * @return A list of lists representing the flight paths from various origins to the specified destiny.
+     *
+     * @details Time complexity: O(N), where N is the number of airports in the BFS result for the given destiny.
+     */
     list<list<string>> processFlights(const string& destiny, const unordered_map<string, pair<list<string>, int>>& airportTrack) const;
 
     // Location
