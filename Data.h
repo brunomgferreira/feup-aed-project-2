@@ -69,6 +69,7 @@ public:
 
     // Flights
     void getFlights(const LocationInfo& originLocation, const LocationInfo& destinyLocation,const unordered_set<string>& airlineSet, bool unwantedAirlines);
+    list<list<string>> processFlights(const string& destiny, const unordered_map<string, pair<list<string>, int>>& airportTrack) const;
 
     // Location
     unordered_set<string> convertLocation(const LocationInfo& location);
