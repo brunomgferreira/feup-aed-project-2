@@ -7,9 +7,9 @@
 
 class GetRadiusState : public State {
 private:
-    function<void(App*, const int)> nextStateCallback;
+    function<void(App*, double)> nextStateCallback;
 public:
-    GetRadiusState(function<void(App*, const int)> nextStateCallback);
+    GetRadiusState(function<void(App*, double)> nextStateCallback);
     void display() const override;
     void handleInput(App* app) override;
 };

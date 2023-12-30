@@ -54,10 +54,9 @@ void GetFlightOriginMenuState::handleInput(App* app) {
                 break;
             case '5':
                 app->setState(new GetCoordinatesState(this, [&](App *app, const Coordinate &coordinate) {
-                    app->setState(new GetRadiusState([&](App *app, const int radius) {
-                        // TODO radius[0]->latitude, radius[1]->longitude ou algo do género
-                        // LocationInfo *originInfo = new LocationInfo(5, 0, 0, radius);
-                        // app->setState(new GetFlightDestinationMenuState(originInfo));
+                    app->setState(new GetRadiusState([&](App *app, double radius) {
+                        LocationInfo originInfo = LocationInfo(5, coordinate, radius);
+                        app->setState(new GetFlightDestinationMenuState(originInfo));
                     }));
                 }));
                 break;
