@@ -11,9 +11,9 @@
 class GetAirlineSetState : public State {
 private:
     State* backState;
-    function<void(App*, const unordered_set<string>&)> nextStateCallback;
+    function<void(App*,  unordered_set<string>)> nextStateCallback;
 public:
-    GetAirlineSetState(State* backState, function<void(App*, const unordered_set<string>&)> nextStateCallback);
+    GetAirlineSetState(State* backState, function<void(App*,  unordered_set<string>)> nextStateCallback);
     void display() const override;
     void handleInput(App* app) override;
 };
