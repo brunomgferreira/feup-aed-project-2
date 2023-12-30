@@ -126,7 +126,7 @@ void Data::numberOfAirports() {
 }
 
 void Data::numberOfCities() {
-    cout << "There is " << cities.size() << " cities." << endl;
+    cout << "There is " << cities.size() << " cities with an airport." << endl;
 }
 
 void Data::numberOfCountries() {
@@ -164,33 +164,134 @@ void Data::numberOfCitiesCountry(string countryname) {
     size_t nCities =0;
     nCities = countries[countryname]->getCities().size();
 
-    cout << "There is " << nCities <<" cities in " << countryname << "." << endl;
+    cout << "There is " << nCities <<" cities in " << countryname << " with an airport." << endl;
 
+}
+
+void Data::numberOfAirlinesCountry(string countryName) {
+    unordered_set<string> difAirlines;
+    for(const auto& cityName: countries[countryName]->getCities()) {
+        for (const auto& airportCode: cities[cityName]->getAirports()) {
+            for (auto &connection: g.findVertex(airportCode)->getAdj()) {
+                for (auto &airlinesCode: connection.second.getAirlines()) {
+                    difAirlines.insert(airlinesCode);
+                }
+            }
+        }
+    }
+    cout << "There is " << difAirlines.size() << " different airlines that flies from " << countryName << "." << endl;
+}
+
+void Data::numberOfFlightsCountry(string countryName) {
+    size_t flights = 0;
+    for(auto &cityName : countries[countryName]->getCities()) {
+        for (auto &airportCode: cities[cityName]->getAirports()) {
+            for (auto &connection: g.findVertex(airportCode)->getAdj()) {
+                flights += connection.second.getAirlines().size();
+            }
+        }
+    }
+    cout << "There is " << flights <<" flights from " << countryName << "."<< endl;
+}
+
+void Data::numberOfDestinationsCountry(string countryName) {
+    unordered_set<string> destinationAirports;
+    unordered_set<string> destinationCities;
+    unordered_set<string> destinationCountries;
+    for(auto &cityName : countries[countryName]->getCities()) {
+        for (auto &airportCode: cities[cityName]->getAirports()) {
+            g.bfs(airportCode,destinationAirports,destinationCities,destinationCountries);
+        }
+    }
+    cout << "For the given country there is, as destinations: " << endl;
+    cout << destinationAirports.size() << " airports" << endl;
+    cout << destinationCities.size() << " cities" << endl;
+    cout << destinationCountries.size() << " countries" << endl;
+}
+
+void Data::numberOfDestinationsXStopsCountry(string countryName, int stops) {
+    unordered_set<string> destinationAirports;
+    unordered_set<string> destinationCities;
+    unordered_set<string> destinationCountries;
+    for(auto &cityName : countries[countryName]->getCities()) {
+        for (auto &airportCode: cities[cityName]->getAirports()) {
+            g.bfs(airportCode,stops,destinationAirports,destinationCities,destinationCountries);
+        }
+    }
+    cout << "For the given country there is, as destinations: " << endl;
+    cout << destinationAirports.size() << " airports" << endl;
+    cout << destinationCities.size() << " cities" << endl;
+    cout << destinationCountries.size() << " countries" << endl;
 }
 
 
 
 //City
 
-void Data::numberOfFlightsCity(string cityName) {
-    size_t flights = 0;
-    for(auto& airportCode : cities[cityName]->getAirports()){
-        for(auto& connection: g.findVertex(airportCode)->getAdj()){
-            flights += connection.second.getAirlines().size();
-        }
-        //chamar numberFlights Airport ?? mudar tipo...
+void Data::numberOfAirportsCity(string cityName) {
+    size_t n = 0;
+    for(auto k : cities[cityName]->getAirports()){
+        n++;
     }
-    cout << "There is " << flights <<" flights from " << cityName << "."<< endl;
+    cout << "There is " << n <<" airports in " << cityName << "."<< endl;
 }
 
 void Data::numberOfCountriesCity(string cityName) {
     unordered_set<string> difCountries;
-    for (auto &airportCode: cities[cityName]->getAirports()) {
-        for (auto &connection: g.findVertex(airportCode)->getAdj()) {
+    for (auto& airportCode: cities[cityName]->getAirports()) {
+        for (auto& connection: g.findVertex(airportCode)->getAdj()) {
             difCountries.insert(connection.second.getDest()->getAirport()->getCountry());
         }
     }
     cout << "There is " << difCountries.size() << " different countries that " << cityName << " flies to." << endl;
+}
+
+void Data::numberOfAirlinesCity(string cityName) {
+    unordered_set<string> difAirlines;
+    for (auto &airportCode: cities[cityName]->getAirports()) {
+        for (auto &connection: g.findVertex(airportCode)->getAdj()) {
+            for (auto &airlinesCode: connection.second.getAirlines()) {
+                difAirlines.insert(airlinesCode);
+            }
+        }
+    }
+    cout << "There is " << difAirlines.size() << " different airlines that flies from " << cityName << "." << endl;
+}
+
+void Data::numberOfFlightsCity(string cityName) {
+    size_t flights = 0;
+    for(auto &airportCode : cities[cityName]->getAirports()){
+        for(auto &connection: g.findVertex(airportCode)->getAdj()){
+            flights += connection.second.getAirlines().size();
+        }
+    }
+    cout << "There is " << flights <<" flights from " << cityName << "."<< endl;
+}
+
+void Data::numberOfDestinationsCity(string cityName) {
+    unordered_set<string> destinationAirports;
+    unordered_set<string> destinationCities;
+    unordered_set<string> destinationCountries;
+    for (auto &airportCode: cities[cityName]->getAirports()) {
+        g.bfs(airportCode,destinationAirports,destinationCities,destinationCountries);
+    }
+    cout << "For the given country there is, as destinations: " << endl;
+    cout << destinationAirports.size() << " airports" << endl;
+    cout << destinationCities.size() << " cities" << endl;
+    cout << destinationCountries.size() << " countries" << endl;
+}
+
+void Data::numberOfDestinationsXStopsCity(string cityName, int stops) {
+    unordered_set<string> destinationAirports;
+    unordered_set<string> destinationCities;
+    unordered_set<string> destinationCountries;
+    for (auto &airportCode: cities[cityName]->getAirports()) {
+        g.bfs(airportCode,stops,destinationAirports,destinationCities,destinationCountries);
+    }
+    cout << "For the given city there is, as destinations: " << endl;
+    cout << destinationAirports.size() << " airports" << endl;
+    cout << destinationCities.size() << " cities" << endl;
+    cout << destinationCountries.size() << " countries" << endl;
 }
 
 
@@ -199,13 +300,36 @@ void Data::numberOfCountriesCity(string cityName) {
 
 void Data::numberOfFlightsAirline(string airlineCode) {
     size_t flights=0;
-    for(auto& airport : g.getVertices()){
-        for(auto& connection: airport.second->getAdj()){
+    for(auto &airport : g.getVertices()){
+        for(auto &connection: airport.second->getAdj()){
             auto it = connection.second.getAirlines().find(airlineCode);
             if(it != connection.second.getAirlines().end()) flights++;
         }
     }
     cout << "There is " << flights <<" flights from airline " << airlineCode << "."<< endl;
+}
+
+void Data::numberOfDestinationsAirline(string airlineCode) {
+    unordered_set<string> destinationAirports;
+    unordered_set<string> destinationCities;
+    unordered_set<string> destinationCountries;
+    for(auto airportCode : g.getVertices()) {
+        for(auto connection : g.findVertex(airportCode.first)->getAdj()){
+            auto airlinesC = connection.second.getAirlines();
+            auto it = airlinesC.find(airlineCode);
+            if (it != airlinesC.end()){
+                Airport* dest = connection.second.getDest()->getAirport();
+                destinationAirports.insert(dest->getCode());
+                destinationCities.insert(dest->getCity());
+                destinationCountries.insert(dest->getCountry());
+            }
+        }
+    }
+
+    cout << "For the given airline there is, as destinations: " << endl;
+    cout << destinationAirports.size() << " airports" << endl;
+    cout << destinationCities.size() << " cities" << endl;
+    cout << destinationCountries.size() << " countries" << endl;
 }
 
 
@@ -214,7 +338,7 @@ void Data::numberOfFlightsAirline(string airlineCode) {
 
 void Data::numberOfFlightsAirport(string airportCode) {
     size_t flights = 0;
-    for(auto& connection: g.findVertex(airportCode)->getAdj()){
+    for(auto &connection: g.findVertex(airportCode)->getAdj()){
         flights += connection.second.getAirlines().size();
     }
     cout << "There is " << flights <<" flights out of " << airportCode << "."<< endl;
@@ -222,9 +346,9 @@ void Data::numberOfFlightsAirport(string airportCode) {
 
 void Data::numberOfAirlinesAirport(string airportCode) {
     unordered_set<string> difAirlines;
-    for(auto& connection: g.findVertex(airportCode)->getAdj()){
-        for(auto& airlines : connection.second.getAirlines()){
-            difAirlines.insert(airlines);
+    for(auto &connection: g.findVertex(airportCode)->getAdj()){
+        for(auto &airlinesCode : connection.second.getAirlines()){
+            difAirlines.insert(airlinesCode);
         }
     }
     cout << "There is " << difAirlines.size() << " different airlines that flies from " << airportCode << "." << endl;
@@ -232,30 +356,39 @@ void Data::numberOfAirlinesAirport(string airportCode) {
 
 void Data::numberOfCountriesAirport(string airportCode) {
     unordered_set<string> difCountries;
-    for(auto& connection: g.findVertex(airportCode)->getAdj()){
+    for(auto &connection: g.findVertex(airportCode)->getAdj()){
         difCountries.insert(connection.second.getDest()->getAirport()->getCountry());
     }
     cout << "There is " << difCountries.size() <<" different countries that " << airportCode << " flies to."<< endl;
 }
 
-void Data::numberOfDestinationsAirport(string airportCode) {
-    vector<int> destinations = g.bfs(airportCode);
+void Data::numberOfDestinationsAirport(const string& airportCode) {
+    unordered_set<string> destinationAirports;
+    unordered_set<string> destinationCities;
+    unordered_set<string> destinationCountries;
+    g.bfs(airportCode,destinationAirports,destinationCities,destinationCountries);
+
 
     cout << "For the given airport there is, as destinations: " << endl;
-    cout << destinations[0] << " airports" << endl;
-    cout << destinations[1] << " cities" << endl;
-    cout << destinations[2] << " countries" << endl;
+    cout << destinationAirports.size() << " airports" << endl;
+    cout << destinationCities.size() << " cities" << endl;
+    cout << destinationCountries.size() << " countries" << endl;
 }
 
-void Data::numberOfDestinationsXStopsAirport(string airportCode, int stops) {
-    vector<int> destinations = g.bfs(airportCode,stops);
+void Data::numberOfDestinationsXStopsAirport(const string& airportCode, int stops) {
+    unordered_set<string> destinationAirports;
+    unordered_set<string> destinationCities;
+    unordered_set<string> destinationCountries;
+    g.bfs(airportCode, stops,destinationAirports,destinationCities,destinationCountries);
 
     cout << "For the given airport there is, as destinations: " << endl;
-    cout << destinations[0] << " airports" << endl;
-    cout << destinations[1] << " cities" << endl;
-    cout << destinations[2] << " countries" << endl;
+    cout << destinationAirports.size() << " airports" << endl;
+    cout << destinationCities.size() << " cities" << endl;
+    cout << destinationCountries.size() << " countries" << endl;
 
 }
+
+
 
 void Data::maximumTrip() {
     vector<pair<string,string>> maxtripVec;
@@ -291,7 +424,6 @@ void Data::maximumTrip() {
 }
 
 
-
 void Data::topKAirports(int k) {
     vector<pair<string,int>> flights;
     for(auto &airportCode : g.getVertices()){
@@ -308,6 +440,8 @@ void Data::topKAirports(int k) {
     }
 }
 
+
+
 bool Data::sortTopAirports(const pair<string, int>& a, const pair<string, int>& b){
     if(a.second > b.second) return true;
     else if (a.second == b.second){
@@ -315,6 +449,20 @@ bool Data::sortTopAirports(const pair<string, int>& a, const pair<string, int>& 
     }
     return false;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

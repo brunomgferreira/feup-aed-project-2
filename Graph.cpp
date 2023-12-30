@@ -102,14 +102,10 @@ const unordered_map<string, Vertex *> &Graph::getVertices() const {
     return vertices;
 }
 
-vector<int> Graph::bfs(const string airportCode) const {
-    unordered_set<string> airports;
-    unordered_set<string> cities;
-    unordered_set<string> countries;
-
+void Graph::bfs(const string& airportCode, unordered_set<string>& destinationAirports, unordered_set<string>& destinationCities, unordered_set<string>& destinationCountries) {
     auto s = findVertex(airportCode);
     if (s == nullptr)
-        return {0,0,0};
+        return;
     queue<Vertex*> q;
     for (auto &v : vertices)
         v.second->visited = false;
@@ -121,25 +117,20 @@ vector<int> Graph::bfs(const string airportCode) const {
         for (auto & e : v->adj) {
             auto w = e.second.dest;
             if ( ! w->visited ) {
-                airports.insert(w->airport->getCode());
-                cities.insert(w->airport->getCity());
-                countries.insert(w->airport->getCountry());
+                destinationAirports.insert(w->airport->getCode());
+                destinationCities.insert(w->airport->getCity());
+                destinationCountries.insert(w->airport->getCountry());
                 q.push(w);
                 w->visited = true;
             }
         }
     }
-    return {(int)airports.size(),(int)cities.size(),(int)countries.size()};
 }
 
-vector<int> Graph::bfs(const string airportCode, int stops) const {
-    unordered_set<string> airports;
-    unordered_set<string> cities;
-    unordered_set<string> countries;
-
+void Graph::bfs(const string& airportCode, int stops, unordered_set<string>& destinationAirports, unordered_set<string>& destinationCities, unordered_set<string>& destinationCountries) {
     auto s = findVertex(airportCode);
     if (s == nullptr)
-        return {0,0,0};
+        return;
     queue<Vertex*> q;
     for (auto &v : vertices)
         v.second->visited = false;
@@ -153,9 +144,9 @@ vector<int> Graph::bfs(const string airportCode, int stops) const {
             for (auto &e: v->getAdj()) {
                 auto w = e.second.dest;
                 if (!w->isVisited()) {
-                    airports.insert(w->airport->getCode());
-                    cities.insert(w->airport->getCity());
-                    countries.insert(w->airport->getCountry());
+                    destinationAirports.insert(w->airport->getCode());
+                    destinationCities.insert(w->airport->getCity());
+                    destinationCountries.insert(w->airport->getCountry());
                     q.push(w);
                     w->setVisited(true);
                 }
@@ -164,7 +155,6 @@ vector<int> Graph::bfs(const string airportCode, int stops) const {
         }
         stops--;
     }
-    return {(int)airports.size(),(int)cities.size(),(int)countries.size()};
 }
 
 
