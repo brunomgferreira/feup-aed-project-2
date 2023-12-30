@@ -582,16 +582,78 @@ public:
     list<list<string>> processFlights(const string& destiny, const unordered_map<string, pair<list<string>, int>>& airportTrack) const;
 
     // Location
+
+    /**
+    * @brief Converts location information into a set of airport codes based on the specified location type.
+    *
+    * @details This method takes location information and converts it into a set of airport codes based on the
+    * specified location type. The location types include a single airport, a city, a country, a coordinate near an
+    * airport, or a coordinate within a specified radius. The resulting set contains the relevant airport codes.
+    *
+    * @param location The location information containing the type and details of the location.
+    *
+    * @return An unordered set of strings representing the airport codes based on the specified location type.
+    *
+    * @details Time complexity: O(A), where A is the total number of airports in the database, depending on the location type.
+    */
     unordered_set<string> convertLocation(const LocationInfo& location);
 
 
     //Othermethods
+
+    /**
+    * @brief Finds and displays the maximum trip in terms of the number of flights between two airports.
+    *
+    * @details This method performs a BFS traversal from each airport to find the maximum trip, defined as the
+    * maximum number of flights between two airports. It keeps track of the airports involved in the maximum trip
+    * and prints the results, including the number of flights and the sequence of airports in the trip.
+    *
+    * @details Time complexity: O(V * (V + E)), where V is the number of vertices (airports) and E is the number of edges (flights).
+    */
     void maximumTrip();
+
+    /**
+    * @brief Displays the top K airports based on the number of flights departing from each airport.
+    *
+    * @details This method calculates the number of flights departing from each airport and then sorts the airports
+    * based on this count in descending order. It prints the top K airports along with the corresponding number of flights.
+    *
+    * @param k The number of top airports to display.
+    *
+    * @details Time complexity: O(V * E * log(V)), where V is the number of vertices (airports) and E is the number of edges (flights).
+    */
     void topKAirports(int k);
+
+    /**
+    * @brief Identifies and displays the essential airports in the given graph.
+    *
+    * @details This method determines the essential airports in the graph, considering the connectivity of the airports.
+    * It performs a depth-first search (DFS) traversal to identify the strongly connected components, and then calculates
+    * the essential airports based on the existence of multiple strongly connected components. The results include the
+    * number of essential airports.
+    *
+    * @details Time complexity: O(V + E), where V is the number of vertices (airports) and E is the number of edges (flights).
+    */
     void essentialAirports();
 
 
     //Sortmethod
+
+    /**
+    * @brief Comparator function for sorting airports based on the number of flights in descending order.
+    *
+    * @details This function compares two pairs containing airport codes and the corresponding number of flights.
+    * It is used as a custom comparator for sorting airports in descending order based on the number of flights.
+    * If the number of flights is the same, the airport codes are compared in lexicographical order.
+    *
+    * @param a The first pair to compare.
+    * @param b The second pair to compare.
+    *
+    * @return True if the number of flights in pair 'a' is greater than that in pair 'b', or if the number of flights
+    * is equal, and the airport code in pair 'a' is lexicographically less than that in pair 'b'. False otherwise.
+    *
+    * @details Time complexity: O(1), as it performs a constant number of comparisons.
+    */
     static bool sortTopAirports(const pair<string, int>& a, const pair<string, int>& b);
 
 };
