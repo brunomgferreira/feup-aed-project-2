@@ -299,12 +299,106 @@ public:
 
 
     //City
+
+    /**
+    * @brief Prints the number of airports in a specific city.
+    *
+    * @details This method calculates and outputs the count of airports in the specified city.
+    * It retrieves the set of airports associated with the given city and counts the total number
+    * of airports in that set. The final count is then displayed on the standard output.
+    *
+    * @param cityName The name of the city for which the number of airports is calculated.
+    *
+    * @details Time complexity: O(1), as the function involves retrieving the size of the set of airports.
+    */
     void numberOfAirportsCity(string cityName);
+
+    /**
+    * @brief Prints the number of different countries reachable from airports in a specific city.
+    *
+    * @details This method calculates and outputs the count of unique countries that can be reached
+    * from airports in the specified city. It iterates through the airports in the city, retrieves
+    * the connections from each airport, and counts the total number of unique destination countries.
+    *
+    * @param cityName The name of the city for which the number of countries is calculated.
+    *
+    * @details Time complexity: O(A + C), where A is the total number of airports in the specified city,
+    * and C is the total number of unique countries reached from those airports.
+    */
     void numberOfCountriesCity(string cityName);
+
+    /**
+    * @brief Prints the number of different airlines operating from airports in a specific city.
+    *
+    * @details This method calculates and outputs the count of unique airline codes for all the flights
+    * originating from airports in the specified city. It iterates through the airports in the city,
+    * retrieves the connections from each airport, and counts the total number of unique airline codes.
+    *
+    * @param cityName The name of the city for which the number of airlines is calculated.
+    *
+    * @details Time complexity: O(A + F), where A is the total number of airports in the specified city,
+    * and F is the total number of flights from those airports.
+    */
     void numberOfAirlinesCity(string cityName);
+
+    /**
+    * @brief Prints the total number of flights originating from airports in a specific city.
+    *
+    * @details This method calculates and outputs the count of flights originating from airports
+    * in the specified city. It iterates through the airports in the city, retrieves the connections
+    * from each airport, and counts the total number of flights connected to those airports.
+    *
+    * @param cityName The name of the city for which the number of flights is calculated.
+    *
+    * @details Time complexity: O(A + F), where A is the total number of airports in the specified city,
+    * and F is the total number of flights from those airports.
+    */
     void numberOfFlightsCity(string cityName);
+
+    /**
+    * @brief Prints the number of unique destinations (airports, cities, and countries) reachable
+    * from airports in a specific city using breadth-first search (BFS).
+    *
+    * @details This method performs a BFS starting from each airport in the specified city to identify
+    * unique destinations. It counts and outputs the number of unique airports, cities, and countries
+    * that can be reached from airports in the given city.
+    *
+    * @param cityName The name of the city for which the number of destinations is calculated.
+    *
+    * @details Time complexity: O(A + D), where A is the total number of airports in the specified city,
+    * and D is the total number of unique destinations reached from those airports.
+    */
     void numberOfDestinationsCity(string cityName);
+
+    /**
+    * @brief Prints the number of unique destinations (airports, cities, and countries) reachable
+    * from airports in a specific city within a given number of stops using breadth-first search (BFS).
+    *
+    * @details This method performs a BFS starting from each airport in the specified city, considering
+    * a maximum number of stops, to identify unique destinations. It counts and outputs the number of unique
+    * airports, cities, and countries that can be reached within the specified number of stops.
+    *
+    * @param cityName The name of the city for which the number of destinations is calculated.
+    * @param stops The maximum number of stops allowed for each BFS traversal.
+    *
+    * @details Time complexity: O(A + D), where A is the total number of airports in the specified city,
+    * and D is the total number of unique destinations reached from those airports.
+    */
     void numberOfDestinationsXStopsCity(string cityName, int stops);
+
+    /**
+    * @brief Retrieves the set of airport codes associated with a specific city.
+    *
+    * @details This method returns an unordered set containing the airport codes
+    * associated with the specified city. It retrieves the set of airports from the
+    * city object and returns it.
+    *
+    * @param cityName The name of the city for which the set of airport codes is retrieved.
+    *
+    * @return An unordered set of strings representing the airport codes in the specified city.
+    *
+    * @details Time complexity: O(1), as the function involves a direct retrieval of the set of airport codes.
+    */
     unordered_set<string> airportsInCity(const string& cityName) const;
 
     //Airline
