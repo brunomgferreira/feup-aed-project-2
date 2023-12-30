@@ -510,7 +510,7 @@ unordered_set<string> Data::airportsInLocation(Coordinate coordinate, double rad
 void Data::getFlights(const LocationInfo &originLocation, const LocationInfo &destinyLocation,
                       const unordered_set<std::string> &airlineSet, bool unwantedAirlines, bool minimizeAirlines) {
 
-    cout << "Processing the flights: \n\n";
+    cout << "Processing the flights... \n\n";
     // Create set of airports to consider as start and end
     unordered_set<string> originAirports = convertLocation(originLocation);
     unordered_set<string> destinyAirports = convertLocation(destinyLocation);
@@ -609,6 +609,11 @@ void Data::getFlights(const LocationInfo &originLocation, const LocationInfo &de
                 }
             }
         }
+    }
+
+    if (bestFlights.empty()){
+        cout << "Not able to find any flights..." << endl;
+        return;
     }
 
     if (minimizeAirlines) {

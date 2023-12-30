@@ -1,19 +1,24 @@
 #include <iostream>
 #include "GetRadiusState.h"
 
-GetRadiusState::GetRadiusState(function<void(App*, const int)> nextStateCallback)
+GetRadiusState::GetRadiusState(function<void(App*, double)> nextStateCallback)
     : nextStateCallback(nextStateCallback) {}
 
 void GetRadiusState::display() const {
-    cout << "Insert radius: ";
+    cout << "Insert radius in Km: ";
 }
 
 void GetRadiusState::handleInput(App* app) {
-    string radius;
+    string inputRadius;
     std::cin.ignore();
-    std::getline(std::cin, radius);
+    std::getline(std::cin, inputRadius);
 
-    // TODO check radius format
-    // TODO erro quando a passar para inteiro quando o input é um digito por exemplo: 1
-    nextStateCallback(app, stoi(radius));
+    double radius = 0;
+    try {
+         radius = std::stod(inputRadius);
+    } catch (...) {
+        cout << "Invalid radius, please try again.\n";
+    }
+
+    nextStateCallback(app, radius);
 }
