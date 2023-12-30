@@ -436,13 +436,113 @@ public:
 
 
     //Airport
+
+    /**
+    * @brief Prints the total number of flights departing from a specific airport.
+    *
+    * @details This method calculates and outputs the count of flights departing from
+    * the specified airport. It retrieves the connections from the airport in the graph,
+    * and for each connection, it adds the count of airlines associated with that connection
+    * to the total count of flights.
+    *
+    * @param airportCode The code of the airport for which the number of flights is calculated.
+    *
+    * @details Time complexity: O(F), where F is the total number of flights departing from the specified airport.
+    */
     void numberOfFlightsAirport(string basicString);
+
+    /**
+    * @brief Prints the number of different airlines operating flights from a specific airport.
+    *
+    * @details This method calculates and outputs the count of unique airline codes for all the flights
+    * departing from the specified airport. It iterates through the connections of the airport in the graph,
+    * and for each connection, it adds the unique airline codes to a set. The final count of unique airline codes
+    * is then displayed on the standard output.
+    *
+    * @param airportCode The code of the airport for which the number of airlines is calculated.
+    *
+    * @details Time complexity: O(F + A), where F is the total number of flights departing from the specified airport,
+    * and A is the total number of airports in the graph.
+    */
     void numberOfAirlinesAirport(string airportCode);
+
+    /**
+    * @brief Prints the number of different countries reachable by flights departing from a specific airport.
+    *
+    * @details This method calculates and outputs the count of unique destination countries for all the flights
+    * departing from the specified airport. It iterates through the connections of the airport in the graph,
+    * and for each connection, it adds the country of the destination airport to a set. The final count of unique
+    * destination countries is then displayed on the standard output.
+    *
+    * @param airportCode The code of the airport for which the number of countries is calculated.
+    *
+    * @details Time complexity: O(F + A), where F is the total number of flights departing from the specified airport,
+    * and A is the total number of airports in the graph.
+    */
     void numberOfCountriesAirport(string airportCode);
+
+    /**
+    * @brief Prints the number of unique destinations (airports, cities, and countries) reachable
+    * by flights departing from a specific airport using breadth-first search (BFS).
+    *
+    * @details This method performs a BFS starting from the specified airport to identify unique destinations.
+    * It calculates and outputs the count of unique airports, cities, and countries that can be reached from
+    * the specified airport.
+    *
+    * @param airportCode The code of the airport for which the number of destinations is calculated.
+    *
+    * @details Time complexity: O(A + D), where A is the total number of airports in the graph,
+    * and D is the total number of unique destinations reached from the specified airport.
+    */
     void numberOfDestinationsAirport(const string& airportCode);
+
+    /**
+    * @brief Prints the number of unique destinations (airports, cities, and countries) reachable
+    * by flights departing from a specific airport within a given number of stops using breadth-first search (BFS).
+    *
+    * @details This method performs a BFS starting from the specified airport, considering a maximum number of stops,
+    * to identify unique destinations. It calculates and outputs the count of unique airports, cities, and countries
+    * that can be reached from the specified airport within the specified number of stops.
+    *
+    * @param airportCode The code of the airport for which the number of destinations is calculated.
+    * @param stops The maximum number of stops allowed for each BFS traversal.
+    *
+    * @details Time complexity: O(A + D), where A is the total number of airports in the graph,
+    * and D is the total number of unique destinations reached from the specified airport within the given number of stops.
+    */
     void numberOfDestinationsXStopsAirport(const string& airportCode, int stops);
 
+
+    // Coordinate
+
+    /**
+    * @brief Finds and returns the airport code of the nearest airport to a given coordinate.
+    *
+    * @details This method calculates the distance between the given coordinate and each airport in the database,
+    * identifying the closest airport. It returns the code of the closest airport.
+    *
+    * @param coordinate The coordinate for which the nearest airport is to be found.
+    *
+    * @return A string representing the code of the nearest airport.
+    *
+    * @details Time complexity: O(A), where A is the total number of airports in the database.
+    */
     string airportNearCoordinate(Coordinate coordinate) const;
+
+    /**
+    * @brief Finds and returns a set of airport codes within a specified radius of a given coordinate.
+    *
+    * @details This method calculates the distance between the given coordinate and each airport in the database,
+    * identifying airports that fall within the specified radius. It returns a set containing the codes of airports
+    * located within the specified distance.
+    *
+    * @param coordinate The coordinate around which airports are searched.
+    * @param radius The maximum distance from the coordinate to include airports in the result set.
+    *
+    * @return An unordered set of strings representing the codes of airports within the specified radius.
+    *
+    * @details Time complexity: O(A), where A is the total number of airports in the database.
+    */
     unordered_set<string> airportsInLocation(Coordinate coordinate, double radius);
 
     // Flights
