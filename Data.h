@@ -79,12 +79,13 @@ public:
     unordered_set<string> airportsInLocation(Coordinate coordinate, double radius);
 
     // Flights
-    void getFlights(const LocationInfo& originLocation, const LocationInfo& destinyLocation,const unordered_set<string>& airlineSet, bool unwantedAirlines);
+    void getFlights(const LocationInfo& originLocation, const LocationInfo& destinyLocation,const unordered_set<string>& airlineSet, bool unwantedAirlines, bool minimizeAirlines);
+private:
     list<list<string>> processFlights(const string& destiny, const unordered_map<string, pair<list<string>, int>>& airportTrack) const;
-
+    pair<list<list<string>>, int> minimalAirlines(const list<list<string>>& flights) const;
     // Location
     unordered_set<string> convertLocation(const LocationInfo& location);
-
+public:
 
     //Othermethods
     void maximumTrip();
