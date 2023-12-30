@@ -3,16 +3,15 @@
 #include "States/MainMenuState.h"
 #include "GetFlightDestinationMenuState.h"
 
-GetFlightFilterMenuState::GetFlightFilterMenuState(LocationInfo *originInfo, LocationInfo *destinationInfo)
+GetFlightFilterMenuState::GetFlightFilterMenuState(const LocationInfo& originInfo, const LocationInfo& destinationInfo)
     : originInfo(originInfo), destinationInfo(destinationInfo) {}
 
 void GetFlightFilterMenuState::display() const {
     cout << "***** Filters *****" << endl;
-    cout << "1. Only one airline" << endl;
-    cout << "2. Set of airlines" << endl;
-    cout << "3. Set of unwanted airlines" << endl;
-    cout << "4. Minimize number of airlines" << endl;
-    cout << "5. No filter" << endl;
+    cout << "1. Set of airlines" << endl;
+    cout << "2. Set of unwanted airlines" << endl;
+    cout << "3. Minimize number of airlines" << endl;
+    cout << "4. No filter" << endl;
     cout << "b. Go Back" << endl;
     cout << "q. Main Menu" << endl;
 }
@@ -25,22 +24,18 @@ void GetFlightFilterMenuState::handleInput(App* app) {
     if (choice.size() == 1) {
         switch (choice[0]) {
             case '1':
-                cout << "Executing Option 1. Only one airline" << endl;
-                // getAirline()
-                break;
-            case '2':
                 cout << "Executing Option 2. Set of airlines" << endl;
                 // getAirlines()
                 break;
-            case '3':
+            case '2':
                 cout << "Executing Option 3. Set of unwanted airlines" << endl;
                 // getUnwantedAirlines()
                 break;
-            case '4':
+            case '3':
                 cout << "Executing Option 4. Minimize number of airlines" << endl;
                 // ?
                 break;
-            case '5':
+            case '4':
                 cout << "Executing Option 5. No filter" << endl;
                 // Execute algorithm
                 PressEnterToContinue();

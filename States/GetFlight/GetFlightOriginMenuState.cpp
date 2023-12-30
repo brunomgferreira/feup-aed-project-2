@@ -30,31 +30,30 @@ void GetFlightOriginMenuState::handleInput(App* app) {
         switch (choice[0]) {
             case '1':
                 app->setState(new GetAirportState(this, [&](App *app, const string &airportCode) {
-                    LocationInfo *originInfo = new LocationInfo(1, airportCode);
+                    LocationInfo originInfo(1, airportCode);
                     app->setState(new GetFlightDestinationMenuState(originInfo));
                 }));
                 break;
             case '2':
                 app->setState(new GetCityState(this, [&](App *app, const string &cityName) {
-                    LocationInfo *originInfo = new LocationInfo(2, cityName);
+                    LocationInfo originInfo(2, cityName);
                     app->setState(new GetFlightDestinationMenuState(originInfo));
                 }));
                 break;
             case '3':
                 app->setState(new GetCountryState(this, [&](App *app, const string &countryName) {
-                    LocationInfo *originInfo = new LocationInfo(3, countryName);
+                    LocationInfo originInfo(3, countryName);
                     app->setState(new GetFlightDestinationMenuState(originInfo));
                 }));
                 break;
             case '4':
-                app->setState(new GetCoordinatesState([&](App *app, const string &coordinates) {
-                    // TODO radius[0]->latitude, radius[1]->longitude ou algo do género
-                    // LocationInfo *originInfo = new LocationInfo(4, 0, 0);
-                    // app->setState(new GetFlightDestinationMenuState(originInfo));
+                app->setState(new GetCoordinatesState(this, [&](App *app, const Coordinate &coordinate) {
+                    LocationInfo originInfo(4, coordinate);
+                    app->setState(new GetFlightDestinationMenuState(originInfo));
                 }));
                 break;
             case '5':
-                app->setState(new GetCoordinatesState([&](App *app, const string &coordinates) {
+                app->setState(new GetCoordinatesState(this, [&](App *app, const Coordinate &coordinate) {
                     app->setState(new GetRadiusState([&](App *app, const int radius) {
                         // TODO radius[0]->latitude, radius[1]->longitude ou algo do género
                         // LocationInfo *originInfo = new LocationInfo(5, 0, 0, radius);

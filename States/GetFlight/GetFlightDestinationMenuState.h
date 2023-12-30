@@ -6,9 +6,9 @@
 
 class GetFlightDestinationMenuState : public State {
 private:
-    LocationInfo *originInfo;
+    LocationInfo originInfo;
 public:
-    GetFlightDestinationMenuState(LocationInfo *originInfo);
+    GetFlightDestinationMenuState(const LocationInfo& originInfo);
     void display() const override;
     void handleInput(App* app) override;
 };
