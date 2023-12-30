@@ -611,6 +611,11 @@ void Data::getFlights(const LocationInfo &originLocation, const LocationInfo &de
         }
     }
 
+    if (bestFlights.empty()){
+        cout << "Not able to find any flights..." << endl;
+        return;
+    }
+
     if (minimizeAirlines) {
         pair<list<list<string>>, int> minimizedAirlines = minimalAirlines(bestFlights);
         bestFlights = minimizedAirlines.first;
