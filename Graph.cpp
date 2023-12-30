@@ -205,6 +205,31 @@ void Graph::dfsart(Vertex *v, stack<string> &s, unordered_set<string> &set, int 
     s.pop();
 }
 
+void Graph::bfsmaxtrip(vector<pair<string,string>> &maxTripVec, int &maxTrip) {
+    for(auto &originAirport : vertices){
+        for(auto v : vertices){
+            v.second->setVisited(false);
+        }
+        queue<pair<Vertex*,int>> q;
+        q.push({findVertex(originAirport.first),0});
+        q.front().first->setVisited(true);
+        while(!q.empty()){
+            Vertex * r = q.front().first;
+            int i = q.front().second;
+            q.pop();
+            for(auto &e : r->getAdj()){
+                auto w = e.second.getDest();
+                if(!w->isVisited()){
+                    q.push({w,i+1});
+                    w->setVisited(true);
+                    if (maxTrip < i + 1) maxTripVec.clear();
+                    if (maxTrip <= i + 1) maxTrip = i + 1, maxTripVec.push_back({originAirport.first, w->getAirport()->getCode()});
+                }
+            }
+        }
+    }
+}
+
 
 
 
