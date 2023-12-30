@@ -30,10 +30,10 @@ public:
 
 
     //Confirm Existence
-    bool countryExists(string basicString);
-    bool cityExists(string basicString);
-    bool airlineExists(string basicString);
-    bool airportExists(string basicString);
+    bool countryExists(const string& basicString);
+    bool cityExists(const string& basicString);
+    bool airlineExists(const string& basicString);
+    bool airportExists(const string& basicString);
 
 
     //Global
@@ -45,33 +45,33 @@ public:
 
 
     //Country
-    void numberOfAirportsCountry(string basicString);
-    void numberOfCitiesCountry(string basicString);
+    void numberOfAirportsCountry(const string& countryName);
+    void numberOfCitiesCountry(const string& countryName);
     unordered_set<string> airportsInCountry(const string& countryName) const;
-    void numberOfAirlinesCountry(string countryName);
-    void numberOfFlightsCountry(string countryName);
-    void numberOfDestinationsCountry(string countryName);
-    void numberOfDestinationsXStopsCountry(string countryName, int stops);
+    void numberOfAirlinesCountry(const string& countryName);
+    void numberOfFlightsCountry(const string& countryName);
+    void numberOfDestinationsCountry(const string& countryName);
+    void numberOfDestinationsXStopsCountry(const string& countryName, int stops);
 
 
     //City
-    void numberOfAirportsCity(string cityName);
-    void numberOfCountriesCity(string cityName);
-    void numberOfAirlinesCity(string cityName);
-    void numberOfFlightsCity(string cityName);
-    void numberOfDestinationsCity(string cityName);
-    void numberOfDestinationsXStopsCity(string cityName, int stops);
+    void numberOfAirportsCity(const string& cityName);
+    void numberOfCountriesCity(const string& cityName);
+    void numberOfAirlinesCity(const string& cityName);
+    void numberOfFlightsCity(const string& cityName);
+    void numberOfDestinationsCity(const string& cityName);
+    void numberOfDestinationsXStopsCity(const string& cityName, int stops);
     unordered_set<string> airportsInCity(const string& cityName) const;
 
     //Airline
-    void numberOfFlightsAirline(string airlineCode);
-    void numberOfDestinationsAirline(string airlineCode);
+    void numberOfFlightsAirline(const string& airlineCode);
+    void numberOfDestinationsAirline(const string& airlineCode);
 
 
     //Airport
-    void numberOfFlightsAirport(string basicString);
-    void numberOfAirlinesAirport(string airportCode);
-    void numberOfCountriesAirport(string airportCode);
+    void numberOfFlightsAirport(const string& basicString);
+    void numberOfAirlinesAirport(const string& airportCode);
+    void numberOfCountriesAirport(const string& airportCode);
     void numberOfDestinationsAirport(const string& airportCode);
     void numberOfDestinationsXStopsAirport(const string& airportCode, int stops);
 
