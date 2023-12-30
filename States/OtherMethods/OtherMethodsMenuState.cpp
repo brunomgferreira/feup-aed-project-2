@@ -35,6 +35,7 @@ void OtherMethodsMenuState::handleInput(App* app) {
                 break;
             case '3':
                 cout << "Executing Option 3. Essential airports" << endl;
+                app->getData()->essentialAirports();
                 PressEnterToContinue();
                 break;
             case 'q':

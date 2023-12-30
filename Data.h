@@ -57,12 +57,11 @@ public:
     //City
     void numberOfAirportsCity(string cityName);
     void numberOfCountriesCity(string cityName);
-    unordered_set<string> airportsInCity(const string& cityName) const;
     void numberOfAirlinesCity(string cityName);
     void numberOfFlightsCity(string cityName);
     void numberOfDestinationsCity(string cityName);
     void numberOfDestinationsXStopsCity(string cityName, int stops);
-
+    unordered_set<string> airportsInCity(const string& cityName) const;
 
     //Airline
     void numberOfFlightsAirline(string airlineCode);
@@ -90,10 +89,12 @@ public:
     //Othermethods
     void maximumTrip();
     void topKAirports(int k);
+    void essentialAirports();
 
 
     //Sortmethod
     static bool sortTopAirports(const pair<string, int>& a, const pair<string, int>& b);
+
 };
 
 

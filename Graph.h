@@ -37,6 +37,10 @@ private:
     unordered_map<string, Edge> adj;  // list of outgoing edges
     bool visited;          // auxiliary field
     bool processing;       // auxiliary field
+    int num;               // auxiliary field
+    int low;
+private:
+    // auxiliary field
 
     void addEdge(Vertex *dest, const string& airlineCode);
 public:
@@ -47,6 +51,10 @@ public:
     void setVisited(bool v);
     bool isProcessing() const;
     void setProcessing(bool p);
+    int getNum() const;
+    void setNum(int num);
+    int getLow() const;
+    void setLow(int low);
     const unordered_map<string, Edge> &getAdj() const;
     void setAdj(const unordered_map<string, Edge> &adj);
     friend class Graph;
@@ -67,6 +75,8 @@ public:
     void bfs(const string& airportCode, unordered_set<string>& destinationAirports, unordered_set<string>& destinationCities, unordered_set<string>& destinationCountries);
 
     void bfs(const string& airportCode, int stops, unordered_set<string>& destinationAirports, unordered_set<string>& destinationCities, unordered_set<string>& destinationCountries);
+
+    void dfsart(Vertex *v, stack<string> &s, unordered_set<string> &set, int &i, string root);
 };
 
 #endif // FLIGHT_MANAGEMENT_SYSTEM_GRAPH_H_
