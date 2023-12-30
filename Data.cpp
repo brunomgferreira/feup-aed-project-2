@@ -488,8 +488,136 @@ unordered_set<string> Data::airportsInLocation(Coordinate coordinate, double rad
     }
     return inRadiusAirports;
 }
+// Flights
 
+void Data::getFlights(const LocationInfo &originLocation, const LocationInfo &destinyLocation,
+                      const unordered_set<std::string> &airlineSet, bool unwantedAirlines) {
+    cout << "Processing the flights: \n\n";
+    // Create set of airports to consider as start and end
+    unordered_set<string> originAirports = convertLocation(originLocation);
+    unordered_set<string> destinyAirports = convertLocation(destinyLocation);
 
+    list<list<string>> bestFlights;
+    int minSizeFlight = numeric_limits<int>::max();
+
+    for (const string &airport: originAirports) {
+
+        // Set all airports to unvisited
+        for (const auto &vertex: g.getVertices()) {
+            vertex.second->setVisited(false);
+        }
+
+        // Control flights
+        unordered_map<string, pair<list<string>, int>> airportTrack;
+        bool foundFlight = false;
+        int flightSize = numeric_limits<int>::max();
+        unordered_set<string> reachedDestiny;
+
+        // BFS
+        Vertex *beggining = g.findVertex(airport);
+        queue<Vertex *> q;
+        q.push(beggining);
+        beggining->setVisited(true);
+        airportTrack[airport] = {{}, 0};
+        while (!q.empty()) {
+            Vertex *origin = q.front();
+            string originCode = origin->getAirport()->getCode();
+            q.pop();
+
+            // Airport is a destiny airport
+            if (destinyAirports.find(originCode) != destinyAirports.end()) {
+                // Check if that level Airports are already all checked
+                if (airportTrack[originCode].second > flightSize) {
+                    q.empty();
+                } else {
+                    foundFlight = true;
+                    flightSize = airportTrack[originCode].second;
+                    reachedDestiny.insert(originCode);
+                }
+            } else {
+                // Consider more distant airports only if flight is not found yet
+                if (!foundFlight) {
+                    for (const auto &edge: origin->getAdj()) {
+                        // Check if its possible to use the connection
+                        bool canUseEdge = false;
+                        unordered_set<string> availableAirlines = edge.second.getAirlines();
+                        if (unwantedAirlines) {
+                            for (const string &airline: availableAirlines) {
+                                if (airlineSet.find(airline) == airlineSet.end()) {
+                                    canUseEdge = true;
+                                    break;
+                                }
+                            }
+                        } else {
+                            for (const string &airline: airlineSet) {
+                                if (availableAirlines.find(airline) != availableAirlines.end()) {
+                                    canUseEdge = true;
+                                    break;
+                                }
+                            }
+                        }
+                        if (canUseEdge) {
+                            string destinyCode = edge.first;
+                            Vertex *destiny = edge.second.getDest();
+                            if (destiny->isVisited()) {
+                                // Check if distance via current node is the same as already set distance
+                                if (airportTrack[destinyCode].second == airportTrack[originCode].second + 1) {
+                                    // If so, add it as a origin for that airport as well
+                                    airportTrack[destinyCode].first.push_back(originCode);
+                                }
+                                } else {
+                                    destiny->setVisited(true);
+                                    airportTrack[destinyCode] = {{originCode}, airportTrack[originCode].second + 1};
+                                    q.push(destiny);
+                                }
+
+                        }
+                    }
+
+                }
+            }
+        }
+        // Check if Flight from current airport is better than flights from others
+        if (flightSize <= minSizeFlight){
+
+            if (flightSize < minSizeFlight){
+                bestFlights.clear();
+            }
+            minSizeFlight = flightSize;
+            // Process the actual flight path
+            for (const string& destiny : reachedDestiny){
+                for (const list<string>& flight : processFlights(destiny, airportTrack)){
+                    bestFlights.push_back(flight);
+                }
+            }
+        }
+    }
+
+    for (const auto & flight : bestFlights){
+        cout << endl;
+        for (const string& airport : flight){
+            cout << airport  << "-";
+        }
+    }
+
+}
+
+list<list<string>> Data::processFlights(const string& destiny, const unordered_map<string, pair<list<string>, int>>& airportTrack) const{
+    list<string> originList = airportTrack.at(destiny).first;
+    if (originList.empty()){
+        return {{destiny}};
+    }
+    list<list<string>> flights;
+    for (const string& origin : originList){
+        for (const list<string>& flight : processFlights(origin, airportTrack)){
+            flights.push_back(flight);
+        }
+    }
+    for (list<string>& flight : flights){
+        flight.push_back(destiny);
+    }
+    return flights;
+}
 // Location
 unordered_set<string> Data::convertLocation(const LocationInfo &location) {
     unordered_set<string> selectedAirports;

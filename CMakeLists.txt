@@ -41,4 +41,6 @@ add_executable(Flight_Management_System
         States/Utils/GetStopsState.cpp
         States/Utils/GetStopsState.h
         States/Utils/GetTopState.cpp
-        States/Utils/GetTopState.h)
+        States/Utils/GetTopState.h
+        States/Utils/GetAirlineSetState.h
+        States/Utils/GetAirlineSetState.cpp)

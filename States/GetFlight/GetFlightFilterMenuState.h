@@ -6,10 +6,10 @@
 
 class GetFlightFilterMenuState : public State {
 private:
-    LocationInfo *originInfo;
-    LocationInfo *destinationInfo;
+    LocationInfo originInfo;
+    LocationInfo destinationInfo;
 public:
-    GetFlightFilterMenuState(LocationInfo *originInfo, LocationInfo *destinationInfo);
+    GetFlightFilterMenuState(const LocationInfo& originInfo, const LocationInfo& destinationInfo);
     void display() const override;
     void handleInput(App* app) override;
 };

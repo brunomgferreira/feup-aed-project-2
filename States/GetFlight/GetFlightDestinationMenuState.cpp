@@ -9,7 +9,7 @@
 #include "States/Utils/GetRadiusState.h"
 #include "GetFlightOriginMenuState.h"
 
-GetFlightDestinationMenuState::GetFlightDestinationMenuState(LocationInfo *originInfo)
+GetFlightDestinationMenuState::GetFlightDestinationMenuState(const LocationInfo& originInfo)
     : originInfo(originInfo) {}
 
 void GetFlightDestinationMenuState::display() const {
@@ -32,31 +32,30 @@ void GetFlightDestinationMenuState::handleInput(App* app) {
         switch (choice[0]) {
             case '1':
                 app->setState(new GetAirportState(this, [&](App *app, const string &airportCode) {
-                    LocationInfo *destinationInfo = new LocationInfo(1, airportCode);
+                    LocationInfo destinationInfo(1, airportCode);
                     app->setState(new GetFlightFilterMenuState(originInfo, destinationInfo));
                 }));
                 break;
             case '2':
                 app->setState(new GetCityState(this, [&](App *app, const string &cityName) {
-                    LocationInfo *destinationInfo = new LocationInfo(2, cityName);
+                    LocationInfo destinationInfo(2, cityName);
                     app->setState(new GetFlightFilterMenuState(originInfo, destinationInfo));
                 }));
                 break;
             case '3':
                 app->setState(new GetCountryState(this, [&](App *app, const string &countryName) {
-                    LocationInfo *destinationInfo = new LocationInfo(3, countryName);
+                    LocationInfo destinationInfo(3, countryName);
                     app->setState(new GetFlightFilterMenuState(originInfo, destinationInfo));
                 }));
                 break;
             case '4':
-                app->setState(new GetCoordinatesState([&](App *app, const string &coordinates) {
-                    // TODO radius[0]->latitude, radius[1]->longitude ou algo do género
-                    // LocationInfo *destinationInfo = new LocationInfo(4, 0, 0);
-                    // app->setState(new GetFlightFilterMenuState(originInfo, destinationInfo));
+                app->setState(new GetCoordinatesState(this, [&](App *app, const Coordinate &coordinates) {
+                    LocationInfo destinationInfo(4, coordinates);
+                    app->setState(new GetFlightFilterMenuState(originInfo, destinationInfo));
                 }));
                 break;
             case '5':
-                app->setState(new GetCoordinatesState([&](App *app, const string &coordinates) {
+                app->setState(new GetCoordinatesState(this, [&](App *app, const Coordinate &coordinates) {
                     app->setState(new GetRadiusState([&](App *app, const int radius) {
                         // TODO radius[0]->latitude, radius[1]->longitude ou algo do género
                        // LocationInfo *destinationInfo = new LocationInfo(5, 0, 0, radius);

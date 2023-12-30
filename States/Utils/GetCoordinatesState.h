@@ -7,9 +7,10 @@
 
 class GetCoordinatesState : public State {
 private:
-    function<void(App*, const string&)> nextStateCallback;
+    State* backState;
+    function<void(App*, const Coordinate&)> nextStateCallback;
 public:
-    GetCoordinatesState(function<void(App*, const string&)> nextStateCallback);
+    GetCoordinatesState(State* backState, function<void(App*, const Coordinate&)> nextStateCallback);
     void display() const override;
     void handleInput(App* app) override;
 };
