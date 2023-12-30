@@ -402,7 +402,36 @@ public:
     unordered_set<string> airportsInCity(const string& cityName) const;
 
     //Airline
+
+    /**
+    * @brief Prints the total number of flights operated by a specific airline.
+    *
+    * @details This method calculates and outputs the count of flights operated by
+    * the specified airline. It iterates through all airports and connections in the
+    * graph, checking for the presence of the given airline code in the set of airlines
+    * for each connection.
+    *
+    * @param airlineCode The code of the airline for which the number of flights is calculated.
+    *
+    * @details Time complexity: O(A + F), where A is the total number of airports in the graph,
+    * and F is the total number of flights in the graph.
+    */
     void numberOfFlightsAirline(string airlineCode);
+
+    /**
+    * @brief Prints the number of unique destinations (airports, cities, and countries) reachable
+    * by flights operated by a specific airline.
+    *
+    * @details This method calculates and outputs the count of unique destinations (airports, cities, and countries)
+    * reachable by flights operated by the specified airline. It iterates through all airports and connections in the
+    * graph, checking for the presence of the given airline code in the set of airlines for each connection. For each
+    * connection with the specified airline, it adds the destination airport's code, city, and country to the respective sets.
+    *
+    * @param airlineCode The code of the airline for which the number of destinations is calculated.
+    *
+    * @details Time complexity: O(A + F + D), where A is the total number of airports in the graph, F is the total number
+    * of flights in the graph, and D is the total number of unique destinations reached by flights operated by the specified airline.
+    */
     void numberOfDestinationsAirline(string airlineCode);
 
 
