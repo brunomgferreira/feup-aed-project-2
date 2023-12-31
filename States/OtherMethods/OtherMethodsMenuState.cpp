@@ -34,7 +34,7 @@ void OtherMethodsMenuState::handleInput(App* app) {
                 cout << "Executing Option 2. Top K airport with the greatest air traffic capacity" << endl;
                 app->setState(new GetTopState(this, [&](App *app, int top) {
                     app->getData()->topKAirports(top);
-                    PressEnterToContinue();
+                    PressEnterToContinue(1);
                     app->setState(this);
                 }));
                 break;

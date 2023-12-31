@@ -50,7 +50,7 @@ void AirportStatisticsMenuState::handleInput(App* app) {
                 cout << "Executing Option 5. - Reachable Destinations with max X stops" << endl;
                 app->setState(new GetStopsState(this, [&](App *app, int stops) {
                     app->getData()->numberOfDestinationsXStopsAirport(airportCode, stops);
-                    PressEnterToContinue();
+                    PressEnterToContinue(1);
                     app->setState(this);
                 }));
                 break;
