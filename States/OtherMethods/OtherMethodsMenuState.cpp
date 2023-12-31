@@ -6,16 +6,21 @@
 OtherMethodsMenuState::OtherMethodsMenuState() {}
 
 void OtherMethodsMenuState::display() const {
-    cout << "***** Other Methods *****" << endl;
-    cout << "1. Maximum trip" << endl;
-    cout << "2. Top K airport with the greatest air traffic capacity" << endl; //input problem
-    cout << "3. Essential airports" << endl;
-    cout << "q. Main Menu" << endl;
+    cout << "\033[94m";
+    cout << "===== OTHER METHODS =====" << endl;
+    cout << "\033[0m";
+    cout << "   1. Maximum trip" << endl;
+    cout << "   2. Top K airport with the greatest air traffic capacity" << endl; //input problem
+    cout << "   3. Essential airports\n" << endl;
+    cout << "   q. Main Menu" << endl;
+    cout << "\033[94m";
+    cout << "-------------------------" << endl;
+    cout << "\033[0m";
+    cout << "Enter your choice: ";
 }
 
 void OtherMethodsMenuState::handleInput(App* app) {
     string choice;
-    cout << "Enter your choice: ";
     cin >> choice;
 
     if (choice.size() == 1) {
@@ -42,7 +47,13 @@ void OtherMethodsMenuState::handleInput(App* app) {
                 app->setState(new MainMenuState());
                 break;
             default:
+                cout << "\033[31m";
                 cout << "Invalid choice. Please try again." << endl;
+                cout << "\033[0m";
         }
-    } else cout << "Invalid input. Please enter a single character." << endl;
+    } else {
+        cout << "\033[31m";
+        cout << "Invalid input. Please enter a single character." << endl;
+        cout << "\033[0m";
+    }
 }

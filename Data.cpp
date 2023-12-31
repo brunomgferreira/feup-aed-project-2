@@ -124,19 +124,44 @@ bool Data::airlineExists(const string& airlineCode) {
 //Global
 
 void Data::numberOfAirports() {
-    cout << "There is " << airports.size() << " airports." << endl;
+    cout << "\033[35m";
+    cout << "----------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> There are " << airports.size() << " airports." << endl;
+    cout << "\033[35m";
+    cout << "----------------------------" << endl;
+    cout << "\033[0m";
 }
 
 void Data::numberOfCities() {
-    cout << "There is " << cities.size() << " cities with an airport." << endl;
+    cout << "\033[35m";
+    cout << "------------------------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> There are " << cities.size() << " cities with an airport." << endl;
+    cout << "\033[35m";
+    cout << "------------------------------------------" << endl;
+    cout << "\033[0m";
 }
 
 void Data::numberOfCountries() {
-    cout << "There is " << countries.size() << " countries." << endl;
+
+    cout << "\033[35m";
+    cout << "----------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> There are " << countries.size() << " countries." << endl;
+    cout << "\033[35m";
+    cout << "----------------------------" << endl;
+    cout << "\033[0m";
 }
 
 void Data::numberOfAirlines() {
-    cout << "There is " << airlines.size() << " airlines." << endl;
+    cout << "\033[35m";
+    cout << "----------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> There are " << airlines.size() << " airlines." << endl;
+    cout << "\033[35m";
+    cout << "----------------------------" << endl;
+    cout << "\033[0m";
 }
 
 void Data::numberOfFlights() {
@@ -146,7 +171,14 @@ void Data::numberOfFlights() {
             flights += connection.second.getAirlines().size();
         }
     }
-    cout << "There is " << flights <<" flights." << endl;
+
+    cout << "\033[35m";
+    cout << "----------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> There are " << flights << " flights." << endl;
+    cout << "\033[35m";
+    cout << "----------------------------" << endl;
+    cout << "\033[0m";
 }
 
 
@@ -159,13 +191,25 @@ void Data::numberOfAirportsCountry(const string& countryName) {
         nAirports += cities[cityName]->getAirports().size();
     }
 
-    cout << "There is " << nAirports << " airports in " << countryName << "." << endl;
+    cout << "\033[35m";
+    cout << "-------------------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> There are " << nAirports << " airports in " << countryName << "." << endl;
+    cout << "\033[35m";
+    cout << "-------------------------------------" << endl;
+    cout << "\033[0m";
 }
 
 void Data::numberOfCitiesCountry(const string& countryName) {
     size_t nCities = countries[countryName]->getCities().size();
+    cout << "\033[35m";
+    cout << "------------------------------------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> There are " << nCities << " cities in " << countryName << " with an airport." << endl;
+    cout << "\033[35m";
+    cout << "------------------------------------------------------" << endl;
+    cout << "\033[0m";
 
-    cout << "There is " << nCities << " cities in " << countryName << " with an airport." << endl;
 
 }
 
@@ -180,7 +224,15 @@ void Data::numberOfAirlinesCountry(const string& countryName) {
             }
         }
     }
-    cout << "There is " << difAirlines.size() << " different airlines that flies from " << countryName << "." << endl;
+
+    cout << "\033[35m";
+    cout << "--------------------------------------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> There are " << difAirlines.size() << " different airlines that fly from " << countryName << "." << endl;
+    cout << "\033[35m";
+    cout << "--------------------------------------------------------" << endl;
+    cout << "\033[0m";
+
 }
 
 void Data::numberOfFlightsCountry(const string& countryName) {
@@ -192,7 +244,15 @@ void Data::numberOfFlightsCountry(const string& countryName) {
             }
         }
     }
-    cout << "There is " << flights <<" flights from " << countryName << "."<< endl;
+
+    cout << "\033[35m";
+    cout << "-----------------------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> There are " << flights <<" flights from " << countryName << "."<< endl;
+    cout << "\033[35m";
+    cout << "-----------------------------------------" << endl;
+    cout << "\033[0m";
+
 }
 
 void Data::numberOfDestinationsCountry(const string& countryName) {
@@ -204,10 +264,17 @@ void Data::numberOfDestinationsCountry(const string& countryName) {
             g.bfs(airportCode,destinationAirports,destinationCities,destinationCountries);
         }
     }
-    cout << "From " << countryName << " there is, as destinations: " << endl;
-    cout << destinationAirports.size() << " airports" << endl;
-    cout << destinationCities.size() << " cities" << endl;
-    cout << destinationCountries.size() << " countries" << endl;
+    cout << "\033[35m";
+    cout << "-------------------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> From " << countryName << " it's possible to reach: " << endl;
+    cout << "   " << destinationAirports.size() << " airports" << endl;
+    cout << "   " <<  destinationCities.size() << " cities" << endl;
+    cout << "   " <<  destinationCountries.size() << " countries" << endl;
+    cout << "\033[35m";
+    cout << "-------------------------------------" << endl;
+    cout << "\033[0m";
+
 }
 
 void Data::numberOfDestinationsXStopsCountry(const string& countryName, int stops) {
@@ -219,10 +286,16 @@ void Data::numberOfDestinationsXStopsCountry(const string& countryName, int stop
             g.bfs(airportCode,stops,destinationAirports,destinationCities,destinationCountries);
         }
     }
-    cout << "From " << countryName << " there is, as destinations: " << endl;
-    cout << destinationAirports.size() << " airports" << endl;
-    cout << destinationCities.size() << " cities" << endl;
-    cout << destinationCountries.size() << " countries" << endl;
+    cout << "\033[35m";
+    cout << "-----------------------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> From " << countryName << ", with " << stops << " it's possible to reach: " << endl;
+    cout << "   " << destinationAirports.size() << " airports" << endl;
+    cout << "   " <<  destinationCities.size() << " cities" << endl;
+    cout << "   " <<  destinationCountries.size() << " countries" << endl;
+    cout << "\033[35m";
+    cout << "-----------------------------------------" << endl;
+    cout << "\033[0m";
 }
 
 
@@ -245,7 +318,14 @@ void Data::numberOfAirportsCity(const string& cityName) {
     for(auto k : cities[cityName]->getAirports()){
         n++;
     }
-    cout << "There is " << n <<" airports in " << cityName << "."<< endl;
+    cout << "\033[35m";
+    cout << "--------------------------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> There is " << n <<" airports in " << cityName << "."<< endl;
+    cout << "\033[35m";
+    cout << "--------------------------------------------" << endl;
+    cout << "\033[0m";
+
 }
 
 void Data::numberOfCountriesCity(const string& cityName) {
@@ -255,7 +335,14 @@ void Data::numberOfCountriesCity(const string& cityName) {
             difCountries.insert(connection.second.getDest()->getAirport()->getCountry());
         }
     }
-    cout << "There is " << difCountries.size() << " different countries that " << cityName << " flies to." << endl;
+    cout << "\033[35m";
+    cout << "----------------------------------------------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> There are " << difCountries.size() << " different countries that " << cityName << " flies to." << endl;
+    cout << "\033[35m";
+    cout << "----------------------------------------------------------------" << endl;
+    cout << "\033[0m";
+
 }
 
 void Data::numberOfAirlinesCity(const string& cityName) {
@@ -267,7 +354,15 @@ void Data::numberOfAirlinesCity(const string& cityName) {
             }
         }
     }
-    cout << "There is " << difAirlines.size() << " different airlines that flies from " << cityName << "." << endl;
+
+    cout << "\033[35m";
+    cout << "---------------------------------------------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> There are " << difAirlines.size() << " different airlines that fly from " << cityName << "." << endl;
+    cout << "\033[35m";
+    cout << "---------------------------------------------------------------" << endl;
+    cout << "\033[0m";
+
 }
 
 void Data::numberOfFlightsCity(const string& cityName) {
@@ -277,7 +372,14 @@ void Data::numberOfFlightsCity(const string& cityName) {
             flights += connection.second.getAirlines().size();
         }
     }
-    cout << "There is " << flights <<" flights from " << cityName << "."<< endl;
+    cout << "\033[35m";
+    cout << "-------------------------------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> There are " << flights <<" flights from " << cityName << "."<< endl;
+    cout << "\033[35m";
+    cout << "-------------------------------------------------" << endl;
+    cout << "\033[0m";
+
 }
 
 void Data::numberOfDestinationsCity(const string& cityName) {
@@ -287,10 +389,18 @@ void Data::numberOfDestinationsCity(const string& cityName) {
     for (auto &airportCode: cities[cityName]->getAirports()) {
         g.bfs(airportCode,destinationAirports,destinationCities,destinationCountries);
     }
-    cout << "From " << cityName << " there is, as destinations: " << endl;
-    cout << destinationAirports.size() << " airports" << endl;
-    cout << destinationCities.size() << " cities" << endl;
-    cout << destinationCountries.size() << " countries" << endl;
+
+    cout << "\033[35m";
+    cout << "----------------------------------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> From " << cityName << " it's possible to reach: " << endl;
+    cout << "   "<<destinationAirports.size() << " airports" << endl;
+    cout << "   "<<destinationCities.size() << " cities" << endl;
+    cout << "   "<<destinationCountries.size() << " countries" << endl;
+    cout << "\033[35m";
+    cout << "----------------------------------------------------" << endl;
+    cout << "\033[0m";
+
 }
 
 void Data::numberOfDestinationsXStopsCity(const string& cityName, int stops) {
@@ -300,10 +410,16 @@ void Data::numberOfDestinationsXStopsCity(const string& cityName, int stops) {
     for (auto &airportCode: cities[cityName]->getAirports()) {
         g.bfs(airportCode,stops,destinationAirports,destinationCities,destinationCountries);
     }
-    cout << "From " << cityName << " there is, as destinations: " << endl;
-    cout << destinationAirports.size() << " airports" << endl;
-    cout << destinationCities.size() << " cities" << endl;
-    cout << destinationCountries.size() << " countries" << endl;
+    cout << "\033[35m";
+    cout << "--------------------------------------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> From " << cityName << ", with " << stops << " it's possible to reach: " << endl;
+    cout << "   "<<destinationAirports.size() << " airports" << endl;
+    cout << "   "<<destinationCities.size() << " cities" << endl;
+    cout << "   "<<destinationCountries.size() << " countries" << endl;
+    cout << "\033[35m";
+    cout << "--------------------------------------------------------" << endl;
+    cout << "\033[0m";
 }
 
 

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "CityStatisticsMenuState.h"
 #include "States/Statistics/StatisticsMenuState.h"
 #include "States/MainMenuState.h"
@@ -10,51 +11,53 @@ CityStatisticsMenuState::CityStatisticsMenuState(string cityName) {
 }
 
 void CityStatisticsMenuState::display() const {
-    cout << "***** City Statistics *****" << endl;
-    cout << "1. Number of Airports" << endl;
-    cout << "2. Number of different countries that city flies to" << endl;
-    cout << "3. Number of Airlines" << endl;
-    cout << "4. Number of Flights" << endl;
-    cout << "5. Number of Destinations" << endl;
-    cout << "6. Reachable Destinations with max X stops" << endl;
-    cout << "b. Statistics Menu" << endl;
-    cout << "q. Main Menu" << endl;
+    cout << "\033[94m";
+    cout << "===== CITY STATISTICS =====" << endl;
+    cout << "\033[93m";
+    cout << setw(14+cityName.size()/2) <<cityName << endl;
+    cout << "\033[0m";
+    cout << " Number of:" << endl;
+    cout << "   1. Airports" << endl;
+    cout << "   2. Cities" << endl;
+    cout << "   3. Airlines" << endl;
+    cout << "   4. Flights" << endl;
+    cout << "   5. Destinations\n" << endl;
+    cout << "   6. Reachable Destinations with max X stops\n" << endl;
+    cout << "   b. Statistics Menu" << endl;
+    cout << "   q. Main Menu" << endl;
+    cout << "\033[94m";
+    cout << "-------------------------------" << endl;
+    cout << "\033[0m";
+    cout << "Enter your choice: ";
 }
 
 void CityStatisticsMenuState::handleInput(App* app) {
     string choice;
-    cout << "Enter your choice: ";
     cin >> choice;
 
     if (choice.size() == 1) {
         switch (choice[0]) {
             case '1':
-                cout << "Executing Option 1 - Number of Airports" << endl;
                 app->getData()->numberOfAirportsCity(cityName);
                 PressEnterToContinue();
                 break;
             case '2':
-                cout << "Executing Option 2 - Number of different countries that city flies to" << endl;
                 app->getData()->numberOfCountriesCity(cityName);
                 PressEnterToContinue();
                 break;
             case '3':
-                cout << "Executing Option 3 - Number of Airlines" << endl;
                 app->getData()->numberOfAirlinesCity(cityName);
                 PressEnterToContinue();
                 break;
             case '4':
-                cout << "Executing Option 4 - Number of Flights" << endl;
                 app->getData()->numberOfFlightsCity(cityName);
                 PressEnterToContinue();
                 break;
             case '5':
-                cout << "Executing Option 5 - Number of Destinations" << endl;
                 app->getData()->numberOfDestinationsCity(cityName);
                 PressEnterToContinue();
                 break;
             case '6':
-                cout << "Executing Option 6. - Reachable Destinations with max X stops" << endl;
                 app->setState(new GetStopsState(this, [&](App *app, int stops) {
                     app->getData()->numberOfDestinationsXStopsCity(cityName, stops);
                     PressEnterToContinue();
