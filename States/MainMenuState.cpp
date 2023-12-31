@@ -7,16 +7,17 @@
 MainMenuState::MainMenuState() {}
 
 void MainMenuState::display() const {
-cout << "***** Main Menu *****" << endl;
-cout << "1. Statistics" << endl;
-cout << "2. Get Flight" << endl;
-cout << "3. Other Methods" << endl;
-cout << "q. Exit" << endl;
+cout <<"\033[94m" << "===== MAIN MENU =====" << "\033[0;0m" << endl;
+cout << "   1. Statistics     " << endl;
+cout << "   2. Get Flight     " << endl;
+cout << "   3. Other Methods  " << endl;
+cout << "   q. Exit           " << endl;
+cout << "\033[94m" <<"---------------------"<< "\033[0m" << endl;
+cout << "Enter your choice: ";
 }
 
 void MainMenuState::handleInput(App* app) {
     string choice;
-    cout << "Enter your choice: ";
     cin >> choice;
 
     if (choice.size() == 1) {
@@ -31,11 +32,11 @@ void MainMenuState::handleInput(App* app) {
                 app->setState(new OtherMethodsMenuState());
                 break;
             case 'q':
-                cout << "Exiting the program." << endl;
+                cout << "Exiting the program..." << endl;
                 app->setState(nullptr);
                 break;
             default:
-                cout << "Invalid choice. Please try again." << endl;
+                cout << "\033[1;31m" << "Invalid choice. Please try again." << "\033[0m"  << endl;
         }
     } else cout << "Invalid input. Please enter a single character." << endl;
 }

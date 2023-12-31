@@ -234,6 +234,7 @@ unordered_set<string> Data::airportsInCountry(const string& countryName) const {
             countryAirports.insert(airport);
         }
     }
+    return countryAirports;
 }
 
 
@@ -621,7 +622,8 @@ pair<list<list<string>>, int> Data::minimalAirlines(const list<list<string>> &fl
         unordered_set<string> usedAirlines;
         int numberAirlines = 0;
 
-        for (auto airport=flight.begin(); ++airport != flight.end(); airport++){
+        auto airport = flight.begin();
+        while (next(airport, 1)!=flight.end()){
             string origin = *airport;
             string destiny = *(++airport);
 

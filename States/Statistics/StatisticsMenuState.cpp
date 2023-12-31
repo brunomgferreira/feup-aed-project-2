@@ -14,18 +14,20 @@
 StatisticsMenuState::StatisticsMenuState() {}
 
 void StatisticsMenuState::display() const {
-    cout << "***** Statistics *****" << endl;
-    cout << "1. Global" << endl;
-    cout << "2. Country" << endl;
-    cout << "3. City" << endl;
-    cout << "4. Airline" << endl;
-    cout << "5. Airport" << endl;
-    cout << "q. Main Menu" << endl;
+
+    cout <<"\033[94m" << "===== STATISTICS =====" << "\033[0m" << endl;
+    cout << "    1. Global    " << endl;
+    cout << "    2. Country     " << endl;
+    cout << "    3. City  " << endl;
+    cout << "    4. Airline" << endl;
+    cout << "    5. Airport" << endl;
+    cout << "    q. Exit           " << endl;
+    cout << "\033[1;94m" <<"----------------------"<< "\033[0m" << endl;
+    cout << "Enter your choice: ";
 }
 
 void StatisticsMenuState::handleInput(App* app) {
     string choice;
-    cout << "Enter your choice: ";
     cin >> choice;
 
     if (choice.size() == 1) {

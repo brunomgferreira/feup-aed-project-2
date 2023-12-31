@@ -6,19 +6,24 @@
 GlobalStatisticsMenuState::GlobalStatisticsMenuState() {}
 
 void GlobalStatisticsMenuState::display() const {
-    cout << "***** Global Statistics *****" << endl;
-    cout << "1. Number of Airports" << endl;
-    cout << "2. Number of Cities" << endl;
-    cout << "3. Number of Countries" << endl;
-    cout << "4. Number of Airlines" << endl;
-    cout << "5. Number of Flights" << endl;
-    cout << "b. Statistics Menu" << endl;
-    cout << "q. Main Menu" << endl;
+    cout << "\033[94m";
+    cout << "===== GLOBAL STATISTICS ===== " << endl;
+    cout << "\033[0m";
+    cout << "   1. Number of Airports" << endl;
+    cout << "   2. Number of Cities" << endl;
+    cout << "   3. Number of Countries" << endl;
+    cout << "   4. Number of Airlines" << endl;
+    cout << "   5. Number of Flights" << endl;
+    cout << "   b. Statistics Menu" << endl;
+    cout << "   q. Main Menu" << endl;
+    cout << "\033[94m";
+    cout << "------------------------------" << endl;
+    cout << "\033[0m";
+    cout << "Enter your choice: ";
 }
 
 void GlobalStatisticsMenuState::handleInput(App* app) {
     string choice;
-    cout << "Enter your choice: ";
     cin >> choice;
 
     if (choice.size() == 1) {

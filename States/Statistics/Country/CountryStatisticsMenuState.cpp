@@ -10,15 +10,18 @@ CountryStatisticsMenuState::CountryStatisticsMenuState(string countryName) {
 }
 
 void CountryStatisticsMenuState::display() const {
-    cout << "***** Country Statistics *****" << endl;
-    cout << "1. Number of Airports" << endl;
-    cout << "2. Number of Cities" << endl;
-    cout << "3. Number of Airlines" << endl;
-    cout << "4. Number of Flights" << endl;
-    cout << "5. Number of Destinations" << endl;
-    cout << "6. Reachable Destinations with max X stops" << endl;
-    cout << "b. Statistics Menu" << endl;
-    cout << "q. Main Menu" << endl;
+    cout << "\033[94m";
+    cout << "===== COUNTRY STATISTICS =====" << endl;
+    cout << "\033[0m";
+    cout << "   1. Number of Airports" << endl;
+    cout << "   2. Number of Cities" << endl;
+    cout << "   3. Number of Airlines" << endl;
+    cout << "   4. Number of Flights" << endl;
+    cout << "   5. Number of Destinations" << endl;
+    cout << "   6. Reachable Destinations with max X stops" << endl;
+    cout << "   b. Statistics Menu" << endl;
+    cout << "   q. Main Menu" << endl;
+    cout << "-------------------------------";
 }
 
 void CountryStatisticsMenuState::handleInput(App* app) {
