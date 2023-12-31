@@ -18,7 +18,9 @@ void GetCountryState::handleInput(App* app) {
     if (countryExists) {
         nextStateCallback(app, countryName);
     } else {
+        cout << "\033[31m";
         cout << "Country does not exist." << endl;
+        cout << "\033[0m";
         app->setState(new TryAgainState(backState, this));
     }
 }

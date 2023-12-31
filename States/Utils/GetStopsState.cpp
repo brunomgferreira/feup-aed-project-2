@@ -19,11 +19,15 @@ void GetStopsState::handleInput(App* app) {
         if (stopsValue >= 0) {
             nextStateCallback(app, stopsValue);
         } else {
+            cout << "\033[31m";
             cout << "Invalid input. Please enter a valid positive integer." << endl;
+            cout << "\033[0m";
             app->setState(new TryAgainState(backState, this));
         }
     } catch (const std::invalid_argument& e) {
+        cout << "\033[31m";
         cout << "Invalid input. Please enter a valid integer." << endl;
+        cout << "\033[0m";
         app->setState(new TryAgainState(backState, this));
     }
 }

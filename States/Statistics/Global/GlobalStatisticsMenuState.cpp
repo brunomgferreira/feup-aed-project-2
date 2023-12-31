@@ -6,45 +6,46 @@
 GlobalStatisticsMenuState::GlobalStatisticsMenuState() {}
 
 void GlobalStatisticsMenuState::display() const {
-    cout << "***** Global Statistics *****" << endl;
-    cout << "1. Number of Airports" << endl;
-    cout << "2. Number of Cities" << endl;
-    cout << "3. Number of Countries" << endl;
-    cout << "4. Number of Airlines" << endl;
-    cout << "5. Number of Flights" << endl;
-    cout << "b. Statistics Menu" << endl;
-    cout << "q. Main Menu" << endl;
+    cout << "\033[94m";
+    cout << "===== GLOBAL STATISTICS ===== " << endl;
+    cout << "\033[0m";
+    cout << " Number of:     " << endl;
+    cout << "   1. Airports" << endl;
+    cout << "   2. Cities" << endl;
+    cout << "   3. Countries" << endl;
+    cout << "   4. Airlines" << endl;
+    cout << "   5. Flights\n" << endl;
+    cout << "   b. Statistics Menu" << endl;
+    cout << "   q. Main Menu" << endl;
+    cout << "\033[94m";
+    cout << "------------------------------" << endl;
+    cout << "\033[0m";
+    cout << "Enter your choice: ";
 }
 
 void GlobalStatisticsMenuState::handleInput(App* app) {
     string choice;
-    cout << "Enter your choice: ";
     cin >> choice;
 
     if (choice.size() == 1) {
         switch (choice[0]) {
             case '1':
-                cout << "Executing Option 1 - Number of Airports." << endl;
                 app->getData()->numberOfAirports();
                 PressEnterToContinue();
                 break;
             case '2':
-                cout << "Executing Option 2 - Number of Cities." << endl;
                 app->getData()->numberOfCities();
                 PressEnterToContinue();
                 break;
             case '3':
-                cout << "Executing Option 3 - Number of Countries." << endl;
                 app->getData()->numberOfCountries();
                 PressEnterToContinue();
                 break;
             case '4':
-                cout << "Executing Option 4 - Number of Airlines" << endl;
                 app->getData()->numberOfAirlines();
                 PressEnterToContinue();
                 break;
             case '5':
-                cout << "Executing Option 5 - Number of Flights" << endl;
                 app->getData()->numberOfFlights();
                 PressEnterToContinue();
                 break;
@@ -55,7 +56,13 @@ void GlobalStatisticsMenuState::handleInput(App* app) {
                 app->setState(new MainMenuState());
                 break;
             default:
+                cout << "\033[31m";
                 cout << "Invalid choice. Please try again." << endl;
+                cout << "\033[0m";
         }
-    } else cout << "Invalid input. Please enter a single character." << endl;
+    } else {
+        cout << "\033[31m";
+        cout << "Invalid input. Please enter a single character." << endl;
+        cout << "\033[0m";
+    }
 }

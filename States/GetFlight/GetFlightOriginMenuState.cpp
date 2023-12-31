@@ -12,18 +12,22 @@
 GetFlightOriginMenuState::GetFlightOriginMenuState() {}
 
 void GetFlightOriginMenuState::display() const {
-    cout << "***** Type of Origin *****" << endl;
-    cout << "1. Airport" << endl;
-    cout << "2. City" << endl;
-    cout << "3. Country" << endl;
-    cout << "4. Coordinates" << endl;
-    cout << "5. Coordinates & Radius" << endl;
-    cout << "q. Main Menu" << endl;
+
+
+    cout <<"\033[94m" << "===== TYPE OF ORIGIN =====" << "\033[0;0m" << endl;
+    cout << "   1. Airport    " << endl;
+    cout << "   2. City     " << endl;
+    cout << "   3. Country  " << endl;
+    cout << "   4. Coordinates" << endl;
+    cout << "   5. Coordinates & Radius\n" << endl;
+    cout << "   q. Main Menu           " << endl;
+    cout << "\033[94m" <<"--------------------------"<< "\033[0m" << endl;
+    cout << "Enter your choice: ";
+
 }
 
 void GetFlightOriginMenuState::handleInput(App* app) {
     string choice;
-    cout << "Enter your choice: ";
     cin >> choice;
 
     if (choice.size() == 1) {
@@ -64,7 +68,13 @@ void GetFlightOriginMenuState::handleInput(App* app) {
                 app->setState(new MainMenuState());
                 break;
             default:
+                cout << "\033[31m";
                 cout << "Invalid choice. Please try again." << endl;
+                cout << "\033[0m";
         }
-    } else cout << "Invalid input. Please enter a single character." << endl;
+    } else {
+        cout << "\033[31m";
+        cout << "Invalid input. Please enter a single character." << endl;
+        cout << "\033[0m";
+    }
 }

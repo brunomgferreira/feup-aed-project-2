@@ -13,19 +13,21 @@ GetFlightDestinationMenuState::GetFlightDestinationMenuState(const LocationInfo&
     : originInfo(originInfo) {}
 
 void GetFlightDestinationMenuState::display() const {
-    cout << "***** Type of Destination *****" << endl;
-    cout << "1. Airport" << endl;
-    cout << "2. City" << endl;
-    cout << "3. Country" << endl;
-    cout << "4. Coordinates" << endl;
-    cout << "5. Coordinates & Radius" << endl;
-    cout << "b. Go Back" << endl;
-    cout << "q. Main Menu" << endl;
+
+    cout <<"\033[94m" << "===== TYPE OF DESTINY =====" << "\033[0;0m" << endl;
+    cout << "   1. Airport    " << endl;
+    cout << "   2. City     " << endl;
+    cout << "   3. Country  " << endl;
+    cout << "   4. Coordinates" << endl;
+    cout << "   5. Coordinates & Radius" << endl;
+    cout << "   q. Main Menu           " << endl;
+    cout << "\033[94m" <<"---------------------------"<< "\033[0m" << endl;
+    cout << "Enter your choice: ";
+
 }
 
 void GetFlightDestinationMenuState::handleInput(App* app) {
     string choice;
-    cout << "Enter your choice: ";
     cin >> choice;
 
     if (choice.size() == 1) {
