@@ -6,7 +6,7 @@ GetTopState::GetTopState(State* backState, function<void(App*, int)> nextStateCa
         : backState(backState), nextStateCallback( nextStateCallback) {}
 
 void GetTopState::display() const {
-    cout << "Insert number of Stops: ";
+    cout << "Insert number of airports: ";
 }
 
 void GetTopState::handleInput(App* app) {
@@ -19,11 +19,15 @@ void GetTopState::handleInput(App* app) {
         if ((topValue > 0) && (topValue <= 3019)){
             nextStateCallback(app, topValue);
         } else {
-            cout << "Invalid input. Please enter a valid positive integer not greater than 3019 (number of airports)." << endl;
+            cout << "\033[31m";
+            cout << "Invalid input. Please enter an integer not greater than 3019 (total number of airports)." << endl;
+            cout << "\033[0m";
             app->setState(new TryAgainState(backState, this));
         }
     } catch (const std::invalid_argument& e) {
+        cout << "\033[31m";
         cout << "Invalid input. Please enter a valid integer." << endl;
+        cout << "\033[0m";
         app->setState(new TryAgainState(backState, this));
     }
 }

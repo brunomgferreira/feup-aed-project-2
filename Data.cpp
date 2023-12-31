@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <limits>
 #include <chrono>
+#include <iomanip>
 #include "Data.h"
 
 Data::Data() {
@@ -573,12 +574,18 @@ void Data::maximumTrip() {
     vector<pair<string,string>> maxTripVec;
     int maxTrip = 0;
     g.bfsmaxtrip(maxTripVec,maxTrip);
-
-    cout << "Max trip of " << maxTrip << " flights." << endl;
-    cout << "Between " << maxTripVec.size() << " airports:" << endl;
+    cout << "\033[35m";
+    cout << "-------------------------------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> The maximum trip is " << maxTrip << " flights long." << endl;
+    cout << "   "<<"Between " << maxTripVec.size() << " airports:" << endl;
     for(auto &flight : maxTripVec){
-        cout << flight.first << " --> " << flight.second << endl;
+        cout << "   "<<flight.first << " --> " << flight.second << endl;
     }
+    cout << "\033[35m";
+    cout << "-------------------------------------------------" << endl;
+    cout << "\033[0m";
+
 }
 
 
@@ -592,10 +599,22 @@ void Data::topKAirports(int k) {
         flights.push_back({airportCode.first,flightsAirport});
     }
     std::sort(flights.begin(), flights.end(),sortTopAirports);
-    cout << "Top " << k << " airports:" << endl;
+
+    cout << "\033[35m";
+    cout << "-------------------------------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> Top " << k << " airports:" << endl;
+    cout << "   Airport | Flights:\n" << endl;
     for(int i =0; i<k; i++){
-        cout << "Airport: "<< flights[i].first << "  |  Flights: "<< flights[i].second << endl;
+        cout << "      "<< flights[i].first << "  |  "<<flights[i].second << endl;
     }
+    cout << "\033[35m";
+    cout << "-------------------------------------------------" << endl;
+    cout << "\033[0m";
+
+
+
+
 }
 
 void Data::essentialAirports() {
@@ -612,7 +631,14 @@ void Data::essentialAirports() {
     for(const auto& airportCode : f.getVertices()){
         if(!airportCode.second->isVisited()) f.dfsart(airportCode.second, s, res, i, airportCode.first);
     }
-    cout << "There is " << res.size() << " essential airports." << endl;
+    cout << "\033[35m";
+    cout << "---------------------------------------------" << endl;
+    cout << "\033[0m";
+    cout << ">> There are " << res.size() << " essential airports." << endl;
+    cout << "\033[35m";
+    cout << "---------------------------------------------" << endl;
+    cout << "\033[0m";
+
 
 }
 
@@ -653,7 +679,6 @@ unordered_set<string> Data::airportsInLocation(Coordinate coordinate, double rad
 void Data::getFlights(const LocationInfo &originLocation, const LocationInfo &destinyLocation,
                        unordered_set<std::string> airlineSet, bool unwantedAirlines, bool minimizeAirlines) {
 
-    cout << "Processing the flights... \n\n";
     // Create set of airports to consider as start and end
     unordered_set<string> originAirports = convertLocation(originLocation);
     unordered_set<string> destinyAirports = convertLocation(destinyLocation);
@@ -753,27 +778,37 @@ void Data::getFlights(const LocationInfo &originLocation, const LocationInfo &de
             }
         }
     }
+    cout << "\033[35m";
+    cout << "-------------------------------------------------" << endl;
+    cout << "\033[0m";
 
     if (bestFlights.empty()){
-        cout << "Not able to find any flights..." << endl;
+        cout << ">> Not able to find any flights..." << endl;
         return;
     }
+
+    cout << ">> Top flights found: " << bestFlights.size() << endl;
+
 
     if (minimizeAirlines) {
         pair<list<list<string>>, int> minimizedAirlines = minimalAirlines(bestFlights);
         bestFlights = minimizedAirlines.first;
         int minNumberAirlines = minimizedAirlines.second;
-        cout << "A possible flight was found with the minimal number of " << minNumberAirlines << " different airlines:" << endl;
+        cout << "   Minimal number of airlines: " << minNumberAirlines << endl;
     }
-
 
     for (const auto & flight : bestFlights){
-        cout << endl;
-        for (const string& airport : flight){
-            cout << airport  << "-";
+        cout << "   ";
+        auto airport = flight.begin();
+        while (next(airport, 1) != flight.end()){
+            cout << *airport++ << " - ";
         }
+        cout << *airport << endl;
     }
 
+    cout << "\033[35m";
+    cout << "-------------------------------------------------" << endl;
+    cout << "\033[0m";
 }
 
 pair<list<list<string>>, int> Data::minimalAirlines(const list<list<string>> &flights) const {

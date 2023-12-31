@@ -26,12 +26,10 @@ void OtherMethodsMenuState::handleInput(App* app) {
     if (choice.size() == 1) {
         switch (choice[0]) {
             case '1':
-                cout << "Executing Option 1. Maximum trip" << endl;
                 app->getData()->maximumTrip();
                 PressEnterToContinue();
                 break;
             case '2':
-                cout << "Executing Option 2. Top K airport with the greatest air traffic capacity" << endl;
                 app->setState(new GetTopState(this, [&](App *app, int top) {
                     app->getData()->topKAirports(top);
                     PressEnterToContinue(1);
@@ -39,7 +37,6 @@ void OtherMethodsMenuState::handleInput(App* app) {
                 }));
                 break;
             case '3':
-                cout << "Executing Option 3. Essential airports" << endl;
                 app->getData()->essentialAirports();
                 PressEnterToContinue();
                 break;

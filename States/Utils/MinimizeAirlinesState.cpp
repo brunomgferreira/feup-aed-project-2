@@ -22,9 +22,15 @@ void MinimizeAirlinesState::handleInput(App* app) {
                 nextStateCallback(app, false);
                 break;
             default:
+                cout << "\033[31m";
                 cout << "Not a valid option. Try again." << endl;
+                cout << "\033[0m";
         }
-    } else cout << "Invalid input. Please enter a single character." << endl;
+    } else {
+        cout << "\033[31m";
+        cout << "Invalid input. Please enter a single character." << endl;
+        cout << "\033[0m";
+    }
 
 
 

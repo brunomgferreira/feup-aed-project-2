@@ -19,7 +19,8 @@ void GetFlightDestinationMenuState::display() const {
     cout << "   2. City     " << endl;
     cout << "   3. Country  " << endl;
     cout << "   4. Coordinates" << endl;
-    cout << "   5. Coordinates & Radius" << endl;
+    cout << "   5. Coordinates & Radius\n" << endl;
+    cout << "   b. Go Back" << endl;
     cout << "   q. Main Menu           " << endl;
     cout << "\033[94m" <<"---------------------------"<< "\033[0m" << endl;
     cout << "Enter your choice: ";
@@ -71,7 +72,13 @@ void GetFlightDestinationMenuState::handleInput(App* app) {
                 app->setState(new MainMenuState());
                 break;
             default:
+                cout << "\033[31m";
                 cout << "Invalid choice. Please try again." << endl;
+                cout << "\033[0m";
         }
-    } else cout << "Invalid input. Please enter a single character." << endl;
+    } else {
+        cout << "\033[31m";
+        cout << "Invalid input. Please enter a single character." << endl;
+        cout << "\033[0m";
+    }
 }
