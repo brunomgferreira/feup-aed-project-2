@@ -45,25 +45,11 @@ public:
     Vertex *getDest() const;
 
     /**
-    * @brief Set the destination vertex associated with the edge.
-    *
-    * @param dest Pointer to the destination vertex to set.
-    */
-    void setDest(Vertex *dest);
-
-    /**
     * @brief Get the set of airline codes associated with the edge.
     *
     * @return The set of airline codes.
     */
     unordered_set<string> getAirlines() const;
-
-    /**
-    * @brief Set the set of airline codes associated with the edge.
-    *
-    * @param airlines The set of airline codes to set.
-    */
-    void setAirlines(unordered_set<string> airlines);
 
     friend class Graph;
     friend class Vertex;
@@ -80,8 +66,7 @@ private:
     bool visited;          // auxiliary field
     int num;               // auxiliary field
     int low;
-private:
-    // auxiliary field
+
     /**
     * @brief Add an edge to another vertex in the adjacency list.
     *
