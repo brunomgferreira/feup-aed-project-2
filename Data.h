@@ -548,20 +548,23 @@ public:
     // Flights
 
     /**
-    * @brief Finds and prints the best flight paths from specified origin to destination locations
-    * with optional airline restrictions using breadth-first search (BFS).
+    * @brief Finds the best flights between two locations considering various constraints.
     *
-    * @details This method performs BFS from each origin airport to find the best flight paths to any of the
-    * specified destination airports. It considers optional airline restrictions, and the best flights are determined
-    * based on the minimum number of stops. The flight paths are then printed on the standard output.
+    * @details This method processes flights between specified origin and destination locations. It uses a BFS
+    * algorithm to find the shortest paths, taking into account airline constraints, unwanted airlines, and
+    * minimizing the number of different airlines. The result includes the best flight paths based on the specified
+    * criteria.
     *
-    * @param originLocation The origin location information, including the city and country.
-    * @param destinyLocation The destination location information, including the city and country.
-    * @param airlineSet A set of airline codes representing optional airline restrictions.
-    * @param unwantedAirlines Flag indicating whether the specified airlines are unwanted or required.
+    * @param originLocation The origin location for the flights.
+    * @param destinyLocation The destination location for the flights.
+    * @param airlineSet A set of airline codes to consider (constraints) for the flights.
+    * @param unwantedAirlines Indicates whether unwanted airlines should be excluded from the flights.
+    * @param minimizeAirlines Indicates whether the number of different airlines should be minimized.
     *
-    * @details Time complexity: O(A + E), where A is the total number of airports in the graph,
-    * and E is the total number of edges (connections) in the graph.
+    * @return The best flight paths based on the specified criteria.
+    *
+    * @details Time complexity: O(F * E * A), where F is the number of flights, E is the average number of edges
+    * (connections) per airport, and A is the average number of airlines per connection.
     */
     void getFlights(const LocationInfo& originLocation, const LocationInfo& destinyLocation, unordered_set<string> airlineSet, bool unwantedAirlines, bool minimizeAirlines);
 
@@ -582,6 +585,22 @@ private:
      * @details Time complexity: O(N), where N is the number of airports in the BFS result for the given destiny.
      */
     list<list<string>> processFlights(const string& destiny, const unordered_map<string, pair<list<string>, int>>& airportTrack) const;
+
+    /**
+    * @brief Finds the minimal number of airlines required for a set of flights.
+    *
+    * @details This method takes a list of flights, where each flight is represented as a list of airport codes,
+    * and determines the minimal number of different airlines required to cover the entire set of flights. It uses
+    * a greedy approach, considering each segment of the flights and selecting the airlines that have not been used
+    * previously. The result includes the minimal set of flights and the corresponding number of different airlines.
+    *
+    * @param flights A list of flights, where each flight is represented as a list of airport codes.
+    *
+    * @return A pair containing the minimal set of flights and the number of different airlines required.
+    *
+    * @details Time complexity: O(F * E * A), where F is the number of flights, E is the average number of edges
+    * (connections) per airport, and A is the average number of airlines per connection.
+    */
     pair<list<list<string>>, int> minimalAirlines(const list<list<string>>& flights) const;
     // Location
 
