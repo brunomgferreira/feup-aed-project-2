@@ -1,0 +1,140 @@
+\hypertarget{class_country}{}\doxysection{Country Class Reference}
+\label{class_country}\index{Country@{Country}}
+
+
+Class representing a country entity in the flight management system.  
+
+
+
+
+{\ttfamily \#include $<$Country.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_country_ac818810300e34f4c49bae2e4e47f6b70}{Country}} (const string \&name, const string \&city\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_country}{Country}} class. \end{DoxyCompactList}\item 
+const string \& \mbox{\hyperlink{class_country_ab2ae416fe1651886101a99e6d0c74486}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets the name of the country. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_country_abd1bce977ed20611fa6796bcb76ef0b4}{set\+Name}} (const string \&name)
+\begin{DoxyCompactList}\small\item\em Sets the name of the country. \end{DoxyCompactList}\item 
+const unordered\+\_\+set$<$ string $>$ \& \mbox{\hyperlink{class_country_a60fb5ec20a666c7e1069c39ff8befb53}{get\+Cities}} () const
+\begin{DoxyCompactList}\small\item\em Gets the set of cities in the country. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_country_ae2bca72fc852c56dfecf367d6355cc69}{add\+City}} (const string \&city\+Name)
+\begin{DoxyCompactList}\small\item\em Adds a new city to the country. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_country_a1f42aceabd0c79ebdd68764619e6bf2e}{set\+Cities}} (const unordered\+\_\+set$<$ string $>$ \&cities)
+\begin{DoxyCompactList}\small\item\em Sets the set of cities in the country. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_country_a4b51ef0ea54d74f9debaf596e4276f05}\label{class_country_a4b51ef0ea54d74f9debaf596e4276f05}} 
+string {\bfseries name}
+\item 
+\mbox{\Hypertarget{class_country_a81f73a2b9b6623ab3c52522e6fef094c}\label{class_country_a81f73a2b9b6623ab3c52522e6fef094c}} 
+unordered\+\_\+set$<$ string $>$ {\bfseries cities}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing a country entity in the flight management system. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_country_ac818810300e34f4c49bae2e4e47f6b70}\label{class_country_ac818810300e34f4c49bae2e4e47f6b70}} 
+\index{Country@{Country}!Country@{Country}}
+\index{Country@{Country}!Country@{Country}}
+\doxysubsubsection{\texorpdfstring{Country()}{Country()}}
+{\footnotesize\ttfamily Country\+::\+Country (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{const string \&}]{city\+Name }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{class_country}{Country}} class. 
+
+Initializes a \mbox{\hyperlink{class_country}{Country}} object with the given name and city.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the country. \\
+\hline
+{\em city\+Name} & The name of the initial city to be added to the country. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_country_ae2bca72fc852c56dfecf367d6355cc69}\label{class_country_ae2bca72fc852c56dfecf367d6355cc69}} 
+\index{Country@{Country}!addCity@{addCity}}
+\index{addCity@{addCity}!Country@{Country}}
+\doxysubsubsection{\texorpdfstring{addCity()}{addCity()}}
+{\footnotesize\ttfamily void Country\+::add\+City (\begin{DoxyParamCaption}\item[{const string \&}]{city\+Name }\end{DoxyParamCaption})}
+
+
+
+Adds a new city to the country. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city\+Name} & The name of the city to be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_country_a60fb5ec20a666c7e1069c39ff8befb53}\label{class_country_a60fb5ec20a666c7e1069c39ff8befb53}} 
+\index{Country@{Country}!getCities@{getCities}}
+\index{getCities@{getCities}!Country@{Country}}
+\doxysubsubsection{\texorpdfstring{getCities()}{getCities()}}
+{\footnotesize\ttfamily const unordered\+\_\+set$<$ string $>$ \& Country\+::get\+Cities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the set of cities in the country. 
+
+\begin{DoxyReturn}{Returns}
+The set of city names in the country. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_country_ab2ae416fe1651886101a99e6d0c74486}\label{class_country_ab2ae416fe1651886101a99e6d0c74486}} 
+\index{Country@{Country}!getName@{getName}}
+\index{getName@{getName}!Country@{Country}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const string \& Country\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the name of the country. 
+
+\begin{DoxyReturn}{Returns}
+The name of the country. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_country_a1f42aceabd0c79ebdd68764619e6bf2e}\label{class_country_a1f42aceabd0c79ebdd68764619e6bf2e}} 
+\index{Country@{Country}!setCities@{setCities}}
+\index{setCities@{setCities}!Country@{Country}}
+\doxysubsubsection{\texorpdfstring{setCities()}{setCities()}}
+{\footnotesize\ttfamily void Country\+::set\+Cities (\begin{DoxyParamCaption}\item[{const unordered\+\_\+set$<$ string $>$ \&}]{cities }\end{DoxyParamCaption})}
+
+
+
+Sets the set of cities in the country. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cities} & The set of city names to be set for the country. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_country_abd1bce977ed20611fa6796bcb76ef0b4}\label{class_country_abd1bce977ed20611fa6796bcb76ef0b4}} 
+\index{Country@{Country}!setName@{setName}}
+\index{setName@{setName}!Country@{Country}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Country\+::set\+Name (\begin{DoxyParamCaption}\item[{const string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Sets the name of the country. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The new name of the country. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Country.\+h\item 
+Country.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,106 @@
+\hypertarget{class_get_radius_state}{}\doxysection{Get\+Radius\+State Class Reference}
+\label{class_get_radius_state}\index{GetRadiusState@{GetRadiusState}}
+
+
+Class that represents a state for obtaining a radius as user input.  
+
+
+
+
+{\ttfamily \#include $<$Get\+Radius\+State.\+h$>$}
+
+
+
+Inheritance diagram for Get\+Radius\+State\+:
+% FIG 0
+
+
+Collaboration diagram for Get\+Radius\+State\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_get_radius_state_aa10855ac568fbc9987c6f6449128369b}{Get\+Radius\+State}} (\mbox{\hyperlink{class_state}{State}} $\ast$back\+State, function$<$ void(\mbox{\hyperlink{class_app}{App}} $\ast$, double)$>$ next\+State\+Callback)
+\begin{DoxyCompactList}\small\item\em Constructs an instance of \mbox{\hyperlink{class_get_radius_state}{Get\+Radius\+State}} with specified back state and callback function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_get_radius_state_aca7838c3aa730e22c54af1be27a5d13e}{display}} () const override
+\begin{DoxyCompactList}\small\item\em Displays a prompt for inserting a radius value in kilometers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_get_radius_state_a72c4b36bdcdd4fd1a21e788e9b17f441}{handle\+Input}} (\mbox{\hyperlink{class_app}{App}} $\ast$app) override
+\begin{DoxyCompactList}\small\item\em Handles user input for obtaining a radius value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_get_radius_state_a20a997984d84b77fbd7c91eaba662986}\label{class_get_radius_state_a20a997984d84b77fbd7c91eaba662986}} 
+\mbox{\hyperlink{class_state}{State}} $\ast$ {\bfseries back\+State}
+\item 
+\mbox{\Hypertarget{class_get_radius_state_aefa6d2743b4e3af284b32eb96badefe4}\label{class_get_radius_state_aefa6d2743b4e3af284b32eb96badefe4}} 
+function$<$ void(\mbox{\hyperlink{class_app}{App}} $\ast$, double)$>$ {\bfseries next\+State\+Callback}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that represents a state for obtaining a radius as user input. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_get_radius_state_aa10855ac568fbc9987c6f6449128369b}\label{class_get_radius_state_aa10855ac568fbc9987c6f6449128369b}} 
+\index{GetRadiusState@{GetRadiusState}!GetRadiusState@{GetRadiusState}}
+\index{GetRadiusState@{GetRadiusState}!GetRadiusState@{GetRadiusState}}
+\doxysubsubsection{\texorpdfstring{GetRadiusState()}{GetRadiusState()}}
+{\footnotesize\ttfamily Get\+Radius\+State\+::\+Get\+Radius\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state}{State}} $\ast$}]{back\+State,  }\item[{function$<$ void(\mbox{\hyperlink{class_app}{App}} $\ast$, double)$>$}]{next\+State\+Callback }\end{DoxyParamCaption})}
+
+
+
+Constructs an instance of \mbox{\hyperlink{class_get_radius_state}{Get\+Radius\+State}} with specified back state and callback function. 
+
+This constructor initializes an instance of the \mbox{\hyperlink{class_get_radius_state}{Get\+Radius\+State}} class with the given back state and a callback function for transitioning to the next state. The back state represents the state to which the application should return when the user chooses to go back from the current state. The callback function specifies the action to be performed in the next state, usually involving capturing a radius value from user input and proceeding to the next state with the captured information.
+
+
+\begin{DoxyParams}{Parameters}
+{\em back\+State} & A pointer to the state to which the application should return when the user chooses to go back. \\
+\hline
+{\em next\+State\+Callback} & A function defining the action to be performed in the next state, usually involving a radius value. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_get_radius_state_aca7838c3aa730e22c54af1be27a5d13e}\label{class_get_radius_state_aca7838c3aa730e22c54af1be27a5d13e}} 
+\index{GetRadiusState@{GetRadiusState}!display@{display}}
+\index{display@{display}!GetRadiusState@{GetRadiusState}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Get\+Radius\+State\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays a prompt for inserting a radius value in kilometers. 
+
+This method prints a prompt to the console, asking the user to insert a radius value in kilometers. The displayed prompt guides the user on the expected format for entering the radius. The user is expected to input a valid numerical value representing the radius in kilometers. 
+
+Implements \mbox{\hyperlink{class_state_adf38e0648b7705d04c39f40b763632bb}{State}}.
+
+\mbox{\Hypertarget{class_get_radius_state_a72c4b36bdcdd4fd1a21e788e9b17f441}\label{class_get_radius_state_a72c4b36bdcdd4fd1a21e788e9b17f441}} 
+\index{GetRadiusState@{GetRadiusState}!handleInput@{handleInput}}
+\index{handleInput@{handleInput}!GetRadiusState@{GetRadiusState}}
+\doxysubsubsection{\texorpdfstring{handleInput()}{handleInput()}}
+{\footnotesize\ttfamily void Get\+Radius\+State\+::handle\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app}{App}} $\ast$}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles user input for obtaining a radius value. 
+
+This method reads a line of input from the console, representing a radius value in kilometers. The method validates the entered input, ensuring it is a valid non-\/negative double. If the input is valid, the callback function is invoked with the captured radius value, and the application transitions to the next state accordingly. If the input is invalid, the user is prompted with an error message, and the state transitions to a \char`\"{}\+Try Again\char`\"{} state, allowing the user to make another attempt.
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & A pointer to the application instance. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a2b8ab1025a5ab2252a3bfdf0597a831f}{State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+States/\+Utils/Get\+Radius\+State.\+h\item 
+States/\+Utils/Get\+Radius\+State.\+cpp\end{DoxyCompactItemize}

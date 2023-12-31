@@ -1,0 +1,101 @@
+\hypertarget{class_minimize_airlines_state}{}\doxysection{Minimize\+Airlines\+State Class Reference}
+\label{class_minimize_airlines_state}\index{MinimizeAirlinesState@{MinimizeAirlinesState}}
+
+
+Class representing the state for minimizing airlines in the flight management system.  
+
+
+
+
+{\ttfamily \#include $<$Minimize\+Airlines\+State.\+h$>$}
+
+
+
+Inheritance diagram for Minimize\+Airlines\+State\+:
+% FIG 0
+
+
+Collaboration diagram for Minimize\+Airlines\+State\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_minimize_airlines_state_afedbc3d552ff829efd5162836f876898}{Minimize\+Airlines\+State}} (function$<$ void(\mbox{\hyperlink{class_app}{App}} $\ast$, bool)$>$ next\+State\+Callback)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{class_minimize_airlines_state}{Minimize\+Airlines\+State}} object with a callback for the next state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_minimize_airlines_state_a570a94e03044bfcd9b7e1947f44a91b2}{display}} () const override
+\begin{DoxyCompactList}\small\item\em Displays a prompt for user input regarding airline minimization. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_minimize_airlines_state_a354c0db8cfb0c41e406f36fe3a241f0f}{handle\+Input}} (\mbox{\hyperlink{class_app}{App}} $\ast$app) override
+\begin{DoxyCompactList}\small\item\em Handles user input for airline minimization prompt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_minimize_airlines_state_af26bca0b62ccdb059193d2f9d2f45da3}\label{class_minimize_airlines_state_af26bca0b62ccdb059193d2f9d2f45da3}} 
+function$<$ void(\mbox{\hyperlink{class_app}{App}} $\ast$, bool)$>$ {\bfseries next\+State\+Callback}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing the state for minimizing airlines in the flight management system. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_minimize_airlines_state_afedbc3d552ff829efd5162836f876898}\label{class_minimize_airlines_state_afedbc3d552ff829efd5162836f876898}} 
+\index{MinimizeAirlinesState@{MinimizeAirlinesState}!MinimizeAirlinesState@{MinimizeAirlinesState}}
+\index{MinimizeAirlinesState@{MinimizeAirlinesState}!MinimizeAirlinesState@{MinimizeAirlinesState}}
+\doxysubsubsection{\texorpdfstring{MinimizeAirlinesState()}{MinimizeAirlinesState()}}
+{\footnotesize\ttfamily Minimize\+Airlines\+State\+::\+Minimize\+Airlines\+State (\begin{DoxyParamCaption}\item[{function$<$ void(\mbox{\hyperlink{class_app}{App}} $\ast$, bool)$>$}]{next\+State\+Callback }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{class_minimize_airlines_state}{Minimize\+Airlines\+State}} object with a callback for the next state. 
+
+This constructor initializes a \mbox{\hyperlink{class_minimize_airlines_state}{Minimize\+Airlines\+State}} object with a callback function that will be executed in the next state. The callback function takes a pointer to the application instance and a boolean parameter indicating whether to minimize airlines or not. This state is typically used to prompt the user for minimizing or not minimizing airlines in the context of flight-\/related queries.
+
+
+\begin{DoxyParams}{Parameters}
+{\em next\+State\+Callback} & A function that takes an \mbox{\hyperlink{class_app}{App}} pointer and a boolean parameter, representing the callback to be executed in the next state. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_minimize_airlines_state_a570a94e03044bfcd9b7e1947f44a91b2}\label{class_minimize_airlines_state_a570a94e03044bfcd9b7e1947f44a91b2}} 
+\index{MinimizeAirlinesState@{MinimizeAirlinesState}!display@{display}}
+\index{display@{display}!MinimizeAirlinesState@{MinimizeAirlinesState}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Minimize\+Airlines\+State\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays a prompt for user input regarding airline minimization. 
+
+This method prints a prompt to the console, asking the user whether they want to show only flights with the minimum number of different airlines. The user is expected to respond with \textquotesingle{}s\textquotesingle{} for yes or \textquotesingle{}n\textquotesingle{} for no. 
+
+Implements \mbox{\hyperlink{class_state_adf38e0648b7705d04c39f40b763632bb}{State}}.
+
+\mbox{\Hypertarget{class_minimize_airlines_state_a354c0db8cfb0c41e406f36fe3a241f0f}\label{class_minimize_airlines_state_a354c0db8cfb0c41e406f36fe3a241f0f}} 
+\index{MinimizeAirlinesState@{MinimizeAirlinesState}!handleInput@{handleInput}}
+\index{handleInput@{handleInput}!MinimizeAirlinesState@{MinimizeAirlinesState}}
+\doxysubsubsection{\texorpdfstring{handleInput()}{handleInput()}}
+{\footnotesize\ttfamily void Minimize\+Airlines\+State\+::handle\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app}{App}} $\ast$}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles user input for airline minimization prompt. 
+
+This method reads a user\textquotesingle{}s input from the console and processes it based on the chosen option. Users can input a single character (\textquotesingle{}s\textquotesingle{} for yes or \textquotesingle{}n\textquotesingle{} for no). The method then calls the callback function with the appropriate boolean parameter to indicate the user\textquotesingle{}s choice. It provides error messages for invalid inputs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & A pointer to the application instance. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a2b8ab1025a5ab2252a3bfdf0597a831f}{State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+States/\+Utils/Minimize\+Airlines\+State.\+h\item 
+States/\+Utils/Minimize\+Airlines\+State.\+cpp\end{DoxyCompactItemize}

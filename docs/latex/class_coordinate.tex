@@ -1,0 +1,121 @@
+\hypertarget{class_coordinate}{}\doxysection{Coordinate Class Reference}
+\label{class_coordinate}\index{Coordinate@{Coordinate}}
+
+
+Class representing geographical coordinates in the flight management system.  
+
+
+
+
+{\ttfamily \#include $<$Coordinate.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_coordinate_aac6f323a685fc1e88fbea9c86f1e600d}{Coordinate}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{class_coordinate}{Coordinate}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_coordinate_a1035ece2a0f4081ecc34fcaa020cfc04}{Coordinate}} (double latitude, double longitude)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for the \mbox{\hyperlink{class_coordinate}{Coordinate}} class. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_coordinate_a864e4dc23d8f0e2cdf8510557bdd946d}{get\+Latitude}} () const
+\begin{DoxyCompactList}\small\item\em Gets the latitude value of the coordinate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_coordinate_ac49dfc528b35bb76e376ea696213e8a4}{get\+Longitude}} () const
+\begin{DoxyCompactList}\small\item\em Gets the longitude value of the coordinate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_coordinate_ae5ba91f53e329a2e84651fa5f6e0a30b}{distance\+To}} (const \mbox{\hyperlink{class_coordinate}{Coordinate}} \&coordinate) const
+\begin{DoxyCompactList}\small\item\em Calculates the great-\/circle distance between two coordinates using the Haversine formula. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_coordinate_a3e326abad267cf9d16c856e5b5df7c96}\label{class_coordinate_a3e326abad267cf9d16c856e5b5df7c96}} 
+double {\bfseries latitude}
+\item 
+\mbox{\Hypertarget{class_coordinate_af1c6225b4860496ca54e15803c287d12}\label{class_coordinate_af1c6225b4860496ca54e15803c287d12}} 
+double {\bfseries longitude}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing geographical coordinates in the flight management system. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_coordinate_aac6f323a685fc1e88fbea9c86f1e600d}\label{class_coordinate_aac6f323a685fc1e88fbea9c86f1e600d}} 
+\index{Coordinate@{Coordinate}!Coordinate@{Coordinate}}
+\index{Coordinate@{Coordinate}!Coordinate@{Coordinate}}
+\doxysubsubsection{\texorpdfstring{Coordinate()}{Coordinate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Coordinate\+::\+Coordinate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \mbox{\hyperlink{class_coordinate}{Coordinate}} class. 
+
+Initializes a \mbox{\hyperlink{class_coordinate}{Coordinate}} object with latitude and longitude set to 0. \mbox{\Hypertarget{class_coordinate_a1035ece2a0f4081ecc34fcaa020cfc04}\label{class_coordinate_a1035ece2a0f4081ecc34fcaa020cfc04}} 
+\index{Coordinate@{Coordinate}!Coordinate@{Coordinate}}
+\index{Coordinate@{Coordinate}!Coordinate@{Coordinate}}
+\doxysubsubsection{\texorpdfstring{Coordinate()}{Coordinate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Coordinate\+::\+Coordinate (\begin{DoxyParamCaption}\item[{double}]{latitude,  }\item[{double}]{longitude }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor for the \mbox{\hyperlink{class_coordinate}{Coordinate}} class. 
+
+Initializes a \mbox{\hyperlink{class_coordinate}{Coordinate}} object with the given latitude and longitude values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em latitude} & The latitude value in degrees. \\
+\hline
+{\em longitude} & The longitude value in degrees. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_coordinate_ae5ba91f53e329a2e84651fa5f6e0a30b}\label{class_coordinate_ae5ba91f53e329a2e84651fa5f6e0a30b}} 
+\index{Coordinate@{Coordinate}!distanceTo@{distanceTo}}
+\index{distanceTo@{distanceTo}!Coordinate@{Coordinate}}
+\doxysubsubsection{\texorpdfstring{distanceTo()}{distanceTo()}}
+{\footnotesize\ttfamily double Coordinate\+::distance\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_coordinate}{Coordinate}} \&}]{coordinate }\end{DoxyParamCaption}) const}
+
+
+
+Calculates the great-\/circle distance between two coordinates using the Haversine formula. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coordinate} & The target coordinate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance between the two coordinates in kilometers. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_coordinate_a864e4dc23d8f0e2cdf8510557bdd946d}\label{class_coordinate_a864e4dc23d8f0e2cdf8510557bdd946d}} 
+\index{Coordinate@{Coordinate}!getLatitude@{getLatitude}}
+\index{getLatitude@{getLatitude}!Coordinate@{Coordinate}}
+\doxysubsubsection{\texorpdfstring{getLatitude()}{getLatitude()}}
+{\footnotesize\ttfamily double Coordinate\+::get\+Latitude (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the latitude value of the coordinate. 
+
+\begin{DoxyReturn}{Returns}
+The latitude value in degrees. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_coordinate_ac49dfc528b35bb76e376ea696213e8a4}\label{class_coordinate_ac49dfc528b35bb76e376ea696213e8a4}} 
+\index{Coordinate@{Coordinate}!getLongitude@{getLongitude}}
+\index{getLongitude@{getLongitude}!Coordinate@{Coordinate}}
+\doxysubsubsection{\texorpdfstring{getLongitude()}{getLongitude()}}
+{\footnotesize\ttfamily double Coordinate\+::get\+Longitude (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the longitude value of the coordinate. 
+
+\begin{DoxyReturn}{Returns}
+The longitude value in degrees. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Coordinate.\+h\item 
+Coordinate.\+cpp\end{DoxyCompactItemize}

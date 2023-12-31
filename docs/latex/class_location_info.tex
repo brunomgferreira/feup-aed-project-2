@@ -1,0 +1,181 @@
+\hypertarget{class_location_info}{}\doxysection{Location\+Info Class Reference}
+\label{class_location_info}\index{LocationInfo@{LocationInfo}}
+
+
+Class representing information about a location, including its type, details, coordinates, and radius.  
+
+
+
+
+{\ttfamily \#include $<$Location\+Info.\+h$>$}
+
+
+
+Collaboration diagram for Location\+Info\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_location_info_aba187f74d1a30d1669ab6bb63f26fcfb}{Location\+Info}} (int type, const std\+::string \&info)
+\begin{DoxyCompactList}\small\item\em Constructs an instance of \mbox{\hyperlink{class_location_info}{Location\+Info}} for types 1-\/3. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_location_info_ac11f1f8883c3d817e4c5c4793be9e132}{Location\+Info}} (int type, \mbox{\hyperlink{class_coordinate}{Coordinate}} coordinate)
+\begin{DoxyCompactList}\small\item\em Constructs an instance of \mbox{\hyperlink{class_location_info}{Location\+Info}} for type 4 (Coordinates). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_location_info_a5d4a1def1e1fd39d5914260adafdf2d1}{Location\+Info}} (int type, \mbox{\hyperlink{class_coordinate}{Coordinate}} coordinate, double radius)
+\begin{DoxyCompactList}\small\item\em Constructs an instance of \mbox{\hyperlink{class_location_info}{Location\+Info}} for type 5 (Coordinates \& Radius). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_location_info_a427df53c39c0beaa53f4d3ea859e8325}{get\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the type of the \mbox{\hyperlink{class_location_info}{Location\+Info}} object. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_location_info_a81544f36ea73e451000275016e652a91}{get\+Info}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the information stored in the \mbox{\hyperlink{class_location_info}{Location\+Info}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_coordinate}{Coordinate}} \mbox{\hyperlink{class_location_info_a6d8ab2b5749ade96c7ac8f2dc99c298a}{get\+Coordinate}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the \mbox{\hyperlink{class_coordinate}{Coordinate}} object associated with the \mbox{\hyperlink{class_location_info}{Location\+Info}} object. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_location_info_af967e3984807c926b1ed82ba62a59da7}{get\+Radius}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the radius associated with the \mbox{\hyperlink{class_location_info}{Location\+Info}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_location_info_aaa3a0e6eac382b9b72eb3417c7ce7355}\label{class_location_info_aaa3a0e6eac382b9b72eb3417c7ce7355}} 
+int {\bfseries type}
+\item 
+\mbox{\Hypertarget{class_location_info_a7a7bf5c3601d58314e6d61133e5c18e9}\label{class_location_info_a7a7bf5c3601d58314e6d61133e5c18e9}} 
+std\+::string {\bfseries info}
+\item 
+\mbox{\Hypertarget{class_location_info_a71539c3274dc129296b6fb3becdb4ac9}\label{class_location_info_a71539c3274dc129296b6fb3becdb4ac9}} 
+\mbox{\hyperlink{class_coordinate}{Coordinate}} {\bfseries coordinate}
+\item 
+\mbox{\Hypertarget{class_location_info_adefc6f079d18e188a469efe7f966d38d}\label{class_location_info_adefc6f079d18e188a469efe7f966d38d}} 
+double {\bfseries radius}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing information about a location, including its type, details, coordinates, and radius. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_location_info_aba187f74d1a30d1669ab6bb63f26fcfb}\label{class_location_info_aba187f74d1a30d1669ab6bb63f26fcfb}} 
+\index{LocationInfo@{LocationInfo}!LocationInfo@{LocationInfo}}
+\index{LocationInfo@{LocationInfo}!LocationInfo@{LocationInfo}}
+\doxysubsubsection{\texorpdfstring{LocationInfo()}{LocationInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Location\+Info\+::\+Location\+Info (\begin{DoxyParamCaption}\item[{int}]{type,  }\item[{const std\+::string \&}]{info }\end{DoxyParamCaption})}
+
+
+
+Constructs an instance of \mbox{\hyperlink{class_location_info}{Location\+Info}} for types 1-\/3. 
+
+This constructor initializes an instance of the \mbox{\hyperlink{class_location_info}{Location\+Info}} class with the specified type and information. For types 1-\/3, the constructor takes an integer type (representing the location type) and a string info (representing the specific information about the location, such as airport code, city name, or country name). This constructor is designed to create \mbox{\hyperlink{class_location_info}{Location\+Info}} objects for different types of locations, allowing flexibility in capturing location details.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & An integer representing the type of location (1 for airport, 2 for city, 3 for country). \\
+\hline
+{\em info} & A string containing specific information about the location (e.\+g., airport code, city name, country name). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_location_info_ac11f1f8883c3d817e4c5c4793be9e132}\label{class_location_info_ac11f1f8883c3d817e4c5c4793be9e132}} 
+\index{LocationInfo@{LocationInfo}!LocationInfo@{LocationInfo}}
+\index{LocationInfo@{LocationInfo}!LocationInfo@{LocationInfo}}
+\doxysubsubsection{\texorpdfstring{LocationInfo()}{LocationInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Location\+Info\+::\+Location\+Info (\begin{DoxyParamCaption}\item[{int}]{type,  }\item[{\mbox{\hyperlink{class_coordinate}{Coordinate}}}]{coordinate }\end{DoxyParamCaption})}
+
+
+
+Constructs an instance of \mbox{\hyperlink{class_location_info}{Location\+Info}} for type 4 (Coordinates). 
+
+This constructor initializes an instance of the \mbox{\hyperlink{class_location_info}{Location\+Info}} class with the specified type and coordinates. For type 4 (Coordinates), the constructor takes an integer type (representing the location type) and a \mbox{\hyperlink{class_coordinate}{Coordinate}} object containing latitude and longitude information. This constructor is designed to create \mbox{\hyperlink{class_location_info}{Location\+Info}} objects for locations specified by coordinates, providing a way to capture geographic information for certain operations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & An integer representing the type of location (4 for coordinates). \\
+\hline
+{\em coordinate} & A \mbox{\hyperlink{class_coordinate}{Coordinate}} object containing latitude and longitude information for the location. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_location_info_a5d4a1def1e1fd39d5914260adafdf2d1}\label{class_location_info_a5d4a1def1e1fd39d5914260adafdf2d1}} 
+\index{LocationInfo@{LocationInfo}!LocationInfo@{LocationInfo}}
+\index{LocationInfo@{LocationInfo}!LocationInfo@{LocationInfo}}
+\doxysubsubsection{\texorpdfstring{LocationInfo()}{LocationInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Location\+Info\+::\+Location\+Info (\begin{DoxyParamCaption}\item[{int}]{type,  }\item[{\mbox{\hyperlink{class_coordinate}{Coordinate}}}]{coordinate,  }\item[{double}]{radius }\end{DoxyParamCaption})}
+
+
+
+Constructs an instance of \mbox{\hyperlink{class_location_info}{Location\+Info}} for type 5 (Coordinates \& Radius). 
+
+This constructor initializes an instance of the \mbox{\hyperlink{class_location_info}{Location\+Info}} class with the specified type, coordinates, and radius. For type 5 (Coordinates \& Radius), the constructor takes an integer type (representing the location type), a \mbox{\hyperlink{class_coordinate}{Coordinate}} object containing latitude and longitude information, and a double radius. This constructor is designed to create \mbox{\hyperlink{class_location_info}{Location\+Info}} objects for locations specified by coordinates with an associated search radius, enabling operations that involve a geographical area.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & An integer representing the type of location (5 for coordinates \& radius). \\
+\hline
+{\em coordinate} & A \mbox{\hyperlink{class_coordinate}{Coordinate}} object containing latitude and longitude information for the location. \\
+\hline
+{\em radius} & A double representing the search radius associated with the location. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_location_info_a6d8ab2b5749ade96c7ac8f2dc99c298a}\label{class_location_info_a6d8ab2b5749ade96c7ac8f2dc99c298a}} 
+\index{LocationInfo@{LocationInfo}!getCoordinate@{getCoordinate}}
+\index{getCoordinate@{getCoordinate}!LocationInfo@{LocationInfo}}
+\doxysubsubsection{\texorpdfstring{getCoordinate()}{getCoordinate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_coordinate}{Coordinate}} Location\+Info\+::get\+Coordinate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the \mbox{\hyperlink{class_coordinate}{Coordinate}} object associated with the \mbox{\hyperlink{class_location_info}{Location\+Info}} object. 
+
+This method returns the \mbox{\hyperlink{class_coordinate}{Coordinate}} object stored in the \mbox{\hyperlink{class_location_info}{Location\+Info}} object. The \mbox{\hyperlink{class_coordinate}{Coordinate}} object contains latitude and longitude information for locations represented by coordinates (types 4 and 5). For other location types, this method may return a default or undefined \mbox{\hyperlink{class_coordinate}{Coordinate}} object.
+
+\begin{DoxyReturn}{Returns}
+A \mbox{\hyperlink{class_coordinate}{Coordinate}} object containing latitude and longitude information for the location (or a default object if not applicable). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_location_info_a81544f36ea73e451000275016e652a91}\label{class_location_info_a81544f36ea73e451000275016e652a91}} 
+\index{LocationInfo@{LocationInfo}!getInfo@{getInfo}}
+\index{getInfo@{getInfo}!LocationInfo@{LocationInfo}}
+\doxysubsubsection{\texorpdfstring{getInfo()}{getInfo()}}
+{\footnotesize\ttfamily string Location\+Info\+::get\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the information stored in the \mbox{\hyperlink{class_location_info}{Location\+Info}} object. 
+
+This method returns the information associated with the \mbox{\hyperlink{class_location_info}{Location\+Info}} object. The nature of the information depends on the type of the location. For types 1-\/3, it represents the airport code, city name, or country name. For types 4-\/5, it may be an empty string as the actual information is stored in the \mbox{\hyperlink{class_coordinate}{Coordinate}} object.
+
+\begin{DoxyReturn}{Returns}
+A string containing the information associated with the \mbox{\hyperlink{class_location_info}{Location\+Info}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_location_info_af967e3984807c926b1ed82ba62a59da7}\label{class_location_info_af967e3984807c926b1ed82ba62a59da7}} 
+\index{LocationInfo@{LocationInfo}!getRadius@{getRadius}}
+\index{getRadius@{getRadius}!LocationInfo@{LocationInfo}}
+\doxysubsubsection{\texorpdfstring{getRadius()}{getRadius()}}
+{\footnotesize\ttfamily double Location\+Info\+::get\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the radius associated with the \mbox{\hyperlink{class_location_info}{Location\+Info}} object. 
+
+This method returns the radius stored in the \mbox{\hyperlink{class_location_info}{Location\+Info}} object. The radius is relevant for locations represented by coordinates with a specified radius (type 5). For other location types, this method may return a default or undefined radius value.
+
+\begin{DoxyReturn}{Returns}
+A double representing the radius associated with the location (or a default value if not applicable). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_location_info_a427df53c39c0beaa53f4d3ea859e8325}\label{class_location_info_a427df53c39c0beaa53f4d3ea859e8325}} 
+\index{LocationInfo@{LocationInfo}!getType@{getType}}
+\index{getType@{getType}!LocationInfo@{LocationInfo}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily int Location\+Info\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the type of the \mbox{\hyperlink{class_location_info}{Location\+Info}} object. 
+
+This method returns the type of the \mbox{\hyperlink{class_location_info}{Location\+Info}} object. The type represents the category or format of the location information stored in the object. It allows the program to distinguish between different types of locations, such as airports, cities, countries, or coordinates with or without a radius.
+
+\begin{DoxyReturn}{Returns}
+An integer representing the type of the \mbox{\hyperlink{class_location_info}{Location\+Info}} object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+States/\+Utils/Location\+Info.\+h\item 
+States/\+Utils/Location\+Info.\+cpp\end{DoxyCompactItemize}

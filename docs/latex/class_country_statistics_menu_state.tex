@@ -1,0 +1,101 @@
+\hypertarget{class_country_statistics_menu_state}{}\doxysection{Country\+Statistics\+Menu\+State Class Reference}
+\label{class_country_statistics_menu_state}\index{CountryStatisticsMenuState@{CountryStatisticsMenuState}}
+
+
+Class that represents the menu state for displaying and handling the country statistics options.  
+
+
+
+
+{\ttfamily \#include $<$Country\+Statistics\+Menu\+State.\+h$>$}
+
+
+
+Inheritance diagram for Country\+Statistics\+Menu\+State\+:
+% FIG 0
+
+
+Collaboration diagram for Country\+Statistics\+Menu\+State\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_country_statistics_menu_state_aded0c942ed087be075bc53a03cabe78d}{Country\+Statistics\+Menu\+State}} (string country\+Name)
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{class_country}{Country}} Statistics Menu state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_country_statistics_menu_state_ab20a883b10dca46d927cbb1fd7959601}{display}} () const override
+\begin{DoxyCompactList}\small\item\em Displays the menu for country-\/specific statistics. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_country_statistics_menu_state_adde73bd3b5018fd7a84eafdd6b517a89}{handle\+Input}} (\mbox{\hyperlink{class_app}{App}} $\ast$app) override
+\begin{DoxyCompactList}\small\item\em Handles user input for country-\/specific statistics menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_country_statistics_menu_state_a13b968a88c82c946458b939571959b93}\label{class_country_statistics_menu_state_a13b968a88c82c946458b939571959b93}} 
+string {\bfseries country\+Name}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that represents the menu state for displaying and handling the country statistics options. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_country_statistics_menu_state_aded0c942ed087be075bc53a03cabe78d}\label{class_country_statistics_menu_state_aded0c942ed087be075bc53a03cabe78d}} 
+\index{CountryStatisticsMenuState@{CountryStatisticsMenuState}!CountryStatisticsMenuState@{CountryStatisticsMenuState}}
+\index{CountryStatisticsMenuState@{CountryStatisticsMenuState}!CountryStatisticsMenuState@{CountryStatisticsMenuState}}
+\doxysubsubsection{\texorpdfstring{CountryStatisticsMenuState()}{CountryStatisticsMenuState()}}
+{\footnotesize\ttfamily Country\+Statistics\+Menu\+State\+::\+Country\+Statistics\+Menu\+State (\begin{DoxyParamCaption}\item[{string}]{country\+Name }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \mbox{\hyperlink{class_country}{Country}} Statistics Menu state. 
+
+This constructor initializes a \mbox{\hyperlink{class_country_statistics_menu_state}{Country\+Statistics\+Menu\+State}} with the specified country name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em country\+Name} & The name of the country for which statistics will be displayed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_country_statistics_menu_state_ab20a883b10dca46d927cbb1fd7959601}\label{class_country_statistics_menu_state_ab20a883b10dca46d927cbb1fd7959601}} 
+\index{CountryStatisticsMenuState@{CountryStatisticsMenuState}!display@{display}}
+\index{display@{display}!CountryStatisticsMenuState@{CountryStatisticsMenuState}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Country\+Statistics\+Menu\+State\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the menu for country-\/specific statistics. 
+
+This method prints the menu for country-\/specific statistics to the console. It includes options for displaying the number of airports, cities, airlines, flights, and destinations for the specified country. Additionally, it provides options for finding reachable destinations with a maximum number of stops, returning to the statistics menu, or going back to the main menu. 
+
+Implements \mbox{\hyperlink{class_state_adf38e0648b7705d04c39f40b763632bb}{State}}.
+
+\mbox{\Hypertarget{class_country_statistics_menu_state_adde73bd3b5018fd7a84eafdd6b517a89}\label{class_country_statistics_menu_state_adde73bd3b5018fd7a84eafdd6b517a89}} 
+\index{CountryStatisticsMenuState@{CountryStatisticsMenuState}!handleInput@{handleInput}}
+\index{handleInput@{handleInput}!CountryStatisticsMenuState@{CountryStatisticsMenuState}}
+\doxysubsubsection{\texorpdfstring{handleInput()}{handleInput()}}
+{\footnotesize\ttfamily void Country\+Statistics\+Menu\+State\+::handle\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app}{App}} $\ast$}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles user input for country-\/specific statistics menu. 
+
+This method reads a user\textquotesingle{}s choice from the console and performs the corresponding action based on the selected option. It allows the user to view the number of airports, cities, airlines, flights, and destinations for the specified country. Additionally, it provides an option to find reachable destinations with a maximum number of stops, return to the statistics menu, or go back to the main menu.
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & A pointer to the application instance. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a2b8ab1025a5ab2252a3bfdf0597a831f}{State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+States/\+Statistics/\+Country/Country\+Statistics\+Menu\+State.\+h\item 
+States/\+Statistics/\+Country/Country\+Statistics\+Menu\+State.\+cpp\end{DoxyCompactItemize}

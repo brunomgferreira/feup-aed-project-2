@@ -1,0 +1,88 @@
+\hypertarget{class_get_flight_origin_menu_state}{}\doxysection{Get\+Flight\+Origin\+Menu\+State Class Reference}
+\label{class_get_flight_origin_menu_state}\index{GetFlightOriginMenuState@{GetFlightOriginMenuState}}
+
+
+Class that represents the menu state for displaying and handling the get flight origin options.  
+
+
+
+
+{\ttfamily \#include $<$Get\+Flight\+Origin\+Menu\+State.\+h$>$}
+
+
+
+Inheritance diagram for Get\+Flight\+Origin\+Menu\+State\+:
+% FIG 0
+
+
+Collaboration diagram for Get\+Flight\+Origin\+Menu\+State\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_get_flight_origin_menu_state_a1d590e1b001f22b18817f0285b178174}{Get\+Flight\+Origin\+Menu\+State}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the Get Flight Origin Menu state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_get_flight_origin_menu_state_a03f7fc6d2f44799eb0fc671b7599550d}{display}} () const override
+\begin{DoxyCompactList}\small\item\em Displays the menu for selecting the type of origin for flight retrieval. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_get_flight_origin_menu_state_a0378fe0c159d9dad5986583f1682c738}{handle\+Input}} (\mbox{\hyperlink{class_app}{App}} $\ast$app) override
+\begin{DoxyCompactList}\small\item\em Handles user input for selecting the type of origin for flight retrieval. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that represents the menu state for displaying and handling the get flight origin options. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_get_flight_origin_menu_state_a1d590e1b001f22b18817f0285b178174}\label{class_get_flight_origin_menu_state_a1d590e1b001f22b18817f0285b178174}} 
+\index{GetFlightOriginMenuState@{GetFlightOriginMenuState}!GetFlightOriginMenuState@{GetFlightOriginMenuState}}
+\index{GetFlightOriginMenuState@{GetFlightOriginMenuState}!GetFlightOriginMenuState@{GetFlightOriginMenuState}}
+\doxysubsubsection{\texorpdfstring{GetFlightOriginMenuState()}{GetFlightOriginMenuState()}}
+{\footnotesize\ttfamily Get\+Flight\+Origin\+Menu\+State\+::\+Get\+Flight\+Origin\+Menu\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the Get Flight Origin Menu state. 
+
+This constructor initializes an instance of the \mbox{\hyperlink{class_get_flight_origin_menu_state}{Get\+Flight\+Origin\+Menu\+State}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_get_flight_origin_menu_state_a03f7fc6d2f44799eb0fc671b7599550d}\label{class_get_flight_origin_menu_state_a03f7fc6d2f44799eb0fc671b7599550d}} 
+\index{GetFlightOriginMenuState@{GetFlightOriginMenuState}!display@{display}}
+\index{display@{display}!GetFlightOriginMenuState@{GetFlightOriginMenuState}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Get\+Flight\+Origin\+Menu\+State\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the menu for selecting the type of origin for flight retrieval. 
+
+This method prints the menu to the console, allowing users to choose the type of origin when retrieving flight information. The displayed menu includes options such as selecting an airport, city, country, coordinates, or coordinates with a radius. Users can input a corresponding numeric option, and the method visually enhances the menu with color formatting. The menu also provides an option to return to the main menu. 
+
+Implements \mbox{\hyperlink{class_state_adf38e0648b7705d04c39f40b763632bb}{State}}.
+
+\mbox{\Hypertarget{class_get_flight_origin_menu_state_a0378fe0c159d9dad5986583f1682c738}\label{class_get_flight_origin_menu_state_a0378fe0c159d9dad5986583f1682c738}} 
+\index{GetFlightOriginMenuState@{GetFlightOriginMenuState}!handleInput@{handleInput}}
+\index{handleInput@{handleInput}!GetFlightOriginMenuState@{GetFlightOriginMenuState}}
+\doxysubsubsection{\texorpdfstring{handleInput()}{handleInput()}}
+{\footnotesize\ttfamily void Get\+Flight\+Origin\+Menu\+State\+::handle\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app}{App}} $\ast$}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles user input for selecting the type of origin for flight retrieval. 
+
+This method reads a user\textquotesingle{}s input from the console and processes it based on the chosen option. Users can input a single character corresponding to the desired option (1-\/5 or \textquotesingle{}q\textquotesingle{} for Main Menu). The method then transitions to the appropriate state based on the user\textquotesingle{}s choice, capturing relevant information such as airport code, city name, country name, coordinates, or coordinates with a radius. The captured information is used to set up the next state for flight destination selection. Error messages are displayed for invalid inputs, and the state may transition accordingly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & A pointer to the application instance. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a2b8ab1025a5ab2252a3bfdf0597a831f}{State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+States/\+Get\+Flight/Get\+Flight\+Origin\+Menu\+State.\+h\item 
+States/\+Get\+Flight/Get\+Flight\+Origin\+Menu\+State.\+cpp\end{DoxyCompactItemize}
