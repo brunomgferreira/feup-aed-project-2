@@ -784,27 +784,32 @@ void Data::getFlights(const LocationInfo &originLocation, const LocationInfo &de
 
     if (bestFlights.empty()){
         cout << ">> Not able to find any flights..." << endl;
-        return;
-    }
+    }else{
 
-    cout << ">> Top flights found: " << bestFlights.size() << endl;
+    }if (minSizeFlight == 0){
+        cout << ">> Origin and destiny locations coincide, no need to take any flight :)" << endl;
+    }else{
+
+        cout << ">> Top flights found: " << bestFlights.size() << endl;
 
 
-    if (minimizeAirlines) {
-        pair<list<list<string>>, int> minimizedAirlines = minimalAirlines(bestFlights);
-        bestFlights = minimizedAirlines.first;
-        int minNumberAirlines = minimizedAirlines.second;
-        cout << "   Minimal number of airlines: " << minNumberAirlines << endl;
-    }
-
-    for (const auto & flight : bestFlights){
-        cout << "   ";
-        auto airport = flight.begin();
-        while (next(airport, 1) != flight.end()){
-            cout << *airport++ << " - ";
+        if (minimizeAirlines) {
+            pair<list<list<string>>, int> minimizedAirlines = minimalAirlines(bestFlights);
+            bestFlights = minimizedAirlines.first;
+            int minNumberAirlines = minimizedAirlines.second;
+            cout << "   Minimal number of airlines: " << minNumberAirlines << endl;
         }
-        cout << *airport << endl;
+
+        for (const auto & flight : bestFlights){
+            cout << "   ";
+            auto airport = flight.begin();
+            while (next(airport, 1) != flight.end()){
+                cout << *airport++ << " - ";
+            }
+            cout << *airport << endl;
+        }
     }
+
 
     cout << "\033[35m";
     cout << "-------------------------------------------------" << endl;
