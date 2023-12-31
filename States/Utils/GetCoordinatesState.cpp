@@ -6,7 +6,7 @@ GetCoordinatesState::GetCoordinatesState(State* backState, function<void(App*, c
     : nextStateCallback(nextStateCallback), backState(backState){}
 
 void GetCoordinatesState::display() const {
-    cout << "Insert coordinates [e.g 13.24,65.13] : ";
+    cout << "Insert coordinates [e.g -13.241,65.0337] : ";
 }
 
 void GetCoordinatesState::handleInput(App* app) {

@@ -102,6 +102,15 @@ public:
     * @return A double representing the radius associated with the location (or a default value if not applicable).
     */
     double getRadius() const;
+
+    /**
+    * @brief Retrieves the location in a string format.
+    *
+    * @details This method returns the string format of the location considering of what type it is.
+    *
+    * @return A string representing the location.
+    */
+    string toString() const;
 };
 
 

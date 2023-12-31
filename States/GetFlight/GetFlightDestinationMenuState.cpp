@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "GetFlightDestinationMenuState.h"
 #include "GetFlightFilterMenuState.h"
 #include "States/MainMenuState.h"
@@ -15,6 +16,10 @@ GetFlightDestinationMenuState::GetFlightDestinationMenuState(const LocationInfo&
 void GetFlightDestinationMenuState::display() const {
 
     cout <<"\033[94m" << "===== TYPE OF DESTINY =====" << "\033[0;0m" << endl;
+    cout << "\033[93m";
+    cout <<  setw(13+originInfo.toString().size()/2)<<  originInfo.toString() << endl;
+    cout << setw(14) << "\uEA9A" << endl;
+    cout << "\033[0m";
     cout << "   1. Airport    " << endl;
     cout << "   2. City     " << endl;
     cout << "   3. Country  " << endl;

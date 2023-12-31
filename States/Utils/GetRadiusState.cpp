@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 #include "GetRadiusState.h"
 #include "TryAgainState.h"
 
@@ -11,7 +12,6 @@ void GetRadiusState::display() const {
 
 void GetRadiusState::handleInput(App* app) {
     string inputRadius;
-    std::cin.ignore();
     std::getline(std::cin, inputRadius);
 
     double radius;
