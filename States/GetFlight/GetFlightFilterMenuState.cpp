@@ -27,7 +27,7 @@ void GetFlightFilterMenuState::handleInput(App* app) {
             case '1':
                 cout << "Executing Option 1. Set of airlines" << endl;
                 app->setState(new GetAirlineSetState(this, [&](App *app,  unordered_set<string> airlineSet){
-                    app->setState(new MinimizeAirlinesState([&](App *app, bool minimizeAirlines){
+                    app->setState(new MinimizeAirlinesState([&, airlineSet](App *app, bool minimizeAirlines){
                         app->getData()->getFlights(originInfo, destinationInfo, airlineSet, false, minimizeAirlines);
                         PressEnterToContinue();
                         app->setState(new MainMenuState());
@@ -37,7 +37,7 @@ void GetFlightFilterMenuState::handleInput(App* app) {
             case '2':
                 cout << "Executing Option 2. Set of unwanted airlines" << endl;
                 app->setState(new GetAirlineSetState(this, [&](App *app,  unordered_set<string> airlineSet){
-                    app->setState(new MinimizeAirlinesState([&](App *app, bool minimizeAirlines){
+                    app->setState(new MinimizeAirlinesState([&, airlineSet](App *app, bool minimizeAirlines){
                         app->getData()->getFlights(originInfo, destinationInfo, airlineSet, true, minimizeAirlines);
                         PressEnterToContinue();
                         app->setState(new MainMenuState());

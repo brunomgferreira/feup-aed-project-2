@@ -19,19 +19,14 @@ void GetAirlineSetState::handleInput(App* app) {
 
     stringstream ss(inputAirlineSet);
     string airlineCode;
-
-    bool error=false;
     while (getline(ss, airlineCode, '-')){
         if (!app->getData()->airlineExists(airlineCode)){
             cout << "Invalid Airline Set. " << airlineCode << " does not exist.\n";
             app->setState(new TryAgainState(backState, this));
-            error=true;
-            break;
+            return;
         }else{
             airlineSet.insert(airlineCode);
         }
     }
-    if (!error){
-        nextStateCallback(app, airlineSet);
-    }
+    nextStateCallback(app, airlineSet);
 }

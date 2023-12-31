@@ -16,7 +16,7 @@ void GetCoordinatesState::handleInput(App* app) {
 
     stringstream ss(inputCoordinates);
     double latitude, longitude;
-    latitude = longitude = 0;
+    latitude = longitude = -1000;
     ss >> latitude;
     ss.ignore(10, ',');
     ss >> longitude;
