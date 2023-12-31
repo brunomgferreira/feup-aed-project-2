@@ -31,34 +31,6 @@ public:
     City(const string &name, const string &countryName, const string &airportCode);
 
     /**
-    * @brief Gets the name of the city.
-    *
-    * @return A reference to the name of the city.
-    */
-    const string &getName() const;
-
-    /**
-    * @brief Sets the name of the city.
-    *
-    * @param name The new name of the city.
-    */
-    void setName(const string &name);
-
-    /**
-    * @brief Gets the name of the country to which the city belongs.
-    *
-    * @return A reference to the name of the country.
-    */
-    const string &getCountryName() const;
-
-    /**
-    * @brief Sets the name of the country to which the city belongs.
-    *
-    * @param countryName The new name of the country.
-    */
-    void setCountryName(const string &countryName);
-
-    /**
     * @brief Gets the set of airport codes associated with the city.
     *
     * @return A reference to the set of airport codes.
@@ -71,13 +43,6 @@ public:
     * @param airportCode The code of the airport to add.
     */
     void addAirport(const string &airportCode);
-
-    /**
-    * @brief Sets the set of airport codes associated with the city.
-    *
-    * @param airports The new set of airport codes.
-    */
-    void setAirports(const unordered_set<string> &airports);
 };
 
 

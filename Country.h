@@ -29,20 +29,6 @@ public:
     Country(const string &name, const string &cityName);
 
     /**
-    * @brief Gets the name of the country.
-    *
-    * @return The name of the country.
-    */
-    const string &getName() const;
-
-    /**
-    * @brief Sets the name of the country.
-    *
-    * @param name The new name of the country.
-    */
-    void setName(const string &name);
-
-    /**
     * @brief Gets the set of cities in the country.
     *
     * @return The set of city names in the country.
@@ -55,13 +41,6 @@ public:
     * @param cityName The name of the city to be added.
     */
     void addCity(const string &cityName);
-
-    /**
-    * @brief Sets the set of cities in the country.
-    *
-    * @param cities The set of city names to be set for the country.
-    */
-    void setCities(const unordered_set<string> &cities);
 };
 
 

@@ -30,20 +30,6 @@ public:
     Coordinate(double latitude, double longitude);
 
     /**
-    * @brief Gets the latitude value of the coordinate.
-    *
-    * @return The latitude value in degrees.
-    */
-    double getLatitude() const;
-
-    /**
-    * @brief Gets the longitude value of the coordinate.
-    *
-    * @return The longitude value in degrees.
-    */
-    double getLongitude() const;
-
-    /**
     * @brief Calculates the great-circle distance between two coordinates using the Haversine formula.
     *
     * @param coordinate The target coordinate.

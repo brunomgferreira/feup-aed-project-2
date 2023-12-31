@@ -42,15 +42,6 @@ public:
     const string &getCountry() const;
 
     /**
-    * @brief Sets the country of the airport.
-    *
-    * @details This method sets the country of the airport to the specified value.
-    *
-    * @param country A constant reference to the string representing the new country for the airport.
-    */
-    void setCountry(const string &country);
-
-    /**
     * @brief Gets the code of the airport.
     *
     * @details This method returns a constant reference to the string representing the airport code.
@@ -58,33 +49,6 @@ public:
     * @return A constant reference to the string representing the airport code.
     */
     const string &getCode() const;
-
-    /**
-    * @brief Sets the code of the airport.
-    *
-    * @details This method sets the code of the airport to the specified value.
-    *
-    * @param code A constant reference to the string representing the new code for the airport.
-    */
-    void setCode(const string &code);
-
-    /**
-    * @brief Gets the name of the airport.
-    *
-    * @details This method returns a constant reference to the string representing the airport name.
-    *
-    * @return A constant reference to the string representing the airport name.
-    */
-    const string &getName() const;
-
-    /**
-    * @brief Sets the name of the airport.
-    *
-    * @details This method sets the name of the airport to the specified value.
-    *
-    * @param name A constant reference to the string representing the new name for the airport.
-    */
-    void setName(const string &name);
 
     /**
     * @brief Gets the city of the airport.
@@ -96,15 +60,6 @@ public:
     const string &getCity() const;
 
     /**
-    * @brief Sets the city of the airport.
-    *
-    * @details This method sets the city of the airport to the specified value.
-    *
-    * @param city A constant reference to the string representing the new city for the airport.
-    */
-    void setCity(const string &city);
-
-    /**
     * @brief Gets the coordinates of the airport.
     *
     * @details This method returns a pointer to a Coordinate object representing the geographic coordinates of the airport.
@@ -112,16 +67,6 @@ public:
     * @return A pointer to a Coordinate object representing the coordinates of the airport.
     */
     const Coordinate *getCoordinate() const;
-
-    /**
-    * @brief Sets the coordinates of the airport.
-    *
-    * @details This method sets the coordinates of the airport to the specified value.
-    *
-    * @param coordinate A pointer to a Coordinate object representing the new coordinates for the airport.
-    */
-    void setCoordinate(Coordinate *coordinate);
-
 };
 
 
