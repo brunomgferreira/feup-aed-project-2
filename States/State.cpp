@@ -2,8 +2,9 @@
 #include <limits>
 #include "State.h"
 
-void State::PressEnterToContinue() const {
+void State::PressEnterToContinue(int numPresses) const {
     cout << "Press ENTER to continue... ";
-    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    for (int i = 0; i < numPresses; ++i)
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
