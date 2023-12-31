@@ -60,7 +60,6 @@ void CityStatisticsMenuState::handleInput(App* app) {
                     PressEnterToContinue();
                     app->setState(this);
                 }));
-                PressEnterToContinue();
                 break;
             case 'b':
                 app->setState(new StatisticsMenuState());

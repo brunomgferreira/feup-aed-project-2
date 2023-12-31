@@ -3,7 +3,7 @@
 #include "TryAgainState.h"
 
 
-GetAirlineSetState::GetAirlineSetState(State* backState, function<void(App*, const unordered_set<string>&)> nextStateCallback)
+GetAirlineSetState::GetAirlineSetState(State* backState, function<void(App*, unordered_set<string>)> nextStateCallback)
 : backState(backState), nextStateCallback(nextStateCallback) {}
 
 void GetAirlineSetState::display() const {

@@ -76,7 +76,11 @@ public:
 
     void bfs(const string& airportCode, int stops, unordered_set<string>& destinationAirports, unordered_set<string>& destinationCities, unordered_set<string>& destinationCountries);
 
+    void bfsmaxtrip(vector<pair<string,string>> &maxTripVec, int &maxTrip);
+
     void dfsart(Vertex *v, stack<string> &s, unordered_set<string> &set, int &i, string root);
+
+
 };
 
 #endif // FLIGHT_MANAGEMENT_SYSTEM_GRAPH_H_

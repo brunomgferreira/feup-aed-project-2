@@ -88,7 +88,7 @@ public:
     *
     * @details Time complexity: O(1), as the function performs a constant-time map lookup.
     */
-    bool countryExists(string basicString);
+    bool countryExists(const string& basicString);
 
     /**
     * @brief Checks the existence of a city in the database.
@@ -103,7 +103,7 @@ public:
     *
     * @details Time complexity: O(1), as the function performs a constant-time map lookup.
     */
-    bool cityExists(string basicString);
+    bool cityExists(const string& basicString);
 
     /**
     * @brief Checks the existence of an airport in the database.
@@ -118,7 +118,7 @@ public:
     *
     * @details Time complexity: O(1), as the function performs a constant-time map lookup.
     */
-    bool airportExists(string basicString);
+    bool airportExists(const string& basicString);
 
     /**
     * @brief Checks the existence of an airline in the database.
@@ -205,7 +205,7 @@ public:
     *
     * @details Time complexity: O(C), where C is the number of cities associated with the specified country.
     */
-    void numberOfAirportsCountry(string basicString);
+    void numberOfAirportsCountry(const string& basicString);
 
     /**
     * @brief Prints the number of cities in a specific country with airports.
@@ -218,7 +218,7 @@ public:
     *
     * @details Time complexity: O(1), as the function involves retrieving the size of the set of cities.
     */
-    void numberOfCitiesCountry(string basicString);
+    void numberOfCitiesCountry(const string& basicString);
 
     /**
     * @brief Retrieves the set of airport codes in a specific country.
@@ -250,7 +250,7 @@ public:
     * @details Time complexity: O(C + A + F), where C is the number of cities associated with the specified country,
     * A is the total number of airports in those cities, and F is the total number of flights from those airports.
     */
-    void numberOfAirlinesCountry(string countryName);
+    void numberOfAirlinesCountry(const string& countryName);
 
     /**
     * @brief Prints the total number of flights originating from airports in a specific country.
@@ -264,7 +264,7 @@ public:
     * @details Time complexity: O(C + A + F), where C is the number of cities associated with the specified country,
     * A is the total number of airports in those cities, and F is the total number of flights from those airports.
     */
-    void numberOfFlightsCountry(string countryName);
+    void numberOfFlightsCountry(const string& countryName);
 
     /**
     * @brief Prints the number of unique destinations (airports, cities, and countries) reachable
@@ -279,7 +279,7 @@ public:
     * @details Time complexity: O(C + A + D), where C is the number of cities associated with the specified country,
     * A is the total number of airports in those cities, and D is the total number of unique destinations reached.
     */
-    void numberOfDestinationsCountry(string countryName);
+    void numberOfDestinationsCountry(const string& countryName);
 
     /**
     * @brief Prints the number of unique destinations (airports, cities, and countries) reachable
@@ -295,7 +295,7 @@ public:
     * @details Time complexity: O(C + A + D), where C is the number of cities associated with the specified country,
     * A is the total number of airports in those cities, and D is the total number of unique destinations reached.
     */
-    void numberOfDestinationsXStopsCountry(string countryName, int stops);
+    void numberOfDestinationsXStopsCountry(const string& countryName, int stops);
 
 
     //City
@@ -311,7 +311,7 @@ public:
     *
     * @details Time complexity: O(1), as the function involves retrieving the size of the set of airports.
     */
-    void numberOfAirportsCity(string cityName);
+    void numberOfAirportsCity(const string& cityName);
 
     /**
     * @brief Prints the number of different countries reachable from airports in a specific city.
@@ -325,7 +325,7 @@ public:
     * @details Time complexity: O(A + C), where A is the total number of airports in the specified city,
     * and C is the total number of unique countries reached from those airports.
     */
-    void numberOfCountriesCity(string cityName);
+    void numberOfCountriesCity(const string& cityName);
 
     /**
     * @brief Prints the number of different airlines operating from airports in a specific city.
@@ -339,7 +339,7 @@ public:
     * @details Time complexity: O(A + F), where A is the total number of airports in the specified city,
     * and F is the total number of flights from those airports.
     */
-    void numberOfAirlinesCity(string cityName);
+    void numberOfAirlinesCity(const string& cityName);
 
     /**
     * @brief Prints the total number of flights originating from airports in a specific city.
@@ -353,7 +353,7 @@ public:
     * @details Time complexity: O(A + F), where A is the total number of airports in the specified city,
     * and F is the total number of flights from those airports.
     */
-    void numberOfFlightsCity(string cityName);
+    void numberOfFlightsCity(const string& cityName);
 
     /**
     * @brief Prints the number of unique destinations (airports, cities, and countries) reachable
@@ -368,7 +368,7 @@ public:
     * @details Time complexity: O(A + D), where A is the total number of airports in the specified city,
     * and D is the total number of unique destinations reached from those airports.
     */
-    void numberOfDestinationsCity(string cityName);
+    void numberOfDestinationsCity(const string& cityName);
 
     /**
     * @brief Prints the number of unique destinations (airports, cities, and countries) reachable
@@ -384,7 +384,7 @@ public:
     * @details Time complexity: O(A + D), where A is the total number of airports in the specified city,
     * and D is the total number of unique destinations reached from those airports.
     */
-    void numberOfDestinationsXStopsCity(string cityName, int stops);
+    void numberOfDestinationsXStopsCity(const string& cityName, int stops);
 
     /**
     * @brief Retrieves the set of airport codes associated with a specific city.
@@ -416,7 +416,7 @@ public:
     * @details Time complexity: O(A + F), where A is the total number of airports in the graph,
     * and F is the total number of flights in the graph.
     */
-    void numberOfFlightsAirline(string airlineCode);
+    void numberOfFlightsAirline(const string& airlineCode);
 
     /**
     * @brief Prints the number of unique destinations (airports, cities, and countries) reachable
@@ -432,7 +432,7 @@ public:
     * @details Time complexity: O(A + F + D), where A is the total number of airports in the graph, F is the total number
     * of flights in the graph, and D is the total number of unique destinations reached by flights operated by the specified airline.
     */
-    void numberOfDestinationsAirline(string airlineCode);
+    void numberOfDestinationsAirline(const string& airlineCode);
 
 
     //Airport
@@ -449,7 +449,7 @@ public:
     *
     * @details Time complexity: O(F), where F is the total number of flights departing from the specified airport.
     */
-    void numberOfFlightsAirport(string basicString);
+    void numberOfFlightsAirport(const string& basicString);
 
     /**
     * @brief Prints the number of different airlines operating flights from a specific airport.
@@ -464,7 +464,7 @@ public:
     * @details Time complexity: O(F + A), where F is the total number of flights departing from the specified airport,
     * and A is the total number of airports in the graph.
     */
-    void numberOfAirlinesAirport(string airportCode);
+    void numberOfAirlinesAirport(const string& airportCode);
 
     /**
     * @brief Prints the number of different countries reachable by flights departing from a specific airport.
@@ -479,7 +479,7 @@ public:
     * @details Time complexity: O(F + A), where F is the total number of flights departing from the specified airport,
     * and A is the total number of airports in the graph.
     */
-    void numberOfCountriesAirport(string airportCode);
+    void numberOfCountriesAirport(const string& airportCode);
 
     /**
     * @brief Prints the number of unique destinations (airports, cities, and countries) reachable
@@ -563,7 +563,9 @@ public:
     * @details Time complexity: O(A + E), where A is the total number of airports in the graph,
     * and E is the total number of edges (connections) in the graph.
     */
-    void getFlights(const LocationInfo& originLocation, const LocationInfo& destinyLocation,const unordered_set<string>& airlineSet, bool unwantedAirlines);
+    void getFlights(const LocationInfo& originLocation, const LocationInfo& destinyLocation, unordered_set<string> airlineSet, bool unwantedAirlines, bool minimizeAirlines);
+
+private:
 
     /**
      * @brief Recursively processes the flight paths from origin to the specified destiny based on BFS results.
@@ -580,7 +582,7 @@ public:
      * @details Time complexity: O(N), where N is the number of airports in the BFS result for the given destiny.
      */
     list<list<string>> processFlights(const string& destiny, const unordered_map<string, pair<list<string>, int>>& airportTrack) const;
-
+    pair<list<list<string>>, int> minimalAirlines(const list<list<string>>& flights) const;
     // Location
 
     /**
@@ -597,7 +599,7 @@ public:
     * @details Time complexity: O(A), where A is the total number of airports in the database, depending on the location type.
     */
     unordered_set<string> convertLocation(const LocationInfo& location);
-
+public:
 
     //Othermethods
 
