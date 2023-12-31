@@ -78,7 +78,6 @@ private:
     Airport* airport;                // contents
     unordered_map<string, Edge> adj;  // list of outgoing edges
     bool visited;          // auxiliary field
-    bool processing;       // auxiliary field
     int num;               // auxiliary field
     int low;
 private:
@@ -112,13 +111,6 @@ public:
     Airport *getAirport() const;
 
     /**
-    * @brief Set the airport associated with the vertex.
-    *
-    * @param airport Pointer to the airport to set for the vertex.
-    */
-    void setAirport(Airport *airport);
-
-    /**
     * @brief Check if the vertex has been visited during traversal.
     *
     * @return True if the vertex has been visited; otherwise, false.
@@ -131,20 +123,6 @@ public:
     * @param v The value to set for the visited status.
     */
     void setVisited(bool v);
-
-    /**
-    * @brief Check if the vertex is currently being processed during traversal.
-    *
-    * @return True if the vertex is being processed; otherwise, false.
-    */
-    bool isProcessing() const;
-
-    /**
-    * @brief Set the processing status of the vertex.
-    *
-    * @param p The value to set for the processing status.
-    */
-    void setProcessing(bool p);
 
     /**
     * @brief Get the numerical identifier for the vertex during traversal.
@@ -180,13 +158,6 @@ public:
     * @return A constant reference to the adjacency list.
     */
     const unordered_map<string, Edge> &getAdj() const;
-
-    /**
-    * @brief Set the adjacency list representing edges to other vertices.
-    *
-    * @param adj The adjacency list to set for the vertex.
-    */
-    void setAdj(const unordered_map<string, Edge> &adj);
 
     friend class Graph;
 };
