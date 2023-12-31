@@ -19,7 +19,9 @@ void GetAirportState::handleInput(App* app) {
     if (airportExists) {
         nextStateCallback(app, airportCode);
     } else {
+        cout << "\033[31m";
         cout << "Airport does not exist." << endl;
+        cout << "\033[0m";
         app->setState(new TryAgainState(backState, this));
     }
 }
