@@ -1,6 +1,7 @@
 #ifndef FLIGHT_MANAGEMENT_SYSTEM_COORDINATE_H
 #define FLIGHT_MANAGEMENT_SYSTEM_COORDINATE_H
-
+#include <string>
+using namespace  std;
 /**
 * @brief Class representing geographical coordinates in the flight management system.
 */
@@ -49,6 +50,14 @@ public:
     * @return The distance between the two coordinates in kilometers.
     */
     double distanceTo(const Coordinate& coordinate) const;
+
+
+    /**
+    * @brief Retrieves the coordinate in a string format
+    *
+    * @return A string that represents the coordinate
+    */
+    string toString() const;
 };
 
 

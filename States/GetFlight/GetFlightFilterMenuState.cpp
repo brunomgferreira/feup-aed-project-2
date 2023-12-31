@@ -14,6 +14,11 @@ void GetFlightFilterMenuState::display() const {
     cout << "\033[94m";
     cout << "===== FLIGHT FILTERS =====" << endl;
     cout << "\033[0m";
+    cout << "\033[93m";
+    cout <<  setw(13+originInfo.toString().size()/2)<<  originInfo.toString() << endl;
+    cout << setw(14) << "\uEA9A" << endl;
+    cout <<  setw(13+destinationInfo.toString().size()/2)<<  destinationInfo.toString() << endl;
+    cout << "\033[0m";
     cout << "   1. Set of airlines" << endl;
     cout << "   2. Set of unwanted airlines" << endl;
     cout << "   3. No filter\n" << endl;

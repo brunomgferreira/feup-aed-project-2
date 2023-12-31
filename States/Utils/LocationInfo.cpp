@@ -1,3 +1,4 @@
+#include <iomanip>
 #include "LocationInfo.h"
 
 // Constructor for types 1-3
@@ -24,4 +25,29 @@ Coordinate LocationInfo::getCoordinate() const {return coordinate;}
 
 double LocationInfo::getRadius() const{
     return radius;
+}
+
+string LocationInfo::toString() const {
+
+    switch (type) {
+        case 1:
+            return info;
+            break;
+        case 2:
+            return  info;
+            break;
+        case 3:
+            return info;
+            break;
+        case 4:
+            return coordinate.toString();
+            break;
+        case 5:
+            stringstream result;
+            result << coordinate.toString() << " - " << fixed << setprecision(1) << radius << "Km";
+            return result.str();
+    }
+
+
+
 }
