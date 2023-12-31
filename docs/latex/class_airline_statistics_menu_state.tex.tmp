@@ -1,0 +1,101 @@
+\hypertarget{class_airline_statistics_menu_state}{}\doxysection{Airline\+Statistics\+Menu\+State Class Reference}
+\label{class_airline_statistics_menu_state}\index{AirlineStatisticsMenuState@{AirlineStatisticsMenuState}}
+
+
+Class that represents the menu state for displaying and handling the airline statistics options.  
+
+
+
+
+{\ttfamily \#include $<$Airline\+Statistics\+Menu\+State.\+h$>$}
+
+
+
+Inheritance diagram for Airline\+Statistics\+Menu\+State\+:
+% FIG 0
+
+
+Collaboration diagram for Airline\+Statistics\+Menu\+State\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_airline_statistics_menu_state_abe02b54fcaa4d4beae68530d71e68845}{Airline\+Statistics\+Menu\+State}} (string airline\+Code)
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{class_airline}{Airline}} Statistics Menu state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_airline_statistics_menu_state_a0b23a44322bdb16d4f15d2618a7820de}{display}} () const override
+\begin{DoxyCompactList}\small\item\em Displays the menu for airline-\/specific statistics options. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_airline_statistics_menu_state_a080f6c119ccb373391c2913a30f760a7}{handle\+Input}} (\mbox{\hyperlink{class_app}{App}} $\ast$app) override
+\begin{DoxyCompactList}\small\item\em Handles user input for the \mbox{\hyperlink{class_airline}{Airline}} Statistics Menu state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_airline_statistics_menu_state_a6fec23794bfe2010c559b3b26bdda24f}\label{class_airline_statistics_menu_state_a6fec23794bfe2010c559b3b26bdda24f}} 
+string {\bfseries airline\+Code}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that represents the menu state for displaying and handling the airline statistics options. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_airline_statistics_menu_state_abe02b54fcaa4d4beae68530d71e68845}\label{class_airline_statistics_menu_state_abe02b54fcaa4d4beae68530d71e68845}} 
+\index{AirlineStatisticsMenuState@{AirlineStatisticsMenuState}!AirlineStatisticsMenuState@{AirlineStatisticsMenuState}}
+\index{AirlineStatisticsMenuState@{AirlineStatisticsMenuState}!AirlineStatisticsMenuState@{AirlineStatisticsMenuState}}
+\doxysubsubsection{\texorpdfstring{AirlineStatisticsMenuState()}{AirlineStatisticsMenuState()}}
+{\footnotesize\ttfamily Airline\+Statistics\+Menu\+State\+::\+Airline\+Statistics\+Menu\+State (\begin{DoxyParamCaption}\item[{string}]{airline\+Code }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \mbox{\hyperlink{class_airline}{Airline}} Statistics Menu state. 
+
+This constructor initializes the \mbox{\hyperlink{class_airline_statistics_menu_state}{Airline\+Statistics\+Menu\+State}} with the specified airline code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em airline\+Code} & The code of the airline for which statistics will be displayed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_airline_statistics_menu_state_a0b23a44322bdb16d4f15d2618a7820de}\label{class_airline_statistics_menu_state_a0b23a44322bdb16d4f15d2618a7820de}} 
+\index{AirlineStatisticsMenuState@{AirlineStatisticsMenuState}!display@{display}}
+\index{display@{display}!AirlineStatisticsMenuState@{AirlineStatisticsMenuState}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Airline\+Statistics\+Menu\+State\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the menu for airline-\/specific statistics options. 
+
+This method prints the airline statistics menu to the console, allowing users to choose between different statistical options related to a specific airline. The displayed menu includes corresponding numeric options, and users can enter their choice. The menu covers information such as the number of flights operated by the airline, the number of destinations served, and options to return to the statistics menu or the main menu. 
+
+Implements \mbox{\hyperlink{class_state_adf38e0648b7705d04c39f40b763632bb}{State}}.
+
+\mbox{\Hypertarget{class_airline_statistics_menu_state_a080f6c119ccb373391c2913a30f760a7}\label{class_airline_statistics_menu_state_a080f6c119ccb373391c2913a30f760a7}} 
+\index{AirlineStatisticsMenuState@{AirlineStatisticsMenuState}!handleInput@{handleInput}}
+\index{handleInput@{handleInput}!AirlineStatisticsMenuState@{AirlineStatisticsMenuState}}
+\doxysubsubsection{\texorpdfstring{handleInput()}{handleInput()}}
+{\footnotesize\ttfamily void Airline\+Statistics\+Menu\+State\+::handle\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app}{App}} $\ast$}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles user input for the \mbox{\hyperlink{class_airline}{Airline}} Statistics Menu state. 
+
+This method reads a user\textquotesingle{}s input from the console and processes it based on the chosen option. Users can input a single character corresponding to the desired option (1-\/2, \textquotesingle{}b\textquotesingle{} for Statistics Menu, or \textquotesingle{}q\textquotesingle{} for Main Menu). The method then executes the selected option, calling specific methods from the application\textquotesingle{}s data module to retrieve and display relevant airline statistics. Error messages are displayed for invalid inputs, and the state may transition accordingly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & A pointer to the application instance. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a2b8ab1025a5ab2252a3bfdf0597a831f}{State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+States/\+Statistics/\+Airline/Airline\+Statistics\+Menu\+State.\+h\item 
+States/\+Statistics/\+Airline/Airline\+Statistics\+Menu\+State.\+cpp\end{DoxyCompactItemize}

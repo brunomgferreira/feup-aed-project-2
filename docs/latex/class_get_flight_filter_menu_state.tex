@@ -1,0 +1,106 @@
+\hypertarget{class_get_flight_filter_menu_state}{}\doxysection{Get\+Flight\+Filter\+Menu\+State Class Reference}
+\label{class_get_flight_filter_menu_state}\index{GetFlightFilterMenuState@{GetFlightFilterMenuState}}
+
+
+Class that represents the menu state for displaying and handling the get flight filter options.  
+
+
+
+
+{\ttfamily \#include $<$Get\+Flight\+Filter\+Menu\+State.\+h$>$}
+
+
+
+Inheritance diagram for Get\+Flight\+Filter\+Menu\+State\+:
+% FIG 0
+
+
+Collaboration diagram for Get\+Flight\+Filter\+Menu\+State\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_get_flight_filter_menu_state_a9f2a34ad82009d8bfa820abdfa21eb63}{Get\+Flight\+Filter\+Menu\+State}} (const \mbox{\hyperlink{class_location_info}{Location\+Info}} \&origin\+Info, const \mbox{\hyperlink{class_location_info}{Location\+Info}} \&destination\+Info)
+\begin{DoxyCompactList}\small\item\em Constructs an instance of \mbox{\hyperlink{class_get_flight_filter_menu_state}{Get\+Flight\+Filter\+Menu\+State}} with specified origin and destination information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_get_flight_filter_menu_state_a1f1a5f5a06e75a94aa887494b2b2ba41}{display}} () const override
+\begin{DoxyCompactList}\small\item\em Displays the menu for selecting flight filter options. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_get_flight_filter_menu_state_a8ca6f147dca7a2ba72968df80f63e909}{handle\+Input}} (\mbox{\hyperlink{class_app}{App}} $\ast$app) override
+\begin{DoxyCompactList}\small\item\em Handles user input for selecting flight filter options. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_get_flight_filter_menu_state_ae01c9e49cdbb3a6354bdfffe33a97313}\label{class_get_flight_filter_menu_state_ae01c9e49cdbb3a6354bdfffe33a97313}} 
+\mbox{\hyperlink{class_location_info}{Location\+Info}} {\bfseries origin\+Info}
+\item 
+\mbox{\Hypertarget{class_get_flight_filter_menu_state_ad6f48fc9f362d90be35f152b292920f4}\label{class_get_flight_filter_menu_state_ad6f48fc9f362d90be35f152b292920f4}} 
+\mbox{\hyperlink{class_location_info}{Location\+Info}} {\bfseries destination\+Info}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that represents the menu state for displaying and handling the get flight filter options. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_get_flight_filter_menu_state_a9f2a34ad82009d8bfa820abdfa21eb63}\label{class_get_flight_filter_menu_state_a9f2a34ad82009d8bfa820abdfa21eb63}} 
+\index{GetFlightFilterMenuState@{GetFlightFilterMenuState}!GetFlightFilterMenuState@{GetFlightFilterMenuState}}
+\index{GetFlightFilterMenuState@{GetFlightFilterMenuState}!GetFlightFilterMenuState@{GetFlightFilterMenuState}}
+\doxysubsubsection{\texorpdfstring{GetFlightFilterMenuState()}{GetFlightFilterMenuState()}}
+{\footnotesize\ttfamily Get\+Flight\+Filter\+Menu\+State\+::\+Get\+Flight\+Filter\+Menu\+State (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_location_info}{Location\+Info}} \&}]{origin\+Info,  }\item[{const \mbox{\hyperlink{class_location_info}{Location\+Info}} \&}]{destination\+Info }\end{DoxyParamCaption})}
+
+
+
+Constructs an instance of \mbox{\hyperlink{class_get_flight_filter_menu_state}{Get\+Flight\+Filter\+Menu\+State}} with specified origin and destination information. 
+
+This constructor initializes an instance of the \mbox{\hyperlink{class_get_flight_filter_menu_state}{Get\+Flight\+Filter\+Menu\+State}} class with the given origin and destination information. The origin information includes details about the selected origin for flight retrieval, such as the type of origin (airport, city, country, coordinates, or coordinates with a radius) and the corresponding data (e.\+g., airport code, city name). Similarly, the destination information provides details about the selected destination. This instance can be used to navigate the application to the state for selecting additional flight filter options based on the provided origin and destination information.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin\+Info} & A \mbox{\hyperlink{class_location_info}{Location\+Info}} object containing information about the selected origin for flight retrieval. \\
+\hline
+{\em destination\+Info} & A \mbox{\hyperlink{class_location_info}{Location\+Info}} object containing information about the selected destination for flight retrieval. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_get_flight_filter_menu_state_a1f1a5f5a06e75a94aa887494b2b2ba41}\label{class_get_flight_filter_menu_state_a1f1a5f5a06e75a94aa887494b2b2ba41}} 
+\index{GetFlightFilterMenuState@{GetFlightFilterMenuState}!display@{display}}
+\index{display@{display}!GetFlightFilterMenuState@{GetFlightFilterMenuState}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Get\+Flight\+Filter\+Menu\+State\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the menu for selecting flight filter options. 
+
+This method prints the menu to the console, allowing users to choose from various flight filter options. The displayed menu includes options such as selecting a set of airlines, a set of unwanted airlines, or no filter at all. Users can input a corresponding numeric option, and the method visually enhances the menu for clarity. The menu also provides options to go back to the previous state or return to the main menu. 
+
+Implements \mbox{\hyperlink{class_state_adf38e0648b7705d04c39f40b763632bb}{State}}.
+
+\mbox{\Hypertarget{class_get_flight_filter_menu_state_a8ca6f147dca7a2ba72968df80f63e909}\label{class_get_flight_filter_menu_state_a8ca6f147dca7a2ba72968df80f63e909}} 
+\index{GetFlightFilterMenuState@{GetFlightFilterMenuState}!handleInput@{handleInput}}
+\index{handleInput@{handleInput}!GetFlightFilterMenuState@{GetFlightFilterMenuState}}
+\doxysubsubsection{\texorpdfstring{handleInput()}{handleInput()}}
+{\footnotesize\ttfamily void Get\+Flight\+Filter\+Menu\+State\+::handle\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app}{App}} $\ast$}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles user input for selecting flight filter options. 
+
+This method reads a user\textquotesingle{}s input from the console and processes it based on the chosen option. Users can input a single character corresponding to the desired option (1-\/3, \textquotesingle{}b\textquotesingle{} for Destination Menu, or \textquotesingle{}q\textquotesingle{} for Main Menu). The method then transitions to the appropriate state based on the user\textquotesingle{}s choice, capturing relevant information such as a set of airlines, a set of unwanted airlines, or no filter at all. The captured information is used to set up the next state for retrieving flights based on the selected filters. Error messages are displayed for invalid inputs, and the state may transition accordingly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & A pointer to the application instance. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a2b8ab1025a5ab2252a3bfdf0597a831f}{State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+States/\+Get\+Flight/Get\+Flight\+Filter\+Menu\+State.\+h\item 
+States/\+Get\+Flight/Get\+Flight\+Filter\+Menu\+State.\+cpp\end{DoxyCompactItemize}

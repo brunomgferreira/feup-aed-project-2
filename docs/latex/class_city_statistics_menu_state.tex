@@ -1,0 +1,101 @@
+\hypertarget{class_city_statistics_menu_state}{}\doxysection{City\+Statistics\+Menu\+State Class Reference}
+\label{class_city_statistics_menu_state}\index{CityStatisticsMenuState@{CityStatisticsMenuState}}
+
+
+Class that represents the menu state for displaying and handling the city statistics options.  
+
+
+
+
+{\ttfamily \#include $<$City\+Statistics\+Menu\+State.\+h$>$}
+
+
+
+Inheritance diagram for City\+Statistics\+Menu\+State\+:
+% FIG 0
+
+
+Collaboration diagram for City\+Statistics\+Menu\+State\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_city_statistics_menu_state_a24508a40a68e9b586794f755f2b8ffb6}{City\+Statistics\+Menu\+State}} (string city\+Name)
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{class_city}{City}} Statistics Menu state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_city_statistics_menu_state_a43321fbd47c04b321330a34cb8446f9b}{display}} () const override
+\begin{DoxyCompactList}\small\item\em Displays the menu for city-\/specific statistics. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_city_statistics_menu_state_a9692686db17f97dfe8bf737e43001e4b}{handle\+Input}} (\mbox{\hyperlink{class_app}{App}} $\ast$app) override
+\begin{DoxyCompactList}\small\item\em Handles user input for city-\/specific statistics menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_city_statistics_menu_state_a83a57d6f856ee71e7238a27932221461}\label{class_city_statistics_menu_state_a83a57d6f856ee71e7238a27932221461}} 
+string {\bfseries city\+Name}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that represents the menu state for displaying and handling the city statistics options. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_city_statistics_menu_state_a24508a40a68e9b586794f755f2b8ffb6}\label{class_city_statistics_menu_state_a24508a40a68e9b586794f755f2b8ffb6}} 
+\index{CityStatisticsMenuState@{CityStatisticsMenuState}!CityStatisticsMenuState@{CityStatisticsMenuState}}
+\index{CityStatisticsMenuState@{CityStatisticsMenuState}!CityStatisticsMenuState@{CityStatisticsMenuState}}
+\doxysubsubsection{\texorpdfstring{CityStatisticsMenuState()}{CityStatisticsMenuState()}}
+{\footnotesize\ttfamily City\+Statistics\+Menu\+State\+::\+City\+Statistics\+Menu\+State (\begin{DoxyParamCaption}\item[{string}]{city\+Name }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \mbox{\hyperlink{class_city}{City}} Statistics Menu state. 
+
+This constructor initializes a \mbox{\hyperlink{class_city_statistics_menu_state}{City\+Statistics\+Menu\+State}} with the specified city name. The city name is used to provide city-\/specific statistics options in the menu.
+
+
+\begin{DoxyParams}{Parameters}
+{\em city\+Name} & The name of the city for which statistics will be displayed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_city_statistics_menu_state_a43321fbd47c04b321330a34cb8446f9b}\label{class_city_statistics_menu_state_a43321fbd47c04b321330a34cb8446f9b}} 
+\index{CityStatisticsMenuState@{CityStatisticsMenuState}!display@{display}}
+\index{display@{display}!CityStatisticsMenuState@{CityStatisticsMenuState}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void City\+Statistics\+Menu\+State\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the menu for city-\/specific statistics. 
+
+This method outputs a formatted menu to the console, presenting various statistical options related to the specified city. Users can choose from options such as the number of airports, cities, airlines, flights, destinations, and reachable destinations with a maximum number of stops. 
+
+Implements \mbox{\hyperlink{class_state_adf38e0648b7705d04c39f40b763632bb}{State}}.
+
+\mbox{\Hypertarget{class_city_statistics_menu_state_a9692686db17f97dfe8bf737e43001e4b}\label{class_city_statistics_menu_state_a9692686db17f97dfe8bf737e43001e4b}} 
+\index{CityStatisticsMenuState@{CityStatisticsMenuState}!handleInput@{handleInput}}
+\index{handleInput@{handleInput}!CityStatisticsMenuState@{CityStatisticsMenuState}}
+\doxysubsubsection{\texorpdfstring{handleInput()}{handleInput()}}
+{\footnotesize\ttfamily void City\+Statistics\+Menu\+State\+::handle\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app}{App}} $\ast$}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles user input for city-\/specific statistics menu. 
+
+This method prompts the user for input and processes the chosen option for city-\/specific statistics. Users can choose from options such as the number of airports, countries, airlines, flights, destinations, and reachable destinations with a maximum number of stops. Additionally, users can navigate back to the statistics menu or return to the main menu.
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & A pointer to the application object. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a2b8ab1025a5ab2252a3bfdf0597a831f}{State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+States/\+Statistics/\+City/City\+Statistics\+Menu\+State.\+h\item 
+States/\+Statistics/\+City/City\+Statistics\+Menu\+State.\+cpp\end{DoxyCompactItemize}

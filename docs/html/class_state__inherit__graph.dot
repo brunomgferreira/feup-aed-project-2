@@ -1,0 +1,52 @@
+digraph "State"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="State",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Abstract base class representing an app state within the flight management system."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="AirlineStatisticsMenuState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_airline_statistics_menu_state.html",tooltip="Class that represents the menu state for displaying and handling the airline statistics options."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="AirportStatisticsMenuState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_airport_statistics_menu_state.html",tooltip="Class that represents the menu state for displaying and handling the airport statistics options."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="CityStatisticsMenuState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_city_statistics_menu_state.html",tooltip="Class that represents the menu state for displaying and handling the city statistics options."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="CountryStatisticsMenuState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_country_statistics_menu_state.html",tooltip="Class that represents the menu state for displaying and handling the country statistics options."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="GetAirlineSetState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_get_airline_set_state.html",tooltip="Class that represents a state for obtaining a set of airlines as user input."];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="GetAirlineState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_get_airline_state.html",tooltip="Class that represents a state for obtaining a airline as user input."];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="GetAirportState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_get_airport_state.html",tooltip="Class that represents a state for obtaining a airport as user input."];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="GetCityState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_get_city_state.html",tooltip="Class that represents a state for obtaining a city as user input."];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="GetCoordinatesState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_get_coordinates_state.html",tooltip="Class that represents a state for obtaining a coordinate as user input."];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="GetCountryState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_get_country_state.html",tooltip="Class that represents a state for obtaining a country as user input."];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="GetFlightDestinationMenu\lState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_get_flight_destination_menu_state.html",tooltip="Class that represents the menu state for displaying and handling the get flight destination options."];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="GetFlightFilterMenuState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_get_flight_filter_menu_state.html",tooltip="Class that represents the menu state for displaying and handling the get flight filter options."];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="GetFlightOriginMenuState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_get_flight_origin_menu_state.html",tooltip="Class that represents the menu state for displaying and handling the get flight origin options."];
+  Node1 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="GetRadiusState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_get_radius_state.html",tooltip="Class that represents a state for obtaining a radius as user input."];
+  Node1 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="GetStopsState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_get_stops_state.html",tooltip="Class that represents a state for obtaining the number of stops as user input."];
+  Node1 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="GetTopState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_get_top_state.html",tooltip="Class that represents a state for obtaining the number of stops with a upper limit as user input."];
+  Node1 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="GlobalStatisticsMenuState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_global_statistics_menu_state.html",tooltip="Class that represents the global statistics state for displaying and handling the global statistics o..."];
+  Node1 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="MainMenuState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_main_menu_state.html",tooltip="Class representing the main menu state of the flight management system."];
+  Node1 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="MinimizeAirlinesState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_minimize_airlines_state.html",tooltip="Class representing the state for minimizing airlines in the flight management system."];
+  Node1 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="OtherMethodsMenuState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_other_methods_menu_state.html",tooltip="Class that represents the menu state for displaying and handling the other methods options."];
+  Node1 -> Node22 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="StatisticsMenuState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_statistics_menu_state.html",tooltip="Class that represents the menu state for displaying and handling the statistics options."];
+  Node1 -> Node23 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="TryAgainState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_try_again_state.html",tooltip="Class representing a state that prompts the user to try an action again."];
+}

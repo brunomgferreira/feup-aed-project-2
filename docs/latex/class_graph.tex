@@ -1,0 +1,219 @@
+\hypertarget{class_graph}{}\doxysection{Graph Class Reference}
+\label{class_graph}\index{Graph@{Graph}}
+
+
+Represents a graph of airports and flights.  
+
+
+
+
+{\ttfamily \#include $<$Graph.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \& \mbox{\hyperlink{class_graph_a7adb424c214b3901372001364225e61d}{get\+Vertices}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves a constant reference to the map of vertices in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ \mbox{\hyperlink{class_graph_af9e8dcdb5d2113d3a9cf1369c1690981}{find\+Vertex}} (const string \&airport\+Code) const
+\begin{DoxyCompactList}\small\item\em Finds and returns the vertex with the given airport code. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_graph_a1c56052d653f558dd75ca231a9880f60}{add\+Vertex}} (\mbox{\hyperlink{class_airport}{Airport}} $\ast$airport)
+\begin{DoxyCompactList}\small\item\em Adds a new vertex to the graph with the given airport. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_graph_a90c9875d8b7aec0085e987f9633363bd}{add\+Edge}} (const string \&origin\+Airport\+Code, const string \&destination\+Airport\+Code, const string \&airline\+Code)
+\begin{DoxyCompactList}\small\item\em Adds a directed edge between two airports with the given airline code. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_a6e7674b1fa1b8202a0cbed98e3f2cbdc}{bfs}} (const string \&airport\+Code, unordered\+\_\+set$<$ string $>$ \&destination\+Airports, unordered\+\_\+set$<$ string $>$ \&destination\+Cities, unordered\+\_\+set$<$ string $>$ \&destination\+Countries)
+\begin{DoxyCompactList}\small\item\em Performs a breadth-\/first search (BFS) starting from the given airport code. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_a9d0045cc383e2226470a0556cab2b895}{bfs}} (const string \&airport\+Code, int stops, unordered\+\_\+set$<$ string $>$ \&destination\+Airports, unordered\+\_\+set$<$ string $>$ \&destination\+Cities, unordered\+\_\+set$<$ string $>$ \&destination\+Countries)
+\begin{DoxyCompactList}\small\item\em Performs a modified breadth-\/first search (BFS) with a specified number of stops. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_a078e103f4a6ecbfb426ea6a6e1c4aae5}{bfsmaxtrip}} (vector$<$ pair$<$ string, string $>$$>$ \&max\+Trip\+Vec, int \&max\+Trip)
+\begin{DoxyCompactList}\small\item\em Performs a BFS to find the maximum trip length and corresponding airports. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_a9ca59836f7e1d8750c0ed916f99840cb}{dfsart}} (\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$v, stack$<$ string $>$ \&s, unordered\+\_\+set$<$ string $>$ \&set, int \&i, string root)
+\begin{DoxyCompactList}\small\item\em Performs a depth-\/first search (DFS) to find articulation points in the graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_graph_a790c8dc16a2e1f3e5ae05d2a3ff4f03f}\label{class_graph_a790c8dc16a2e1f3e5ae05d2a3ff4f03f}} 
+unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ {\bfseries vertices}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a graph of airports and flights. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_graph_a90c9875d8b7aec0085e987f9633363bd}\label{class_graph_a90c9875d8b7aec0085e987f9633363bd}} 
+\index{Graph@{Graph}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{addEdge()}{addEdge()}}
+{\footnotesize\ttfamily bool Graph\+::add\+Edge (\begin{DoxyParamCaption}\item[{const string \&}]{origin\+Airport\+Code,  }\item[{const string \&}]{destination\+Airport\+Code,  }\item[{const string \&}]{airline\+Code }\end{DoxyParamCaption})}
+
+
+
+Adds a directed edge between two airports with the given airline code. 
+
+This method adds a directed edge from the origin airport to the destination airport with the specified airline code. Both origin and destination airports must exist in the graph.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin\+Airport\+Code} & The code of the origin airport. \\
+\hline
+{\em destination\+Airport\+Code} & The code of the destination airport. \\
+\hline
+{\em airline\+Code} & The code of the airline associated with the edge. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the edge is successfully added, false otherwise.
+\end{DoxyReturn}
+Time complexity\+: O(1) \mbox{\Hypertarget{class_graph_a1c56052d653f558dd75ca231a9880f60}\label{class_graph_a1c56052d653f558dd75ca231a9880f60}} 
+\index{Graph@{Graph}!addVertex@{addVertex}}
+\index{addVertex@{addVertex}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{addVertex()}{addVertex()}}
+{\footnotesize\ttfamily bool Graph\+::add\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_airport}{Airport}} $\ast$}]{airport }\end{DoxyParamCaption})}
+
+
+
+Adds a new vertex to the graph with the given airport. 
+
+This method adds a new vertex to the graph if a vertex with the same airport code does not already exist.
+
+
+\begin{DoxyParams}{Parameters}
+{\em airport} & The airport associated with the new vertex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the vertex is successfully added, false otherwise.
+\end{DoxyReturn}
+Time complexity\+: O(1) \mbox{\Hypertarget{class_graph_a9d0045cc383e2226470a0556cab2b895}\label{class_graph_a9d0045cc383e2226470a0556cab2b895}} 
+\index{Graph@{Graph}!bfs@{bfs}}
+\index{bfs@{bfs}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{bfs()}{bfs()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Graph\+::bfs (\begin{DoxyParamCaption}\item[{const string \&}]{airport\+Code,  }\item[{int}]{stops,  }\item[{unordered\+\_\+set$<$ string $>$ \&}]{destination\+Airports,  }\item[{unordered\+\_\+set$<$ string $>$ \&}]{destination\+Cities,  }\item[{unordered\+\_\+set$<$ string $>$ \&}]{destination\+Countries }\end{DoxyParamCaption})}
+
+
+
+Performs a modified breadth-\/first search (BFS) with a specified number of stops. 
+
+This method explores the graph using BFS up to a specified number of stops and populates sets with information about destination airports, cities, and countries.
+
+
+\begin{DoxyParams}{Parameters}
+{\em airport\+Code} & The code of the starting airport for BFS. \\
+\hline
+{\em stops} & The maximum number of stops allowed in the search. \\
+\hline
+{\em destination\+Airports} & A set to store destination airport codes. \\
+\hline
+{\em destination\+Cities} & A set to store destination city names. \\
+\hline
+{\em destination\+Countries} & A set to store destination country names.\\
+\hline
+\end{DoxyParams}
+Time complexity\+: O(V + E), where V is the number of vertices and E is the number of edges. \mbox{\Hypertarget{class_graph_a6e7674b1fa1b8202a0cbed98e3f2cbdc}\label{class_graph_a6e7674b1fa1b8202a0cbed98e3f2cbdc}} 
+\index{Graph@{Graph}!bfs@{bfs}}
+\index{bfs@{bfs}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{bfs()}{bfs()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Graph\+::bfs (\begin{DoxyParamCaption}\item[{const string \&}]{airport\+Code,  }\item[{unordered\+\_\+set$<$ string $>$ \&}]{destination\+Airports,  }\item[{unordered\+\_\+set$<$ string $>$ \&}]{destination\+Cities,  }\item[{unordered\+\_\+set$<$ string $>$ \&}]{destination\+Countries }\end{DoxyParamCaption})}
+
+
+
+Performs a breadth-\/first search (BFS) starting from the given airport code. 
+
+This method explores the graph using BFS and populates sets with information about destination airports, cities, and countries.
+
+
+\begin{DoxyParams}{Parameters}
+{\em airport\+Code} & The code of the starting airport for BFS. \\
+\hline
+{\em destination\+Airports} & A set to store destination airport codes. \\
+\hline
+{\em destination\+Cities} & A set to store destination city names. \\
+\hline
+{\em destination\+Countries} & A set to store destination country names.\\
+\hline
+\end{DoxyParams}
+Time complexity\+: O(V + E), where V is the number of vertices and E is the number of edges. \mbox{\Hypertarget{class_graph_a078e103f4a6ecbfb426ea6a6e1c4aae5}\label{class_graph_a078e103f4a6ecbfb426ea6a6e1c4aae5}} 
+\index{Graph@{Graph}!bfsmaxtrip@{bfsmaxtrip}}
+\index{bfsmaxtrip@{bfsmaxtrip}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{bfsmaxtrip()}{bfsmaxtrip()}}
+{\footnotesize\ttfamily void Graph\+::bfsmaxtrip (\begin{DoxyParamCaption}\item[{vector$<$ pair$<$ string, string $>$$>$ \&}]{max\+Trip\+Vec,  }\item[{int \&}]{max\+Trip }\end{DoxyParamCaption})}
+
+
+
+Performs a BFS to find the maximum trip length and corresponding airports. 
+
+This method iterates through all airports in the graph and performs BFS to find the maximum trip length and the corresponding origin and destination airports.
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Trip\+Vec} & A vector to store pairs of origin and destination airports for the maximum trip. \\
+\hline
+{\em max\+Trip} & An integer representing the maximum trip length.\\
+\hline
+\end{DoxyParams}
+Time complexity\+: O(V $\ast$ (V + E)), where V is the number of vertices and E is the number of edges. \mbox{\Hypertarget{class_graph_a9ca59836f7e1d8750c0ed916f99840cb}\label{class_graph_a9ca59836f7e1d8750c0ed916f99840cb}} 
+\index{Graph@{Graph}!dfsart@{dfsart}}
+\index{dfsart@{dfsart}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{dfsart()}{dfsart()}}
+{\footnotesize\ttfamily void Graph\+::dfsart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{v,  }\item[{stack$<$ string $>$ \&}]{s,  }\item[{unordered\+\_\+set$<$ string $>$ \&}]{set,  }\item[{int \&}]{i,  }\item[{string}]{root }\end{DoxyParamCaption})}
+
+
+
+Performs a depth-\/first search (DFS) to find articulation points in the graph. 
+
+This method identifies articulation points in the graph using DFS and updates a set with the found articulation points.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The current vertex being processed in the DFS. \\
+\hline
+{\em s} & A stack to keep track of visited vertices during DFS. \\
+\hline
+{\em set} & A set to store the identified articulation points. \\
+\hline
+{\em i} & An integer representing the current DFS iteration. \\
+\hline
+{\em root} & The code of the root airport for DFS.\\
+\hline
+\end{DoxyParams}
+Time complexity\+: O(V + E), where V is the number of vertices and E is the number of edges. \mbox{\Hypertarget{class_graph_af9e8dcdb5d2113d3a9cf1369c1690981}\label{class_graph_af9e8dcdb5d2113d3a9cf1369c1690981}} 
+\index{Graph@{Graph}!findVertex@{findVertex}}
+\index{findVertex@{findVertex}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{findVertex()}{findVertex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ Graph\+::find\+Vertex (\begin{DoxyParamCaption}\item[{const string \&}]{airport\+Code }\end{DoxyParamCaption}) const}
+
+
+
+Finds and returns the vertex with the given airport code. 
+
+This method searches for a vertex in the graph using the provided airport code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em airport\+Code} & The code of the airport to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the found vertex, or nullptr if not found.
+\end{DoxyReturn}
+Time complexity\+: O(1) \mbox{\Hypertarget{class_graph_a7adb424c214b3901372001364225e61d}\label{class_graph_a7adb424c214b3901372001364225e61d}} 
+\index{Graph@{Graph}!getVertices@{getVertices}}
+\index{getVertices@{getVertices}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getVertices()}{getVertices()}}
+{\footnotesize\ttfamily const unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \& Graph\+::get\+Vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves a constant reference to the map of vertices in the graph. 
+
+This method returns a constant reference to the map containing all vertices in the graph.
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the map of vertices.
+\end{DoxyReturn}
+Time complexity\+: O(1) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Graph.\+h\item 
+Graph.\+cpp\end{DoxyCompactItemize}
