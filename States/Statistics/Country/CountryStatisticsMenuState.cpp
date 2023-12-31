@@ -60,7 +60,7 @@ void CountryStatisticsMenuState::handleInput(App* app) {
             case '6':
                 app->setState(new GetStopsState(this, [&](App *app, int stops) {
                     app->getData()->numberOfDestinationsXStopsCountry(countryName, stops);
-                    PressEnterToContinue();
+                    PressEnterToContinue(1);
                     app->setState(this);
                 }));
                 break;
