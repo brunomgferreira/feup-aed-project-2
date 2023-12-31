@@ -20,14 +20,15 @@ void GetCoordinatesState::handleInput(App* app) {
     ss >> latitude;
     ss.ignore(10, ',');
     ss >> longitude;
-    cout << latitude << "," << longitude << '\n';
     if (latitude <= 90 && latitude >= -90 && longitude <=180 && longitude >=-180){
         Coordinate coordinate(latitude, longitude);
         nextStateCallback(app, coordinate);
     } else {
-        cout << "Not a valid coordinate. "
-                " -90 <= latitude <= 90 |"
+        cout << "\033[31m";
+        cout << "Not a valid coordinate.\n"
+                "  -90 <= latitude <= 90\n"
                 " -180 <= longitude <= 180" << endl;
+        cout << "\033[0m";
         app->setState(new TryAgainState(backState, this));
     }
 }
