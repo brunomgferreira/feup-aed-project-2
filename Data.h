@@ -133,7 +133,7 @@ public:
     *
     * @details Time complexity: O(1), as the function performs a constant-time map lookup.
     */
-    bool airlineExists(string basicString);
+    bool airlineExists(const string& basicString);
 
 
     //Global
