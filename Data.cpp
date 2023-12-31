@@ -653,7 +653,6 @@ unordered_set<string> Data::airportsInLocation(Coordinate coordinate, double rad
 void Data::getFlights(const LocationInfo &originLocation, const LocationInfo &destinyLocation,
                        unordered_set<std::string> airlineSet, bool unwantedAirlines, bool minimizeAirlines) {
 
-    cout << "Processing the flights... \n\n";
     // Create set of airports to consider as start and end
     unordered_set<string> originAirports = convertLocation(originLocation);
     unordered_set<string> destinyAirports = convertLocation(destinyLocation);
@@ -753,27 +752,37 @@ void Data::getFlights(const LocationInfo &originLocation, const LocationInfo &de
             }
         }
     }
+    cout << "\033[35m";
+    cout << "-------------------------------------------------" << endl;
+    cout << "\033[0m";
 
     if (bestFlights.empty()){
-        cout << "Not able to find any flights..." << endl;
+        cout << ">> Not able to find any flights..." << endl;
         return;
     }
+
+    cout << ">> Top flights found: " << bestFlights.size() << endl;
+
 
     if (minimizeAirlines) {
         pair<list<list<string>>, int> minimizedAirlines = minimalAirlines(bestFlights);
         bestFlights = minimizedAirlines.first;
         int minNumberAirlines = minimizedAirlines.second;
-        cout << "A possible flight was found with the minimal number of " << minNumberAirlines << " different airlines:" << endl;
+        cout << "   Minimal number of airlines: " << minNumberAirlines << endl;
     }
-
 
     for (const auto & flight : bestFlights){
-        cout << endl;
-        for (const string& airport : flight){
-            cout << airport  << "-";
+        cout << "   ";
+        auto airport = flight.begin();
+        while (next(airport, 1) != flight.end()){
+            cout << *airport++ << " - ";
         }
+        cout << *airport << endl;
     }
 
+    cout << "\033[35m";
+    cout << "-------------------------------------------------" << endl;
+    cout << "\033[0m";
 }
 
 pair<list<list<string>>, int> Data::minimalAirlines(const list<list<string>> &flights) const {
