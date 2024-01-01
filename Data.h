@@ -601,7 +601,7 @@ private:
     * @details Time complexity: O(F * E * A), where F is the number of flights, E is the average number of edges
     * (connections) per airport, and A is the average number of airlines per connection.
     */
-    pair<list<list<string>>, int> minimalAirlines(const list<list<string>>& flights) const;
+    pair<list<list<string>>, int> minimalAirlines(const list<list<string>>& flights, const unordered_set<string>& airlineSet, bool unwantedAirlines) const;
     // Location
 
     /**
