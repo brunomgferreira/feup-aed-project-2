@@ -699,7 +699,7 @@ void Data::getFlights(const LocationInfo &originLocation, const LocationInfo &de
         int flightSize = numeric_limits<int>::max();
         unordered_set<string> reachedDestiny;
 
-        // BFS
+
         Vertex *beggining = g.findVertex(airport);
         queue<Vertex *> q;
         q.push(beggining);
@@ -816,15 +816,6 @@ void Data::getFlights(const LocationInfo &originLocation, const LocationInfo &de
 }
 
 
-struct PairHash {
-    size_t operator()(const std::pair<std::string, int>& p) const {
-        size_t h1 = std::hash<std::string>{}(p.first);
-        size_t h2 = std::hash<int>{}(p.second);
-        return h1 ^ (h2 << 1);
-    }
-};
-
-
 
 pair<list<list<string>>, int> Data::minimalAirlines(const list<list<string>> &flights, const unordered_set<string>& airlineSet, bool unwantedAirlines) const {
 
@@ -833,7 +824,7 @@ pair<list<list<string>>, int> Data::minimalAirlines(const list<list<string>> &fl
     list<list<string>> bestFlights;
 
     for (const list<string> &flight: flights) {
-        unordered_set<pair<string, int>, PairHash> usedAirlines;
+        vector<unordered_set<string>> usedAirlines;
         int numberAirlines = 0;
 
         auto airport = flight.begin();
@@ -856,29 +847,33 @@ pair<list<list<string>>, int> Data::minimalAirlines(const list<list<string>> &fl
                     }
                 }
             }
-            // Airlines already used that can be used again
-            unordered_set<string> bestAirlines;
-            for (const auto &airline: usedAirlines) {
-                if (effectiveAirlines.find(airline.first) != effectiveAirlines.end()) {
-                    bestAirlines.insert(airline.first);
+            // Store best airlines organized by their first use
+            unordered_map<int, unordered_set<string>> bestAirlines;
+            for (size_t i=0; i<usedAirlines.size(); i++){
+                const auto& set = usedAirlines[i];
+                for (const string& airline : set){
+                    if (effectiveAirlines.find(airline) != effectiveAirlines.end()){
+                        if (bestAirlines.find(i) != bestAirlines.end()){
+                            bestAirlines.at(i).insert(airline);
+                        }else{
+                            bestAirlines[i] = unordered_set<string>{airline};
+                        }
+                    }
                 }
             }
             // If no before used airline can be used
             if (bestAirlines.empty()) {
                 numberAirlines++;
+                usedAirlines.emplace_back();
                 // Add all the current airlines to the usedAirlines
                 for (const string &airline: effectiveAirlines) {
-                    usedAirlines.insert({airline, numberAirlines});
+                    usedAirlines[numberAirlines-1].insert(airline);
                 }
             } else {
                 // If possible to use airline already used, update used airlines
-                auto it = usedAirlines.begin();
-                while (it != usedAirlines.end()) {
-                    cout << (*it).first;
-                    if ((*it).second == minAirlines && bestAirlines.find((*it).first) == bestAirlines.end()) {
-                        it = usedAirlines.erase(it);
-                    } else {
-                        ++it;
+                for (const auto& pair : bestAirlines){
+                    for (const string& airline : pair.second){
+                        usedAirlines[pair.first].erase(airline);
                     }
                 }
             }
