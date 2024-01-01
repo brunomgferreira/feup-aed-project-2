@@ -677,7 +677,7 @@ unordered_set<string> Data::airportsInLocation(Coordinate coordinate, double rad
 // Flights
 
 void Data::getFlights(const LocationInfo &originLocation, const LocationInfo &destinyLocation,
-                       unordered_set<std::string> airlineSet, bool unwantedAirlines, bool minimizeAirlines) {
+                       unordered_set<string> airlineSet, bool unwantedAirlines, bool minimizeAirlines) {
 
     // Create set of airports to consider as start and end
     unordered_set<string> originAirports = convertLocation(originLocation);
@@ -785,8 +785,7 @@ void Data::getFlights(const LocationInfo &originLocation, const LocationInfo &de
     if (bestFlights.empty()){
         cout << ">> Not able to find any flights..." << endl;
     }else{
-
-    }if (minSizeFlight == 0){
+        if (minSizeFlight == 0){
         cout << ">> Origin and destiny locations coincide, no need to take any flight :)" << endl;
     }else{
 
@@ -794,7 +793,7 @@ void Data::getFlights(const LocationInfo &originLocation, const LocationInfo &de
 
 
         if (minimizeAirlines) {
-            pair<list<list<string>>, int> minimizedAirlines = minimalAirlines(bestFlights);
+            pair<list<list<string>>, int> minimizedAirlines = minimalAirlines(bestFlights, airlineSet, unwantedAirlines);
             bestFlights = minimizedAirlines.first;
             int minNumberAirlines = minimizedAirlines.second;
             cout << "   Minimal number of airlines: " << minNumberAirlines << endl;
@@ -808,7 +807,7 @@ void Data::getFlights(const LocationInfo &originLocation, const LocationInfo &de
             }
             cout << *airport << endl;
         }
-    }
+    } }
 
 
     cout << "\033[35m";
@@ -816,40 +815,76 @@ void Data::getFlights(const LocationInfo &originLocation, const LocationInfo &de
     cout << "\033[0m";
 }
 
-pair<list<list<string>>, int> Data::minimalAirlines(const list<list<string>> &flights) const {
+
+struct PairHash {
+    size_t operator()(const std::pair<std::string, int>& p) const {
+        size_t h1 = std::hash<std::string>{}(p.first);
+        size_t h2 = std::hash<int>{}(p.second);
+        return h1 ^ (h2 << 1);
+    }
+};
+
+
+
+pair<list<list<string>>, int> Data::minimalAirlines(const list<list<string>> &flights, const unordered_set<string>& airlineSet, bool unwantedAirlines) const {
+
 
     int minAirlines = numeric_limits<int>::max();
     list<list<string>> bestFlights;
 
-    for (const list<string>& flight : flights){
-        unordered_set<string> usedAirlines;
+    for (const list<string> &flight: flights) {
+        unordered_set<pair<string, int>, PairHash> usedAirlines;
         int numberAirlines = 0;
 
         auto airport = flight.begin();
-        while (next(airport, 1)!=flight.end()){
+        while (next(airport, 1) != flight.end()) {
             string origin = *airport;
             string destiny = *(++airport);
 
             unordered_set<string> availableAirlines = g.findVertex(origin)->getAdj().at(destiny).getAirlines();
-            unordered_set<string> bestAirlines = usedAirlines;
-            for (const string& airline : bestAirlines){
-                if (availableAirlines.find(airline) != availableAirlines.end()){
-                    bestAirlines.insert(airline);
+            unordered_set<string> effectiveAirlines;
+            if (unwantedAirlines) {
+                for (const string &airline: availableAirlines) {
+                    if (airlineSet.find(airline) == airlineSet.end()) {
+                        effectiveAirlines.insert(airline);
+                    }
+                }
+            } else {
+                for (const string &airline: availableAirlines) {
+                    if (airlineSet.find(airline) != airlineSet.end()) {
+                        effectiveAirlines.insert(airline);
+                    }
                 }
             }
-            if (bestAirlines.empty()){
+            // Airlines already used that can be used again
+            unordered_set<string> bestAirlines;
+            for (const auto &airline: usedAirlines) {
+                if (effectiveAirlines.find(airline.first) != effectiveAirlines.end()) {
+                    bestAirlines.insert(airline.first);
+                }
+            }
+            // If no before used airline can be used
+            if (bestAirlines.empty()) {
                 numberAirlines++;
-                for (const string& airline : availableAirlines){
-                    usedAirlines.insert(airline);
+                // Add all the current airlines to the usedAirlines
+                for (const string &airline: effectiveAirlines) {
+                    usedAirlines.insert({airline, numberAirlines});
                 }
-            }else{
-                usedAirlines = bestAirlines;
+            } else {
+                // If possible to use airline already used, update used airlines
+                auto it = usedAirlines.begin();
+                while (it != usedAirlines.end()) {
+                    cout << (*it).first;
+                    if ((*it).second == minAirlines && bestAirlines.find((*it).first) == bestAirlines.end()) {
+                        it = usedAirlines.erase(it);
+                    } else {
+                        ++it;
+                    }
+                }
             }
-
-
         }
-        if (numberAirlines <= minAirlines){
-            if (numberAirlines < minAirlines){
+        if (numberAirlines <= minAirlines) {
+            if (numberAirlines < minAirlines) {
                 bestFlights.clear();
             }
             minAirlines = numberAirlines;
@@ -859,22 +894,25 @@ pair<list<list<string>>, int> Data::minimalAirlines(const list<list<string>> &fl
     return {bestFlights, minAirlines};
 }
 
-list<list<string>> Data::processFlights(const string& destiny, const unordered_map<string, pair<list<string>, int>>& airportTrack) const{
+
+list<list<string>> Data::processFlights(const string &destiny,
+                                            const unordered_map<string, pair<list<string>, int>> &airportTrack) const {
     list<string> originList = airportTrack.at(destiny).first;
-    if (originList.empty()){
+    if (originList.empty()) {
         return {{destiny}};
     }
     list<list<string>> flights;
-    for (const string& origin : originList){
-        for (const list<string>& flight : processFlights(origin, airportTrack)){
+    for (const string &origin: originList) {
+        for (const list<string> &flight: processFlights(origin, airportTrack)) {
             flights.push_back(flight);
         }
     }
-    for (list<string>& flight : flights){
+    for (list<string> &flight: flights) {
         flight.push_back(destiny);
     }
     return flights;
 }
+
 // Location
 unordered_set<string> Data::convertLocation(const LocationInfo &location) {
     unordered_set<string> selectedAirports;
