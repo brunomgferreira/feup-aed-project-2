@@ -710,6 +710,12 @@ void Data::getFlights(const LocationInfo &originLocation, const LocationInfo &de
             string originCode = origin->getAirport()->getCode();
             q.pop();
 
+            // No need to process more distance airports if shorter flight already found
+            if (airportTrack[originCode].second > minSizeFlight){
+                break;
+            }
+
+
             // Airport is a destiny airport
             if (destinyAirports.find(originCode) != destinyAirports.end()) {
                 // Check if that level Airports are already all checked
@@ -796,7 +802,8 @@ void Data::getFlights(const LocationInfo &originLocation, const LocationInfo &de
             pair<list<list<string>>, int> minimizedAirlines = minimalAirlines(bestFlights, airlineSet, unwantedAirlines);
             bestFlights = minimizedAirlines.first;
             int minNumberAirlines = minimizedAirlines.second;
-            cout << "   Minimal number of airlines: " << minNumberAirlines << endl;
+            cout << "   Flights with optimal number of airlines: " << bestFlights.size() << endl;
+            cout << "   Minimal number of airlines: " << minNumberAirlines << endl << endl;
         }
 
         for (const auto & flight : bestFlights){
