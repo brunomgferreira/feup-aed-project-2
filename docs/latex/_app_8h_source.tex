@@ -1,0 +1,41 @@
+\doxysection{App.\+h}
+\hypertarget{_app_8h_source}{}\label{_app_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FLIGHT\_MANAGEMENT\_SYSTEM\_APP\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FLIGHT\_MANAGEMENT\_SYSTEM\_APP\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Data.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_state}{State}};}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_app}{App}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_app}{App}}*\ instance;}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_state}{State}}*\ currentState;}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_data}{Data}}*\ data;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_app_acb8cbf3e285b91d0170ffe87df5989c5}{App}}();}
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_app_a34f1f253b1cef5f4ecbac66eaf6964ec}{\string~App}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_app}{App}}*\ \mbox{\hyperlink{class_app_a4d04d85bbda06ce06faad681c652f1c7}{getInstance}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_state}{State}}\ *\mbox{\hyperlink{class_app_a26e3b9f6b91e8e3f25d7d42db07f9284}{getState}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_a8b13a49d2c6cfa525cf866db1d2197c7}{setState}}(\mbox{\hyperlink{class_state}{State}}*\ state);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{class_data}{Data}}\ *\mbox{\hyperlink{class_app_aee6d8099b506284e3011c02236434c69}{getData}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_ae2404f5a75c343691c1c3ec4e958a529}{display}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_a82cf101250fcf289a59c4d4b9b847029}{handleInput}}();}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FLIGHT\_MANAGEMENT\_SYSTEM\_APP\_H}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ }
+
+\end{DoxyCode}

@@ -1,5 +1,5 @@
-\hypertarget{class_data}{}\doxysection{Data Class Reference}
-\label{class_data}\index{Data@{Data}}
+\doxysection{Data Class Reference}
+\hypertarget{class_data}{}\label{class_data}\index{Data@{Data}}
 
 
 Class that saves all the program data.  
@@ -12,12 +12,18 @@ Class that saves all the program data.
 
 
 Collaboration diagram for Data\+:
-% FIG 0
-\doxysubsection*{Public Member Functions}
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=125pt]{class_data__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}} ()
-\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{class_data}{Data}} class. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_data}{Data} class. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_data_a840ca351dc8ef62969e84030729fee46}{read\+File\+Airlines}} ()
 \begin{DoxyCompactList}\small\item\em Reads and populates the map of airlines from an external file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_data_a91a280bccf677d0789cd23e3de0c2c96}{read\+File\+Airports}} ()
@@ -96,36 +102,36 @@ void \mbox{\hyperlink{class_data_a1e742b55a2f3769ef86daa2f30b4ee22}{top\+KAirpor
 \begin{DoxyCompactList}\small\item\em Displays the top K airports based on the number of flights departing from each airport. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_data_a038a612952d83eaff3f5e8debc3115e8}{essential\+Airports}} ()
 \begin{DoxyCompactList}\small\item\em Identifies and displays the essential airports in the given graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
+\doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static bool \mbox{\hyperlink{class_data_aa26af5f184c1c278612acb4893c6b0fa}{sort\+Top\+Airports}} (const pair$<$ string, int $>$ \&a, const pair$<$ string, int $>$ \&b)
 \begin{DoxyCompactList}\small\item\em Comparator function for sorting airports based on the number of flights in descending order. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
+\doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-list$<$ list$<$ string $>$ $>$ \mbox{\hyperlink{class_data_ae3e5ab9c41e660b5d4be54c3960a3bec}{process\+Flights}} (const string \&destiny, const unordered\+\_\+map$<$ string, pair$<$ list$<$ string $>$, int $>$$>$ \&airport\+Track) const
+list$<$ list$<$ string $>$ $>$ \mbox{\hyperlink{class_data_aff03c21514d820ec0deeba0c2dd26935}{process\+Flights}} (const string \&destiny, const unordered\+\_\+map$<$ string, pair$<$ list$<$ string $>$, int $>$ $>$ \&airport\+Track) const
 \begin{DoxyCompactList}\small\item\em Recursively processes the flight paths from origin to the specified destiny based on BFS results. \end{DoxyCompactList}\item 
-pair$<$ list$<$ list$<$ string $>$ $>$, int $>$ \mbox{\hyperlink{class_data_acfacfd7001d61f88a5a46ae828346225}{minimal\+Airlines}} (const list$<$ list$<$ string $>$$>$ \&flights) const
+pair$<$ list$<$ list$<$ string $>$ $>$, int $>$ \mbox{\hyperlink{class_data_a13a0bc951d05965f9d58b926aaa47ac4}{minimal\+Airlines}} (const list$<$ list$<$ string $>$ $>$ \&flights, const unordered\+\_\+set$<$ string $>$ \&airline\+Set, bool unwanted\+Airlines) const
 \begin{DoxyCompactList}\small\item\em Finds the minimal number of airlines required for a set of flights. \end{DoxyCompactList}\item 
 unordered\+\_\+set$<$ string $>$ \mbox{\hyperlink{class_data_a0f9767293f91aa7a7ac92ad91ebf77b8}{convert\+Location}} (const \mbox{\hyperlink{class_location_info}{Location\+Info}} \&location)
 \begin{DoxyCompactList}\small\item\em Converts location information into a set of airport codes based on the specified location type. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
+\doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_data_a03db640e9e1758a2c9543e225e20e891}\label{class_data_a03db640e9e1758a2c9543e225e20e891}} 
-unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_airline}{Airline}} $\ast$ $>$ {\bfseries airlines}
+\Hypertarget{class_data_a03db640e9e1758a2c9543e225e20e891}\label{class_data_a03db640e9e1758a2c9543e225e20e891} 
+unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_airline}{Airline}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries airlines}
 \item 
-\mbox{\Hypertarget{class_data_a6a8c05bea4d84301e6414282dbcab63c}\label{class_data_a6a8c05bea4d84301e6414282dbcab63c}} 
-unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_airport}{Airport}} $\ast$ $>$ {\bfseries airports}
+\Hypertarget{class_data_a6a8c05bea4d84301e6414282dbcab63c}\label{class_data_a6a8c05bea4d84301e6414282dbcab63c} 
+unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_airport}{Airport}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries airports}
 \item 
-\mbox{\Hypertarget{class_data_af73ee8e65b77d57faa1a16052e9101f5}\label{class_data_af73ee8e65b77d57faa1a16052e9101f5}} 
-unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_city}{City}} $\ast$ $>$ {\bfseries cities}
+\Hypertarget{class_data_af73ee8e65b77d57faa1a16052e9101f5}\label{class_data_af73ee8e65b77d57faa1a16052e9101f5} 
+unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_city}{City}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries cities}
 \item 
-\mbox{\Hypertarget{class_data_a15b0a8ca04e1c75881d517e17b629f75}\label{class_data_a15b0a8ca04e1c75881d517e17b629f75}} 
-unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_country}{Country}} $\ast$ $>$ {\bfseries countries}
+\Hypertarget{class_data_a15b0a8ca04e1c75881d517e17b629f75}\label{class_data_a15b0a8ca04e1c75881d517e17b629f75} 
+unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_country}{Country}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries countries}
 \item 
-\mbox{\Hypertarget{class_data_a7ff2cbd4ce464653b30ac17a1bc7f2e6}\label{class_data_a7ff2cbd4ce464653b30ac17a1bc7f2e6}} 
+\Hypertarget{class_data_a7ff2cbd4ce464653b30ac17a1bc7f2e6}\label{class_data_a7ff2cbd4ce464653b30ac17a1bc7f2e6} 
 \mbox{\hyperlink{class_graph}{Graph}} {\bfseries g}
 \end{DoxyCompactItemize}
 
@@ -134,7 +140,7 @@ unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_country}{Country}} $\ast$ $
 Class that saves all the program data. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_data_af11f741cb7f587e2e495452a8905a22a}\label{class_data_af11f741cb7f587e2e495452a8905a22a}} 
+\Hypertarget{class_data_af11f741cb7f587e2e495452a8905a22a}\label{class_data_af11f741cb7f587e2e495452a8905a22a} 
 \index{Data@{Data}!Data@{Data}}
 \index{Data@{Data}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{Data()}{Data()}}
@@ -142,14 +148,14 @@ Class that saves all the program data.
 
 
 
-Default constructor for the \mbox{\hyperlink{class_data}{Data}} class. 
+Default constructor for the \doxylink{class_data}{Data} class. 
 
-This default constructor creates a new instance of the \mbox{\hyperlink{class_data}{Data}} class without specifying any initial values. It initializes the \mbox{\hyperlink{class_data}{Data}} object with default values.
+This default constructor creates a new instance of the \doxylink{class_data}{Data} class without specifying any initial values. It initializes the \doxylink{class_data}{Data} object with default values.
 
 Time complexity\+: O(1) 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_data_a3232913b5dbecb8da90aa3dc3aaee8c2}\label{class_data_a3232913b5dbecb8da90aa3dc3aaee8c2}} 
+\Hypertarget{class_data_a3232913b5dbecb8da90aa3dc3aaee8c2}\label{class_data_a3232913b5dbecb8da90aa3dc3aaee8c2} 
 \index{Data@{Data}!airlineExists@{airlineExists}}
 \index{airlineExists@{airlineExists}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{airlineExists()}{airlineExists()}}
@@ -169,7 +175,7 @@ This method checks whether an airline with the given code exists in the database
 \begin{DoxyReturn}{Returns}
 True if the airline exists in the database, false otherwise.
 \end{DoxyReturn}
-Time complexity\+: O(1), as the function performs a constant-\/time map lookup. \mbox{\Hypertarget{class_data_affd17fa1c815a2809e5b62c5a567f566}\label{class_data_affd17fa1c815a2809e5b62c5a567f566}} 
+Time complexity\+: O(1), as the function performs a constant-\/time map lookup. \Hypertarget{class_data_affd17fa1c815a2809e5b62c5a567f566}\label{class_data_affd17fa1c815a2809e5b62c5a567f566} 
 \index{Data@{Data}!airportExists@{airportExists}}
 \index{airportExists@{airportExists}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{airportExists()}{airportExists()}}
@@ -189,7 +195,7 @@ This method checks whether an airport with the given code exists in the database
 \begin{DoxyReturn}{Returns}
 True if the airport exists in the database, false otherwise.
 \end{DoxyReturn}
-Time complexity\+: O(1), as the function performs a constant-\/time map lookup. \mbox{\Hypertarget{class_data_af24972dc926e39275d85b754bd389f86}\label{class_data_af24972dc926e39275d85b754bd389f86}} 
+Time complexity\+: O(1), as the function performs a constant-\/time map lookup. \Hypertarget{class_data_af24972dc926e39275d85b754bd389f86}\label{class_data_af24972dc926e39275d85b754bd389f86} 
 \index{Data@{Data}!airportNearCoordinate@{airportNearCoordinate}}
 \index{airportNearCoordinate@{airportNearCoordinate}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{airportNearCoordinate()}{airportNearCoordinate()}}
@@ -209,7 +215,7 @@ This method calculates the distance between the given coordinate and each airpor
 \begin{DoxyReturn}{Returns}
 A string representing the code of the nearest airport.
 \end{DoxyReturn}
-Time complexity\+: O(\+A), where A is the total number of airports in the database. \mbox{\Hypertarget{class_data_a024e1b2cd49356ad47df5fa979325dfb}\label{class_data_a024e1b2cd49356ad47df5fa979325dfb}} 
+Time complexity\+: O(\+A), where A is the total number of airports in the database. \Hypertarget{class_data_a024e1b2cd49356ad47df5fa979325dfb}\label{class_data_a024e1b2cd49356ad47df5fa979325dfb} 
 \index{Data@{Data}!airportsInCity@{airportsInCity}}
 \index{airportsInCity@{airportsInCity}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{airportsInCity()}{airportsInCity()}}
@@ -229,7 +235,7 @@ This method returns an unordered set containing the airport codes associated wit
 \begin{DoxyReturn}{Returns}
 An unordered set of strings representing the airport codes in the specified city.
 \end{DoxyReturn}
-Time complexity\+: O(1), as the function involves a direct retrieval of the set of airport codes. \mbox{\Hypertarget{class_data_a994e04c76d6fd3389f0aef86ed812f48}\label{class_data_a994e04c76d6fd3389f0aef86ed812f48}} 
+Time complexity\+: O(1), as the function involves a direct retrieval of the set of airport codes. \Hypertarget{class_data_a994e04c76d6fd3389f0aef86ed812f48}\label{class_data_a994e04c76d6fd3389f0aef86ed812f48} 
 \index{Data@{Data}!airportsInCountry@{airportsInCountry}}
 \index{airportsInCountry@{airportsInCountry}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{airportsInCountry()}{airportsInCountry()}}
@@ -249,7 +255,7 @@ This method returns an unordered set containing the airport codes for all the ai
 \begin{DoxyReturn}{Returns}
 An unordered set of strings representing the airport codes in the specified country.
 \end{DoxyReturn}
-Time complexity\+: O(C + A), where C is the number of cities associated with the specified country, and A is the total number of airports in those cities. \mbox{\Hypertarget{class_data_a0133c6a17a3188024592dbed8bdc35ad}\label{class_data_a0133c6a17a3188024592dbed8bdc35ad}} 
+Time complexity\+: O(C + A), where C is the number of cities associated with the specified country, and A is the total number of airports in those cities. \Hypertarget{class_data_a0133c6a17a3188024592dbed8bdc35ad}\label{class_data_a0133c6a17a3188024592dbed8bdc35ad} 
 \index{Data@{Data}!airportsInLocation@{airportsInLocation}}
 \index{airportsInLocation@{airportsInLocation}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{airportsInLocation()}{airportsInLocation()}}
@@ -271,7 +277,7 @@ This method calculates the distance between the given coordinate and each airpor
 \begin{DoxyReturn}{Returns}
 An unordered set of strings representing the codes of airports within the specified radius.
 \end{DoxyReturn}
-Time complexity\+: O(\+A), where A is the total number of airports in the database. \mbox{\Hypertarget{class_data_ac5a3e421e885ce7b35695f2c400f6942}\label{class_data_ac5a3e421e885ce7b35695f2c400f6942}} 
+Time complexity\+: O(\+A), where A is the total number of airports in the database. \Hypertarget{class_data_ac5a3e421e885ce7b35695f2c400f6942}\label{class_data_ac5a3e421e885ce7b35695f2c400f6942} 
 \index{Data@{Data}!cityExists@{cityExists}}
 \index{cityExists@{cityExists}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{cityExists()}{cityExists()}}
@@ -291,7 +297,7 @@ This method checks whether a city with the given name exists in the database. It
 \begin{DoxyReturn}{Returns}
 True if the city exists in the database, false otherwise.
 \end{DoxyReturn}
-Time complexity\+: O(1), as the function performs a constant-\/time map lookup. \mbox{\Hypertarget{class_data_a0f9767293f91aa7a7ac92ad91ebf77b8}\label{class_data_a0f9767293f91aa7a7ac92ad91ebf77b8}} 
+Time complexity\+: O(1), as the function performs a constant-\/time map lookup. \Hypertarget{class_data_a0f9767293f91aa7a7ac92ad91ebf77b8}\label{class_data_a0f9767293f91aa7a7ac92ad91ebf77b8} 
 \index{Data@{Data}!convertLocation@{convertLocation}}
 \index{convertLocation@{convertLocation}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{convertLocation()}{convertLocation()}}
@@ -311,7 +317,7 @@ This method takes location information and converts it into a set of airport cod
 \begin{DoxyReturn}{Returns}
 An unordered set of strings representing the airport codes based on the specified location type.
 \end{DoxyReturn}
-Time complexity\+: O(\+A), where A is the total number of airports in the database, depending on the location type. \mbox{\Hypertarget{class_data_a22579a90f8bc9e47a8eddabf6950fc78}\label{class_data_a22579a90f8bc9e47a8eddabf6950fc78}} 
+Time complexity\+: O(\+A), where A is the total number of airports in the database, depending on the location type. \Hypertarget{class_data_a22579a90f8bc9e47a8eddabf6950fc78}\label{class_data_a22579a90f8bc9e47a8eddabf6950fc78} 
 \index{Data@{Data}!countryExists@{countryExists}}
 \index{countryExists@{countryExists}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{countryExists()}{countryExists()}}
@@ -331,7 +337,7 @@ This method checks whether a country with the given name exists in the database.
 \begin{DoxyReturn}{Returns}
 True if the country exists in the database, false otherwise.
 \end{DoxyReturn}
-Time complexity\+: O(1), as the function performs a constant-\/time map lookup. \mbox{\Hypertarget{class_data_a038a612952d83eaff3f5e8debc3115e8}\label{class_data_a038a612952d83eaff3f5e8debc3115e8}} 
+Time complexity\+: O(1), as the function performs a constant-\/time map lookup. \Hypertarget{class_data_a038a612952d83eaff3f5e8debc3115e8}\label{class_data_a038a612952d83eaff3f5e8debc3115e8} 
 \index{Data@{Data}!essentialAirports@{essentialAirports}}
 \index{essentialAirports@{essentialAirports}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{essentialAirports()}{essentialAirports()}}
@@ -343,7 +349,7 @@ Identifies and displays the essential airports in the given graph.
 
 This method determines the essential airports in the graph, considering the connectivity of the airports. It performs a depth-\/first search (DFS) traversal to identify the strongly connected components, and then calculates the essential airports based on the existence of multiple strongly connected components. The results include the number of essential airports.
 
-Time complexity\+: O(V + E), where V is the number of vertices (airports) and E is the number of edges (flights). \mbox{\Hypertarget{class_data_aa3f25ac5a5a1bbd2544f9ace33cd7aa8}\label{class_data_aa3f25ac5a5a1bbd2544f9ace33cd7aa8}} 
+Time complexity\+: O(V + E), where V is the number of vertices (airports) and E is the number of edges (flights). \Hypertarget{class_data_aa3f25ac5a5a1bbd2544f9ace33cd7aa8}\label{class_data_aa3f25ac5a5a1bbd2544f9ace33cd7aa8} 
 \index{Data@{Data}!getFlights@{getFlights}}
 \index{getFlights@{getFlights}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{getFlights()}{getFlights()}}
@@ -371,7 +377,7 @@ This method processes flights between specified origin and destination locations
 \begin{DoxyReturn}{Returns}
 The best flight paths based on the specified criteria.
 \end{DoxyReturn}
-Time complexity\+: O(\+F $\ast$ E $\ast$ A), where F is the number of flights, E is the average number of edges (connections) per airport, and A is the average number of airlines per connection. \mbox{\Hypertarget{class_data_a3fa5c9c302b5e55fc6a059c6906005ef}\label{class_data_a3fa5c9c302b5e55fc6a059c6906005ef}} 
+Time complexity\+: O(\+F \texorpdfstring{$\ast$}{*} E \texorpdfstring{$\ast$}{*} A), where F is the number of flights, E is the average number of edges (connections) per airport, and A is the average number of airlines per connection. \Hypertarget{class_data_a3fa5c9c302b5e55fc6a059c6906005ef}\label{class_data_a3fa5c9c302b5e55fc6a059c6906005ef} 
 \index{Data@{Data}!maximumTrip@{maximumTrip}}
 \index{maximumTrip@{maximumTrip}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{maximumTrip()}{maximumTrip()}}
@@ -383,11 +389,11 @@ Finds and displays the maximum trip in terms of the number of flights between tw
 
 This method performs a BFS traversal from each airport to find the maximum trip, defined as the maximum number of flights between two airports. It keeps track of the airports involved in the maximum trip and prints the results, including the number of flights and the sequence of airports in the trip.
 
-Time complexity\+: O(V $\ast$ (V + E)), where V is the number of vertices (airports) and E is the number of edges (flights). \mbox{\Hypertarget{class_data_acfacfd7001d61f88a5a46ae828346225}\label{class_data_acfacfd7001d61f88a5a46ae828346225}} 
+Time complexity\+: O(V \texorpdfstring{$\ast$}{*} (V + E)), where V is the number of vertices (airports) and E is the number of edges (flights). \Hypertarget{class_data_a13a0bc951d05965f9d58b926aaa47ac4}\label{class_data_a13a0bc951d05965f9d58b926aaa47ac4} 
 \index{Data@{Data}!minimalAirlines@{minimalAirlines}}
 \index{minimalAirlines@{minimalAirlines}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{minimalAirlines()}{minimalAirlines()}}
-{\footnotesize\ttfamily pair$<$ list$<$ list$<$ string $>$ $>$, int $>$ Data\+::minimal\+Airlines (\begin{DoxyParamCaption}\item[{const list$<$ list$<$ string $>$$>$ \&}]{flights }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily pair$<$ list$<$ list$<$ string $>$ $>$, int $>$ Data\+::minimal\+Airlines (\begin{DoxyParamCaption}\item[{const list$<$ list$<$ string $>$ $>$ \&}]{flights,  }\item[{const unordered\+\_\+set$<$ string $>$ \&}]{airline\+Set,  }\item[{bool}]{unwanted\+Airlines }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -403,7 +409,7 @@ This method takes a list of flights, where each flight is represented as a list 
 \begin{DoxyReturn}{Returns}
 A pair containing the minimal set of flights and the number of different airlines required.
 \end{DoxyReturn}
-Time complexity\+: O(\+F $\ast$ E $\ast$ A), where F is the number of flights, E is the average number of edges (connections) per airport, and A is the average number of airlines per connection. \mbox{\Hypertarget{class_data_acfa3bf0a6f7cba5d3ad35516b2fd3762}\label{class_data_acfa3bf0a6f7cba5d3ad35516b2fd3762}} 
+Time complexity\+: O(\+F \texorpdfstring{$\ast$}{*} E \texorpdfstring{$\ast$}{*} A), where F is the number of flights, E is the average number of edges (connections) per airport, and A is the average number of airlines per connection. \Hypertarget{class_data_acfa3bf0a6f7cba5d3ad35516b2fd3762}\label{class_data_acfa3bf0a6f7cba5d3ad35516b2fd3762} 
 \index{Data@{Data}!numberOfAirlines@{numberOfAirlines}}
 \index{numberOfAirlines@{numberOfAirlines}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfAirlines()}{numberOfAirlines()}}
@@ -415,7 +421,7 @@ Prints the number of airlines in the database.
 
 This method outputs the count of airlines present in the database to the standard output. It utilizes the size of the map containing airlines to determine the total number of cities.
 
-Time complexity\+: O(1), as the function only involves retrieving the size of the map. \mbox{\Hypertarget{class_data_ae98183d4e85751ee6727ecd9b4d143ab}\label{class_data_ae98183d4e85751ee6727ecd9b4d143ab}} 
+Time complexity\+: O(1), as the function only involves retrieving the size of the map. \Hypertarget{class_data_ae98183d4e85751ee6727ecd9b4d143ab}\label{class_data_ae98183d4e85751ee6727ecd9b4d143ab} 
 \index{Data@{Data}!numberOfAirlinesAirport@{numberOfAirlinesAirport}}
 \index{numberOfAirlinesAirport@{numberOfAirlinesAirport}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfAirlinesAirport()}{numberOfAirlinesAirport()}}
@@ -432,7 +438,7 @@ This method calculates and outputs the count of unique airline codes for all the
 {\em airport\+Code} & The code of the airport for which the number of airlines is calculated.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(F + A), where F is the total number of flights departing from the specified airport, and A is the total number of airports in the graph. \mbox{\Hypertarget{class_data_a4d35ee8ae82062c1cc11cfb9e17a57f5}\label{class_data_a4d35ee8ae82062c1cc11cfb9e17a57f5}} 
+Time complexity\+: O(F + A), where F is the total number of flights departing from the specified airport, and A is the total number of airports in the graph. \Hypertarget{class_data_a4d35ee8ae82062c1cc11cfb9e17a57f5}\label{class_data_a4d35ee8ae82062c1cc11cfb9e17a57f5} 
 \index{Data@{Data}!numberOfAirlinesCity@{numberOfAirlinesCity}}
 \index{numberOfAirlinesCity@{numberOfAirlinesCity}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfAirlinesCity()}{numberOfAirlinesCity()}}
@@ -449,7 +455,7 @@ This method calculates and outputs the count of unique airline codes for all the
 {\em city\+Name} & The name of the city for which the number of airlines is calculated.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(A + F), where A is the total number of airports in the specified city, and F is the total number of flights from those airports. \mbox{\Hypertarget{class_data_a0a23ba54de14adaf669e339d4d14b0c4}\label{class_data_a0a23ba54de14adaf669e339d4d14b0c4}} 
+Time complexity\+: O(A + F), where A is the total number of airports in the specified city, and F is the total number of flights from those airports. \Hypertarget{class_data_a0a23ba54de14adaf669e339d4d14b0c4}\label{class_data_a0a23ba54de14adaf669e339d4d14b0c4} 
 \index{Data@{Data}!numberOfAirlinesCountry@{numberOfAirlinesCountry}}
 \index{numberOfAirlinesCountry@{numberOfAirlinesCountry}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfAirlinesCountry()}{numberOfAirlinesCountry()}}
@@ -466,7 +472,7 @@ This method calculates and outputs the count of unique airline codes for all the
 {\em country\+Name} & The name of the country for which the number of airlines is calculated.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(C + A + F), where C is the number of cities associated with the specified country, A is the total number of airports in those cities, and F is the total number of flights from those airports. \mbox{\Hypertarget{class_data_afd9547372fc52c89c4961092ff304271}\label{class_data_afd9547372fc52c89c4961092ff304271}} 
+Time complexity\+: O(C + A + F), where C is the number of cities associated with the specified country, A is the total number of airports in those cities, and F is the total number of flights from those airports. \Hypertarget{class_data_afd9547372fc52c89c4961092ff304271}\label{class_data_afd9547372fc52c89c4961092ff304271} 
 \index{Data@{Data}!numberOfAirports@{numberOfAirports}}
 \index{numberOfAirports@{numberOfAirports}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfAirports()}{numberOfAirports()}}
@@ -478,7 +484,7 @@ Prints the number of airports in the database.
 
 This method outputs the count of airports present in the database to the standard output. It utilizes the size of the map containing airports to determine the total number of airports.
 
-Time complexity\+: O(1), as the function only involves retrieving the size of the map. \mbox{\Hypertarget{class_data_a276aed8c4fe49f38d332c19e20fb5baa}\label{class_data_a276aed8c4fe49f38d332c19e20fb5baa}} 
+Time complexity\+: O(1), as the function only involves retrieving the size of the map. \Hypertarget{class_data_a276aed8c4fe49f38d332c19e20fb5baa}\label{class_data_a276aed8c4fe49f38d332c19e20fb5baa} 
 \index{Data@{Data}!numberOfAirportsCity@{numberOfAirportsCity}}
 \index{numberOfAirportsCity@{numberOfAirportsCity}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfAirportsCity()}{numberOfAirportsCity()}}
@@ -495,7 +501,7 @@ This method calculates and outputs the count of airports in the specified city. 
 {\em city\+Name} & The name of the city for which the number of airports is calculated.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(1), as the function involves retrieving the size of the set of airports. \mbox{\Hypertarget{class_data_a330c90fbd6eec8881dfb8323a71b95aa}\label{class_data_a330c90fbd6eec8881dfb8323a71b95aa}} 
+Time complexity\+: O(1), as the function involves retrieving the size of the set of airports. \Hypertarget{class_data_a330c90fbd6eec8881dfb8323a71b95aa}\label{class_data_a330c90fbd6eec8881dfb8323a71b95aa} 
 \index{Data@{Data}!numberOfAirportsCountry@{numberOfAirportsCountry}}
 \index{numberOfAirportsCountry@{numberOfAirportsCountry}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfAirportsCountry()}{numberOfAirportsCountry()}}
@@ -512,7 +518,7 @@ This method calculates and outputs the count of airports in the specified countr
 {\em country\+Name} & The name of the country for which the number of airports is calculated.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(\+C), where C is the number of cities associated with the specified country. \mbox{\Hypertarget{class_data_adf9bc09bf3cf1582236ff0124cbb4e66}\label{class_data_adf9bc09bf3cf1582236ff0124cbb4e66}} 
+Time complexity\+: O(\+C), where C is the number of cities associated with the specified country. \Hypertarget{class_data_adf9bc09bf3cf1582236ff0124cbb4e66}\label{class_data_adf9bc09bf3cf1582236ff0124cbb4e66} 
 \index{Data@{Data}!numberOfCities@{numberOfCities}}
 \index{numberOfCities@{numberOfCities}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfCities()}{numberOfCities()}}
@@ -524,7 +530,7 @@ Prints the number of cities in the database.
 
 This method outputs the count of cities present in the database to the standard output. It utilizes the size of the map containing cities to determine the total number of cities.
 
-Time complexity\+: O(1), as the function only involves retrieving the size of the map. \mbox{\Hypertarget{class_data_a2a1d211fa511c08bd446c767958d5cd5}\label{class_data_a2a1d211fa511c08bd446c767958d5cd5}} 
+Time complexity\+: O(1), as the function only involves retrieving the size of the map. \Hypertarget{class_data_a2a1d211fa511c08bd446c767958d5cd5}\label{class_data_a2a1d211fa511c08bd446c767958d5cd5} 
 \index{Data@{Data}!numberOfCitiesCountry@{numberOfCitiesCountry}}
 \index{numberOfCitiesCountry@{numberOfCitiesCountry}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfCitiesCountry()}{numberOfCitiesCountry()}}
@@ -541,7 +547,7 @@ This method calculates and outputs the count of cities in the specified country 
 {\em country\+Name} & The name of the country for which the number of cities is calculated.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(1), as the function involves retrieving the size of the set of cities. \mbox{\Hypertarget{class_data_a27c2284f3bc73d20d14fdeee453a2308}\label{class_data_a27c2284f3bc73d20d14fdeee453a2308}} 
+Time complexity\+: O(1), as the function involves retrieving the size of the set of cities. \Hypertarget{class_data_a27c2284f3bc73d20d14fdeee453a2308}\label{class_data_a27c2284f3bc73d20d14fdeee453a2308} 
 \index{Data@{Data}!numberOfCountries@{numberOfCountries}}
 \index{numberOfCountries@{numberOfCountries}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfCountries()}{numberOfCountries()}}
@@ -553,7 +559,7 @@ Prints the number of countries in the database.
 
 This method outputs the count of countries present in the database to the standard output. It utilizes the size of the map containing countries to determine the total number of cities.
 
-Time complexity\+: O(1), as the function only involves retrieving the size of the map. \mbox{\Hypertarget{class_data_a1d9cebed2c0bc9888fc03e38446d9eed}\label{class_data_a1d9cebed2c0bc9888fc03e38446d9eed}} 
+Time complexity\+: O(1), as the function only involves retrieving the size of the map. \Hypertarget{class_data_a1d9cebed2c0bc9888fc03e38446d9eed}\label{class_data_a1d9cebed2c0bc9888fc03e38446d9eed} 
 \index{Data@{Data}!numberOfCountriesAirport@{numberOfCountriesAirport}}
 \index{numberOfCountriesAirport@{numberOfCountriesAirport}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfCountriesAirport()}{numberOfCountriesAirport()}}
@@ -570,7 +576,7 @@ This method calculates and outputs the count of unique destination countries for
 {\em airport\+Code} & The code of the airport for which the number of countries is calculated.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(F + A), where F is the total number of flights departing from the specified airport, and A is the total number of airports in the graph. \mbox{\Hypertarget{class_data_a309d86494dc65db9366780704cf010f6}\label{class_data_a309d86494dc65db9366780704cf010f6}} 
+Time complexity\+: O(F + A), where F is the total number of flights departing from the specified airport, and A is the total number of airports in the graph. \Hypertarget{class_data_a309d86494dc65db9366780704cf010f6}\label{class_data_a309d86494dc65db9366780704cf010f6} 
 \index{Data@{Data}!numberOfCountriesCity@{numberOfCountriesCity}}
 \index{numberOfCountriesCity@{numberOfCountriesCity}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfCountriesCity()}{numberOfCountriesCity()}}
@@ -587,7 +593,7 @@ This method calculates and outputs the count of unique countries that can be rea
 {\em city\+Name} & The name of the city for which the number of countries is calculated.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(A + C), where A is the total number of airports in the specified city, and C is the total number of unique countries reached from those airports. \mbox{\Hypertarget{class_data_a1c1a33ea9f202840619e82f45a0d6257}\label{class_data_a1c1a33ea9f202840619e82f45a0d6257}} 
+Time complexity\+: O(A + C), where A is the total number of airports in the specified city, and C is the total number of unique countries reached from those airports. \Hypertarget{class_data_a1c1a33ea9f202840619e82f45a0d6257}\label{class_data_a1c1a33ea9f202840619e82f45a0d6257} 
 \index{Data@{Data}!numberOfDestinationsAirline@{numberOfDestinationsAirline}}
 \index{numberOfDestinationsAirline@{numberOfDestinationsAirline}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfDestinationsAirline()}{numberOfDestinationsAirline()}}
@@ -604,7 +610,7 @@ This method calculates and outputs the count of unique destinations (airports, c
 {\em airline\+Code} & The code of the airline for which the number of destinations is calculated.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(A + F + D), where A is the total number of airports in the graph, F is the total number of flights in the graph, and D is the total number of unique destinations reached by flights operated by the specified airline. \mbox{\Hypertarget{class_data_a0355f56c64b28fb2e98ba59c43a7efb4}\label{class_data_a0355f56c64b28fb2e98ba59c43a7efb4}} 
+Time complexity\+: O(A + F + D), where A is the total number of airports in the graph, F is the total number of flights in the graph, and D is the total number of unique destinations reached by flights operated by the specified airline. \Hypertarget{class_data_a0355f56c64b28fb2e98ba59c43a7efb4}\label{class_data_a0355f56c64b28fb2e98ba59c43a7efb4} 
 \index{Data@{Data}!numberOfDestinationsAirport@{numberOfDestinationsAirport}}
 \index{numberOfDestinationsAirport@{numberOfDestinationsAirport}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfDestinationsAirport()}{numberOfDestinationsAirport()}}
@@ -621,7 +627,7 @@ This method performs a BFS starting from the specified airport to identify uniqu
 {\em airport\+Code} & The code of the airport for which the number of destinations is calculated.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(A + D), where A is the total number of airports in the graph, and D is the total number of unique destinations reached from the specified airport. \mbox{\Hypertarget{class_data_a776af9acd6e46ef2cc686c01026c0986}\label{class_data_a776af9acd6e46ef2cc686c01026c0986}} 
+Time complexity\+: O(A + D), where A is the total number of airports in the graph, and D is the total number of unique destinations reached from the specified airport. \Hypertarget{class_data_a776af9acd6e46ef2cc686c01026c0986}\label{class_data_a776af9acd6e46ef2cc686c01026c0986} 
 \index{Data@{Data}!numberOfDestinationsCity@{numberOfDestinationsCity}}
 \index{numberOfDestinationsCity@{numberOfDestinationsCity}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfDestinationsCity()}{numberOfDestinationsCity()}}
@@ -638,7 +644,7 @@ This method performs a BFS starting from each airport in the specified city to i
 {\em city\+Name} & The name of the city for which the number of destinations is calculated.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(A + D), where A is the total number of airports in the specified city, and D is the total number of unique destinations reached from those airports. \mbox{\Hypertarget{class_data_a70f94be3d519236679c9c5df840de74d}\label{class_data_a70f94be3d519236679c9c5df840de74d}} 
+Time complexity\+: O(A + D), where A is the total number of airports in the specified city, and D is the total number of unique destinations reached from those airports. \Hypertarget{class_data_a70f94be3d519236679c9c5df840de74d}\label{class_data_a70f94be3d519236679c9c5df840de74d} 
 \index{Data@{Data}!numberOfDestinationsCountry@{numberOfDestinationsCountry}}
 \index{numberOfDestinationsCountry@{numberOfDestinationsCountry}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfDestinationsCountry()}{numberOfDestinationsCountry()}}
@@ -655,7 +661,7 @@ This method performs a BFS starting from each airport in the specified country t
 {\em country\+Name} & The name of the country for which the number of destinations is calculated.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(C + A + D), where C is the number of cities associated with the specified country, A is the total number of airports in those cities, and D is the total number of unique destinations reached. \mbox{\Hypertarget{class_data_abbb43288440f35ac24fb14478c21b789}\label{class_data_abbb43288440f35ac24fb14478c21b789}} 
+Time complexity\+: O(C + A + D), where C is the number of cities associated with the specified country, A is the total number of airports in those cities, and D is the total number of unique destinations reached. \Hypertarget{class_data_abbb43288440f35ac24fb14478c21b789}\label{class_data_abbb43288440f35ac24fb14478c21b789} 
 \index{Data@{Data}!numberOfDestinationsXStopsAirport@{numberOfDestinationsXStopsAirport}}
 \index{numberOfDestinationsXStopsAirport@{numberOfDestinationsXStopsAirport}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfDestinationsXStopsAirport()}{numberOfDestinationsXStopsAirport()}}
@@ -674,7 +680,7 @@ This method performs a BFS starting from the specified airport, considering a ma
 {\em stops} & The maximum number of stops allowed for each BFS traversal.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(A + D), where A is the total number of airports in the graph, and D is the total number of unique destinations reached from the specified airport within the given number of stops. \mbox{\Hypertarget{class_data_a5797bf505cd1c133b6136655831e75aa}\label{class_data_a5797bf505cd1c133b6136655831e75aa}} 
+Time complexity\+: O(A + D), where A is the total number of airports in the graph, and D is the total number of unique destinations reached from the specified airport within the given number of stops. \Hypertarget{class_data_a5797bf505cd1c133b6136655831e75aa}\label{class_data_a5797bf505cd1c133b6136655831e75aa} 
 \index{Data@{Data}!numberOfDestinationsXStopsCity@{numberOfDestinationsXStopsCity}}
 \index{numberOfDestinationsXStopsCity@{numberOfDestinationsXStopsCity}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfDestinationsXStopsCity()}{numberOfDestinationsXStopsCity()}}
@@ -693,7 +699,7 @@ This method performs a BFS starting from each airport in the specified city, con
 {\em stops} & The maximum number of stops allowed for each BFS traversal.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(A + D), where A is the total number of airports in the specified city, and D is the total number of unique destinations reached from those airports. \mbox{\Hypertarget{class_data_a652a1f67693314d0ca0a52105a3296f1}\label{class_data_a652a1f67693314d0ca0a52105a3296f1}} 
+Time complexity\+: O(A + D), where A is the total number of airports in the specified city, and D is the total number of unique destinations reached from those airports. \Hypertarget{class_data_a652a1f67693314d0ca0a52105a3296f1}\label{class_data_a652a1f67693314d0ca0a52105a3296f1} 
 \index{Data@{Data}!numberOfDestinationsXStopsCountry@{numberOfDestinationsXStopsCountry}}
 \index{numberOfDestinationsXStopsCountry@{numberOfDestinationsXStopsCountry}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfDestinationsXStopsCountry()}{numberOfDestinationsXStopsCountry()}}
@@ -712,7 +718,7 @@ This method performs a BFS starting from each airport in the specified country, 
 {\em stops} & The maximum number of stops allowed for each BFS traversal.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(C + A + D), where C is the number of cities associated with the specified country, A is the total number of airports in those cities, and D is the total number of unique destinations reached. \mbox{\Hypertarget{class_data_a38e23090e29091175fb567707514b255}\label{class_data_a38e23090e29091175fb567707514b255}} 
+Time complexity\+: O(C + A + D), where C is the number of cities associated with the specified country, A is the total number of airports in those cities, and D is the total number of unique destinations reached. \Hypertarget{class_data_a38e23090e29091175fb567707514b255}\label{class_data_a38e23090e29091175fb567707514b255} 
 \index{Data@{Data}!numberOfFlights@{numberOfFlights}}
 \index{numberOfFlights@{numberOfFlights}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfFlights()}{numberOfFlights()}}
@@ -724,7 +730,7 @@ Prints the total number of flights in the database.
 
 This method calculates and outputs the total count of flights present in the database. It iterates through the vertices of the graph, considering each airport and its connections, and accumulates the count of flights from those connections. The final count is then displayed on the standard output.
 
-Time complexity\+: O(V + E), where V is the number of vertices (airports) and E is the number of edges (connections/flights) in the graph. \mbox{\Hypertarget{class_data_a399418be5c66a1cb1f522bbaa3f3b634}\label{class_data_a399418be5c66a1cb1f522bbaa3f3b634}} 
+Time complexity\+: O(V + E), where V is the number of vertices (airports) and E is the number of edges (connections/flights) in the graph. \Hypertarget{class_data_a399418be5c66a1cb1f522bbaa3f3b634}\label{class_data_a399418be5c66a1cb1f522bbaa3f3b634} 
 \index{Data@{Data}!numberOfFlightsAirline@{numberOfFlightsAirline}}
 \index{numberOfFlightsAirline@{numberOfFlightsAirline}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfFlightsAirline()}{numberOfFlightsAirline()}}
@@ -741,7 +747,7 @@ This method calculates and outputs the count of flights operated by the specifie
 {\em airline\+Code} & The code of the airline for which the number of flights is calculated.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(A + F), where A is the total number of airports in the graph, and F is the total number of flights in the graph. \mbox{\Hypertarget{class_data_a3705bacfc822643d3c792b23ad20f985}\label{class_data_a3705bacfc822643d3c792b23ad20f985}} 
+Time complexity\+: O(A + F), where A is the total number of airports in the graph, and F is the total number of flights in the graph. \Hypertarget{class_data_a3705bacfc822643d3c792b23ad20f985}\label{class_data_a3705bacfc822643d3c792b23ad20f985} 
 \index{Data@{Data}!numberOfFlightsAirport@{numberOfFlightsAirport}}
 \index{numberOfFlightsAirport@{numberOfFlightsAirport}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfFlightsAirport()}{numberOfFlightsAirport()}}
@@ -758,7 +764,7 @@ This method calculates and outputs the count of flights departing from the speci
 {\em airport\+Code} & The code of the airport for which the number of flights is calculated.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(\+F), where F is the total number of flights departing from the specified airport. \mbox{\Hypertarget{class_data_a87d62f0f558bffe2e7b636b786e40897}\label{class_data_a87d62f0f558bffe2e7b636b786e40897}} 
+Time complexity\+: O(\+F), where F is the total number of flights departing from the specified airport. \Hypertarget{class_data_a87d62f0f558bffe2e7b636b786e40897}\label{class_data_a87d62f0f558bffe2e7b636b786e40897} 
 \index{Data@{Data}!numberOfFlightsCity@{numberOfFlightsCity}}
 \index{numberOfFlightsCity@{numberOfFlightsCity}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfFlightsCity()}{numberOfFlightsCity()}}
@@ -775,7 +781,7 @@ This method calculates and outputs the count of flights originating from airport
 {\em city\+Name} & The name of the city for which the number of flights is calculated.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(A + F), where A is the total number of airports in the specified city, and F is the total number of flights from those airports. \mbox{\Hypertarget{class_data_ac7dc74368029e4dbdc78b2992283db5b}\label{class_data_ac7dc74368029e4dbdc78b2992283db5b}} 
+Time complexity\+: O(A + F), where A is the total number of airports in the specified city, and F is the total number of flights from those airports. \Hypertarget{class_data_ac7dc74368029e4dbdc78b2992283db5b}\label{class_data_ac7dc74368029e4dbdc78b2992283db5b} 
 \index{Data@{Data}!numberOfFlightsCountry@{numberOfFlightsCountry}}
 \index{numberOfFlightsCountry@{numberOfFlightsCountry}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{numberOfFlightsCountry()}{numberOfFlightsCountry()}}
@@ -792,11 +798,11 @@ This method calculates and outputs the count of flights originating from airport
 {\em country\+Name} & The name of the country for which the number of flights is calculated.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(C + A + F), where C is the number of cities associated with the specified country, A is the total number of airports in those cities, and F is the total number of flights from those airports. \mbox{\Hypertarget{class_data_ae3e5ab9c41e660b5d4be54c3960a3bec}\label{class_data_ae3e5ab9c41e660b5d4be54c3960a3bec}} 
+Time complexity\+: O(C + A + F), where C is the number of cities associated with the specified country, A is the total number of airports in those cities, and F is the total number of flights from those airports. \Hypertarget{class_data_aff03c21514d820ec0deeba0c2dd26935}\label{class_data_aff03c21514d820ec0deeba0c2dd26935} 
 \index{Data@{Data}!processFlights@{processFlights}}
 \index{processFlights@{processFlights}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{processFlights()}{processFlights()}}
-{\footnotesize\ttfamily list$<$ list$<$ string $>$ $>$ Data\+::process\+Flights (\begin{DoxyParamCaption}\item[{const string \&}]{destiny,  }\item[{const unordered\+\_\+map$<$ string, pair$<$ list$<$ string $>$, int $>$$>$ \&}]{airport\+Track }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily list$<$ list$<$ string $>$ $>$ Data\+::process\+Flights (\begin{DoxyParamCaption}\item[{const string \&}]{destiny,  }\item[{const unordered\+\_\+map$<$ string, pair$<$ list$<$ string $>$, int $>$ $>$ \&}]{airport\+Track }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -814,7 +820,7 @@ This method recursively generates flight paths from the specified origin to the 
 \begin{DoxyReturn}{Returns}
 A list of lists representing the flight paths from various origins to the specified destiny.
 \end{DoxyReturn}
-Time complexity\+: O(\+N), where N is the number of airports in the BFS result for the given destiny. \mbox{\Hypertarget{class_data_a840ca351dc8ef62969e84030729fee46}\label{class_data_a840ca351dc8ef62969e84030729fee46}} 
+Time complexity\+: O(\+N), where N is the number of airports in the BFS result for the given destiny. \Hypertarget{class_data_a840ca351dc8ef62969e84030729fee46}\label{class_data_a840ca351dc8ef62969e84030729fee46} 
 \index{Data@{Data}!readFileAirlines@{readFileAirlines}}
 \index{readFileAirlines@{readFileAirlines}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{readFileAirlines()}{readFileAirlines()}}
@@ -826,7 +832,7 @@ Reads and populates the map of airlines from an external file.
 
 This method reads data from an external file containing airlines and populates the map of airlines in the database. Each airline has a code, name, callsign and a country.
 
-Time complexity\+: O(\+N), where N is the number airlines read from the file. \mbox{\Hypertarget{class_data_a91a280bccf677d0789cd23e3de0c2c96}\label{class_data_a91a280bccf677d0789cd23e3de0c2c96}} 
+Time complexity\+: O(\+N), where N is the number airlines read from the file. \Hypertarget{class_data_a91a280bccf677d0789cd23e3de0c2c96}\label{class_data_a91a280bccf677d0789cd23e3de0c2c96} 
 \index{Data@{Data}!readFileAirports@{readFileAirports}}
 \index{readFileAirports@{readFileAirports}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{readFileAirports()}{readFileAirports()}}
@@ -838,7 +844,7 @@ Reads and populates the map of airports from an external file.
 
 This method reads data from an external file containing airports and populates the map of airports in the database. Each airport has a code, name, city, country, latitude, and longitude. Additionally, this function updates the graph, and the maps of the cities and countries, creating new entries if necessary.
 
-Time complexity\+: O(\+N), where N is the number of airports read from the file. \mbox{\Hypertarget{class_data_a564f8e34acca634ece0cf457c0c4ae98}\label{class_data_a564f8e34acca634ece0cf457c0c4ae98}} 
+Time complexity\+: O(\+N), where N is the number of airports read from the file. \Hypertarget{class_data_a564f8e34acca634ece0cf457c0c4ae98}\label{class_data_a564f8e34acca634ece0cf457c0c4ae98} 
 \index{Data@{Data}!readFileFlights@{readFileFlights}}
 \index{readFileFlights@{readFileFlights}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{readFileFlights()}{readFileFlights()}}
@@ -850,7 +856,7 @@ Reads and populates the map of flights from an external file.
 
 This method reads data from an external file containing flight information and populates the map of flights in the database. Each line in the file represents a flight with the origin airport code, destination airport code, and the airline code. Additionally, this function adds an edge to the graph representing the flight between the origin and destination airports.
 
-Time complexity\+: O(\+N), where N is the number of flights read from the file. \mbox{\Hypertarget{class_data_aa26af5f184c1c278612acb4893c6b0fa}\label{class_data_aa26af5f184c1c278612acb4893c6b0fa}} 
+Time complexity\+: O(\+N), where N is the number of flights read from the file. \Hypertarget{class_data_aa26af5f184c1c278612acb4893c6b0fa}\label{class_data_aa26af5f184c1c278612acb4893c6b0fa} 
 \index{Data@{Data}!sortTopAirports@{sortTopAirports}}
 \index{sortTopAirports@{sortTopAirports}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{sortTopAirports()}{sortTopAirports()}}
@@ -872,7 +878,7 @@ This function compares two pairs containing airport codes and the corresponding 
 \begin{DoxyReturn}{Returns}
 True if the number of flights in pair \textquotesingle{}a\textquotesingle{} is greater than that in pair \textquotesingle{}b\textquotesingle{}, or if the number of flights is equal, and the airport code in pair \textquotesingle{}a\textquotesingle{} is lexicographically less than that in pair \textquotesingle{}b\textquotesingle{}. False otherwise.
 \end{DoxyReturn}
-Time complexity\+: O(1), as it performs a constant number of comparisons. \mbox{\Hypertarget{class_data_a1e742b55a2f3769ef86daa2f30b4ee22}\label{class_data_a1e742b55a2f3769ef86daa2f30b4ee22}} 
+Time complexity\+: O(1), as it performs a constant number of comparisons. \Hypertarget{class_data_a1e742b55a2f3769ef86daa2f30b4ee22}\label{class_data_a1e742b55a2f3769ef86daa2f30b4ee22} 
 \index{Data@{Data}!topKAirports@{topKAirports}}
 \index{topKAirports@{topKAirports}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{topKAirports()}{topKAirports()}}
@@ -889,7 +895,7 @@ This method calculates the number of flights departing from each airport and the
 {\em k} & The number of top airports to display.\\
 \hline
 \end{DoxyParams}
-Time complexity\+: O(\+V $\ast$ E $\ast$ log(\+V)), where V is the number of vertices (airports) and E is the number of edges (flights). 
+Time complexity\+: O(\+V \texorpdfstring{$\ast$}{*} E \texorpdfstring{$\ast$}{*} log(\+V)), where V is the number of vertices (airports) and E is the number of edges (flights). 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

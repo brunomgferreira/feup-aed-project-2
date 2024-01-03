@@ -1,0 +1,26 @@
+\doxysection{Get\+Airline\+Set\+State.\+h}
+\hypertarget{_get_airline_set_state_8h_source}{}\label{_get_airline_set_state_8h_source}\index{States/Utils/GetAirlineSetState.h@{States/Utils/GetAirlineSetState.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FLIGHT\_MANAGEMENT\_SYSTEM\_GETAIRLINESETSTATE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FLIGHT\_MANAGEMENT\_SYSTEM\_GETAIRLINESETSTATE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}States/State.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_get_airline_set_state}{GetAirlineSetState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_state}{State}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_state}{State}}*\ backState;}
+\DoxyCodeLine{00014\ \ \ \ \ function<void(\mbox{\hyperlink{class_app}{App}}*,\ \ unordered\_set<string>)>\ nextStateCallback;}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_get_airline_set_state}{GetAirlineSetState}}(\mbox{\hyperlink{class_state}{State}}*\ backState,\ function<\textcolor{keywordtype}{void}(\mbox{\hyperlink{class_app}{App}}*,\ \ unordered\_set<string>)>\ nextStateCallback);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_get_airline_set_state_ad1d307271297aa9961e15861b4f09724}{display}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_get_airline_set_state_acc43f411cab102e19f1f83d112216e4d}{handleInput}}(\mbox{\hyperlink{class_app}{App}}*\ app)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FLIGHT\_MANAGEMENT\_SYSTEM\_GETAIRLINESETSTATE\_H}}
+
+\end{DoxyCode}

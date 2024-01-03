@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['pressentertocontinue_104',['PressEnterToContinue',['../class_state.html#a5cc910b45294b877032ada4cbc90c213',1,'State']]],
-  ['processflights_105',['processFlights',['../class_data.html#ae3e5ab9c41e660b5d4be54c3960a3bec',1,'Data']]]
+  ['pressentertocontinue_0',['PressEnterToContinue',['../class_state.html#a5cc910b45294b877032ada4cbc90c213',1,'State']]],
+  ['processflights_1',['processFlights',['../class_data.html#aff03c21514d820ec0deeba0c2dd26935',1,'Data']]]
 ];

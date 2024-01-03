@@ -1,0 +1,5 @@
+<map id="AirportStatisticsMenuState" name="AirportStatisticsMenuState">
+<area shape="rect" id="Node000001" title="Class that represents the menu state for displaying and handling the airport statistics options." alt="" coords="5,81,201,109"/>
+<area shape="rect" id="Node000002" href="$class_state.html" title="Abstract base class representing an app state within the flight management system." alt="" coords="75,5,131,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,49,106,81,100,81,100,49"/>
+</map>

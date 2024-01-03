@@ -1,5 +1,5 @@
-\hypertarget{class_get_flight_destination_menu_state}{}\doxysection{Get\+Flight\+Destination\+Menu\+State Class Reference}
-\label{class_get_flight_destination_menu_state}\index{GetFlightDestinationMenuState@{GetFlightDestinationMenuState}}
+\doxysection{Get\+Flight\+Destination\+Menu\+State Class Reference}
+\hypertarget{class_get_flight_destination_menu_state}{}\label{class_get_flight_destination_menu_state}\index{GetFlightDestinationMenuState@{GetFlightDestinationMenuState}}
 
 
 Class that represents the menu state for displaying and handling the get flight destination options.  
@@ -12,24 +12,41 @@ Class that represents the menu state for displaying and handling the get flight 
 
 
 Inheritance diagram for Get\+Flight\+Destination\+Menu\+State\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{class_get_flight_destination_menu_state__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Get\+Flight\+Destination\+Menu\+State\+:
-% FIG 1
-\doxysubsection*{Public Member Functions}
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{class_get_flight_destination_menu_state__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_get_flight_destination_menu_state_a2a8d3adceb5cbaca5d491ffb62a020b7}{Get\+Flight\+Destination\+Menu\+State}} (const \mbox{\hyperlink{class_location_info}{Location\+Info}} \&origin\+Info)
-\begin{DoxyCompactList}\small\item\em Constructs an instance of \mbox{\hyperlink{class_get_flight_destination_menu_state}{Get\+Flight\+Destination\+Menu\+State}} with a specified origin information. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructs an instance of \doxylink{class_get_flight_destination_menu_state}{Get\+Flight\+Destination\+Menu\+State} with a specified origin information. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_get_flight_destination_menu_state_a1b574a885f4aca2a73380e84a8adb01a}{display}} () const override
 \begin{DoxyCompactList}\small\item\em Displays the menu for selecting the type of destination for flight retrieval. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_get_flight_destination_menu_state_a4982ab8497272d765006c537e30746bd}{handle\+Input}} (\mbox{\hyperlink{class_app}{App}} $\ast$app) override
+void \mbox{\hyperlink{class_get_flight_destination_menu_state_a4982ab8497272d765006c537e30746bd}{handle\+Input}} (\mbox{\hyperlink{class_app}{App}} \texorpdfstring{$\ast$}{*}app) override
 \begin{DoxyCompactList}\small\item\em Handles user input for selecting the type of destination for flight retrieval. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_state}{State}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_get_flight_destination_menu_state_a271bf9263950f791272d7b8b24ee3f7d}\label{class_get_flight_destination_menu_state_a271bf9263950f791272d7b8b24ee3f7d}} 
+void \mbox{\hyperlink{class_state_a5cc910b45294b877032ada4cbc90c213}{Press\+Enter\+To\+Continue}} (int num\+Presses=2) const
+\begin{DoxyCompactList}\small\item\em Waits for user to press ENTER to continue execution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_get_flight_destination_menu_state_a271bf9263950f791272d7b8b24ee3f7d}\label{class_get_flight_destination_menu_state_a271bf9263950f791272d7b8b24ee3f7d} 
 \mbox{\hyperlink{class_location_info}{Location\+Info}} {\bfseries origin\+Info}
 \end{DoxyCompactItemize}
 
@@ -38,7 +55,7 @@ void \mbox{\hyperlink{class_get_flight_destination_menu_state_a4982ab8497272d765
 Class that represents the menu state for displaying and handling the get flight destination options. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_get_flight_destination_menu_state_a2a8d3adceb5cbaca5d491ffb62a020b7}\label{class_get_flight_destination_menu_state_a2a8d3adceb5cbaca5d491ffb62a020b7}} 
+\Hypertarget{class_get_flight_destination_menu_state_a2a8d3adceb5cbaca5d491ffb62a020b7}\label{class_get_flight_destination_menu_state_a2a8d3adceb5cbaca5d491ffb62a020b7} 
 \index{GetFlightDestinationMenuState@{GetFlightDestinationMenuState}!GetFlightDestinationMenuState@{GetFlightDestinationMenuState}}
 \index{GetFlightDestinationMenuState@{GetFlightDestinationMenuState}!GetFlightDestinationMenuState@{GetFlightDestinationMenuState}}
 \doxysubsubsection{\texorpdfstring{GetFlightDestinationMenuState()}{GetFlightDestinationMenuState()}}
@@ -46,19 +63,19 @@ Class that represents the menu state for displaying and handling the get flight 
 
 
 
-Constructs an instance of \mbox{\hyperlink{class_get_flight_destination_menu_state}{Get\+Flight\+Destination\+Menu\+State}} with a specified origin information. 
+Constructs an instance of \doxylink{class_get_flight_destination_menu_state}{Get\+Flight\+Destination\+Menu\+State} with a specified origin information. 
 
-This constructor initializes an instance of the \mbox{\hyperlink{class_get_flight_destination_menu_state}{Get\+Flight\+Destination\+Menu\+State}} class with the given origin information. The origin information includes details such as the type of origin (airport, city, country, coordinates, or coordinates with a radius) and the corresponding data (e.\+g., airport code, city name). This instance can then be used to navigate the application to the state for selecting flight destination options based on the provided origin information.
+This constructor initializes an instance of the \doxylink{class_get_flight_destination_menu_state}{Get\+Flight\+Destination\+Menu\+State} class with the given origin information. The origin information includes details such as the type of origin (airport, city, country, coordinates, or coordinates with a radius) and the corresponding data (e.\+g., airport code, city name). This instance can then be used to navigate the application to the state for selecting flight destination options based on the provided origin information.
 
 
 \begin{DoxyParams}{Parameters}
-{\em origin\+Info} & A \mbox{\hyperlink{class_location_info}{Location\+Info}} object containing information about the selected origin for flight retrieval. \\
+{\em origin\+Info} & A \doxylink{class_location_info}{Location\+Info} object containing information about the selected origin for flight retrieval. \\
 \hline
 \end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_get_flight_destination_menu_state_a1b574a885f4aca2a73380e84a8adb01a}\label{class_get_flight_destination_menu_state_a1b574a885f4aca2a73380e84a8adb01a}} 
+\Hypertarget{class_get_flight_destination_menu_state_a1b574a885f4aca2a73380e84a8adb01a}\label{class_get_flight_destination_menu_state_a1b574a885f4aca2a73380e84a8adb01a} 
 \index{GetFlightDestinationMenuState@{GetFlightDestinationMenuState}!display@{display}}
 \index{display@{display}!GetFlightDestinationMenuState@{GetFlightDestinationMenuState}}
 \doxysubsubsection{\texorpdfstring{display()}{display()}}
@@ -72,11 +89,11 @@ This method prints the menu to the console, allowing users to choose the type of
 
 Implements \mbox{\hyperlink{class_state_adf38e0648b7705d04c39f40b763632bb}{State}}.
 
-\mbox{\Hypertarget{class_get_flight_destination_menu_state_a4982ab8497272d765006c537e30746bd}\label{class_get_flight_destination_menu_state_a4982ab8497272d765006c537e30746bd}} 
+\Hypertarget{class_get_flight_destination_menu_state_a4982ab8497272d765006c537e30746bd}\label{class_get_flight_destination_menu_state_a4982ab8497272d765006c537e30746bd} 
 \index{GetFlightDestinationMenuState@{GetFlightDestinationMenuState}!handleInput@{handleInput}}
 \index{handleInput@{handleInput}!GetFlightDestinationMenuState@{GetFlightDestinationMenuState}}
 \doxysubsubsection{\texorpdfstring{handleInput()}{handleInput()}}
-{\footnotesize\ttfamily void Get\+Flight\+Destination\+Menu\+State\+::handle\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app}{App}} $\ast$}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Get\+Flight\+Destination\+Menu\+State\+::handle\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app}{App}} \texorpdfstring{$\ast$}{*}}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 

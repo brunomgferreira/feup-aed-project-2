@@ -1,0 +1,5 @@
+<map id="GlobalStatisticsMenuState" name="GlobalStatisticsMenuState">
+<area shape="rect" id="Node000001" title="Class that represents the global statistics state for displaying and handling the global statistics o..." alt="" coords="5,81,199,109"/>
+<area shape="rect" id="Node000002" href="$class_state.html" title="Abstract base class representing an app state within the flight management system." alt="" coords="74,5,130,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,49,105,81,99,81,99,49"/>
+</map>

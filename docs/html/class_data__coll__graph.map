@@ -1,0 +1,5 @@
+<map id="Data" name="Data">
+<area shape="rect" id="Node000001" title="Class that saves all the program data." alt="" coords="9,98,62,126"/>
+<area shape="rect" id="Node000002" href="$class_graph.html" title="Represents a graph of airports and flights." alt="" coords="5,5,66,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="38,48,38,98,33,98,33,48"/>
+</map>

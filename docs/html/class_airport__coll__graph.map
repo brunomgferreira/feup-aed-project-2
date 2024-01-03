@@ -1,0 +1,5 @@
+<map id="Airport" name="Airport">
+<area shape="rect" id="Node000001" title="Class representing an airport entity in the flight management system." alt="" coords="19,98,84,126"/>
+<area shape="rect" id="Node000002" href="$class_coordinate.html" title="Class representing geographical coordinates in the flight management system." alt="" coords="5,5,98,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,48,54,98,49,98,49,48"/>
+</map>

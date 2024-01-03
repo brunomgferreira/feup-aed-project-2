@@ -1,0 +1,29 @@
+\doxysection{Try\+Again\+State.\+h}
+\hypertarget{_try_again_state_8h_source}{}\label{_try_again_state_8h_source}\index{States/Utils/TryAgainState.h@{States/Utils/TryAgainState.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FLIGHT\_MANAGEMENT\_SYSTEM\_TRYAGAINSTATE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FLIGHT\_MANAGEMENT\_SYSTEM\_TRYAGAINSTATE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}States/State.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_try_again_state}{TryAgainState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_state}{State}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_state}{State}}\ *backState;}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_state}{State}}\ *currentState;}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_try_again_state}{TryAgainState}}(\mbox{\hyperlink{class_state}{State}}\ *backState,\ \mbox{\hyperlink{class_state}{State}}\ *currentState);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_try_again_state_a2b8612db5038083dc4bb80e7b1dd46f8}{display}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_try_again_state_a8dc71bc7136f5afcbe0a0097920a4813}{handleInput}}(\mbox{\hyperlink{class_app}{App}}*\ app)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FLIGHT\_MANAGEMENT\_SYSTEM\_TRYAGAINSTATE\_H}}
+
+\end{DoxyCode}

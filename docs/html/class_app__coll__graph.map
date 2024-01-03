@@ -1,0 +1,10 @@
+<map id="App" name="App">
+<area shape="rect" id="Node000001" title="Singleton class representing the main application controller for the flight management system." alt="" coords="67,191,114,218"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="130,194,137,198,140,205,132,214,114,216,114,210,129,209,135,204,133,202,128,199"/>
+<area shape="rect" id="Node000002" href="$class_state.html" title="Abstract base class representing an app state within the flight management system." alt="" coords="5,98,61,126"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="31,141,37,165,50,181,68,192,65,196,47,185,32,168,26,142"/>
+<area shape="rect" id="Node000003" href="$class_data.html" title="Class that saves all the program data." alt="" coords="122,98,174,126"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="136,141,121,168,103,192,99,188,116,165,132,138"/>
+<area shape="rect" id="Node000004" href="$class_graph.html" title="Represents a graph of airports and flights." alt="" coords="118,5,178,33"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="150,48,150,98,145,98,145,48"/>
+</map>

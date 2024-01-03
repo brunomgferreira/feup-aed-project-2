@@ -1,0 +1,27 @@
+\doxysection{Get\+Flight\+Filter\+Menu\+State.\+h}
+\hypertarget{_get_flight_filter_menu_state_8h_source}{}\label{_get_flight_filter_menu_state_8h_source}\index{States/GetFlight/GetFlightFilterMenuState.h@{States/GetFlight/GetFlightFilterMenuState.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FLIGHT\_MANAGEMENT\_SYSTEM\_GETFLIGHTFILTERMENUSTATE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FLIGHT\_MANAGEMENT\_SYSTEM\_GETFLIGHTFILTERMENUSTATE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}States/State.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}States/Utils/LocationInfo.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_get_flight_filter_menu_state}{GetFlightFilterMenuState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_state}{State}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_location_info}{LocationInfo}}\ originInfo;}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_location_info}{LocationInfo}}\ destinationInfo;}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_get_flight_filter_menu_state}{GetFlightFilterMenuState}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_location_info}{LocationInfo}}\&\ originInfo,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_location_info}{LocationInfo}}\&\ destinationInfo);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_get_flight_filter_menu_state_a1f1a5f5a06e75a94aa887494b2b2ba41}{display}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_get_flight_filter_menu_state_a8ca6f147dca7a2ba72968df80f63e909}{handleInput}}(\mbox{\hyperlink{class_app}{App}}*\ app)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FLIGHT\_MANAGEMENT\_SYSTEM\_GETFLIGHTFILTERMENUSTATE\_H}}
+
+\end{DoxyCode}

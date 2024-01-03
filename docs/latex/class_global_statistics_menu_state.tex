@@ -1,5 +1,5 @@
-\hypertarget{class_global_statistics_menu_state}{}\doxysection{Global\+Statistics\+Menu\+State Class Reference}
-\label{class_global_statistics_menu_state}\index{GlobalStatisticsMenuState@{GlobalStatisticsMenuState}}
+\doxysection{Global\+Statistics\+Menu\+State Class Reference}
+\hypertarget{class_global_statistics_menu_state}{}\label{class_global_statistics_menu_state}\index{GlobalStatisticsMenuState@{GlobalStatisticsMenuState}}
 
 
 Class that represents the global statistics state for displaying and handling the global statistics options.  
@@ -12,27 +12,44 @@ Class that represents the global statistics state for displaying and handling th
 
 
 Inheritance diagram for Global\+Statistics\+Menu\+State\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{class_global_statistics_menu_state__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Global\+Statistics\+Menu\+State\+:
-% FIG 1
-\doxysubsection*{Public Member Functions}
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{class_global_statistics_menu_state__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_global_statistics_menu_state_a918f23981a6614c79597d5f97b324bdc}{Global\+Statistics\+Menu\+State}} ()
 \begin{DoxyCompactList}\small\item\em Default constructor for the Global Statistics Menu state. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_global_statistics_menu_state_a7baeae49897fee2f594eb4570b0b12de}{display}} () const override
 \begin{DoxyCompactList}\small\item\em Displays the Global Statistics Menu. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_global_statistics_menu_state_a0c0bf9af2c745ebeb93e2fd70a4c411f}{handle\+Input}} (\mbox{\hyperlink{class_app}{App}} $\ast$app) override
+void \mbox{\hyperlink{class_global_statistics_menu_state_a0c0bf9af2c745ebeb93e2fd70a4c411f}{handle\+Input}} (\mbox{\hyperlink{class_app}{App}} \texorpdfstring{$\ast$}{*}app) override
 \begin{DoxyCompactList}\small\item\em Handles user input for the Global Statistics Menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_state}{State}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_state_a5cc910b45294b877032ada4cbc90c213}{Press\+Enter\+To\+Continue}} (int num\+Presses=2) const
+\begin{DoxyCompactList}\small\item\em Waits for user to press ENTER to continue execution. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Class that represents the global statistics state for displaying and handling the global statistics options. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_global_statistics_menu_state_a918f23981a6614c79597d5f97b324bdc}\label{class_global_statistics_menu_state_a918f23981a6614c79597d5f97b324bdc}} 
+\Hypertarget{class_global_statistics_menu_state_a918f23981a6614c79597d5f97b324bdc}\label{class_global_statistics_menu_state_a918f23981a6614c79597d5f97b324bdc} 
 \index{GlobalStatisticsMenuState@{GlobalStatisticsMenuState}!GlobalStatisticsMenuState@{GlobalStatisticsMenuState}}
 \index{GlobalStatisticsMenuState@{GlobalStatisticsMenuState}!GlobalStatisticsMenuState@{GlobalStatisticsMenuState}}
 \doxysubsubsection{\texorpdfstring{GlobalStatisticsMenuState()}{GlobalStatisticsMenuState()}}
@@ -42,10 +59,10 @@ Class that represents the global statistics state for displaying and handling th
 
 Default constructor for the Global Statistics Menu state. 
 
-This constructor initializes an instance of the \mbox{\hyperlink{class_global_statistics_menu_state}{Global\+Statistics\+Menu\+State}} class. 
+This constructor initializes an instance of the \doxylink{class_global_statistics_menu_state}{Global\+Statistics\+Menu\+State} class. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_global_statistics_menu_state_a7baeae49897fee2f594eb4570b0b12de}\label{class_global_statistics_menu_state_a7baeae49897fee2f594eb4570b0b12de}} 
+\Hypertarget{class_global_statistics_menu_state_a7baeae49897fee2f594eb4570b0b12de}\label{class_global_statistics_menu_state_a7baeae49897fee2f594eb4570b0b12de} 
 \index{GlobalStatisticsMenuState@{GlobalStatisticsMenuState}!display@{display}}
 \index{display@{display}!GlobalStatisticsMenuState@{GlobalStatisticsMenuState}}
 \doxysubsubsection{\texorpdfstring{display()}{display()}}
@@ -59,11 +76,11 @@ This method is responsible for displaying the Global Statistics Menu. It prints 
 
 Implements \mbox{\hyperlink{class_state_adf38e0648b7705d04c39f40b763632bb}{State}}.
 
-\mbox{\Hypertarget{class_global_statistics_menu_state_a0c0bf9af2c745ebeb93e2fd70a4c411f}\label{class_global_statistics_menu_state_a0c0bf9af2c745ebeb93e2fd70a4c411f}} 
+\Hypertarget{class_global_statistics_menu_state_a0c0bf9af2c745ebeb93e2fd70a4c411f}\label{class_global_statistics_menu_state_a0c0bf9af2c745ebeb93e2fd70a4c411f} 
 \index{GlobalStatisticsMenuState@{GlobalStatisticsMenuState}!handleInput@{handleInput}}
 \index{handleInput@{handleInput}!GlobalStatisticsMenuState@{GlobalStatisticsMenuState}}
 \doxysubsubsection{\texorpdfstring{handleInput()}{handleInput()}}
-{\footnotesize\ttfamily void Global\+Statistics\+Menu\+State\+::handle\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app}{App}} $\ast$}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Global\+Statistics\+Menu\+State\+::handle\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app}{App}} \texorpdfstring{$\ast$}{*}}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 

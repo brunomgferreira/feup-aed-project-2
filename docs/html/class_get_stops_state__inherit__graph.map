@@ -1,0 +1,5 @@
+<map id="GetStopsState" name="GetStopsState">
+<area shape="rect" id="Node000001" title="Class that represents a state for obtaining the number of stops as user input." alt="" coords="5,81,120,109"/>
+<area shape="rect" id="Node000002" href="$class_state.html" title="Abstract base class representing an app state within the flight management system." alt="" coords="35,5,90,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,49,65,81,60,81,60,49"/>
+</map>

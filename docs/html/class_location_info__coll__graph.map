@@ -1,0 +1,5 @@
+<map id="LocationInfo" name="LocationInfo">
+<area shape="rect" id="Node000001" title="Class representing information about a location, including its type, details, coordinates,..." alt="" coords="5,98,107,126"/>
+<area shape="rect" id="Node000002" href="$class_coordinate.html" title="Class representing geographical coordinates in the flight management system." alt="" coords="10,5,102,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,48,59,98,53,98,53,48"/>
+</map>

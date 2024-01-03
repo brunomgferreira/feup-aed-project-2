@@ -1,0 +1,6 @@
+<map id="GetAirlineState" name="GetAirlineState">
+<area shape="rect" id="Node000001" title="Class that represents a state for obtaining a airline as user input." alt="" coords="5,98,126,126"/>
+<area shape="rect" id="Node000002" href="$class_state.html" title="Abstract base class representing an app state within the flight management system." alt="" coords="38,5,93,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,49,65,57,65,74,67,97,62,98,60,74,60,57,61,49"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="68,48,68,98,63,98,63,48"/>
+</map>

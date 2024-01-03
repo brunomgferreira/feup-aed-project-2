@@ -1,0 +1,9 @@
+<map id="GetFlightDestinationMenuState" name="GetFlightDestinationMenuState">
+<area shape="rect" id="Node000001" title="Class that represents the menu state for displaying and handling the get flight destination options." alt="" coords="5,191,198,235"/>
+<area shape="rect" id="Node000002" href="$class_state.html" title="Abstract base class representing an app state within the flight management system." alt="" coords="53,98,108,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,140,99,190,94,191,84,141"/>
+<area shape="rect" id="Node000003" href="$class_location_info.html" title="Class representing information about a location, including its type, details, coordinates,..." alt="" coords="132,98,234,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="165,139,121,192,117,188,160,136"/>
+<area shape="rect" id="Node000004" href="$class_coordinate.html" title="Class representing geographical coordinates in the flight management system." alt="" coords="137,5,229,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="186,48,186,98,180,98,180,48"/>
+</map>

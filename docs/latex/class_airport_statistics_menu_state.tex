@@ -1,5 +1,5 @@
-\hypertarget{class_airport_statistics_menu_state}{}\doxysection{Airport\+Statistics\+Menu\+State Class Reference}
-\label{class_airport_statistics_menu_state}\index{AirportStatisticsMenuState@{AirportStatisticsMenuState}}
+\doxysection{Airport\+Statistics\+Menu\+State Class Reference}
+\hypertarget{class_airport_statistics_menu_state}{}\label{class_airport_statistics_menu_state}\index{AirportStatisticsMenuState@{AirportStatisticsMenuState}}
 
 
 Class that represents the menu state for displaying and handling the airport statistics options.  
@@ -12,24 +12,41 @@ Class that represents the menu state for displaying and handling the airport sta
 
 
 Inheritance diagram for Airport\+Statistics\+Menu\+State\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{class_airport_statistics_menu_state__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Airport\+Statistics\+Menu\+State\+:
-% FIG 1
-\doxysubsection*{Public Member Functions}
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{class_airport_statistics_menu_state__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_airport_statistics_menu_state_a3e5d8dbca315ada915d1c663616d0246}{Airport\+Statistics\+Menu\+State}} (string airport\+Code)
-\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{class_airport}{Airport}} Statistics Menu state. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_airport}{Airport} Statistics Menu state. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_airport_statistics_menu_state_ad30c413b258b94fc338a9fd4e7787b21}{display}} () const override
 \begin{DoxyCompactList}\small\item\em Displays the menu for airline-\/specific statistics options. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_airport_statistics_menu_state_a7cd7307a6b5f862e2797f1aad7f678b6}{handle\+Input}} (\mbox{\hyperlink{class_app}{App}} $\ast$app) override
-\begin{DoxyCompactList}\small\item\em Handles user input for the \mbox{\hyperlink{class_airport}{Airport}} Statistics Menu state. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
+void \mbox{\hyperlink{class_airport_statistics_menu_state_a7cd7307a6b5f862e2797f1aad7f678b6}{handle\+Input}} (\mbox{\hyperlink{class_app}{App}} \texorpdfstring{$\ast$}{*}app) override
+\begin{DoxyCompactList}\small\item\em Handles user input for the \doxylink{class_airport}{Airport} Statistics Menu state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_state}{State}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_airport_statistics_menu_state_ae036081f3d0e79c509661fe8f9f15cb3}\label{class_airport_statistics_menu_state_ae036081f3d0e79c509661fe8f9f15cb3}} 
+void \mbox{\hyperlink{class_state_a5cc910b45294b877032ada4cbc90c213}{Press\+Enter\+To\+Continue}} (int num\+Presses=2) const
+\begin{DoxyCompactList}\small\item\em Waits for user to press ENTER to continue execution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_airport_statistics_menu_state_ae036081f3d0e79c509661fe8f9f15cb3}\label{class_airport_statistics_menu_state_ae036081f3d0e79c509661fe8f9f15cb3} 
 string {\bfseries airport\+Code}
 \end{DoxyCompactItemize}
 
@@ -38,7 +55,7 @@ string {\bfseries airport\+Code}
 Class that represents the menu state for displaying and handling the airport statistics options. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_airport_statistics_menu_state_a3e5d8dbca315ada915d1c663616d0246}\label{class_airport_statistics_menu_state_a3e5d8dbca315ada915d1c663616d0246}} 
+\Hypertarget{class_airport_statistics_menu_state_a3e5d8dbca315ada915d1c663616d0246}\label{class_airport_statistics_menu_state_a3e5d8dbca315ada915d1c663616d0246} 
 \index{AirportStatisticsMenuState@{AirportStatisticsMenuState}!AirportStatisticsMenuState@{AirportStatisticsMenuState}}
 \index{AirportStatisticsMenuState@{AirportStatisticsMenuState}!AirportStatisticsMenuState@{AirportStatisticsMenuState}}
 \doxysubsubsection{\texorpdfstring{AirportStatisticsMenuState()}{AirportStatisticsMenuState()}}
@@ -46,9 +63,9 @@ Class that represents the menu state for displaying and handling the airport sta
 
 
 
-Default constructor for the \mbox{\hyperlink{class_airport}{Airport}} Statistics Menu state. 
+Default constructor for the \doxylink{class_airport}{Airport} Statistics Menu state. 
 
-This constructor initializes the \mbox{\hyperlink{class_airport_statistics_menu_state}{Airport\+Statistics\+Menu\+State}} object with the specified airport code. The airport code is used to display statistics related to the selected airport in the menu options.
+This constructor initializes the \doxylink{class_airport_statistics_menu_state}{Airport\+Statistics\+Menu\+State} object with the specified airport code. The airport code is used to display statistics related to the selected airport in the menu options.
 
 
 \begin{DoxyParams}{Parameters}
@@ -58,7 +75,7 @@ This constructor initializes the \mbox{\hyperlink{class_airport_statistics_menu_
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_airport_statistics_menu_state_ad30c413b258b94fc338a9fd4e7787b21}\label{class_airport_statistics_menu_state_ad30c413b258b94fc338a9fd4e7787b21}} 
+\Hypertarget{class_airport_statistics_menu_state_ad30c413b258b94fc338a9fd4e7787b21}\label{class_airport_statistics_menu_state_ad30c413b258b94fc338a9fd4e7787b21} 
 \index{AirportStatisticsMenuState@{AirportStatisticsMenuState}!display@{display}}
 \index{display@{display}!AirportStatisticsMenuState@{AirportStatisticsMenuState}}
 \doxysubsubsection{\texorpdfstring{display()}{display()}}
@@ -72,15 +89,15 @@ This method prints the airline statistics menu to the console, allowing users to
 
 Implements \mbox{\hyperlink{class_state_adf38e0648b7705d04c39f40b763632bb}{State}}.
 
-\mbox{\Hypertarget{class_airport_statistics_menu_state_a7cd7307a6b5f862e2797f1aad7f678b6}\label{class_airport_statistics_menu_state_a7cd7307a6b5f862e2797f1aad7f678b6}} 
+\Hypertarget{class_airport_statistics_menu_state_a7cd7307a6b5f862e2797f1aad7f678b6}\label{class_airport_statistics_menu_state_a7cd7307a6b5f862e2797f1aad7f678b6} 
 \index{AirportStatisticsMenuState@{AirportStatisticsMenuState}!handleInput@{handleInput}}
 \index{handleInput@{handleInput}!AirportStatisticsMenuState@{AirportStatisticsMenuState}}
 \doxysubsubsection{\texorpdfstring{handleInput()}{handleInput()}}
-{\footnotesize\ttfamily void Airport\+Statistics\+Menu\+State\+::handle\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app}{App}} $\ast$}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Airport\+Statistics\+Menu\+State\+::handle\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app}{App}} \texorpdfstring{$\ast$}{*}}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-Handles user input for the \mbox{\hyperlink{class_airport}{Airport}} Statistics Menu state. 
+Handles user input for the \doxylink{class_airport}{Airport} Statistics Menu state. 
 
 This method reads a user\textquotesingle{}s input from the console and processes it based on the chosen option. Users can input a single character corresponding to the desired option (1-\/5, \textquotesingle{}b\textquotesingle{} for Statistics Menu, or \textquotesingle{}q\textquotesingle{} for Main Menu). The method then executes the selected option, calling specific methods from the application\textquotesingle{}s data module to retrieve and display relevant airport statistics. In some cases, the method prompts the user for additional input, such as the maximum number of stops for reachable destinations. Error messages are displayed for invalid inputs, and the state may transition accordingly.
 

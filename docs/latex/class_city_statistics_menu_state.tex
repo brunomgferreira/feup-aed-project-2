@@ -1,5 +1,5 @@
-\hypertarget{class_city_statistics_menu_state}{}\doxysection{City\+Statistics\+Menu\+State Class Reference}
-\label{class_city_statistics_menu_state}\index{CityStatisticsMenuState@{CityStatisticsMenuState}}
+\doxysection{City\+Statistics\+Menu\+State Class Reference}
+\hypertarget{class_city_statistics_menu_state}{}\label{class_city_statistics_menu_state}\index{CityStatisticsMenuState@{CityStatisticsMenuState}}
 
 
 Class that represents the menu state for displaying and handling the city statistics options.  
@@ -12,24 +12,41 @@ Class that represents the menu state for displaying and handling the city statis
 
 
 Inheritance diagram for City\+Statistics\+Menu\+State\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{class_city_statistics_menu_state__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for City\+Statistics\+Menu\+State\+:
-% FIG 1
-\doxysubsection*{Public Member Functions}
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{class_city_statistics_menu_state__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_city_statistics_menu_state_a24508a40a68e9b586794f755f2b8ffb6}{City\+Statistics\+Menu\+State}} (string city\+Name)
-\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{class_city}{City}} Statistics Menu state. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_city}{City} Statistics Menu state. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_city_statistics_menu_state_a43321fbd47c04b321330a34cb8446f9b}{display}} () const override
 \begin{DoxyCompactList}\small\item\em Displays the menu for city-\/specific statistics. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_city_statistics_menu_state_a9692686db17f97dfe8bf737e43001e4b}{handle\+Input}} (\mbox{\hyperlink{class_app}{App}} $\ast$app) override
+void \mbox{\hyperlink{class_city_statistics_menu_state_a9692686db17f97dfe8bf737e43001e4b}{handle\+Input}} (\mbox{\hyperlink{class_app}{App}} \texorpdfstring{$\ast$}{*}app) override
 \begin{DoxyCompactList}\small\item\em Handles user input for city-\/specific statistics menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_state}{State}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_city_statistics_menu_state_a83a57d6f856ee71e7238a27932221461}\label{class_city_statistics_menu_state_a83a57d6f856ee71e7238a27932221461}} 
+void \mbox{\hyperlink{class_state_a5cc910b45294b877032ada4cbc90c213}{Press\+Enter\+To\+Continue}} (int num\+Presses=2) const
+\begin{DoxyCompactList}\small\item\em Waits for user to press ENTER to continue execution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_city_statistics_menu_state_a83a57d6f856ee71e7238a27932221461}\label{class_city_statistics_menu_state_a83a57d6f856ee71e7238a27932221461} 
 string {\bfseries city\+Name}
 \end{DoxyCompactItemize}
 
@@ -38,7 +55,7 @@ string {\bfseries city\+Name}
 Class that represents the menu state for displaying and handling the city statistics options. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_city_statistics_menu_state_a24508a40a68e9b586794f755f2b8ffb6}\label{class_city_statistics_menu_state_a24508a40a68e9b586794f755f2b8ffb6}} 
+\Hypertarget{class_city_statistics_menu_state_a24508a40a68e9b586794f755f2b8ffb6}\label{class_city_statistics_menu_state_a24508a40a68e9b586794f755f2b8ffb6} 
 \index{CityStatisticsMenuState@{CityStatisticsMenuState}!CityStatisticsMenuState@{CityStatisticsMenuState}}
 \index{CityStatisticsMenuState@{CityStatisticsMenuState}!CityStatisticsMenuState@{CityStatisticsMenuState}}
 \doxysubsubsection{\texorpdfstring{CityStatisticsMenuState()}{CityStatisticsMenuState()}}
@@ -46,9 +63,9 @@ Class that represents the menu state for displaying and handling the city statis
 
 
 
-Default constructor for the \mbox{\hyperlink{class_city}{City}} Statistics Menu state. 
+Default constructor for the \doxylink{class_city}{City} Statistics Menu state. 
 
-This constructor initializes a \mbox{\hyperlink{class_city_statistics_menu_state}{City\+Statistics\+Menu\+State}} with the specified city name. The city name is used to provide city-\/specific statistics options in the menu.
+This constructor initializes a \doxylink{class_city_statistics_menu_state}{City\+Statistics\+Menu\+State} with the specified city name. The city name is used to provide city-\/specific statistics options in the menu.
 
 
 \begin{DoxyParams}{Parameters}
@@ -58,7 +75,7 @@ This constructor initializes a \mbox{\hyperlink{class_city_statistics_menu_state
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_city_statistics_menu_state_a43321fbd47c04b321330a34cb8446f9b}\label{class_city_statistics_menu_state_a43321fbd47c04b321330a34cb8446f9b}} 
+\Hypertarget{class_city_statistics_menu_state_a43321fbd47c04b321330a34cb8446f9b}\label{class_city_statistics_menu_state_a43321fbd47c04b321330a34cb8446f9b} 
 \index{CityStatisticsMenuState@{CityStatisticsMenuState}!display@{display}}
 \index{display@{display}!CityStatisticsMenuState@{CityStatisticsMenuState}}
 \doxysubsubsection{\texorpdfstring{display()}{display()}}
@@ -72,11 +89,11 @@ This method outputs a formatted menu to the console, presenting various statisti
 
 Implements \mbox{\hyperlink{class_state_adf38e0648b7705d04c39f40b763632bb}{State}}.
 
-\mbox{\Hypertarget{class_city_statistics_menu_state_a9692686db17f97dfe8bf737e43001e4b}\label{class_city_statistics_menu_state_a9692686db17f97dfe8bf737e43001e4b}} 
+\Hypertarget{class_city_statistics_menu_state_a9692686db17f97dfe8bf737e43001e4b}\label{class_city_statistics_menu_state_a9692686db17f97dfe8bf737e43001e4b} 
 \index{CityStatisticsMenuState@{CityStatisticsMenuState}!handleInput@{handleInput}}
 \index{handleInput@{handleInput}!CityStatisticsMenuState@{CityStatisticsMenuState}}
 \doxysubsubsection{\texorpdfstring{handleInput()}{handleInput()}}
-{\footnotesize\ttfamily void City\+Statistics\+Menu\+State\+::handle\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app}{App}} $\ast$}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void City\+Statistics\+Menu\+State\+::handle\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_app}{App}} \texorpdfstring{$\ast$}{*}}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 

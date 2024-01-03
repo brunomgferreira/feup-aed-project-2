@@ -1,0 +1,9 @@
+<map id="Edge" name="Edge">
+<area shape="rect" id="Node000001" title="Class representing an edge in a graph, associated with a destination vertex and airlines." alt="" coords="25,283,78,311"/>
+<area shape="rect" id="Node000002" href="$class_vertex.html" title="Represents a vertex in the graph, corresponding to an airport." alt="" coords="20,191,83,218"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,234,54,283,49,283,49,234"/>
+<area shape="rect" id="Node000003" href="$class_airport.html" title="Class representing an airport entity in the flight management system." alt="" coords="19,98,84,126"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="54,141,54,190,49,190,49,141"/>
+<area shape="rect" id="Node000004" href="$class_coordinate.html" title="Class representing geographical coordinates in the flight management system." alt="" coords="5,5,98,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="54,48,54,98,49,98,49,48"/>
+</map>

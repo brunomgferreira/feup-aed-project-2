@@ -1,0 +1,6 @@
+<map id="GetCountryState" name="GetCountryState">
+<area shape="rect" id="Node000001" title="Class that represents a state for obtaining a country as user input." alt="" coords="5,98,135,126"/>
+<area shape="rect" id="Node000002" href="$class_state.html" title="Abstract base class representing an app state within the flight management system." alt="" coords="42,5,98,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,49,70,57,70,74,71,97,66,98,65,74,65,57,65,49"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="73,48,73,98,67,98,67,48"/>
+</map>

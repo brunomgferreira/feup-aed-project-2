@@ -1,5 +1,5 @@
-\hypertarget{class_edge}{}\doxysection{Edge Class Reference}
-\label{class_edge}\index{Edge@{Edge}}
+\doxysection{Edge Class Reference}
+\hypertarget{class_edge}{}\label{class_edge}\index{Edge@{Edge}}
 
 
 Class representing an edge in a graph, associated with a destination vertex and airlines.  
@@ -12,36 +12,38 @@ Class representing an edge in a graph, associated with a destination vertex and 
 
 
 Collaboration diagram for Edge\+:
-% FIG 0
-\doxysubsection*{Public Member Functions}
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{class_edge__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_edge_a9945c672f1f2a46a8592d4554b9d8c6a}{Edge}} (\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$d, unordered\+\_\+set$<$ string $>$ airlines)
-\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_edge}{Edge}} class. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ \mbox{\hyperlink{class_edge_a5cda44e9ba257b03963a1ac301371a59}{get\+Dest}} () const
+\mbox{\hyperlink{class_edge_a9945c672f1f2a46a8592d4554b9d8c6a}{Edge}} (\mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}d, unordered\+\_\+set$<$ string $>$ airlines)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_edge}{Edge} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_edge_a5cda44e9ba257b03963a1ac301371a59}{get\+Dest}} () const
 \begin{DoxyCompactList}\small\item\em Get the destination vertex associated with the edge. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_edge_a1ecc1e562c2f7f07d6897dd9e54e7cbd}{set\+Dest}} (\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$dest)
-\begin{DoxyCompactList}\small\item\em Set the destination vertex associated with the edge. \end{DoxyCompactList}\item 
 unordered\+\_\+set$<$ string $>$ \mbox{\hyperlink{class_edge_a1a4746271788f7391ce6e61daebae909}{get\+Airlines}} () const
-\begin{DoxyCompactList}\small\item\em Get the set of airline codes associated with the edge. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_edge_adb10d3caad0be72632f788532a2c49bf}{set\+Airlines}} (unordered\+\_\+set$<$ string $>$ airlines)
-\begin{DoxyCompactList}\small\item\em Set the set of airline codes associated with the edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
+\begin{DoxyCompactList}\small\item\em Get the set of airline codes associated with the edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_edge_a50339c1a85710ca827d4e3865727ffd7}\label{class_edge_a50339c1a85710ca827d4e3865727ffd7}} 
-\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ {\bfseries dest}
+\Hypertarget{class_edge_a50339c1a85710ca827d4e3865727ffd7}\label{class_edge_a50339c1a85710ca827d4e3865727ffd7} 
+\mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} {\bfseries dest}
 \item 
-\mbox{\Hypertarget{class_edge_af38be6265dab633df0835e092e705e09}\label{class_edge_af38be6265dab633df0835e092e705e09}} 
+\Hypertarget{class_edge_af38be6265dab633df0835e092e705e09}\label{class_edge_af38be6265dab633df0835e092e705e09} 
 unordered\+\_\+set$<$ string $>$ {\bfseries airlines}
 \end{DoxyCompactItemize}
-\doxysubsection*{Friends}
+\doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_edge_afab89afd724f1b07b1aaad6bdc61c47a}\label{class_edge_afab89afd724f1b07b1aaad6bdc61c47a}} 
+\Hypertarget{class_edge_afab89afd724f1b07b1aaad6bdc61c47a}\label{class_edge_afab89afd724f1b07b1aaad6bdc61c47a} 
 class {\bfseries Graph}
 \item 
-\mbox{\Hypertarget{class_edge_a1251d18f08324022e8e73506c3768f3c}\label{class_edge_a1251d18f08324022e8e73506c3768f3c}} 
+\Hypertarget{class_edge_a1251d18f08324022e8e73506c3768f3c}\label{class_edge_a1251d18f08324022e8e73506c3768f3c} 
 class {\bfseries Vertex}
 \end{DoxyCompactItemize}
 
@@ -50,17 +52,17 @@ class {\bfseries Vertex}
 Class representing an edge in a graph, associated with a destination vertex and airlines. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_edge_a9945c672f1f2a46a8592d4554b9d8c6a}\label{class_edge_a9945c672f1f2a46a8592d4554b9d8c6a}} 
+\Hypertarget{class_edge_a9945c672f1f2a46a8592d4554b9d8c6a}\label{class_edge_a9945c672f1f2a46a8592d4554b9d8c6a} 
 \index{Edge@{Edge}!Edge@{Edge}}
 \index{Edge@{Edge}!Edge@{Edge}}
 \doxysubsubsection{\texorpdfstring{Edge()}{Edge()}}
-{\footnotesize\ttfamily Edge\+::\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{d,  }\item[{unordered\+\_\+set$<$ string $>$}]{airlines }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Edge\+::\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{d,  }\item[{unordered\+\_\+set$<$ string $>$}]{airlines }\end{DoxyParamCaption})}
 
 
 
-Constructor for the \mbox{\hyperlink{class_edge}{Edge}} class. 
+Constructor for the \doxylink{class_edge}{Edge} class. 
 
-Initializes an instance of the \mbox{\hyperlink{class_edge}{Edge}} class with the specified destination vertex and airlines.
+Initializes an instance of the \doxylink{class_edge}{Edge} class with the specified destination vertex and airlines.
 
 
 \begin{DoxyParams}{Parameters}
@@ -72,7 +74,7 @@ Initializes an instance of the \mbox{\hyperlink{class_edge}{Edge}} class with th
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_edge_a1a4746271788f7391ce6e61daebae909}\label{class_edge_a1a4746271788f7391ce6e61daebae909}} 
+\Hypertarget{class_edge_a1a4746271788f7391ce6e61daebae909}\label{class_edge_a1a4746271788f7391ce6e61daebae909} 
 \index{Edge@{Edge}!getAirlines@{getAirlines}}
 \index{getAirlines@{getAirlines}!Edge@{Edge}}
 \doxysubsubsection{\texorpdfstring{getAirlines()}{getAirlines()}}
@@ -85,11 +87,11 @@ Get the set of airline codes associated with the edge.
 \begin{DoxyReturn}{Returns}
 The set of airline codes. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_edge_a5cda44e9ba257b03963a1ac301371a59}\label{class_edge_a5cda44e9ba257b03963a1ac301371a59}} 
+\Hypertarget{class_edge_a5cda44e9ba257b03963a1ac301371a59}\label{class_edge_a5cda44e9ba257b03963a1ac301371a59} 
 \index{Edge@{Edge}!getDest@{getDest}}
 \index{getDest@{getDest}!Edge@{Edge}}
 \doxysubsubsection{\texorpdfstring{getDest()}{getDest()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ Edge\+::get\+Dest (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} Edge\+::get\+Dest (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -98,36 +100,6 @@ Get the destination vertex associated with the edge.
 \begin{DoxyReturn}{Returns}
 Pointer to the destination vertex. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_edge_adb10d3caad0be72632f788532a2c49bf}\label{class_edge_adb10d3caad0be72632f788532a2c49bf}} 
-\index{Edge@{Edge}!setAirlines@{setAirlines}}
-\index{setAirlines@{setAirlines}!Edge@{Edge}}
-\doxysubsubsection{\texorpdfstring{setAirlines()}{setAirlines()}}
-{\footnotesize\ttfamily void Edge\+::set\+Airlines (\begin{DoxyParamCaption}\item[{unordered\+\_\+set$<$ string $>$}]{airlines }\end{DoxyParamCaption})}
-
-
-
-Set the set of airline codes associated with the edge. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em airlines} & The set of airline codes to set. \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{class_edge_a1ecc1e562c2f7f07d6897dd9e54e7cbd}\label{class_edge_a1ecc1e562c2f7f07d6897dd9e54e7cbd}} 
-\index{Edge@{Edge}!setDest@{setDest}}
-\index{setDest@{setDest}!Edge@{Edge}}
-\doxysubsubsection{\texorpdfstring{setDest()}{setDest()}}
-{\footnotesize\ttfamily void Edge\+::set\+Dest (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{dest }\end{DoxyParamCaption})}
-
-
-
-Set the destination vertex associated with the edge. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em dest} & Pointer to the destination vertex to set. \\
-\hline
-\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

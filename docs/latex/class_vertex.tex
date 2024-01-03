@@ -1,5 +1,5 @@
-\hypertarget{class_vertex}{}\doxysection{Vertex Class Reference}
-\label{class_vertex}\index{Vertex@{Vertex}}
+\doxysection{Vertex Class Reference}
+\hypertarget{class_vertex}{}\label{class_vertex}\index{Vertex@{Vertex}}
 
 
 Represents a vertex in the graph, corresponding to an airport.  
@@ -12,24 +12,24 @@ Represents a vertex in the graph, corresponding to an airport.
 
 
 Collaboration diagram for Vertex\+:
-% FIG 0
-\doxysubsection*{Public Member Functions}
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{class_vertex__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_vertex_ab121a04e2d31a50dd4703421e7479656}{Vertex}} (\mbox{\hyperlink{class_airport}{Airport}} $\ast$airport)
-\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_vertex}{Vertex}} class. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_airport}{Airport}} $\ast$ \mbox{\hyperlink{class_vertex_a66fe8666ad2d41d32100c45304eb85be}{get\+Airport}} () const
+\mbox{\hyperlink{class_vertex_ab121a04e2d31a50dd4703421e7479656}{Vertex}} (\mbox{\hyperlink{class_airport}{Airport}} \texorpdfstring{$\ast$}{*}airport)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_vertex}{Vertex} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_airport}{Airport}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_vertex_a66fe8666ad2d41d32100c45304eb85be}{get\+Airport}} () const
 \begin{DoxyCompactList}\small\item\em Get the airport associated with the vertex. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_vertex_aeb6374ac1f9c81cf5f7e9d3547dda6d8}{set\+Airport}} (\mbox{\hyperlink{class_airport}{Airport}} $\ast$airport)
-\begin{DoxyCompactList}\small\item\em Set the airport associated with the vertex. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_vertex_aa4bd82105b85ee53a917391f4811cd8a}{is\+Visited}} () const
 \begin{DoxyCompactList}\small\item\em Check if the vertex has been visited during traversal. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_vertex_a3c6d6c2254850a647d3a27007ef940f6}{set\+Visited}} (bool v)
 \begin{DoxyCompactList}\small\item\em Set the visited status of the vertex. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_vertex_a126e306f0534b99cd97aa864fdb243d4}{is\+Processing}} () const
-\begin{DoxyCompactList}\small\item\em Check if the vertex is currently being processed during traversal. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_vertex_a4427952db4781f61eb336fe5965da708}{set\+Processing}} (bool p)
-\begin{DoxyCompactList}\small\item\em Set the processing status of the vertex. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_vertex_af65c843649e89097b38e8d108327c34a}{get\+Num}} () const
 \begin{DoxyCompactList}\small\item\em Get the numerical identifier for the vertex during traversal. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_vertex_aa691c9e7724f31dc397ba653eb061d34}{set\+Num}} (int num)
@@ -39,39 +39,34 @@ int \mbox{\hyperlink{class_vertex_a7acb7c0857c03cf23db677ad3618a04e}{get\+Low}} 
 void \mbox{\hyperlink{class_vertex_a390911b126aee6bcf85a4b2e9921a421}{set\+Low}} (int low)
 \begin{DoxyCompactList}\small\item\em Set the low value for the vertex. \end{DoxyCompactList}\item 
 const unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_edge}{Edge}} $>$ \& \mbox{\hyperlink{class_vertex_a016df0300249bd98863b689376783f4f}{get\+Adj}} () const
-\begin{DoxyCompactList}\small\item\em Get the adjacency list representing edges to other vertices. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_vertex_ade5e37a5947a32eb4ce4a32d0a1279f4}{set\+Adj}} (const unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_edge}{Edge}} $>$ \&adj)
-\begin{DoxyCompactList}\small\item\em Set the adjacency list representing edges to other vertices. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactList}\small\item\em Get the adjacency list representing edges to other vertices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_vertex_ae82aabf3f5d69898f5535185f00693ee}{add\+Edge}} (\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$dest, const string \&airline\+Code)
+void \mbox{\hyperlink{class_vertex_ae82aabf3f5d69898f5535185f00693ee}{add\+Edge}} (\mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}dest, const string \&airline\+Code)
 \begin{DoxyCompactList}\small\item\em Add an edge to another vertex in the adjacency list. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
+\doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_vertex_abbd61436ec6306cf518dcb5c6debd3a6}\label{class_vertex_abbd61436ec6306cf518dcb5c6debd3a6}} 
-\mbox{\hyperlink{class_airport}{Airport}} $\ast$ {\bfseries airport}
+\Hypertarget{class_vertex_abbd61436ec6306cf518dcb5c6debd3a6}\label{class_vertex_abbd61436ec6306cf518dcb5c6debd3a6} 
+\mbox{\hyperlink{class_airport}{Airport}} \texorpdfstring{$\ast$}{*} {\bfseries airport}
 \item 
-\mbox{\Hypertarget{class_vertex_a1ff9f978e56f0ad909fcc10d226f0316}\label{class_vertex_a1ff9f978e56f0ad909fcc10d226f0316}} 
+\Hypertarget{class_vertex_a1ff9f978e56f0ad909fcc10d226f0316}\label{class_vertex_a1ff9f978e56f0ad909fcc10d226f0316} 
 unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_edge}{Edge}} $>$ {\bfseries adj}
 \item 
-\mbox{\Hypertarget{class_vertex_aaef9f7de91b4b8f1752d391a1aae9c2e}\label{class_vertex_aaef9f7de91b4b8f1752d391a1aae9c2e}} 
+\Hypertarget{class_vertex_aaef9f7de91b4b8f1752d391a1aae9c2e}\label{class_vertex_aaef9f7de91b4b8f1752d391a1aae9c2e} 
 bool {\bfseries visited}
 \item 
-\mbox{\Hypertarget{class_vertex_a305dc8fcad6e4c7ef2491409ca7ddaa4}\label{class_vertex_a305dc8fcad6e4c7ef2491409ca7ddaa4}} 
-bool {\bfseries processing}
-\item 
-\mbox{\Hypertarget{class_vertex_a426e62928803a13f734083c3eb9b05ed}\label{class_vertex_a426e62928803a13f734083c3eb9b05ed}} 
+\Hypertarget{class_vertex_a426e62928803a13f734083c3eb9b05ed}\label{class_vertex_a426e62928803a13f734083c3eb9b05ed} 
 int {\bfseries num}
 \item 
-\mbox{\Hypertarget{class_vertex_aa9783976d034b309b455e181be01b379}\label{class_vertex_aa9783976d034b309b455e181be01b379}} 
+\Hypertarget{class_vertex_aa9783976d034b309b455e181be01b379}\label{class_vertex_aa9783976d034b309b455e181be01b379} 
 int {\bfseries low}
 \end{DoxyCompactItemize}
-\doxysubsection*{Friends}
+\doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_vertex_afab89afd724f1b07b1aaad6bdc61c47a}\label{class_vertex_afab89afd724f1b07b1aaad6bdc61c47a}} 
+\Hypertarget{class_vertex_afab89afd724f1b07b1aaad6bdc61c47a}\label{class_vertex_afab89afd724f1b07b1aaad6bdc61c47a} 
 class {\bfseries Graph}
 \end{DoxyCompactItemize}
 
@@ -80,17 +75,17 @@ class {\bfseries Graph}
 Represents a vertex in the graph, corresponding to an airport. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_vertex_ab121a04e2d31a50dd4703421e7479656}\label{class_vertex_ab121a04e2d31a50dd4703421e7479656}} 
+\Hypertarget{class_vertex_ab121a04e2d31a50dd4703421e7479656}\label{class_vertex_ab121a04e2d31a50dd4703421e7479656} 
 \index{Vertex@{Vertex}!Vertex@{Vertex}}
 \index{Vertex@{Vertex}!Vertex@{Vertex}}
 \doxysubsubsection{\texorpdfstring{Vertex()}{Vertex()}}
-{\footnotesize\ttfamily Vertex\+::\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_airport}{Airport}} $\ast$}]{airport }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Vertex\+::\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_airport}{Airport}} \texorpdfstring{$\ast$}{*}}]{airport }\end{DoxyParamCaption})}
 
 
 
-Constructor for the \mbox{\hyperlink{class_vertex}{Vertex}} class. 
+Constructor for the \doxylink{class_vertex}{Vertex} class. 
 
-Initializes an instance of the \mbox{\hyperlink{class_vertex}{Vertex}} class with the specified airport.
+Initializes an instance of the \doxylink{class_vertex}{Vertex} class with the specified airport.
 
 
 \begin{DoxyParams}{Parameters}
@@ -100,11 +95,11 @@ Initializes an instance of the \mbox{\hyperlink{class_vertex}{Vertex}} class wit
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_vertex_ae82aabf3f5d69898f5535185f00693ee}\label{class_vertex_ae82aabf3f5d69898f5535185f00693ee}} 
+\Hypertarget{class_vertex_ae82aabf3f5d69898f5535185f00693ee}\label{class_vertex_ae82aabf3f5d69898f5535185f00693ee} 
 \index{Vertex@{Vertex}!addEdge@{addEdge}}
 \index{addEdge@{addEdge}!Vertex@{Vertex}}
 \doxysubsubsection{\texorpdfstring{addEdge()}{addEdge()}}
-{\footnotesize\ttfamily void Vertex\+::add\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{dest,  }\item[{const string \&}]{airline\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily void Vertex\+::add\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{const string \&}]{airline\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -119,7 +114,7 @@ If an edge to the specified destination already exists, add the airline code to 
 {\em airline\+Code} & The airline code associated with the edge. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_vertex_a016df0300249bd98863b689376783f4f}\label{class_vertex_a016df0300249bd98863b689376783f4f}} 
+\Hypertarget{class_vertex_a016df0300249bd98863b689376783f4f}\label{class_vertex_a016df0300249bd98863b689376783f4f} 
 \index{Vertex@{Vertex}!getAdj@{getAdj}}
 \index{getAdj@{getAdj}!Vertex@{Vertex}}
 \doxysubsubsection{\texorpdfstring{getAdj()}{getAdj()}}
@@ -132,11 +127,11 @@ Get the adjacency list representing edges to other vertices.
 \begin{DoxyReturn}{Returns}
 A constant reference to the adjacency list. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_vertex_a66fe8666ad2d41d32100c45304eb85be}\label{class_vertex_a66fe8666ad2d41d32100c45304eb85be}} 
+\Hypertarget{class_vertex_a66fe8666ad2d41d32100c45304eb85be}\label{class_vertex_a66fe8666ad2d41d32100c45304eb85be} 
 \index{Vertex@{Vertex}!getAirport@{getAirport}}
 \index{getAirport@{getAirport}!Vertex@{Vertex}}
 \doxysubsubsection{\texorpdfstring{getAirport()}{getAirport()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_airport}{Airport}} $\ast$ Vertex\+::get\+Airport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_airport}{Airport}} \texorpdfstring{$\ast$}{*} Vertex\+::get\+Airport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -145,7 +140,7 @@ Get the airport associated with the vertex.
 \begin{DoxyReturn}{Returns}
 Pointer to the airport associated with the vertex. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_vertex_a7acb7c0857c03cf23db677ad3618a04e}\label{class_vertex_a7acb7c0857c03cf23db677ad3618a04e}} 
+\Hypertarget{class_vertex_a7acb7c0857c03cf23db677ad3618a04e}\label{class_vertex_a7acb7c0857c03cf23db677ad3618a04e} 
 \index{Vertex@{Vertex}!getLow@{getLow}}
 \index{getLow@{getLow}!Vertex@{Vertex}}
 \doxysubsubsection{\texorpdfstring{getLow()}{getLow()}}
@@ -158,7 +153,7 @@ Get the low value used in traversal algorithms.
 \begin{DoxyReturn}{Returns}
 The low value for the vertex. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_vertex_af65c843649e89097b38e8d108327c34a}\label{class_vertex_af65c843649e89097b38e8d108327c34a}} 
+\Hypertarget{class_vertex_af65c843649e89097b38e8d108327c34a}\label{class_vertex_af65c843649e89097b38e8d108327c34a} 
 \index{Vertex@{Vertex}!getNum@{getNum}}
 \index{getNum@{getNum}!Vertex@{Vertex}}
 \doxysubsubsection{\texorpdfstring{getNum()}{getNum()}}
@@ -171,20 +166,7 @@ Get the numerical identifier for the vertex during traversal.
 \begin{DoxyReturn}{Returns}
 The numerical identifier for the vertex. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_vertex_a126e306f0534b99cd97aa864fdb243d4}\label{class_vertex_a126e306f0534b99cd97aa864fdb243d4}} 
-\index{Vertex@{Vertex}!isProcessing@{isProcessing}}
-\index{isProcessing@{isProcessing}!Vertex@{Vertex}}
-\doxysubsubsection{\texorpdfstring{isProcessing()}{isProcessing()}}
-{\footnotesize\ttfamily bool Vertex\+::is\+Processing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Check if the vertex is currently being processed during traversal. 
-
-\begin{DoxyReturn}{Returns}
-True if the vertex is being processed; otherwise, false. 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_vertex_aa4bd82105b85ee53a917391f4811cd8a}\label{class_vertex_aa4bd82105b85ee53a917391f4811cd8a}} 
+\Hypertarget{class_vertex_aa4bd82105b85ee53a917391f4811cd8a}\label{class_vertex_aa4bd82105b85ee53a917391f4811cd8a} 
 \index{Vertex@{Vertex}!isVisited@{isVisited}}
 \index{isVisited@{isVisited}!Vertex@{Vertex}}
 \doxysubsubsection{\texorpdfstring{isVisited()}{isVisited()}}
@@ -197,37 +179,7 @@ Check if the vertex has been visited during traversal.
 \begin{DoxyReturn}{Returns}
 True if the vertex has been visited; otherwise, false. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_vertex_ade5e37a5947a32eb4ce4a32d0a1279f4}\label{class_vertex_ade5e37a5947a32eb4ce4a32d0a1279f4}} 
-\index{Vertex@{Vertex}!setAdj@{setAdj}}
-\index{setAdj@{setAdj}!Vertex@{Vertex}}
-\doxysubsubsection{\texorpdfstring{setAdj()}{setAdj()}}
-{\footnotesize\ttfamily void Vertex\+::set\+Adj (\begin{DoxyParamCaption}\item[{const unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_edge}{Edge}} $>$ \&}]{adj }\end{DoxyParamCaption})}
-
-
-
-Set the adjacency list representing edges to other vertices. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em adj} & The adjacency list to set for the vertex. \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{class_vertex_aeb6374ac1f9c81cf5f7e9d3547dda6d8}\label{class_vertex_aeb6374ac1f9c81cf5f7e9d3547dda6d8}} 
-\index{Vertex@{Vertex}!setAirport@{setAirport}}
-\index{setAirport@{setAirport}!Vertex@{Vertex}}
-\doxysubsubsection{\texorpdfstring{setAirport()}{setAirport()}}
-{\footnotesize\ttfamily void Vertex\+::set\+Airport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_airport}{Airport}} $\ast$}]{airport }\end{DoxyParamCaption})}
-
-
-
-Set the airport associated with the vertex. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em airport} & Pointer to the airport to set for the vertex. \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{class_vertex_a390911b126aee6bcf85a4b2e9921a421}\label{class_vertex_a390911b126aee6bcf85a4b2e9921a421}} 
+\Hypertarget{class_vertex_a390911b126aee6bcf85a4b2e9921a421}\label{class_vertex_a390911b126aee6bcf85a4b2e9921a421} 
 \index{Vertex@{Vertex}!setLow@{setLow}}
 \index{setLow@{setLow}!Vertex@{Vertex}}
 \doxysubsubsection{\texorpdfstring{setLow()}{setLow()}}
@@ -242,7 +194,7 @@ Set the low value for the vertex.
 {\em low} & The low value to set for the vertex. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_vertex_aa691c9e7724f31dc397ba653eb061d34}\label{class_vertex_aa691c9e7724f31dc397ba653eb061d34}} 
+\Hypertarget{class_vertex_aa691c9e7724f31dc397ba653eb061d34}\label{class_vertex_aa691c9e7724f31dc397ba653eb061d34} 
 \index{Vertex@{Vertex}!setNum@{setNum}}
 \index{setNum@{setNum}!Vertex@{Vertex}}
 \doxysubsubsection{\texorpdfstring{setNum()}{setNum()}}
@@ -257,22 +209,7 @@ Set the numerical identifier for the vertex.
 {\em num} & The numerical identifier to set for the vertex. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_vertex_a4427952db4781f61eb336fe5965da708}\label{class_vertex_a4427952db4781f61eb336fe5965da708}} 
-\index{Vertex@{Vertex}!setProcessing@{setProcessing}}
-\index{setProcessing@{setProcessing}!Vertex@{Vertex}}
-\doxysubsubsection{\texorpdfstring{setProcessing()}{setProcessing()}}
-{\footnotesize\ttfamily void Vertex\+::set\+Processing (\begin{DoxyParamCaption}\item[{bool}]{p }\end{DoxyParamCaption})}
-
-
-
-Set the processing status of the vertex. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em p} & The value to set for the processing status. \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{class_vertex_a3c6d6c2254850a647d3a27007ef940f6}\label{class_vertex_a3c6d6c2254850a647d3a27007ef940f6}} 
+\Hypertarget{class_vertex_a3c6d6c2254850a647d3a27007ef940f6}\label{class_vertex_a3c6d6c2254850a647d3a27007ef940f6} 
 \index{Vertex@{Vertex}!setVisited@{setVisited}}
 \index{setVisited@{setVisited}!Vertex@{Vertex}}
 \doxysubsubsection{\texorpdfstring{setVisited()}{setVisited()}}
